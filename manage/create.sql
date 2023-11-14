@@ -133,8 +133,8 @@ CREATE TABLE `Action` (
                           `attack` INT,
                           `skill` INT,
                           `movement` INT,
-                          `restore_cards` INT,
-                          `discard` ENUM ('PERMANENT', 'SHORT_REST', 'LONG_REST') DEFAULT "PERMANENT",
+                          `restoreCards` INT,
+                          `discard` ENUM ('PERMANENT', 'SHORT_REST', 'LONG_REST', 'NEVER') DEFAULT "NEVER",
                           PRIMARY KEY (`id`)
 );
 
@@ -153,39 +153,39 @@ CREATE TABLE `SummonAction` (
                                 PRIMARY KEY (`id`)
 );
 
-CREATE TABLE `Attack` (
-                          `id` INT NOT NULL AUTO_INCREMENT,
-                          `range` INT NOT NULL,
-                          `damage` INT NOT NULL,
-                          `area` INT,
-                          `target` ENUM ('SELF', 'ONE', 'ALL') NOT NULL,
-                          `numAttacks` INT NOT NULL,
-                          PRIMARY KEY (`id`)
-);
-
-CREATE TABLE `Skill` (
-                         `id` INT NOT NULL AUTO_INCREMENT,
-                         `range` INT NOT NULL,
-                         `duration` INT,
-                         `heal` INT,
-                         `area` INT,
-                         `target` ENUM ('SELF', 'ONE', 'ALL') NOT NULL,
-                         PRIMARY KEY (`id`)
-);
-
-CREATE TABLE `Movement` (
-                            `id` INT NOT NULL AUTO_INCREMENT,
-                            `range` INT NOT NULL,
-                            `type` ENUM ('WALK', 'JUMP') DEFAULT "WALK",
-                            PRIMARY KEY (`id`)
-);
-
-CREATE TABLE `RestoreCards` (
+CREATE TABLE `AttackAction` (
                                 `id` INT NOT NULL AUTO_INCREMENT,
-                                `cards` INT,
+                                `range` INT NOT NULL,
+                                `damage` INT NOT NULL,
+                                `area` INT,
                                 `target` ENUM ('SELF', 'ONE', 'ALL') NOT NULL,
-                                `random` BOOL,
+                                `numAttacks` INT NOT NULL,
                                 PRIMARY KEY (`id`)
+);
+
+CREATE TABLE `SkillAction` (
+                               `id` INT NOT NULL AUTO_INCREMENT,
+                               `range` INT NOT NULL,
+                               `duration` INT,
+                               `heal` INT,
+                               `area` INT,
+                               `target` ENUM ('SELF', 'ONE', 'ALL') NOT NULL,
+                               PRIMARY KEY (`id`)
+);
+
+CREATE TABLE `MovementAction` (
+                                  `id` INT NOT NULL AUTO_INCREMENT,
+                                  `range` INT NOT NULL,
+                                  `type` ENUM ('WALK', 'JUMP') DEFAULT "WALK",
+                                  PRIMARY KEY (`id`)
+);
+
+CREATE TABLE `RestoreCardsAction` (
+                                      `id` INT NOT NULL AUTO_INCREMENT,
+                                      `cards` INT,
+                                      `target` ENUM ('SELF', 'ONE', 'ALL') NOT NULL,
+                                      `random` BOOL,
+                                      PRIMARY KEY (`id`)
 );
 
 CREATE TABLE `Effect` (
@@ -372,7 +372,7 @@ CREATE INDEX `pk_Action_skill` ON `Action` (`skill`);
 
 CREATE INDEX `pk_Action_movement` ON `Action` (`movement`);
 
-CREATE INDEX `pk_Action_restore_card` ON `Action` (`restore_cards`);
+CREATE INDEX `pk_Action_restore_card` ON `Action` (`restoreCards`);
 
 CREATE INDEX `uk_SummonAction_idSummon` ON `SummonAction` (`idSummon`);
 
@@ -448,13 +448,13 @@ ALTER TABLE `SummonAction` ADD CONSTRAINT `fk_SummonAction_Action` FOREIGN KEY (
 
 ALTER TABLE `Action` ADD CONSTRAINT `fk_Action_Summon` FOREIGN KEY (`summon`) REFERENCES `Summon` (`id`);
 
-ALTER TABLE `Action` ADD CONSTRAINT `fk_Action_Attack` FOREIGN KEY (`attack`) REFERENCES `Attack` (`id`);
+ALTER TABLE `Action` ADD CONSTRAINT `fk_Action_AttackAction` FOREIGN KEY (`attack`) REFERENCES `AttackAction` (`id`);
 
-ALTER TABLE `Action` ADD CONSTRAINT `fk_Action_Skill` FOREIGN KEY (`skill`) REFERENCES `Skill` (`id`);
+ALTER TABLE `Action` ADD CONSTRAINT `fk_Action_SkillAction` FOREIGN KEY (`skill`) REFERENCES `SkillAction` (`id`);
 
-ALTER TABLE `Action` ADD CONSTRAINT `fk_Action_Movement` FOREIGN KEY (`movement`) REFERENCES `Movement` (`id`);
+ALTER TABLE `Action` ADD CONSTRAINT `fk_Action_MovementAction` FOREIGN KEY (`movement`) REFERENCES `MovementAction` (`id`);
 
-ALTER TABLE `Action` ADD CONSTRAINT `fk_Action_RestoreCards` FOREIGN KEY (`restore_cards`) REFERENCES `RestoreCards` (`id`);
+ALTER TABLE `Action` ADD CONSTRAINT `fk_Action_RestoreCards` FOREIGN KEY (`restoreCards`) REFERENCES `RestoreCardsAction` (`id`);
 
 ALTER TABLE `SummonEffect` ADD CONSTRAINT `fk_SummonEffect_Effect` FOREIGN KEY (`idEffect`) REFERENCES `Effect` (`id`);
 
@@ -462,15 +462,15 @@ ALTER TABLE `SummonEffect` ADD CONSTRAINT `fk_SummonEffect_Summon` FOREIGN KEY (
 
 ALTER TABLE `AttackEffect` ADD CONSTRAINT `fk_AttackEffect_Effect` FOREIGN KEY (`idEffect`) REFERENCES `Effect` (`id`);
 
-ALTER TABLE `AttackEffect` ADD CONSTRAINT `fk_AttackEffect_Attack` FOREIGN KEY (`idAttack`) REFERENCES `Attack` (`id`);
+ALTER TABLE `AttackEffect` ADD CONSTRAINT `fk_AttackEffect_Attack` FOREIGN KEY (`idAttack`) REFERENCES `AttackAction` (`id`);
 
 ALTER TABLE `SkillEffect` ADD CONSTRAINT `fk_SkillEffect_Effect` FOREIGN KEY (`idEffect`) REFERENCES `Effect` (`id`);
 
-ALTER TABLE `SkillEffect` ADD CONSTRAINT `fk_SkillEffect_Skill` FOREIGN KEY (`idSkill`) REFERENCES `Skill` (`id`);
+ALTER TABLE `SkillEffect` ADD CONSTRAINT `fk_SkillEffect_Skill` FOREIGN KEY (`idSkill`) REFERENCES `SkillAction` (`id`);
 
 ALTER TABLE `MovementEffect` ADD CONSTRAINT `fk_MovementEffect_Effect` FOREIGN KEY (`idEffect`) REFERENCES `Effect` (`id`);
 
-ALTER TABLE `MovementEffect` ADD CONSTRAINT `fk_MovementEffect_Movement` FOREIGN KEY (`idMovement`) REFERENCES `Movement` (`id`);
+ALTER TABLE `MovementEffect` ADD CONSTRAINT `fk_MovementEffect_Movement` FOREIGN KEY (`idMovement`) REFERENCES `MovementAction` (`id`);
 
 ALTER TABLE `ClassEffect` ADD CONSTRAINT `fk_ClassEffect_Effect` FOREIGN KEY (`idEffect`) REFERENCES `Effect` (`id`);
 

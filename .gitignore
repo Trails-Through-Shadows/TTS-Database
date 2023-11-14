@@ -2,3 +2,4 @@
 script/.env
 script/__pycache__
 insert/schematic/locations.sql
+insert/action/actions.sql

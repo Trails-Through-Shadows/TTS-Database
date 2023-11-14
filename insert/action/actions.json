@@ -1,0 +1,31 @@
+[
+  {
+    "id": 1,
+    "title": "Špinavý dráp",
+    "description": "Zaútočí na jednoho nepřítele v dosahu 2.",
+    "summon": null,
+    "attack": {
+        "id": 1,
+        "range": 1,
+        "damage": 1,
+        "area": 0,
+        "target": "ONE",
+        "numAttacks": 1,
+        "attackEffects": [ 14, 4 ]
+    },
+    "skill": null,
+    "movement": null,
+    "restoreCards": null,
+    "discard": "SHORT_REST"
+  }, {
+    "id": 2,
+    "title": "",
+    "description": "",
+    "summon": {},
+    "attack": {},
+    "skill": {},
+    "movement": {},
+    "restoreCards": {},
+    "discard": "NEVER"
+  }
+]

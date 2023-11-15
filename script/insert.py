@@ -21,8 +21,8 @@ for dirPath, _, fileNames in os.walk(insertFolder):
                 subprocess.call(['python', filePath])
                 log("Executing {}... Done".format(filePath), "INFO", True)
             except Exception as e:
-                log("Executing {}... Error: {}".format(filePath, e), "ERROR", True)
-                log(e, "ERROR", True)
+                log("Executing {}... Error", "ERROR", True)
+                log(" - {}".format(e), "ERROR", True)
 
 sqlFiles = []
 
@@ -46,7 +46,8 @@ for filePath in sqlFiles:
         executeFileSQL(filePath)
         log("Executing {}... Done".format(filePath), "INFO", True)
     except Exception as e:
-        log("Executing {}... Error: {}".format(filePath, e), "ERROR", True)
+        log("Executing {}... Error".format(filePath, e), "ERROR", True)
+        log(" - {}".format(e), "ERROR", True)
 
 # Close the connection
 conn.close()

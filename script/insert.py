@@ -9,39 +9,44 @@ executeFileSQL(clearScriptPath)
 # Directory where the .sql files are located
 insertFolder = '../insert'
 
-sqlFiles = []
-pyFiles = []
-
-for dirPath, dirNames, fileNames in os.walk(insertFolder):
+for dirPath, _, fileNames in os.walk(insertFolder):
     for fileName in fileNames:
         filePath = os.path.join(dirPath, fileName)
 
         # Python files
         if fileName.lower().endswith('.py'):
-            pyFiles.append((fileName, filePath))
+            log("Executing {}...".format(filePath), "INFO")
+
+            try:
+                subprocess.call(['python', filePath])
+                log("Executing {}... Done".format(filePath), "INFO", True)
+            except Exception as e:
+                log("Executing {}... Error: {}".format(filePath, e), "ERROR", True)
+                log(e, "ERROR", True)
+
+sqlFiles = []
+
+# Excecute all sql files sorted by name in the insert folder
+for dirPath, _, fileNames in os.walk(insertFolder):
+    for fileName in fileNames:
+        filePath = os.path.join(dirPath, fileName)
 
         # SQL files
         if fileName.lower().endswith('.sql'):
-            sqlFiles.append((fileName, filePath))
+            sqlFiles.append(filePath)
 
-log("Found {} SQL files and {} Python files.".format(len(sqlFiles), len(pyFiles)), "INFO", True)
+# Sort the files by name
+sqlFiles.sort(key=lambda x: os.path.basename(x))
 
-# Sort sql files by name
-sqlFiles.sort(key=lambda x: x[0])
-
-# Execute all python files
-for fileName, filePath in pyFiles:
+# Execute all the SQL files
+for filePath in sqlFiles:
     log("Executing {}...".format(filePath), "INFO")
+
     try:
-        subprocess.call(['python', filePath])
+        executeFileSQL(filePath)
         log("Executing {}... Done".format(filePath), "INFO", True)
     except Exception as e:
         log("Executing {}... Error: {}".format(filePath, e), "ERROR", True)
-        log(e, "ERROR", True)
-
-# Execute all sql files
-for fileName, filePath in sqlFiles:
-    executeFileSQL(filePath)
 
 # Close the connection
 conn.close()

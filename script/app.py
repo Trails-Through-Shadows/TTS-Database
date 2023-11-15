@@ -44,7 +44,6 @@ except mysql.connector.Error as error:
     log(f"Error connecting to MySQL: {error}", "ERROR")
     exit(1)
 
-
 # Function to execute a SQL file
 def executeFileSQL(filePath: str) -> None:
 
@@ -55,17 +54,8 @@ def executeFileSQL(filePath: str) -> None:
         sqlFileContent = file.read()
         cursor = conn.cursor()  # Create a new cursor for each file
 
-        try:
-            log(f"Executing {filePath}...", "INFO")
+        # Execute the SQL file
+        for result in cursor.execute(sqlFileContent, multi=True):
+            pass  # Consuming the iterator
 
-            # Execute the SQL file
-            for result in cursor.execute(sqlFileContent, multi=True):
-                pass  # Consuming the iterator
-
-            conn.commit()
-            log(f"Executing {filePath}... Done", "INFO", True)
-        except mysql.connector.Error as error:
-            conn.rollback()
-            log(f"Executing {filePath}... Error: {error}", "ERROR", True)
-        finally:
-            cursor.close()
+        conn.commit()

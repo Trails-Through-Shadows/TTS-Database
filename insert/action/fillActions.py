@@ -30,17 +30,13 @@ for action in data:
 
     # Summon
     if action["summon"]:
-        pass
-
-    # Summon
-    if action["summon"]:
         summon = action["summon"]
         summonID = summon["id"]
 
         sqlFile.write(
             "INSERT INTO SummonAction (id, idSummon, idAction) "
-            "VALUES ('{}', '{}', '{}');\n"
-            .format(str(summon["id"]), str(summon["idSummon"]), str(summon["idAction"]))
+            "VALUES ({}, {}, {});\n"
+            .format(summon["id"], summon["idSummon"], summon["idAction"])
         )
 
         # SummonEffect
@@ -48,8 +44,8 @@ for action in data:
             for effect in summon["summonEffects"]:
                 sqlFile.write(
                     "INSERT INTO SummonEffect (idSummon, idEffect) "
-                    "VALUES ('{}', '{}');\n"
-                    .format(str(summon["id"]), str(effect))
+                    "VALUES ({}, {});\n"
+                    .format(summon["id"], effect)
                 )
 
     # Attack
@@ -59,8 +55,8 @@ for action in data:
 
         sqlFile.write(
             "INSERT INTO AttackAction (id, `range`, damage, area, target, numAttacks) "
-            "VALUES ('{}', '{}', '{}', '{}', '{}', '{}');\n"
-            .format(str(attack["id"]), str(attack["range"]), str(attack["damage"]), str(attack["area"]), attack["target"], str(attack["numAttacks"]))
+            "VALUES ({}, {}, {}, {}, '{}', {});\n"
+            .format(attack["id"], attack["range"], attack["damage"], attack["area"], attack["target"], attack["numAttacks"])
         )
 
         # AttackEffect
@@ -68,8 +64,8 @@ for action in data:
             for effect in attack["attackEffects"]:
                 sqlFile.write(
                     "INSERT INTO AttackEffect (idAttack, idEffect) "
-                    "VALUES ('{}', '{}');\n"
-                    .format(str(attack["id"]), str(effect))
+                    "VALUES ({}, {});\n"
+                    .format(attack["id"], effect)
                 )
 
     # Skill
@@ -79,8 +75,8 @@ for action in data:
 
         sqlFile.write(
             "INSERT INTO SkillAction (id, `range`, duration, heal, area, target) "
-            "VALUES ('{}', '{}', '{}', '{}', '{}', '{}');\n"
-            .format(str(skill["id"]), str(skill["range"]), str(skill["duration"]), str(skill["heal"]), str(skill["area"]), skill["target"])
+            "VALUES ({}, {}, {}, {}, {}, {});\n"
+            .format(skill["id"], skill["range"], skill["duration"], skill["heal"], skill["area"], skill["target"])
         )
 
         # SkillEffect
@@ -88,8 +84,8 @@ for action in data:
             for effect in skill["skillEffects"]:
                 sqlFile.write(
                     "INSERT INTO SkillEffect (idSkill, idEffect) "
-                    "VALUES ('{}', '{}');\n"
-                    .format(str(skill["id"]), str(effect))
+                    "VALUES ({}, {});\n"
+                    .format(skill["id"], effect)
                 )
 
     # Movement
@@ -99,8 +95,8 @@ for action in data:
 
         sqlFile.write(
             "INSERT INTO MovementAction (id, `range`, type) "
-            "VALUES ('{}', '{}', '{}');\n"
-            .format(str(movement["id"]), str(movement["range"]), movement["type"])
+            "VALUES ({}, {}, {});\n"
+            .format(movement["id"], movement["range"], movement["type"])
         )
 
         # MovementEffect
@@ -108,8 +104,8 @@ for action in data:
             for effect in movement["movementEffects"]:
                 sqlFile.write(
                     "INSERT INTO MovementEffect (idMovement, idEffect) "
-                    "VALUES ('{}', '{}');\n"
-                    .format(str(movement["id"]), str(effect))
+                    "VALUES ({}, {});\n"
+                    .format(movement["id"], effect)
                 )
 
     # RestoreCards
@@ -119,13 +115,13 @@ for action in data:
 
         sqlFile.write(
             "INSERT INTO RestoreCardsAction (id, cards, target, random) "
-            "VALUES ('{}', '{}', '{}', '{}');\n"
-            .format(str(restoreCards["id"]), str(restoreCards["cards"]), restoreCards["target"], str(restoreCards["random"]))
+            "VALUES ({}, {}, {}, {});\n"
+            .format(restoreCards["id"], restoreCards["cards"], restoreCards["target"], restoreCards["random"])
         )
 
     # Insert Action
     sqlFile.write(
         "INSERT INTO Action (id, title, description, summon, attack, skill, movement, restoreCards, discard) "
-        "VALUES ('{}', '{}', '{}', '{}', '{}', '{}', '{}', '{}', '{}');\n"
+        "VALUES ({}, '{}', '{}', {}, {}, {}, {}, {}, '{}');\n"
         .format(id, title, description, summonID, attackID, skillID, movementID, restoreCardID, discard)
     )

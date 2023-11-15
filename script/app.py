@@ -1,5 +1,6 @@
 import os
 import mysql.connector
+import subprocess
 from dotenv import load_dotenv
 from datetime import datetime
 
@@ -46,16 +47,35 @@ except mysql.connector.Error as error:
 
 # Function to execute a SQL file
 def executeFileSQL(filePath: str) -> None:
-
-    # Replace backslash with forward slash
     filePath = filePath.replace('\\', '/')
+    log("Executing {}...".format(filePath), "INFO")
 
-    with open(filePath, 'r') as file:
+    try:
+        # Read the SQL file
+        file = open(filePath, "r")
         sqlFileContent = file.read()
-        cursor = conn.cursor()  # Create a new cursor for each file
+        file.close()
 
         # Execute the SQL file
+        cursor = conn.cursor()
         for result in cursor.execute(sqlFileContent, multi=True):
             pass  # Consuming the iterator
 
         conn.commit()
+        log("Executing {}... Done".format(filePath), "INFO", True)
+    except Exception as e:
+        log("Executing {}... Error".format(filePath, e), "ERROR", True)
+        log(" - {}".format(e), "ERROR", True)
+
+
+# Function to execute a Python file
+def executeFilePython(filePath: str) -> None:
+    filePath = filePath.replace('\\', '/')
+    log("Executing {}...".format(filePath), "INFO")
+
+    try:
+        subprocess.call(['python', filePath])
+        log("Executing {}... Done".format(filePath), "INFO", True)
+    except Exception as e:
+        log("Executing {}... Error", "ERROR", True)
+        log(" - {}".format(e), "ERROR", True)

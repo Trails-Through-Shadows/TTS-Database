@@ -1,4 +1,3 @@
-import subprocess
 from app import *
 
 
@@ -9,24 +8,17 @@ executeFileSQL(clearScriptPath)
 # Directory where the .sql files are located
 insertFolder = '../insert'
 
+# Execute all the Python files
 for dirPath, _, fileNames in os.walk(insertFolder):
     for fileName in fileNames:
         filePath = os.path.join(dirPath, fileName)
 
         # Python files
         if fileName.lower().endswith('.py'):
-            log("Executing {}...".format(filePath), "INFO")
+            executeFilePython(filePath)
 
-            try:
-                subprocess.call(['python', filePath])
-                log("Executing {}... Done".format(filePath), "INFO", True)
-            except Exception as e:
-                log("Executing {}... Error", "ERROR", True)
-                log(" - {}".format(e), "ERROR", True)
-
+# Get all the SQL files
 sqlFiles = []
-
-# Excecute all sql files sorted by name in the insert folder
 for dirPath, _, fileNames in os.walk(insertFolder):
     for fileName in fileNames:
         filePath = os.path.join(dirPath, fileName)
@@ -40,14 +32,7 @@ sqlFiles.sort(key=lambda x: os.path.basename(x))
 
 # Execute all the SQL files
 for filePath in sqlFiles:
-    log("Executing {}...".format(filePath), "INFO")
-
-    try:
-        executeFileSQL(filePath)
-        log("Executing {}... Done".format(filePath), "INFO", True)
-    except Exception as e:
-        log("Executing {}... Error".format(filePath, e), "ERROR", True)
-        log(" - {}".format(e), "ERROR", True)
+    executeFileSQL(filePath)
 
 # Close the connection
 conn.close()

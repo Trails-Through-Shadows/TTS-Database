@@ -17,8 +17,10 @@ VALUES
     (15, 'CONFUSION_IMMUNITY', 10, 'SELF', NULL),
     (16, 'CHARM', 3, 'ONE', NULL),
     (17, 'CHARM_IMMUNITY', 10, 'SELF', NULL),
-    (18, 'INVISIBILITY', 5, 'SELF', NULL),
-    (19, 'SHIELD', 2, 'SELF', 10),
-    (20, 'BONUS_HEALTH', 10, 'SELF', 20),
-    (21, 'BONUS_DAMAGE', 5, 'SELF', 5),
-    (22, 'BONUS_MOVEMENT', 5, 'SELF', 10);
+    (18, 'FEAR', 3, 'ONE', NULL),
+    (19, 'FEAR_IMMUNITY', 10, 'SELF', NULL),
+    (20, 'INVISIBILITY', 5, 'SELF', NULL),
+    (21, 'SHIELD', 2, 'SELF', 10),
+    (22, 'BONUS_HEALTH', 10, 'SELF', 20),
+    (23, 'BONUS_DAMAGE', 5, 'SELF', 5),
+    (24, 'BONUS_MOVEMENT', 5, 'SELF', 10);

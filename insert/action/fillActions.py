@@ -1,6 +1,28 @@
 import json
 import os
 
+
+# Replace None with NULL recursively
+def replaceNoneWithNull(data):
+    if isinstance(data, dict):
+        for key in data:
+            if data[key] is None:
+                data[key] = "NULL"
+            else:
+                data[key] = replaceNoneWithNull(data[key])
+    elif isinstance(data, list):
+        for i in range(len(data)):
+            if data[i] is None:
+                data[i] = "NULL"
+            else:
+                data[i] = replaceNoneWithNull(data[i])
+    else:
+        if data is None:
+            data = "NULL"
+
+    return data
+
+
 # Get current file path even if it's executed from another file
 currentFolderPath = os.path.dirname(os.path.realpath(__file__))
 
@@ -17,6 +39,9 @@ sqlFile = open(sqlFilePath, "w")
 sqlFile.truncate(0)
 sqlFile.flush()
 
+# Replace None with NULL
+data = replaceNoneWithNull(data)
+
 for action in data:
     id = action["id"]
     title = action["title"]
@@ -28,35 +53,40 @@ for action in data:
     restoreCardID = "NULL"
     discard = action["discard"]
 
+    sqlFile.write("-- Action {}\n".format(title))
+
     # Summon
-    if action["summon"]:
+    if action["summon"] != 'NULL':
         summon = action["summon"]
         summonID = summon["id"]
+        actionIDs = summon["idAction"]
 
-        sqlFile.write(
-            "INSERT INTO SummonAction (id, idSummon, idAction) "
-            "VALUES ({}, {}, {});\n"
-            .format(summon["id"], summon["idSummon"], summon["idAction"])
-        )
+        for actionID in actionIDs:
+            sqlFile.write(
+                "INSERT INTO SummonAction (idSummon, idAction) "
+                "VALUES ({}, {});\n"
+                .format(summon["idSummon"], actionID)
+            )
 
-        # SummonEffect
-        if "summonEffects" in summon:
-            for effect in summon["summonEffects"]:
-                sqlFile.write(
-                    "INSERT INTO SummonEffect (idSummon, idEffect) "
-                    "VALUES ({}, {});\n"
-                    .format(summon["id"], effect)
-                )
+            # SummonEffect
+            if "summonEffects" in summon:
+                for effect in summon["summonEffects"]:
+                    sqlFile.write(
+                        "INSERT INTO SummonEffect (idSummon, idEffect) "
+                        "VALUES ({}, {});\n"
+                        .format(summon["id"], effect)
+                    )
 
     # Attack
-    if action["attack"]:
+    if action["attack"] != 'NULL':
         attack = action["attack"]
         attackID = attack["id"]
 
         sqlFile.write(
             "INSERT INTO AttackAction (id, `range`, damage, area, target, numAttacks) "
             "VALUES ({}, {}, {}, {}, '{}', {});\n"
-            .format(attack["id"], attack["range"], attack["damage"], attack["area"], attack["target"], attack["numAttacks"])
+            .format(attack["id"], attack["range"], attack["damage"], attack["area"], attack["target"],
+                    attack["numAttacks"])
         )
 
         # AttackEffect
@@ -69,13 +99,13 @@ for action in data:
                 )
 
     # Skill
-    if action["skill"]:
+    if action["skill"] != 'NULL':
         skill = action["skill"]
         skillID = skill["id"]
 
         sqlFile.write(
             "INSERT INTO SkillAction (id, `range`, duration, heal, area, target) "
-            "VALUES ({}, {}, {}, {}, {}, {});\n"
+            "VALUES ({}, {}, {}, {}, {}, '{}');\n"
             .format(skill["id"], skill["range"], skill["duration"], skill["heal"], skill["area"], skill["target"])
         )
 
@@ -89,13 +119,13 @@ for action in data:
                 )
 
     # Movement
-    if action["movement"]:
+    if action["movement"] != 'NULL':
         movement = action["movement"]
         movementID = movement["id"]
 
         sqlFile.write(
             "INSERT INTO MovementAction (id, `range`, type) "
-            "VALUES ({}, {}, {});\n"
+            "VALUES ({}, {}, '{}');\n"
             .format(movement["id"], movement["range"], movement["type"])
         )
 
@@ -109,7 +139,7 @@ for action in data:
                 )
 
     # RestoreCards
-    if action["restoreCards"]:
+    if action["restoreCards"] != 'NULL':
         restoreCards = action["restoreCards"]
         restoreCardID = restoreCards["id"]
 

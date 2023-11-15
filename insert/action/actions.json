@@ -2,7 +2,7 @@
   {
     "id": 1,
     "title": "Špinavý dráp",
-    "description": "Zaútočí na jednoho nepřítele v dosahu 2.",
+    "description": "Zaútoč na jednoho nepřítele v dosahu 2.",
     "summon": null,
     "attack": {
       "id": 1,
@@ -24,24 +24,26 @@
   {
     "id": 2,
     "title": "Příšerná stvůra",
-    "description": "Stvoří příšerně velkou krysu",
+    "description": "Stvoř příšerně velkou krysu.",
     "summon": {
       "id": 1,
-      "idAction": 2,
+      "idAction": [
+        1
+      ],
       "idSummon": 1
     },
-    "attack": {},
-    "skill": {},
-    "movement": {},
-    "restoreCards": {},
+    "attack": null,
+    "skill": null,
+    "movement": null,
+    "restoreCards": null,
     "discard": "LONG_REST"
   },
   {
     "id": 3,
     "title": "Horký stín",
-    "description": "Vytvoří zónu ohně na vzdálenost 2 ",
-    "summon": {},
-    "attack": {},
+    "description": "Vytvoř zónu ohně na vzdálenost 2.",
+    "summon": null,
+    "attack": null,
     "skill": {
       "id": 1,
       "range": 2,
@@ -53,23 +55,158 @@
         6
       ]
     },
-    "movement": {},
-    "restoreCards": {},
+    "movement": null,
+    "restoreCards": null,
     "discard": "NEVER"
   },
   {
     "id": 4,
-    "title": "",
+    "title": "Krok vpřed",
     "description": "",
-    "summon": {},
-    "attack": {},
-    "skill": {},
+    "summon": null,
+    "attack": null,
+    "skill": null,
     "movement": {
       "id": 1,
       "range": 3,
       "type": "WALK"
     },
-    "restoreCards": {},
+    "restoreCards": null,
+    "discard": "NEVER"
+  },
+  {
+    "id": 5,
+    "title": "Smrtící postup",
+    "description": "Vykroč vpřed a zabij jednoho nepřítele na sousedním poli.",
+    "summon": null,
+    "attack": {
+      "id": 2,
+      "range": 1,
+      "damage": -1,
+      "area": 0,
+      "target": "ONE",
+      "numAttacks": 1,
+      "attackEffects": []
+    },
+    "skill": null,
+    "movement": {
+      "id": 2,
+      "range": 2,
+      "type": "WALK"
+    },
+    "restoreCards": null,
+    "discard": "PERMANENT"
+  },
+  {
+    "id": 6,
+    "title": "Zeď zkázy",
+    "description": "Připrav se na bitvu.",
+    "summon": null,
+    "attack": null,
+    "skill": {
+      "id": 2,
+      "range": 0,
+      "duration": 1,
+      "heal": null,
+      "area": 0,
+      "target": "SELF",
+      "skillEffects": [
+        3,
+        19,
+        20
+      ]
+    },
+    "movement": null,
+    "restoreCards": null,
+    "discard": "SHORT_REST"
+  },
+  {
+    "id": 7,
+    "title": "Záplava úderů",
+    "description": "Zaútoč na tři nepřátele na sousedních polích.",
+    "summon": null,
+    "attack": {
+      "id": 3,
+      "range": 1,
+      "damage": 3,
+      "area": 0,
+      "target": "ONE",
+      "numAttacks": 3,
+      "attackEffects": []
+    },
+    "skill": null,
+    "movement": null,
+    "restoreCards": null,
+    "discard": "SHORT_REST"
+  },
+  {
+    "id": 8,
+    "title": "Vyzývavý řev",
+    "description": "Zastraš své nepřátele.",
+    "summon": null,
+    "attack": null,
+    "skill": {
+      "id": 3,
+      "range": 0,
+      "duration": 3,
+      "heal": null,
+      "area": 0,
+      "target": "SELF",
+      "skillEffects": [
+        18
+      ]
+    },
+    "movement": null,
+    "restoreCards": null,
+    "discard": "SHORT_REST"
+  },
+  {
+    "id": 9,
+    "title": "Léčivý dotek",
+    "description": "Uzdrav jednoho spojence na dosah 2.",
+    "summon": null,
+    "attack": null,
+    "skill": {
+      "id": 4,
+      "range": 2,
+      "duration": 0,
+      "heal": 3,
+      "area": 0,
+      "target": "ONE",
+      "skillEffects": []
+    },
+    "movement": null,
+    "restoreCards": null,
+    "discard": "SHORT_REST"
+  },
+  {
+    "id": 10,
+    "title": "Léčivá vlna",
+    "description": "Uzdrav všechny spojence na dosah 2.",
+    "summon": null,
+    "attack": null,
+    "skill": {
+      "id": 5,
+      "range": 2,
+      "duration": 0,
+      "heal": 3,
+      "area": 0,
+      "target": "ALL",
+      "skillEffects": []
+    },
+    "movement": null,
+    "restoreCards": null,
+    "discard": "LONG_REST"
+  },
+  {
+    "id": 999,
+    "title": "Klid",
+    "description": "Prohlédni si okolí.",
+    "summon": null,
+    "attack": null,
+    "skill": null,
+    "movement": null,
+    "restoreCards": null,
     "discard": "NEVER"
   }
 ]

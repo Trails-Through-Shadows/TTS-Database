@@ -5,26 +5,70 @@
     "description": "Zaútočí na jednoho nepřítele v dosahu 2.",
     "summon": null,
     "attack": {
-        "id": 1,
-        "range": 1,
-        "damage": 1,
-        "area": 0,
-        "target": "ONE",
-        "numAttacks": 1,
-        "attackEffects": [ 14, 4 ]
+      "id": 1,
+      "range": 1,
+      "damage": 1,
+      "area": 0,
+      "target": "ONE",
+      "numAttacks": 1,
+      "attackEffects": [
+        14,
+        4
+      ]
     },
     "skill": null,
     "movement": null,
     "restoreCards": null,
     "discard": "SHORT_REST"
-  }, {
+  },
+  {
     "id": 2,
+    "title": "Příšerná stvůra",
+    "description": "Stvoří příšerně velkou krysu",
+    "summon": {
+      "id": 1,
+      "idAction": 2,
+      "idSummon": 1
+    },
+    "attack": {},
+    "skill": {},
+    "movement": {},
+    "restoreCards": {},
+    "discard": "LONG_REST"
+  },
+  {
+    "id": 3,
+    "title": "Horký stín",
+    "description": "Vytvoří zónu ohně na vzdálenost 2 ",
+    "summon": {},
+    "attack": {},
+    "skill": {
+      "id": 1,
+      "range": 2,
+      "duration": 3,
+      "heal": null,
+      "area": 2,
+      "target": "ALL",
+      "skillEffects": [
+        6
+      ]
+    },
+    "movement": {},
+    "restoreCards": {},
+    "discard": "NEVER"
+  },
+  {
+    "id": 4,
     "title": "",
     "description": "",
     "summon": {},
     "attack": {},
     "skill": {},
-    "movement": {},
+    "movement": {
+      "id": 1,
+      "range": 3,
+      "type": "WALK"
+    },
     "restoreCards": {},
     "discard": "NEVER"
   }

@@ -7,7 +7,14 @@
     "parts": [
       {
         "id": 1,
-        "hexCount": 20,
+        "scheme": [
+          "  ....",
+          "......",
+          "..x...",
+          "......",
+          "....",
+          ".."
+        ],
         "hexes": {
           "14": {
             "type": "OBSTACLE",
@@ -17,29 +24,33 @@
             "type": "ENEMY",
             "id": 1
           }
-        },
-        "doors": [
-          {
-            "first": {
-              "partId": 1,
-              "hexId": 3,
-              "edge": "a"
-            },
-            "second": {
-              "partId": 2,
-              "hexId": 3,
-              "edge": "b"
-            }
-          }
-        ]
+        }
       }, {
         "id": 2,
-        "hexCount": 30,
+        "scheme": [
+          ".....",
+          ".....",
+          "....."
+        ],
         "hexes": {
           "10": {
             "type": "ENEMY",
             "id": 2
           }
+        }
+      }
+    ],
+    "doors": [
+      {
+        "first": {
+          "partId": 1,
+          "hexId": 3,
+          "edge": "a"
+        },
+        "second": {
+          "partId": 2,
+          "hexId": 3,
+          "edge": "b"
         }
       }
     ]
@@ -51,7 +62,13 @@
     "parts": [
       {
         "id": 3,
-        "hexCount": 25,
+        "scheme": [
+          ".....",
+          ".....",
+          ".....",
+          ".....",
+          "....."
+        ],
         "hexes": {
           "2": {
             "type": "OBSTACLE",
@@ -68,7 +85,12 @@
         }
       }, {
         "id": 4,
-        "hexCount": 20,
+        "scheme": [
+          ".....",
+          ".....",
+          ".....",
+          "....."
+        ],
         "hexes": {
           "5": {
             "type": "OBSTACLE",
@@ -108,7 +130,14 @@
     "parts": [
       {
         "id": 5,
-        "hexCount": 35,
+        "scheme": [
+          ".....",
+          ".....",
+          ".....",
+          ".....",
+          ".....",
+          "....."
+        ],
         "hexes": {
           "11": {
             "type": "OBSTACLE",
@@ -120,7 +149,7 @@
           },
           "29": {
             "type": "ENEMY",
-            "id": 5
+            "id": 4
           },
           "34": {
             "type": "TREASURE",
@@ -143,7 +172,14 @@
         ]
       }, {
         "id": 6,
-        "hexCount": 40,
+        "scheme": [
+          ".....",
+          ".....",
+          ".....",
+          ".....",
+          ".....",
+          "....."
+        ],
         "hexes": {
           "6": {
             "type": "OBSTACLE",
@@ -155,7 +191,7 @@
           },
           "36": {
             "type": "ENEMY",
-            "id": 6
+            "id": 2
           },
           "15": {
             "type": "TREASURE",

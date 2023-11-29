@@ -1,0 +1,106 @@
+[
+  {
+    "id": 1,
+    "name": "Zombie",
+    "health": 10,
+    "defence": 2,
+    "actions": [
+      {
+        "lvlReq": 1,
+        "id": 1
+      }, {
+        "lvlReq": 1,
+        "id": 2
+      }
+    ],
+    "effects": [
+      {
+        "lvlReq": 1,
+        "effect": {
+          "type": "POISON_IMMUNITY",
+          "duration": 3,
+          "range": "SELF",
+          "strength": 0
+        }
+      }
+    ]
+  }, {
+    "id": 2,
+    "name": "Goblin",
+    "health": 8,
+    "defence": 3,
+    "actions": [
+      {
+        "lvlReq": 1,
+        "id": 3
+      },
+      {
+        "lvlReq": 2,
+        "id": 4
+      }
+    ],
+    "effects": [
+      {
+        "lvlReq": 1,
+        "effect": {
+          "type": "FIRE",
+          "duration": 2,
+          "range": "SELF",
+          "strength": 2
+        }
+      }
+    ]
+  }, {
+    "id": 3,
+    "name": "Skeleton",
+    "health": 6,
+    "defence": 1,
+    "actions": [
+      {
+        "lvlReq": 1,
+        "id": 5
+      },
+      {
+        "lvlReq": 2,
+        "id": 6
+      }
+    ],
+    "effects": [
+      {
+        "lvlReq": 1,
+        "effect": {
+          "type": "BLEED_IMMUNITY",
+          "duration": 2,
+          "range": "SELF",
+          "strength": 0
+        }
+      }
+    ]
+  }, {
+    "id": 4,
+    "name": "Orc",
+    "health": 12,
+    "defence": 4,
+    "actions": [
+      {
+        "lvlReq": 2,
+        "id": 7
+      },
+      {
+        "lvlReq": 3,
+        "id": 8
+      }
+    ],
+    "effects": [
+      {
+        "lvlReq": 2,
+        "effect": {
+          "type": "STUN",
+          "duration": 1,
+          "range": "SELF",
+          "strength": 0
+        }
+      }
+    ]
+  }
+]

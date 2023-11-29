@@ -1,0 +1,23 @@
+[
+  {
+    "id": 1,
+    "title": "Our First Campaign",
+    "description": "This is our first campaign",
+    "locations": [ 1, 2 ],
+    "achievements": [ 1, 2, 3 ]
+  },
+  {
+      "id": 2,
+      "title": "Our Second Campaign",
+      "description": "This is our second campaign",
+      "locations": [ 1, 2 ],
+      "achievements": [ 1, 2, 3 ]
+  },
+  {
+      "id": 3,
+      "title": "Our Third Campaign",
+      "description": "This is our third campaign",
+      "locations": [ 1, 2 ],
+      "achievements": [ 1, 2, 3 ]
+  }
+]

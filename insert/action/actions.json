@@ -12,16 +12,24 @@
       "target": "ONE",
       "numAttacks": 1,
       "attackEffects": [
-        14,
-        4
+        {
+          "type": "POISON",
+          "duration": 3,
+          "range": "ONE",
+          "strength": 5
+        }, {
+          "type": "POISON_IMMUNITY",
+          "duration": 3,
+          "range": "SELF",
+          "strength": 0
+        }
       ]
     },
     "skill": null,
     "movement": null,
     "restoreCards": null,
     "discard": "SHORT_REST"
-  },
-  {
+  }, {
     "id": 2,
     "title": "Příšerná stvůra",
     "description": "Stvoř příšerně velkou krysu.",
@@ -37,8 +45,7 @@
     "movement": null,
     "restoreCards": null,
     "discard": "LONG_REST"
-  },
-  {
+  }, {
     "id": 3,
     "title": "Horký stín",
     "description": "Vytvoř zónu ohně na vzdálenost 2.",
@@ -52,14 +59,18 @@
       "area": 2,
       "target": "ALL",
       "skillEffects": [
-        6
+        {
+          "type": "POISON_IMMUNITY",
+          "duration": 3,
+          "range": "SELF",
+          "strength": 0
+        }
       ]
     },
     "movement": null,
     "restoreCards": null,
     "discard": "NEVER"
-  },
-  {
+  }, {
     "id": 4,
     "title": "Krok vpřed",
     "description": "",
@@ -73,8 +84,7 @@
     },
     "restoreCards": null,
     "discard": "NEVER"
-  },
-  {
+  }, {
     "id": 5,
     "title": "Smrtící postup",
     "description": "Vykroč vpřed a zabij jednoho nepřítele na sousedním poli.",
@@ -96,8 +106,7 @@
     },
     "restoreCards": null,
     "discard": "PERMANENT"
-  },
-  {
+  }, {
     "id": 6,
     "title": "Zeď zkázy",
     "description": "Připrav se na bitvu.",
@@ -111,16 +120,18 @@
       "area": 0,
       "target": "SELF",
       "skillEffects": [
-        3,
-        19,
-        20
+        {
+          "type": "POISON_IMMUNITY",
+          "duration": 3,
+          "range": "SELF",
+          "strength": 0
+        }
       ]
     },
     "movement": null,
     "restoreCards": null,
     "discard": "SHORT_REST"
-  },
-  {
+  }, {
     "id": 7,
     "title": "Záplava úderů",
     "description": "Zaútoč na tři nepřátele na sousedních polích.",
@@ -138,8 +149,7 @@
     "movement": null,
     "restoreCards": null,
     "discard": "SHORT_REST"
-  },
-  {
+  }, {
     "id": 8,
     "title": "Vyzývavý řev",
     "description": "Zastraš své nepřátele.",
@@ -153,14 +163,18 @@
       "area": 0,
       "target": "SELF",
       "skillEffects": [
-        18
+        {
+          "type": "POISON_IMMUNITY",
+          "duration": 3,
+          "range": "SELF",
+          "strength": 0
+        }
       ]
     },
     "movement": null,
     "restoreCards": null,
     "discard": "SHORT_REST"
-  },
-  {
+  }, {
     "id": 9,
     "title": "Léčivý dotek",
     "description": "Uzdrav jednoho spojence na dosah 2.",
@@ -178,8 +192,7 @@
     "movement": null,
     "restoreCards": null,
     "discard": "SHORT_REST"
-  },
-  {
+  }, {
     "id": 10,
     "title": "Léčivá vlna",
     "description": "Uzdrav všechny spojence na dosah 2.",
@@ -197,9 +210,8 @@
     "movement": null,
     "restoreCards": null,
     "discard": "LONG_REST"
-  },
-  {
-    "id": 999,
+  }, {
+    "id": -1,
     "title": "Klid",
     "description": "Prohlédni si okolí.",
     "summon": null,

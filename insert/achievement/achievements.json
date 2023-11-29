@@ -1,0 +1,58 @@
+[
+  {
+    "id": 1,
+    "title": "Great Success",
+    "description": "You have successfully created a new post.",
+    "xpReward": 100
+  }, {
+    "id": 2,
+    "title": "Social Butterfly",
+    "description": "You've connected with 50 friends.",
+    "xpReward": 50
+  }, {
+    "id": 3,
+    "title": "Master Explorer",
+    "description": "You've visited every location in the game world.",
+    "xpReward": 200
+  }, {
+    "id": 4,
+    "title": "Treasure Hunter",
+    "description": "You've discovered hidden treasures in 10 different areas.",
+    "xpReward": 150
+  }, {
+    "id": 5,
+    "title": "Combat Veteran",
+    "description": "You've won 100 battles.",
+    "xpReward": 100
+  }, {
+    "id": 6,
+    "title": "Craftsman",
+    "description": "You've crafted 50 items.",
+    "xpReward": 75
+  }, {
+    "id": 7,
+    "title": "Speed Demon",
+    "description": "You've completed a time-based challenge in record time.",
+    "xpReward": 50
+  }, {
+    "id": 8,
+    "title": "Collector",
+    "description": "You've collected 100 unique items.",
+    "xpReward": 100
+  }, {
+    "id": 9,
+    "title": "Puzzle Solver",
+    "description": "You've solved 50 challenging puzzles.",
+    "xpReward": 75
+  }, {
+    "id": 10,
+    "title": "Quest Master",
+    "description": "You've completed 20 quests.",
+    "xpReward": 150
+  }, {
+    "id": 11,
+    "title": "Legendary Hero",
+    "description": "You've become a legendary hero in the game world.",
+    "xpReward": 300
+  }
+]

@@ -10,7 +10,7 @@ with open(dataFilePath, "r") as dataFile:
     data = json.load(dataFile)
 
 # Write the SQL file
-sqlFilePath = currentFolderPath + "/locations.sql"
+sqlFilePath = currentFolderPath + "/3-locations.sql"
 sqlFile = open(sqlFilePath, "w")
 
 # Clear the SQL file
@@ -45,9 +45,11 @@ for location in data:
                     .format(location["id"], str(itemID), req)
                 )
 
-    # Get json
+    # Parts
     if "parts" in location:
         for part in location["parts"]:
+            scheme = part["scheme"]
+
             sqlFile.write(
                 "INSERT INTO Part (id) "
                 "VALUES ('{}');\n"
@@ -62,30 +64,40 @@ for location in data:
             )
 
             # Hexes
-            for i in range(1, int(part["hexCount"])):
-                sqlFile.write(
-                    "INSERT INTO Hex (idPart, id) "
-                    "VALUES ('{}', '{}');\n"
-                    .format(str(part["id"]), i)
-                )
+            i = 1  # Starting index
+            for y, row in enumerate(scheme):
+                for x, dot in enumerate(row):
 
-                # HexEnemy or HexObstacle
-                if str(i) in part["hexes"]:
-                    hex = part["hexes"][str(i)]
-                    hexType = hex["type"]
+                    # Skip empty hexes
+                    if scheme[y][x] == " ":
+                        continue
 
-                    if hexType == "ENEMY":
-                        sqlFile.write(
-                            "INSERT INTO HexEnemy (idEnemy, idLocation, idPart, idHex) "
-                            "VALUES ('{}', '{}', '{}', '{}');\n"
-                            .format(hex["id"], location["id"], str(part["id"]), i)
-                        )
-                    elif hexType == "OBSTACLE":
-                        sqlFile.write(
-                            "INSERT INTO HexObstacle (idObstacle, idLocation, idPart, idHex) "
-                            "VALUES ('{}', '{}', '{}', '{}');\n"
-                            .format(hex["id"], location["id"], str(part["id"]), i)
-                        )
+                    sqlFile.write(
+                        "INSERT INTO Hex (idPart, id, xCord, yCord) "
+                        "VALUES ('{}', '{}', '{}', '{}');\n"
+                        .format(str(part["id"]), i, x, y)
+                    )
+
+                    # HexEnemy or HexObstacle
+                    if str(i) in part["hexes"]:
+                        hex = part["hexes"][str(i)]
+                        hexType = hex["type"]
+
+                        if hexType == "ENEMY":
+                            sqlFile.write(
+                                "INSERT INTO HexEnemy (idEnemy, idLocation, idPart, idHex) "
+                                "VALUES ('{}', '{}', '{}', '{}');\n"
+                                .format(hex["id"], location["id"], str(part["id"]), i)
+                            )
+                        elif hexType == "OBSTACLE":
+                            sqlFile.write(
+                                "INSERT INTO HexObstacle (idObstacle, idLocation, idPart, idHex) "
+                                "VALUES ('{}', '{}', '{}', '{}');\n"
+                                .format(hex["id"], location["id"], str(part["id"]), i)
+                            )
+
+                    # Increment index
+                    i += 1
 
     # Doors
     if "doors" in location:
@@ -93,10 +105,8 @@ for location in data:
             sqlFile.write(
                 "INSERT INTO HexDoor (idLocation, firstPart, secondPart, firstHex, secondHex, firstEdge, secondEdge) "
                 "VALUES ('{}', '{}', '{}', '{}', '{}', '{}', '{}');\n"
-                .format(location["id"],
-                        str(door["first"]["partId"]), str(door["second"]["partId"]),
-                        str(door["first"]["hexId"]), str(door["second"]["hexId"]),
-                        door["first"]["edge"], door["second"]["edge"])
+                .format(location["id"], str(door["first"]["partId"]), str(door["second"]["partId"]),
+                        str(door["first"]["hexId"]), str(door["second"]["hexId"]), door["first"]["edge"], door["second"]["edge"])
             )
 
     # Paths

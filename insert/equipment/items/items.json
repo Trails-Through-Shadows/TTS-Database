@@ -1,0 +1,125 @@
+[
+  {
+    "id": 1,
+    "title":"Sword of the Venom",
+    "type": "WEAPON",
+    "description": "A sword that is imbued with the venom of a snake.",
+    "effects": [
+      {
+        "type": "POISON",
+        "duration": 2,
+        "range": "ONE",
+        "strength": 1
+      }
+    ]
+  }, {
+    "id": 2,
+    "title": "Elixir of Healing",
+    "type": "POTION",
+    "description": "A magical elixir that restores health.",
+    "effects": [
+      {
+        "type": "BONUS_HEALTH",
+        "duration": 1,
+        "range": "SELF",
+        "strength": 10
+      }
+    ]
+  }, {
+    "id": 3,
+    "title": "Iron Helmet",
+    "type": "HELMET",
+    "description": "A sturdy iron helmet for protection.",
+    "effects": []
+  }, {
+    "id": 4,
+    "title": "Leather Chestplate",
+    "type": "CHESTPLATE",
+    "description": "A chestplate made of tough leather.",
+    "effects": []
+  }, {
+    "id": 5,
+    "title": "Iron Leggings",
+    "type": "LEGGINGS",
+    "description": "Durable iron leggings for added defense.",
+    "effects": []
+  }, {
+    "id": 6,
+    "title": "Boots of Speed",
+    "type": "BOOTS",
+    "description": "Enchanted boots that increase movement speed.",
+    "effects": [
+      {
+        "type": "BONUS_MOVEMENT",
+        "duration": 2,
+        "range": "SELF",
+        "strength": 20
+      }
+    ]
+  }, {
+    "id": 7,
+    "title": "Amulet of Protection",
+    "type": "ACCESSORY",
+    "description": "A magical amulet that provides protection against curses.",
+    "effects": [
+      {
+        "type": "DISARM_IMMUNITY",
+        "duration": 1,
+        "range": "SELF",
+        "strength": 1
+      }
+    ]
+  }, {
+    "id": 8,
+    "title": "Fireball Scroll",
+    "type": "SCROLL",
+    "description": "A scroll that allows the user to cast a fireball spell.",
+    "effects": [
+      {
+        "type": "FIRE",
+        "duration": 1,
+        "range": "ONE",
+        "strength": 5
+      }
+    ]
+  }, {
+    "id": 9,
+    "title": "Wand of Lightning",
+    "type": "WAND",
+    "description": "A wand that can unleash powerful lightning bolts.",
+    "effects": [
+      {
+        "type": "BONUS_DAMAGE",
+        "duration": 1,
+        "range": "SELF",
+        "strength": 15
+      }
+    ]
+  }, {
+    "id": 10,
+    "title": "Spellbook of Enchantment",
+    "type": "BOOK",
+    "description": "A spellbook filled with enchantment spells.",
+    "effects": [
+      {
+        "type": "CHARM",
+        "duration": 2,
+        "range": "ONE",
+        "strength": 2
+      }
+    ]
+  }, {
+    "id": 11,
+    "title": "Health Potion",
+    "type": "POTION",
+    "description": "A potion that restores a small amount of health.",
+    "effects": [
+      {
+        "type": "BONUS_HEALTH",
+        "duration": 1,
+        "range": "SELF",
+        "strength": 5
+      }
+    ]
+  }
+]

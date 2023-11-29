@@ -1,0 +1,37 @@
+[
+  {
+    "id": 1,
+    "name": "Warlock",
+    "baseHealth": 100,
+    "actions": [
+      {
+        "id": 1,
+        "comment": "Špinavý dráp",
+        "levelReq": 1,
+        "itemReq": 1
+      }, {
+        "id": 2,
+        "comment": "Příšerná stvůra",
+        "levelReq": 1,
+        "itemReq": null
+      }
+    ]
+  }, {
+    "id": 2,
+    "name": "Human",
+    "baseHealth": 100,
+    "actions": [
+      {
+        "id": 3,
+        "comment": "Horký stín",
+        "levelReq": 1,
+        "itemReq": null
+      }, {
+        "id": 4,
+        "comment": "Krok vpřed",
+        "levelReq": 1,
+        "itemReq": null
+      }
+    ]
+  }
+]

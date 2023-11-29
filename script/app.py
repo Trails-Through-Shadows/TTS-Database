@@ -45,6 +45,7 @@ except mysql.connector.Error as error:
     log(f"Error connecting to MySQL: {error}", "ERROR")
     exit(1)
 
+
 # Function to execute a SQL file
 def executeFileSQL(filePath: str) -> None:
     filePath = filePath.replace('\\', '/')

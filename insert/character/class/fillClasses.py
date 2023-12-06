@@ -42,19 +42,31 @@ sqlFile.flush()
 # Replace None with NULL
 data = replaceNoneWithNull(data)
 
-for race in data:
-    id = race["id"]
+for clazz in data:
+    clazzID = clazz["id"]
 
+    # Params
+    clazzName = clazz["name"]
+    clazzBaseHealth = clazz["baseHealth"]
+    clazzActions = clazz["actions"]
+
+    sqlFile.write("-- Class {}\n".format(clazzName))
     sqlFile.write(
         "INSERT INTO Class (id, name, baseHealth) "
         "VALUES ({}, '{}', {});\n"
-        .format(id, race["name"], race["baseHealth"])
+        .format(clazzID, clazzName, clazzBaseHealth)
     )
 
     # Actions
-    for action in race["actions"]:
+    for action in clazzActions:
+        actionID = action["id"]
+
+        # Params
+        actionLevelReq = action["levelReq"]
+        actionItemReq = action["itemReq"]
+
         sqlFile.write(
             "INSERT INTO ClassAction (id, idClass, levelReq, itemReq, idAction) "
             "VALUES ({}, {}, {}, {}, {});\n"
-            .format("NULL", id, action["levelReq"], action["itemReq"], action["id"])
+            .format("NULL", clazzID, actionLevelReq, actionItemReq, actionID)
         )

@@ -23,6 +23,26 @@ def replaceNoneWithNull(data):
     return data
 
 
+def insertEffects(id, effects: [], type: str) -> int:
+    for effect in effects:
+        sqlFile.write(
+            "INSERT INTO Effect (id, type, duration, `range`, strength) "
+            "VALUES ({}, '{}', {}, '{}', {}) "
+            "ON DUPLICATE KEY UPDATE id=id;\n"
+            .format("NULL", effect["type"], effect["duration"], effect["range"], effect["strength"])
+        )
+
+        sqlFile.write(
+            "SET @idEffect = (SELECT id FROM Effect WHERE type = '{}' AND duration = {} AND `range` = '{}' AND strength = {});\n"
+            .format(effect["type"], effect["duration"], effect["range"], effect["strength"])
+        )
+
+        sqlFile.write(
+            "INSERT INTO {} VALUES ({}, @idEffect);\n"
+            .format(type, id)
+        )
+
+
 # Get current file path even if it's executed from another file
 currentFolderPath = os.path.dirname(os.path.realpath(__file__))
 
@@ -42,41 +62,19 @@ sqlFile.flush()
 # Replace None with NULL
 data = replaceNoneWithNull(data)
 
-# Create a temp unique index
-sqlFile.write("DROP INDEX IF EXISTS `tempUnique` ON Effect;\n")
-sqlFile.write("ALTER TABLE Effect ADD UNIQUE INDEX `tempUnique` (type, duration, `range`, strength);\n")
-
 for item in data:
-    id = item["id"]
-    title = item["title"]
-    type = item["type"]
-    description = item["description"]
+    itemID = item["id"]
 
-    sqlFile.write("-- Item {}\n".format(title))
+    # Params
+    itemTitle = item["title"]
+    itemType = item["type"]
+    itemDesc = item["description"]
+    itemEffects = item["effects"]
+
+    sqlFile.write("-- Item {}\n".format(itemTitle))
     sqlFile.write(
-        "INSERT INTO Item (id, title, itemType, description) "
-        "VALUES ({}, '{}', '{}', '{}');\n".format(id, title, type, description)
+        "INSERT INTO Item (id, title, type, description) "
+        "VALUES ({}, '{}', '{}', '{}');\n".format(itemID, itemTitle, itemType, itemDesc)
     )
 
-    # Effects
-    for effect in item["effects"]:
-        sqlFile.write(
-            "INSERT INTO Effect (id, type, duration, `range`, strength) "
-            "VALUES ({}, '{}', {}, '{}', {}) "
-            "ON DUPLICATE KEY UPDATE id=id;\n"
-            .format("NULL", effect["type"], effect["duration"], effect["range"], effect["strength"])
-        )
-
-        sqlFile.write(
-            "SET @idEffect = (SELECT id FROM Effect WHERE type = '{}' AND duration = {} AND `range` = '{}' AND strength = {});\n"
-            .format(effect["type"], effect["duration"], effect["range"], effect["strength"])
-        )
-
-        sqlFile.write(
-            "INSERT INTO ItemEffect (idItem, idEffect) "
-            "VALUES ({}, @idEffect);\n".format(id)
-        )
-
-# Drop the unique index
-sqlFile.write("-- Drop the unique index\n")
-sqlFile.write("ALTER TABLE Effect DROP INDEX `tempUnique`;\n")
+    insertEffects(itemID, itemEffects, "ItemEffect")

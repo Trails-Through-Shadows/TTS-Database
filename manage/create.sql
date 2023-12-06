@@ -52,6 +52,7 @@ CREATE TABLE `Path` (
 CREATE TABLE `LocationPart` (
                                 `idLocation` INT NOT NULL,
                                 `idPart` INT NOT NULL,
+                                `rotation` INT NOT NULL DEFAULT 0,
                                 PRIMARY KEY (`idLocation`, `idPart`)
 );
 
@@ -64,8 +65,9 @@ CREATE TABLE `Part` (
 CREATE TABLE `Hex` (
                        `idPart` INT NOT NULL,
                        `id` INT NOT NULL AUTO_INCREMENT,
-                       `xCord` INT NOT NULL DEFAULT 0,
-                       `yCord` INT NOT NULL DEFAULT 0,
+                       `qCord` INT NOT NULL DEFAULT 0,
+                       `rCord` INT NOT NULL DEFAULT 0,
+                       `sCord` INT NOT NULL DEFAULT 0,
                        PRIMARY KEY (`id`, `idPart`)
 );
 
@@ -76,15 +78,13 @@ CREATE TABLE `HexDoor` (
                            `secondPart` INT NOT NULL,
                            `firstHex` INT NOT NULL,
                            `secondHex` INT NOT NULL,
-                           `firstEdge` ENUM ('A', 'B', 'C', 'D', 'E', 'F'),
-                           `secondEdge` ENUM ('A', 'B', 'C', 'D', 'E', 'F'),
                            PRIMARY KEY (`id`)
 );
 
 CREATE TABLE `Class` (
                          `id` INT NOT NULL AUTO_INCREMENT,
                          `name` VARCHAR(50) NOT NULL,
-                         `baseHealth` INT,
+                         `baseHealth` INT NOT NULL,
                          PRIMARY KEY (`id`)
 );
 
@@ -143,10 +143,9 @@ CREATE TABLE `Action` (
                           `id` INT NOT NULL AUTO_INCREMENT,
                           `title` VARCHAR(50) NOT NULL,
                           `description` TEXT,
-                          `summon` INT,
-                          `attack` INT,
-                          `skill` INT,
                           `movement` INT,
+                          `skill` INT,
+                          `attack` INT,
                           `restoreCards` INT,
                           `discard` ENUM ('PERMANENT', 'SHORT_REST', 'LONG_REST', 'NEVER') DEFAULT "NEVER",
                           PRIMARY KEY (`id`)
@@ -154,55 +153,56 @@ CREATE TABLE `Action` (
 
 CREATE TABLE `Summon` (
                           `id` INT NOT NULL AUTO_INCREMENT,
-                          `name` VARCHAR(50),
+                          `name` VARCHAR(50) NOT NULL,
                           `duration` INT,
                           `health` INT,
+                          `idAction` INT,
                           PRIMARY KEY (`id`)
 );
 
 CREATE TABLE `SummonAction` (
                                 `idSummon` INT NOT NULL,
-                                `idAction` INT NOT NULL
+                                `idAction` INT NOT NULL,
+                                `range` INT,
+                                PRIMARY KEY (`idSummon`, `idAction`)
 );
 
-CREATE TABLE `AttackAction` (
+CREATE TABLE `Attack` (
+                          `id` INT NOT NULL AUTO_INCREMENT,
+                          `range` INT NOT NULL,
+                          `damage` INT NOT NULL,
+                          `area` INT,
+                          `target` ENUM ('SELF', 'ONE', 'ALL') NOT NULL,
+                          `numAttacks` INT NOT NULL,
+                          PRIMARY KEY (`id`)
+);
+
+CREATE TABLE `Skill` (
+                         `id` INT NOT NULL AUTO_INCREMENT,
+                         `range` INT NOT NULL,
+                         `area` INT,
+                         `target` ENUM ('SELF', 'ONE', 'ALL') NOT NULL,
+                         PRIMARY KEY (`id`)
+);
+
+CREATE TABLE `Movement` (
+                            `id` INT NOT NULL AUTO_INCREMENT,
+                            `range` INT NOT NULL,
+                            `type` ENUM ('WALK', 'JUMP') NOT NULL DEFAULT "WALK",
+                            PRIMARY KEY (`id`)
+);
+
+CREATE TABLE `RestoreCards` (
                                 `id` INT NOT NULL AUTO_INCREMENT,
-                                `range` INT NOT NULL,
-                                `damage` INT NOT NULL,
-                                `area` INT,
+                                `numCards` INT,
                                 `target` ENUM ('SELF', 'ONE', 'ALL') NOT NULL,
-                                `numAttacks` INT NOT NULL,
+                                `random` BOOL,
                                 PRIMARY KEY (`id`)
-);
-
-CREATE TABLE `SkillAction` (
-                               `id` INT NOT NULL AUTO_INCREMENT,
-                               `range` INT NOT NULL,
-                               `duration` INT,
-                               `heal` INT,
-                               `area` INT,
-                               `target` ENUM ('SELF', 'ONE', 'ALL') NOT NULL,
-                               PRIMARY KEY (`id`)
-);
-
-CREATE TABLE `MovementAction` (
-                                  `id` INT NOT NULL AUTO_INCREMENT,
-                                  `range` INT NOT NULL,
-                                  `type` ENUM ('WALK', 'JUMP') DEFAULT "WALK",
-                                  PRIMARY KEY (`id`)
-);
-
-CREATE TABLE `RestoreCardsAction` (
-                                      `id` INT NOT NULL AUTO_INCREMENT,
-                                      `cards` INT,
-                                      `target` ENUM ('SELF', 'ONE', 'ALL') NOT NULL,
-                                      `random` BOOL,
-                                      PRIMARY KEY (`id`)
 );
 
 CREATE TABLE `Effect` (
                           `id` INT NOT NULL AUTO_INCREMENT,
-                          `type` ENUM ('PUSH', 'PULL', 'FORCED_MOVEMENT_IMMUNITY', 'POISON', 'POISON_IMMUNITY', 'FIRE', 'FIRE_IMMUNITY', 'BLEED', 'BLEED_IMMUNITY', 'DISARM', 'DISARM_IMMUNITY', 'STUN', 'STUN_IMMUNITY', 'CONFUSION', 'CONFUSION_IMMUNITY', 'CHARM', 'CHARM_IMMUNITY', 'FEAR', 'FEAR_IMMUNITY', 'INVISIBILITY', 'SHIELD', 'BONUS_HEALTH', 'BONUS_DAMAGE', 'BONUS_MOVEMENT') NOT NULL,
+                          `type` ENUM ('PUSH', 'PULL', 'FORCED_MOVEMENT_RESISTANCE', 'POISON', 'POISON_RESISTANCE', 'FIRE', 'FIRE_RESISTANCE', 'BLEED', 'BLEED_RESISTANCE', 'DISARM', 'DISARM_RESISTANCE', 'STUN', 'STUN_RESISTANCE', 'CONFUSION', 'CONFUSION_RESISTANCE', 'CHARM', 'CHARM_RESISTANCE', 'FEAR', 'FEAR_RESISTANCE', 'INVISIBILITY', 'SHIELD', 'HEAL', 'REGENERATION', 'BONUS_HEALTH', 'BONUS_DAMAGE', 'BONUS_MOVEMENT') NOT NULL,
                           `duration` INT NOT NULL,
                           `range` ENUM ('SELF', 'ONE', 'ALL') NOT NULL,
                           `strength` INT,
@@ -276,10 +276,10 @@ CREATE TABLE `HexObstacle` (
 
 CREATE TABLE `Obstacle` (
                             `id` INT NOT NULL AUTO_INCREMENT,
-                            `name` VARCHAR(50),
+                            `name` VARCHAR(50) NOT NULL,
                             `damage` INT,
+                            `health` INT,
                             `crossable` BOOL NOT NULL,
-                            `health` INT NOT NULL,
                             PRIMARY KEY (`id`)
 );
 
@@ -314,7 +314,7 @@ CREATE TABLE `CampaignAchievements` (
 CREATE TABLE `Item` (
                         `id` INT NOT NULL,
                         `title` VARCHAR(50) NOT NULL,
-                        `itemType` ENUM ('WEAPON', 'POTION', 'HELMET', 'CHESTPLATE', 'LEGGINGS', 'BOOTS', 'ACCESSORY', 'SHIELD', 'SCROLL', 'WAND', 'STAFF', 'BOOK', 'CONSUMABLE', 'TOOL', 'MISC') NOT NULL,
+                        `type` ENUM ('WEAPON', 'POTION', 'HELMET', 'CHESTPLATE', 'LEGGINGS', 'BOOTS', 'ACCESSORY', 'SHIELD', 'SCROLL', 'WAND', 'STAFF', 'BOOK', 'CONSUMABLE', 'TOOL', 'MISC') NOT NULL,
                         `description` TEXT,
                         PRIMARY KEY (`id`)
 );
@@ -369,8 +369,6 @@ CREATE INDEX `uk_EnemyAction_idEnemy` ON `EnemyAction` (`idEnemy`);
 
 CREATE INDEX `uk_EnemyAction_idAction` ON `EnemyAction` (`idAction`);
 
-CREATE INDEX `pk_Action_summon` ON `Action` (`summon`);
-
 CREATE INDEX `pk_Action_attack` ON `Action` (`attack`);
 
 CREATE INDEX `pk_Action_skill` ON `Action` (`skill`);
@@ -382,6 +380,8 @@ CREATE INDEX `pk_Action_restore_card` ON `Action` (`restoreCards`);
 CREATE INDEX `uk_SummonAction_idSummon` ON `SummonAction` (`idSummon`);
 
 CREATE INDEX `uk_SummonAction_idAction` ON `SummonAction` (`idAction`);
+
+CREATE UNIQUE INDEX `uk_SummonEffect` ON `Effect` (`type`, `duration`, `range`, `strength`);
 
 CREATE INDEX `uk_HexObstacle_idLocation` ON `HexObstacle` (`idLocation`);
 
@@ -453,15 +453,15 @@ ALTER TABLE `SummonAction` ADD CONSTRAINT `fk_SummonAction_Summon` FOREIGN KEY (
 
 ALTER TABLE `SummonAction` ADD CONSTRAINT `fk_SummonAction_Action` FOREIGN KEY (`idAction`) REFERENCES `Action` (`id`);
 
-ALTER TABLE `Action` ADD CONSTRAINT `fk_Action_Summon` FOREIGN KEY (`summon`) REFERENCES `Summon` (`id`);
+ALTER TABLE `Summon` ADD CONSTRAINT `fk_Summon_Action` FOREIGN KEY (`idAction`) REFERENCES `Action` (`id`);
 
-ALTER TABLE `Action` ADD CONSTRAINT `fk_Action_AttackAction` FOREIGN KEY (`attack`) REFERENCES `AttackAction` (`id`);
+ALTER TABLE `Action` ADD CONSTRAINT `fk_Action_Attack` FOREIGN KEY (`attack`) REFERENCES `Attack` (`id`);
 
-ALTER TABLE `Action` ADD CONSTRAINT `fk_Action_SkillAction` FOREIGN KEY (`skill`) REFERENCES `SkillAction` (`id`);
+ALTER TABLE `Action` ADD CONSTRAINT `fk_Action_Skill` FOREIGN KEY (`skill`) REFERENCES `Skill` (`id`);
 
-ALTER TABLE `Action` ADD CONSTRAINT `fk_Action_MovementAction` FOREIGN KEY (`movement`) REFERENCES `MovementAction` (`id`);
+ALTER TABLE `Action` ADD CONSTRAINT `fk_Action_Movement` FOREIGN KEY (`movement`) REFERENCES `Movement` (`id`);
 
-ALTER TABLE `Action` ADD CONSTRAINT `fk_Action_RestoreCards` FOREIGN KEY (`restoreCards`) REFERENCES `RestoreCardsAction` (`id`);
+ALTER TABLE `Action` ADD CONSTRAINT `fk_Action_RestoreCards` FOREIGN KEY (`restoreCards`) REFERENCES `RestoreCards` (`id`);
 
 ALTER TABLE `SummonEffect` ADD CONSTRAINT `fk_SummonEffect_Effect` FOREIGN KEY (`idEffect`) REFERENCES `Effect` (`id`);
 
@@ -469,15 +469,15 @@ ALTER TABLE `SummonEffect` ADD CONSTRAINT `fk_SummonEffect_Summon` FOREIGN KEY (
 
 ALTER TABLE `AttackEffect` ADD CONSTRAINT `fk_AttackEffect_Effect` FOREIGN KEY (`idEffect`) REFERENCES `Effect` (`id`);
 
-ALTER TABLE `AttackEffect` ADD CONSTRAINT `fk_AttackEffect_Attack` FOREIGN KEY (`idAttack`) REFERENCES `AttackAction` (`id`);
+ALTER TABLE `AttackEffect` ADD CONSTRAINT `fk_AttackEffect_Attack` FOREIGN KEY (`idAttack`) REFERENCES `Attack` (`id`);
 
 ALTER TABLE `SkillEffect` ADD CONSTRAINT `fk_SkillEffect_Effect` FOREIGN KEY (`idEffect`) REFERENCES `Effect` (`id`);
 
-ALTER TABLE `SkillEffect` ADD CONSTRAINT `fk_SkillEffect_Skill` FOREIGN KEY (`idSkill`) REFERENCES `SkillAction` (`id`);
+ALTER TABLE `SkillEffect` ADD CONSTRAINT `fk_SkillEffect_Skill` FOREIGN KEY (`idSkill`) REFERENCES `Skill` (`id`);
 
 ALTER TABLE `MovementEffect` ADD CONSTRAINT `fk_MovementEffect_Effect` FOREIGN KEY (`idEffect`) REFERENCES `Effect` (`id`);
 
-ALTER TABLE `MovementEffect` ADD CONSTRAINT `fk_MovementEffect_Movement` FOREIGN KEY (`idMovement`) REFERENCES `MovementAction` (`id`);
+ALTER TABLE `MovementEffect` ADD CONSTRAINT `fk_MovementEffect_Movement` FOREIGN KEY (`idMovement`) REFERENCES `Movement` (`id`);
 
 ALTER TABLE `ClassEffect` ADD CONSTRAINT `fk_ClassEffect_Effect` FOREIGN KEY (`idEffect`) REFERENCES `Effect` (`id`);
 

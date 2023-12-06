@@ -6,18 +6,20 @@
     "defence": 2,
     "actions": [
       {
-        "lvlReq": 1,
-        "id": 1
+        "id": 1,
+        "comment": "Lorem ipsum.",
+        "lvlReq": 1
       }, {
-        "lvlReq": 1,
-        "id": 2
+        "id": 1,
+        "comment": "Lorem ipsum.",
+        "lvlReq": 1
       }
     ],
     "effects": [
       {
         "lvlReq": 1,
         "effect": {
-          "type": "POISON_IMMUNITY",
+          "type": "POISON_RESISTANCE",
           "duration": 3,
           "range": "SELF",
           "strength": 0
@@ -31,12 +33,14 @@
     "defence": 3,
     "actions": [
       {
-        "lvlReq": 1,
-        "id": 3
+        "id": 1,
+        "comment": "Lorem ipsum.",
+        "lvlReq": 1
       },
       {
-        "lvlReq": 2,
-        "id": 4
+        "id": 1,
+        "comment": "Lorem ipsum.",
+        "lvlReq": 2
       }
     ],
     "effects": [
@@ -57,19 +61,21 @@
     "defence": 1,
     "actions": [
       {
-        "lvlReq": 1,
-        "id": 5
+        "id": 1,
+        "comment": "Lorem ipsum.",
+        "lvlReq": 1
       },
       {
-        "lvlReq": 2,
-        "id": 6
+        "id": 1,
+        "comment": "Lorem ipsum.",
+        "lvlReq": 2
       }
     ],
     "effects": [
       {
         "lvlReq": 1,
         "effect": {
-          "type": "BLEED_IMMUNITY",
+          "type": "BLEED_RESISTANCE",
           "duration": 2,
           "range": "SELF",
           "strength": 0
@@ -83,12 +89,14 @@
     "defence": 4,
     "actions": [
       {
-        "lvlReq": 2,
-        "id": 7
+        "id": 1,
+        "comment": "Lorem ipsum.",
+        "lvlReq": 2
       },
       {
-        "lvlReq": 3,
-        "id": 8
+        "id": 1,
+        "comment": "Lorem ipsum.",
+        "lvlReq": 3
       }
     ],
     "effects": [

@@ -1,12 +1,18 @@
+import sys
+
 from app import *
 
-
-# Clear the database
-clearScriptPath = '../manage/clear.sql'
-executeFileSQL(clearScriptPath)
+# If -s, then skip clear.sql
+if not (len(sys.argv) > 1 and sys.argv[1] == '-s'):
+    # Clear the database
+    clearScriptPath = 'manage/clear.sql'
+    executeFileSQL(clearScriptPath)
 
 # Directory where the .sql files are located
-insertFolder = '../insert'
+insertFolder = 'insert'
+
+log("", "INFO", True)
+log("Executing all the Python files...", "INFO", True)
 
 # Execute all the Python files
 for dirPath, _, fileNames in os.walk(insertFolder):
@@ -16,6 +22,10 @@ for dirPath, _, fileNames in os.walk(insertFolder):
         # Python files
         if fileName.lower().endswith('.py'):
             executeFilePython(filePath)
+
+log("Successfully executed all the Python files.", "INFO", True)
+log("", "INFO", True)
+log("Executing all the SQL files...", "INFO", True)
 
 # Get all the SQL files
 sqlFiles = []
@@ -37,3 +47,4 @@ for filePath in sqlFiles:
 # Close the connection
 conn.close()
 log("Successfully executed all the SQL files.", "INFO")
+log("", "INFO", True)

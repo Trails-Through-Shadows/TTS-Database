@@ -1,5 +1,6 @@
 .idea
+venv/
 .venv
-script/.env
+.env
 script/__pycache__
 insert/**/*-*.sql

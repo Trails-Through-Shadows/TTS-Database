@@ -12,6 +12,7 @@ colors = {
     "LIGHT_GRAY": '\033[37m',
     "GRAY":       '\033[90m',
     "INFO":       '\033[92m',
+    "DEBUG":      '\033[94m',
     "WARNING":    '\033[93m',
     "ERROR":      '\033[91m',
     "RESET":      '\033[0m',
@@ -22,6 +23,11 @@ colors = {
 def log(message, level="INFO", reset=False):
     current_time = datetime.now().strftime('%Y-%m-%d %H:%M:%S')
     levelString = level.upper().ljust(6)
+
+    # Replace the level with the colorized level
+    message = message.replace("Error", f"{colors['ERROR']}Error{colors['RESET']}")
+    message = message.replace("Done", f"{colors['INFO']}Done{colors['RESET']}")
+
     print(f"{colors['GRAY']}[{current_time}] {colors[level]}{levelString}{colors['RESET']}: {message}", end='\r' if not reset else '\n')
 
 
@@ -42,14 +48,15 @@ try:
     )
     log("Connecting to the database... Done", "INFO", True)
 except mysql.connector.Error as error:
-    log(f"Error connecting to MySQL: {error}", "ERROR")
+    log("Connecting to the database... Error", "INFO", True)
+    log(f" - {error}", "ERROR")
     exit(1)
 
 
 # Function to execute a SQL file
 def executeFileSQL(filePath: str) -> None:
     filePath = filePath.replace('\\', '/')
-    log("Executing {}...".format(filePath), "INFO")
+    log(" - Executing {}...".format(filePath), "INFO")
 
     try:
         # Read the SQL file
@@ -63,20 +70,20 @@ def executeFileSQL(filePath: str) -> None:
             pass  # Consuming the iterator
 
         conn.commit()
-        log("Executing {}... Done".format(filePath), "INFO", True)
+        log(" - Executing {}... Done".format(filePath), "INFO", True)
     except Exception as e:
-        log("Executing {}... Error".format(filePath, e), "ERROR", True)
-        log(" - {}".format(e), "ERROR", True)
+        log(" - Executing {}... Error".format(filePath, e), "INFO", True)
+        log("    - {}".format(e), "ERROR", True)
 
 
 # Function to execute a Python file
 def executeFilePython(filePath: str) -> None:
     filePath = filePath.replace('\\', '/')
-    log("Executing {}...".format(filePath), "INFO")
+    log(" - Executing {}...".format(filePath), "INFO")
 
     try:
         subprocess.call(['python', filePath])
-        log("Executing {}... Done".format(filePath), "INFO", True)
+        log(" - Executing {}... Done".format(filePath), "INFO", True)
     except Exception as e:
-        log("Executing {}... Error", "ERROR", True)
-        log(" - {}".format(e), "ERROR", True)
+        log(" - Executing {}... Error", "INFO", True)
+        log("    - {}".format(e), "ERROR", True)

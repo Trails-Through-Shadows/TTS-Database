@@ -6,12 +6,12 @@
     "actions": [
       {
         "id": 1,
-        "comment": "Špinavý dráp",
+        "comment": "Lorem ipsum.",
         "levelReq": 1,
         "itemReq": 1
       }, {
-        "id": 2,
-        "comment": "Příšerná stvůra",
+        "id": 1,
+        "comment": "Lorem ipsum.",
         "levelReq": 1,
         "itemReq": null
       }
@@ -22,13 +22,13 @@
     "baseHealth": 100,
     "actions": [
       {
-        "id": 3,
-        "comment": "Horký stín",
+        "id": 1,
+        "comment": "Lorem ipsum.",
         "levelReq": 1,
         "itemReq": null
       }, {
-        "id": 4,
-        "comment": "Krok vpřed",
+        "id": 1,
+        "comment": "Lorem ipsum.",
         "levelReq": 1,
         "itemReq": null
       }

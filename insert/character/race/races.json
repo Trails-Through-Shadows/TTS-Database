@@ -5,26 +5,49 @@
     "actions": [
       {
         "id": 1,
-        "comment": "Špinavý dráp",
+        "comment": "Lorem ipsum.",
         "levelReq": 1
       }, {
-        "id": 2,
-        "comment": "Příšerná stvůra",
+        "id": 1,
+        "comment": "Lorem ipsum.",
         "levelReq": 1
       }
+    ],
+    "effects": [
+      {
+        "lvlReq": 1,
+        "effect": {
+          "type": "BLEED_RESISTANCE",
+          "duration": 2,
+          "range": "SELF",
+          "strength": 0
+        }
+      }
     ]
-  }, {
+  },
+  {
     "id": 2,
     "name": "Human",
     "actions": [
       {
-        "id": 3,
-        "comment": "Horký stín",
+        "id": 1,
+        "comment": "Lorem ipsum.",
         "levelReq": 1
       }, {
-        "id": 4,
-        "comment": "Krok vpřed",
+        "id": 1,
+        "comment": "Lorem ipsum.",
         "levelReq": 1
+      }
+    ],
+    "effects": [
+      {
+        "lvlReq": 1,
+        "effect": {
+          "type": "BLEED_RESISTANCE",
+          "duration": 2,
+          "range": "SELF",
+          "strength": 0
+        }
       }
     ]
   }

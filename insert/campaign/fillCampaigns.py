@@ -43,22 +43,25 @@ sqlFile.flush()
 data = replaceNoneWithNull(data)
 
 for campaign in data:
-    id = campaign["id"]
-    title = campaign["title"]
-    description = campaign["description"]
+    campaignID = campaign["id"]
+
+    # Params
+    campaignTitle = campaign["title"]
+    campaignDesc = campaign["description"]
 
     # Escape double quotes
-    title = title.replace('"', '\\"')
-    description = description.replace('"', '\\"')
+    campaignTitle = campaignTitle.replace('"', '\\"')
+    campaignDesc = campaignDesc.replace('"', '\\"')
 
     # Escape single quotes
-    title = title.replace("'", "\\'")
-    description = description.replace("'", "\\'")
+    campaignTitle = campaignTitle.replace("'", "\\'")
+    campaignDesc = campaignDesc.replace("'", "\\'")
 
+    sqlFile.write("-- Campaign {}\n".format(campaignTitle))
     sqlFile.write(
         "INSERT INTO Campaign (id, title, description) "
         "VALUES ('{}', '{}', '{}');\n"
-        .format(id, title, description)
+        .format(campaignID, campaignTitle, campaignDesc)
     )
 
     # Locations
@@ -66,7 +69,7 @@ for campaign in data:
         sqlFile.write(
             "INSERT INTO CampaignLocation (idCampaign, idLocation) "
             "VALUES ('{}', '{}');\n"
-            .format(id, location)
+            .format(campaignID, location)
         )
 
     # Achievements
@@ -74,5 +77,5 @@ for campaign in data:
         sqlFile.write(
             "INSERT INTO CampaignAchievements (idCampaign, idAchievement) "
             "VALUES ('{}', '{}');\n"
-            .format(id, achievement)
+            .format(campaignID, achievement)
         )

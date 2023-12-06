@@ -1,217 +1,210 @@
 [
   {
     "id": 1,
-    "type": "DUNGEON",
     "title": "Dungeon 1",
+    "tag": "dng-1",
+    "type": "DUNGEON",
     "description": "This is the first dungeon",
     "parts": [
       {
-        "id": 1,
-        "scheme": [
-          "  ....",
-          "......",
-          "..x...",
-          "......",
-          "....",
-          ".."
-        ],
-        "hexes": {
-          "14": {
-            "type": "OBSTACLE",
-            "id": 1
-          },
-          "3": {
-            "type": "ENEMY",
-            "id": 1
-          }
-        }
-      }, {
-        "id": 2,
-        "scheme": [
-          ".....",
-          ".....",
-          "....."
-        ],
-        "hexes": {
-          "10": {
-            "type": "ENEMY",
-            "id": 2
-          }
-        }
-      }
-    ],
-    "doors": [
-      {
-        "first": {
-          "partId": 1,
-          "hexId": 3,
-          "edge": "a"
-        },
-        "second": {
-          "partId": 2,
-          "hexId": 3,
-          "edge": "b"
-        }
-      }
-    ]
-  }, {
-    "id": 2,
-    "type": "DUNGEON",
-    "title": "Dungeon 2",
-    "description": "A perilous dungeon with multiple challenges",
-    "parts": [
-      {
-        "id": 3,
-        "scheme": [
-          ".....",
-          ".....",
-          ".....",
-          ".....",
-          "....."
-        ],
-        "hexes": {
-          "2": {
-            "type": "OBSTACLE",
-            "id": 2
-          },
-          "8": {
-            "type": "TREASURE",
-            "id": 1
-          },
-          "21": {
-            "type": "ENEMY",
-            "id": 3
-          }
-        }
-      }, {
-        "id": 4,
-        "scheme": [
-          ".....",
-          ".....",
-          ".....",
-          "....."
-        ],
-        "hexes": {
-          "5": {
-            "type": "OBSTACLE",
-            "id": 3
-          },
-          "18": {
-            "type": "ENEMY",
-            "id": 4
-          },
-          "7": {
-            "type": "TREASURE",
-            "id": 2
-          }
-        }
-      }
-    ],
-    "doors": [
-      {
-        "first": {
-          "partId": 1,
-          "hexId": 1,
-          "edge": "d"
-        },
-        "second": {
-          "partId": 2,
-          "hexId": 15,
-          "edge": "f"
-        }
-      }
-    ],
-    "paths": [1]
-  }, {
-    "id": 3,
-    "type": "DUNGEON",
-    "title": "Dungeon 3",
-    "description": "A maze of traps and monsters awaits",
-    "parts": [
-      {
-        "id": 5,
-        "scheme": [
-          ".....",
-          ".....",
-          ".....",
-          ".....",
-          ".....",
-          "....."
-        ],
-        "hexes": {
-          "11": {
-            "type": "OBSTACLE",
-            "id": 4
-          },
-          "17": {
-            "type": "TRAP",
-            "id": 1
-          },
-          "29": {
-            "type": "ENEMY",
-            "id": 4
-          },
-          "34": {
-            "type": "TREASURE",
-            "id": 3
-          }
-        },
-        "doors": [
+        "scheme": 1,
+        "rotation": 0,
+        "hexes": [
           {
-            "first": {
-              "partId": 1,
-              "hexId": 12,
-              "edge": "c"
+            "cords": {
+              "q": 0,
+              "r": -2,
+              "s": 2
             },
-            "second": {
-              "partId": 2,
-              "hexId": 4,
-              "edge": "e"
-            }
+            "type": "ENEMY",
+            "id": 1
           }
         ]
-      }, {
-        "id": 6,
-        "scheme": [
-          ".....",
-          ".....",
-          ".....",
-          ".....",
-          ".....",
-          "....."
-        ],
-        "hexes": {
-          "6": {
-            "type": "OBSTACLE",
-            "id": 5
-          },
-          "23": {
-            "type": "TRAP",
-            "id": 2
-          },
-          "36": {
+      },
+      {
+        "scheme": 2,
+        "rotation": 0,
+        "hexes": [
+          {
+            "cords": {
+              "r": 0,
+              "q": 2,
+              "s": -2
+            },
             "type": "ENEMY",
-            "id": 2
-          },
-          "15": {
-            "type": "TREASURE",
-            "id": 4
+            "id": 1
+          }
+        ]
+      }
+    ],
+    "doors": [
+      {
+        "first": {
+          "partId": 1,
+          "cords": {
+            "q": -2,
+            "r": 2,
+            "s": 0
+          }
+        },
+        "second": {
+          "partId": 2,
+          "cords": {
+            "q": 2,
+            "r": -2,
+            "s": 0
           }
         }
       }
     ],
-    "paths": [2]
-  }, {
-    "id": 4,
-    "type": "MARKET",
+    "paths": []
+  },
+  {
+    "id": 2,
     "title": "Market 1",
-    "description": "A market with many wares",
+    "tag": "mark-1",
+    "type": "MARKET",
+    "description": "This is Market 1",
     "items": {
       "ids": [1, 2, 3, 4, 5, 6, 7, 8, 9],
       "requirements": {
         "2": "CLASS:WARRIOR, LEVEL:2",
         "9": "CLASS:WARRIOR"
       }
-    }
+    },
+    "parts": [],
+    "doors": [],
+    "paths": [ 1 ]
+  },
+  {
+    "id": 3,
+    "title": "Location 3",
+    "tag": "loc-3",
+    "type": "DUNGEON",
+    "description": "This is Location 3",
+    "parts": [
+      {
+        "scheme": 1,
+        "rotation": 0,
+        "hexes": [
+          {
+            "cords": {
+              "q": 0,
+              "r": 0,
+              "s": 0
+            },
+            "type": "ENEMY",
+            "id": 2
+          }
+        ]
+      }
+    ],
+    "doors": [],
+    "paths": [ 1, 2 ]
+  },
+  {
+    "id": 4,
+    "title": "Location 4",
+    "tag": "loc-4",
+    "type": "DUNGEON",
+    "description": "This is Location 4",
+    "parts": [
+      {
+        "scheme": 2,
+        "rotation": 0,
+        "hexes": [
+          {
+            "cords": {
+              "q": 1,
+              "r": -1,
+              "s": 0
+            },
+            "type": "ENEMY",
+            "id": 2
+          }
+        ]
+      }
+    ],
+    "doors": [],
+    "paths": [ 3 ]
+  },
+  {
+    "id": 5,
+    "title": "Location 5",
+    "tag": "loc-5",
+    "type": "DUNGEON",
+    "description": "This is Location 5",
+    "parts": [
+      {
+        "scheme": 3,
+        "rotation": 0,
+        "hexes": [
+          {
+            "cords": {
+              "q": 2,
+              "r": 0,
+              "s": -2
+            },
+            "type": "ENEMY",
+            "id": 2
+          }
+        ]
+      }
+    ],
+    "doors": [],
+    "paths": [ 4 ]
+  },
+  {
+    "id": 6,
+    "title": "Location 6",
+    "tag": "loc-6",
+    "type": "DUNGEON",
+    "description": "This is Location 6",
+    "parts": [
+      {
+        "scheme": 4,
+        "rotation": 0,
+        "hexes": [
+          {
+            "cords": {
+              "q": 0,
+              "r": 0,
+              "s": 0
+            },
+            "type": "ENEMY",
+            "id": 2
+          }
+        ]
+      }
+    ],
+    "doors": [],
+    "paths": [ 5 ]
+  },
+  {
+    "id": 7,
+    "title": "Location 7",
+    "tag": "loc-7",
+    "type": "DUNGEON",
+    "description": "This is Location 7",
+    "parts": [
+      {
+        "scheme": 5,
+        "rotation": 0,
+        "hexes": [
+          {
+            "cords": {
+              "q": 1,
+              "r": 0,
+              "s": -1
+            },
+            "type": "ENEMY",
+            "id": 2
+          }
+        ]
+      }
+    ],
+    "doors": [],
+    "paths": [ 6 ]
   }
 ]
+

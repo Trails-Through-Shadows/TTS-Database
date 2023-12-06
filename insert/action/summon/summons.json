@@ -1,0 +1,9 @@
+[
+  {
+    "id": 1,
+    "name": "Giant Rat",
+    "duration": "10",
+    "health": "10",
+    "action": null
+  }
+]

@@ -23,6 +23,26 @@ def replaceNoneWithNull(data):
     return data
 
 
+def insertEffects(id, effects: [], type: str) -> int:
+    for effect in effects:
+        sqlFile.write(
+            "INSERT INTO Effect (id, type, duration, `range`, strength) "
+            "VALUES ({}, '{}', {}, '{}', {}) "
+            "ON DUPLICATE KEY UPDATE id=id;\n"
+            .format("NULL", effect["type"], effect["duration"], effect["range"], effect["strength"])
+        )
+
+        sqlFile.write(
+            "SET @idEffect = (SELECT id FROM Effect WHERE type = '{}' AND duration = {} AND `range` = '{}' AND strength = {});\n"
+            .format(effect["type"], effect["duration"], effect["range"], effect["strength"])
+        )
+
+        sqlFile.write(
+            "INSERT INTO {} VALUES ({}, @idEffect);\n"
+            .format(type, id)
+        )
+
+
 # Get current file path even if it's executed from another file
 currentFolderPath = os.path.dirname(os.path.realpath(__file__))
 
@@ -42,119 +62,19 @@ sqlFile.flush()
 # Replace None with NULL
 data = replaceNoneWithNull(data)
 
-# Create a temp unique index
-sqlFile.write("DROP INDEX IF EXISTS `tempUnique` ON Effect;\n")
-sqlFile.write("ALTER TABLE Effect ADD UNIQUE INDEX `tempUnique` (type, duration, `range`, strength);\n")
-
 for action in data:
-    id = action["id"]
-    title = action["title"]
-    description = action["description"]
-    discard = action["discard"]
+    actionID = action["id"]
 
-    if id == -1: continue
-    sqlFile.write("-- Action {}\n".format(title))
+    # Skip templated actions
+    if actionID == -1:
+        continue
 
-    # Summon
-    summonID = "NULL"
-    if action["summon"] != 'NULL':
-        summon = action["summon"]
-        summonID = summon["id"]
-        actionIDs = summon["idAction"]
+    # Params
+    actionTitle = action["title"]
+    actionDesc = action["description"]
+    actionDiscard = action["discard"]
 
-        for actionID in actionIDs:
-            sqlFile.write(
-                "INSERT INTO SummonAction (idSummon, idAction) "
-                "VALUES ({}, {});\n"
-                .format(summonID, actionID)
-            )
-
-            # SummonEffect
-            if "summonEffects" in summon:
-                for effect in summon["summonEffects"]:
-                    sqlFile.write(
-                        "INSERT INTO Effect (id, type, duration, `range`, strength) "
-                        "VALUES ({}, '{}', {}, '{}', {}) "
-                        "ON DUPLICATE KEY UPDATE id=id;\n"
-                        .format("NULL", effect["type"], effect["duration"], effect["range"], effect["strength"])
-                    )
-
-                    sqlFile.write(
-                        "SET @idEffect = (SELECT id FROM Effect WHERE type = '{}' AND duration = {} AND `range` = '{}' AND strength = {});\n"
-                        .format(effect["type"], effect["duration"], effect["range"], effect["strength"])
-                    )
-
-                    sqlFile.write(
-                        "INSERT INTO SummonEffect (idSummon, idEffect) "
-                        "VALUES ({}, @idEffect);\n"
-                        .format(summonID)
-                    )
-
-    # Attack
-    attackID = "NULL"
-    if action["attack"] != 'NULL':
-        attack = action["attack"]
-        attackID = attack["id"]
-
-        sqlFile.write(
-            "INSERT INTO AttackAction (id, `range`, damage, area, target, numAttacks) "
-            "VALUES ({}, {}, {}, {}, '{}', {});\n"
-            .format(attackID, attack["range"], attack["damage"], attack["area"], attack["target"], attack["numAttacks"])
-        )
-
-        # AttackEffect
-        if "attackEffects" in attack:
-            for effect in attack["attackEffects"]:
-                sqlFile.write(
-                    "INSERT INTO Effect (id, type, duration, `range`, strength) "
-                    "VALUES ({}, '{}', {}, '{}', {}) "
-                    "ON DUPLICATE KEY UPDATE id=id;\n"
-                    .format("NULL", effect["type"], effect["duration"], effect["range"], effect["strength"])
-                )
-
-                sqlFile.write(
-                    "SET @idEffect = (SELECT id FROM Effect WHERE type = '{}' AND duration = {} AND `range` = '{}' AND strength = {});\n"
-                    .format(effect["type"], effect["duration"], effect["range"], effect["strength"])
-                )
-
-                sqlFile.write(
-                    "INSERT INTO AttackEffect (idAttack, idEffect) "
-                    "VALUES ({}, @idEffect);\n"
-                    .format(attackID)
-                )
-
-    # Skill
-    skillID = "NULL"
-    if action["skill"] != 'NULL':
-        skill = action["skill"]
-        skillID = skill["id"]
-
-        sqlFile.write(
-            "INSERT INTO SkillAction (id, `range`, duration, heal, area, target) "
-            "VALUES ({}, {}, {}, {}, {}, '{}');\n"
-            .format(skillID, skill["range"], skill["duration"], skill["heal"], skill["area"], skill["target"])
-        )
-
-        # SkillEffect
-        if "skillEffects" in skill:
-            for effect in skill["skillEffects"]:
-                sqlFile.write(
-                    "INSERT INTO Effect (id, type, duration, `range`, strength) "
-                    "VALUES ({}, '{}', {}, '{}', {}) "
-                    "ON DUPLICATE KEY UPDATE id=id;\n"
-                    .format("NULL", effect["type"], effect["duration"], effect["range"], effect["strength"])
-                )
-
-                sqlFile.write(
-                    "SET @idEffect = (SELECT id FROM Effect WHERE type = '{}' AND duration = {} AND `range` = '{}' AND strength = {});\n"
-                    .format(effect["type"], effect["duration"], effect["range"], effect["strength"])
-                )
-
-                sqlFile.write(
-                    "INSERT INTO SkillEffect (idSkill, idEffect) "
-                    "VALUES ({}, @idEffect);\n"
-                    .format(skillID)
-                )
+    sqlFile.write("-- Action {}\n".format(actionTitle))
 
     # Movement
     movementID = "NULL"
@@ -162,32 +82,60 @@ for action in data:
         movement = action["movement"]
         movementID = movement["id"]
 
+        # Params
+        moveRange = movement["range"]
+        moveType = movement["type"]
+        moveEffects = movement["effects"]
+
         sqlFile.write(
-            "INSERT INTO MovementAction (id, `range`, type) "
+            "INSERT INTO Movement (id, `range`, type) "
             "VALUES ({}, {}, '{}');\n"
-            .format(movementID, movement["range"], movement["type"])
+            .format(movementID, moveRange, moveType)
         )
 
-        # MovementEffect
-        if "movementEffects" in movement:
-            for effect in movement["movementEffects"]:
-                sqlFile.write(
-                    "INSERT INTO Effect (id, type, duration, `range`, strength) "
-                    "VALUES ({}, '{}', {}, '{}', {}) "
-                    "ON DUPLICATE KEY UPDATE id=id;\n"
-                    .format("NULL", effect["type"], effect["duration"], effect["range"], effect["strength"])
-                )
+        insertEffects(movementID, moveEffects, "MovementEffect")
 
-                sqlFile.write(
-                    "SET @idEffect = (SELECT id FROM Effect WHERE type = '{}' AND duration = {} AND `range` = '{}' AND strength = {});\n"
-                    .format(effect["type"], effect["duration"], effect["range"], effect["strength"])
-                )
+    # Skill
+    skillID = "NULL"
+    if action["skill"] != 'NULL':
+        skill = action["skill"]
+        skillID = skill["id"]
 
-                sqlFile.write(
-                    "INSERT INTO MovementEffect (idMovement, idEffect) "
-                    "VALUES ({}, @idEffect);\n"
-                    .format(movementID)
-                )
+        # Params
+        skillRange = skill["range"]
+        skillArea = skill["area"]
+        skillTarget = skill["target"]
+        skillEffects = skill["effects"]
+
+        sqlFile.write(
+            "INSERT INTO Skill (id, `range`, area, target) "
+            "VALUES ({}, {}, {}, '{}');\n"
+            .format(skillID, skillRange, skillArea, skillTarget)
+        )
+
+        insertEffects(skillID, skillEffects, "SkillEffect")
+
+    # Attack
+    attackID = "NULL"
+    if action["attack"] != 'NULL':
+        attack = action["attack"]
+        attackID = attack["id"]
+
+        # Params
+        attackRange = attack["range"]
+        attackDamage = attack["damage"]
+        attackArea = attack["area"]
+        attackTarget = attack["target"]
+        attackNumAttacks = attack["numAttacks"]
+        attackEffects = attack["effects"]
+
+        sqlFile.write(
+            "INSERT INTO Attack (id, `range`, damage, area, target, numAttacks) "
+            "VALUES ({}, {}, {}, {}, '{}', {});\n"
+            .format(attackID, attackRange, attackDamage, attackArea, attackTarget, attackNumAttacks)
+        )
+
+        insertEffects(attackID, attackEffects, "AttackEffect")
 
     # RestoreCards
     restoreCardID = "NULL"
@@ -195,19 +143,34 @@ for action in data:
         restoreCards = action["restoreCards"]
         restoreCardID = restoreCards["id"]
 
+        # Params
+        restoreCardsNumber = restoreCards["numCards"]
+        restoreCardTarget = restoreCards["target"]
+        restoreCardRandom = restoreCards["random"]
+
         sqlFile.write(
-            "INSERT INTO RestoreCardsAction (id, cards, target, random) "
-            "VALUES ({}, {}, {}, {});\n"
-            .format(restoreCardID, restoreCards["cards"], restoreCards["target"], restoreCards["random"])
+            "INSERT INTO RestoreCards (id, numCards, target, random) "
+            "VALUES ({}, {}, '{}', {});\n"
+            .format(restoreCardID, restoreCardsNumber, restoreCardTarget, restoreCardRandom)
         )
 
     # Insert Action
     sqlFile.write(
-        "INSERT INTO Action (id, title, description, summon, attack, skill, movement, restoreCards, discard) "
-        "VALUES ({}, '{}', '{}', {}, {}, {}, {}, {}, '{}');\n"
-        .format(id, title, description, summonID, attackID, skillID, movementID, restoreCardID, discard)
+        "INSERT INTO Action (id, title, description, attack, skill, movement, restoreCards, discard) "
+        "VALUES ({}, '{}', '{}', {}, {}, {}, {}, '{}');\n"
+        .format(actionID, actionTitle, actionDesc, attackID, skillID, movementID, restoreCardID, actionDiscard)
     )
 
-# Drop the unique index
-sqlFile.write("-- Drop the unique index\n")
-sqlFile.write("ALTER TABLE Effect DROP INDEX `tempUnique`;\n")
+    # Summon
+    summons = action["summon"]
+    for summon in summons:
+        summonID = summon["id"]
+
+        # Params
+        summonRange = summon["range"]
+
+        sqlFile.write(
+            "INSERT INTO SummonAction (idSummon, idAction, `range`) "
+            "VALUES ({}, {}, {});\n"
+            .format(summonID, actionID, summonRange)
+        )

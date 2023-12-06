@@ -42,55 +42,52 @@ sqlFile.flush()
 # Replace None with NULL
 data = replaceNoneWithNull(data)
 
-# Create a temp unique index
-sqlFile.write("DROP INDEX IF EXISTS `tempUnique` ON Effect;\n")
-sqlFile.write("ALTER TABLE Effect ADD UNIQUE INDEX `tempUnique` (type, duration, `range`, strength);\n")
-
 for enemy in data:
-    id = enemy["id"]
-    name = enemy["name"]
-    health = enemy["health"]
-    defence = enemy["defence"]
+    enemyID = enemy["id"]
 
-    sqlFile.write("-- Enemy {}\n".format(name))
+    # Params
+    enemyName = enemy["name"]
+    enemyHealth = enemy["health"]
+    enemyDefence = enemy["defence"]
+    enemyActions = enemy["actions"]
+    enemyEffects = enemy["effects"]
+
+    sqlFile.write("-- Enemy {}\n".format(enemyName))
     sqlFile.write(
         "INSERT INTO Enemy (id, name, health, defence) "
-        "VALUES ({}, '{}', {}, {});\n".format(id, name, health, defence)
+        "VALUES ({}, '{}', {}, {});\n".format(enemyID, enemyName, enemyHealth, enemyDefence)
     )
 
     # Actions
-    for action in enemy["actions"]:
-        lvlReq = action["lvlReq"]
+    for action in enemyActions:
         actionID = action["id"]
+
+        # Params
+        actionLvlReq = action["lvlReq"]
 
         sqlFile.write(
             "INSERT INTO EnemyAction (id, idEnemy, levelReq, idAction) "
-            "VALUES ({}, {}, {}, {});\n".format("NULL", id, lvlReq, actionID)
+            "VALUES ({}, {}, {}, {});\n".format("NULL", enemyID, actionLvlReq, actionID)
         )
 
     # Effects
-    if "effects" in enemy:
-        for effect in enemy["effects"]:
-            lvlReq = effect["lvlReq"]
-            eff = effect["effect"]
+    for effect in enemyEffects:
+        lvlReq = effect["lvlReq"]
+        eff = effect["effect"]
 
-            sqlFile.write(
-                "INSERT INTO Effect (id, type, duration, `range`, strength) "
-                "VALUES ({}, '{}', {}, '{}', {}) "
-                "ON DUPLICATE KEY UPDATE id=id;\n"
-                .format("NULL", eff["type"], eff["duration"], eff["range"], eff["strength"])
-            )
+        sqlFile.write(
+            "INSERT INTO Effect (id, type, duration, `range`, strength) "
+            "VALUES ({}, '{}', {}, '{}', {}) "
+            "ON DUPLICATE KEY UPDATE id=id;\n"
+            .format("NULL", eff["type"], eff["duration"], eff["range"], eff["strength"])
+        )
 
-            sqlFile.write(
-                "SET @idEffect = (SELECT id FROM Effect WHERE type = '{}' AND duration = {} AND `range` = '{}' AND strength = {});\n"
-                .format(eff["type"], eff["duration"], eff["range"], eff["strength"])
-            )
+        sqlFile.write(
+            "SET @idEffect = (SELECT id FROM Effect WHERE type = '{}' AND duration = {} AND `range` = '{}' AND strength = {});\n"
+            .format(eff["type"], eff["duration"], eff["range"], eff["strength"])
+        )
 
-            sqlFile.write(
-                "INSERT INTO EnemyEffect (idEnemy, idEffect, levelReq) "
-                "VALUES ({}, @idEffect, {});\n".format(id, lvlReq)
-            )
-
-# Drop the unique index
-sqlFile.write("-- Drop the unique index\n")
-sqlFile.write("ALTER TABLE Effect DROP INDEX `tempUnique`;\n")
+        sqlFile.write(
+            "INSERT INTO EnemyEffect (idEnemy, idEffect, levelReq) "
+            "VALUES ({}, @idEffect, {});\n".format(enemyID, lvlReq)
+        )

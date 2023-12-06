@@ -43,19 +43,51 @@ sqlFile.flush()
 data = replaceNoneWithNull(data)
 
 for race in data:
-    id = race["id"]
-    name = race["name"]
+    raceID = race["id"]
 
+    # Params
+    raceName = race["name"]
+    raceEffects = race["effects"]
+    raceActions = race["actions"]
+
+    sqlFile.write("-- Race {}\n".format(raceName))
     sqlFile.write(
         "INSERT INTO Race (id, name) "
         "VALUES ({}, '{}');\n"
-        .format(id, name)
+        .format(raceID, raceName)
     )
 
     # Actions
-    for action in race["actions"]:
+    for action in raceActions:
+        actionID = action["id"]
+
+        # Params
+        actionLevelReq = action["levelReq"]
+
         sqlFile.write(
             "INSERT INTO RaceAction (id, idRace, levelReq, idAction) "
             "VALUES ({}, {}, {}, {});\n"
-            .format("NULL", id, action["levelReq"], action["id"])
+            .format("NULL", raceID, actionLevelReq, actionID)
+        )
+
+    # Effects
+    for effect in raceEffects:
+        lvlReq = effect["lvlReq"]
+        eff = effect["effect"]
+
+        sqlFile.write(
+            "INSERT INTO Effect (id, type, duration, `range`, strength) "
+            "VALUES ({}, '{}', {}, '{}', {}) "
+            "ON DUPLICATE KEY UPDATE id=id;\n"
+            .format("NULL", eff["type"], eff["duration"], eff["range"], eff["strength"])
+        )
+
+        sqlFile.write(
+            "SET @idEffect = (SELECT id FROM Effect WHERE type = '{}' AND duration = {} AND `range` = '{}' AND strength = {});\n"
+            .format(eff["type"], eff["duration"], eff["range"], eff["strength"])
+        )
+
+        sqlFile.write(
+            "INSERT INTO RaceEffect (idRace, idEffect, levelReq) "
+            "VALUES ({}, @idEffect, {});\n".format(raceID, lvlReq)
         )

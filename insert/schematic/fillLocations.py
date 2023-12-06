@@ -19,10 +19,19 @@ sqlFile.flush()
 
 # Iterate through the JSON data and insert records into tables
 for location in data:
+    locationID = location["id"]
+
+    # Params
+    locationTitle = location["title"]
+    locationTag = location["tag"]
+    locationType = location["type"]
+    locationDesc = location["description"]
+
+    sqlFile.write("-- Location {}\n".format(locationTag))
     sqlFile.write(
-        "INSERT INTO Location (id, title, type, description) "
-        "VALUES ('{}', '{}', '{}', '{}');\n"
-        .format(location["id"], location["title"], location["type"], location["description"])
+        "INSERT INTO Location (id, title, tag, type, description) "
+        "VALUES ({}, '{}', '{}', '{}', '{}');\n"
+        .format(locationID, locationTitle, locationTag, locationType, locationDesc)
     )
 
     if location["type"] == "MARKET":
@@ -41,72 +50,57 @@ for location in data:
 
                 sqlFile.write(
                     "INSERT INTO MarketItem (idMarket, idItem, requirements) "
-                    "VALUES ('{}', '{}', '{}');\n"
-                    .format(location["id"], str(itemID), req)
+                    "VALUES ({}, {}, '{}');\n"
+                    .format(location["id"], itemID, req)
                 )
 
     # Parts
     if "parts" in location:
         for part in location["parts"]:
-            scheme = part["scheme"]
 
-            sqlFile.write(
-                "INSERT INTO Part (id) "
-                "VALUES ('{}');\n"
-                .format(str(part["id"]))
-            )
+            # Params
+            partScheme = part["scheme"]
+            partRotation = part["rotation"]
+            partHexes = part["hexes"]
 
             # LocationPart Relationship
             sqlFile.write(
-                "INSERT INTO LocationPart (idLocation, idPart) "
-                "VALUES ('{}', '{}');\n"
-                .format(location["id"], str(part["id"]))
+                "INSERT INTO LocationPart (idLocation, idPart, rotation) "
+                "VALUES ({}, {}, {});\n"
+                .format(locationID, partScheme, partRotation)
             )
-
-            # Hexes
-            i = 1  # Starting index
-            for y, row in enumerate(scheme):
-                for x, dot in enumerate(row):
-
-                    # Skip empty hexes
-                    if scheme[y][x] == " ":
-                        continue
-
-                    sqlFile.write(
-                        "INSERT INTO Hex (idPart, id, xCord, yCord) "
-                        "VALUES ('{}', '{}', '{}', '{}');\n"
-                        .format(str(part["id"]), i, x, y)
-                    )
-
-                    # HexEnemy or HexObstacle
-                    if str(i) in part["hexes"]:
-                        hex = part["hexes"][str(i)]
-                        hexType = hex["type"]
-
-                        if hexType == "ENEMY":
-                            sqlFile.write(
-                                "INSERT INTO HexEnemy (idEnemy, idLocation, idPart, idHex) "
-                                "VALUES ('{}', '{}', '{}', '{}');\n"
-                                .format(hex["id"], location["id"], str(part["id"]), i)
-                            )
-                        elif hexType == "OBSTACLE":
-                            sqlFile.write(
-                                "INSERT INTO HexObstacle (idObstacle, idLocation, idPart, idHex) "
-                                "VALUES ('{}', '{}', '{}', '{}');\n"
-                                .format(hex["id"], location["id"], str(part["id"]), i)
-                            )
-
-                    # Increment index
-                    i += 1
 
     # Doors
     if "doors" in location:
         for door in location["doors"]:
+
+            # Params
+            doorFirstPart = door["first"]["partId"]
+            doorFirstCordR = door["first"]["cords"]["r"]
+            doorFirstCordQ = door["first"]["cords"]["q"]
+            doorFirstCordS = door["first"]["cords"]["s"]
+
+            doorSecondPart = door["second"]["partId"]
+            doorSecondCordR = door["second"]["cords"]["r"]
+            doorSecondCordQ = door["second"]["cords"]["q"]
+            doorSecondCordS = door["second"]["cords"]["s"]
+
+            # First Hex
             sqlFile.write(
-                "INSERT INTO HexDoor (idLocation, firstPart, secondPart, firstHex, secondHex, firstEdge, secondEdge) "
-                "VALUES ('{}', '{}', '{}', '{}', '{}', '{}', '{}');\n"
-                .format(location["id"], str(door["first"]["partId"]), str(door["second"]["partId"]),
-                        str(door["first"]["hexId"]), str(door["second"]["hexId"]), door["first"]["edge"], door["second"]["edge"])
+                "SET @doorFirstHexID = (SELECT id FROM Hex WHERE idPart = {} AND qCord = {} AND rCord = {} AND sCord = {});\n"
+                .format(doorFirstPart, doorFirstCordQ, doorFirstCordR, doorFirstCordS)
+            )
+
+            # Second Hex
+            sqlFile.write(
+                "SET @doorSecondHexID = (SELECT id FROM Hex WHERE idPart = {} AND qCord = {} AND rCord = {} AND sCord = {});\n"
+                .format(doorSecondPart, doorSecondCordQ, doorSecondCordR, doorSecondCordS)
+            )
+
+            sqlFile.write(
+                "INSERT INTO HexDoor (id, idLocation, firstPart, secondPart, firstHex, secondHex) "
+                "VALUES ({}, {}, {}, {}, @doorFirstHexID, @doorSecondHexID);\n"
+                .format("NULL", locationID, doorFirstPart, doorSecondPart)
             )
 
     # Paths
@@ -114,6 +108,6 @@ for location in data:
         for path in location["paths"]:
             sqlFile.write(
                 "INSERT INTO Path (idStart, idEnd) "
-                "VALUES ('{}', '{}');\n"
-                .format(path, str(location["id"]))
+                "VALUES ({}, {});\n"
+                .format(path, location["id"])
             )

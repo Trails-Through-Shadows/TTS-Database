@@ -27,41 +27,44 @@ def replaceNoneWithNull(data):
 currentFolderPath = os.path.dirname(os.path.realpath(__file__))
 
 # Open the JSON file
-dataFilePath = currentFolderPath + "/achievements.json"
+dataFilePath = currentFolderPath + "/summons.json"
 with open(dataFilePath, encoding='utf8') as dataFile:
     data = json.load(dataFile)
 
 # Write the SQL file
-sqlFilePath = currentFolderPath + "/0-achievements.sql"
+sqlFilePath = currentFolderPath + "/0-summons.sql"
+lateSqlFilePath = currentFolderPath + "/2-summons-late.sql"
 sqlFile = open(sqlFilePath, "w")
+lateSqlFile = open(lateSqlFilePath, "w")
 
 # Clear the SQL file
 sqlFile.truncate(0)
+lateSqlFile.truncate(0)
 sqlFile.flush()
+lateSqlFile.flush()
 
 # Replace None with NULL
 data = replaceNoneWithNull(data)
 
-for achievement in data:
-    achieveID = achievement["id"]
+for summon in data:
+    summonID = summon["id"]
 
     # Params
-    achieveTitle = achievement["title"]
-    achieveDesc = achievement["description"]
-    achieveXpReward = achievement["xpReward"]
+    summonName = summon["name"]
+    summonDuration = summon["duration"]
+    summonHealth = summon["health"]
+    summonAction = summon["action"]
 
-    # Escape double quotes
-    achieveTitle = achieveTitle.replace('"', '\\"')
-    achieveDesc = achieveDesc.replace('"', '\\"')
-
-    # Escape single quotes
-    achieveTitle = achieveTitle.replace("'", "\\'")
-    achieveDesc = achieveDesc.replace("'", "\\'")
-
-    sqlFile.write("-- Achievement {}\n".format(achieveTitle))
-
+    sqlFile.write("-- Summon {}\n".format(summonName))
     sqlFile.write(
-        "INSERT INTO Achievement (id, title, description, xpReward) "
-        "VALUES ('{}', '{}', '{}', {});\n"
-        .format(achieveID, achieveTitle, achieveDesc, achieveXpReward)
+        "INSERT INTO Summon (id, name, duration, health, idAction) "
+        "VALUES ({}, '{}', {}, {}, {}) "
+        .format(summonID, summonName, summonDuration, summonHealth, 'NULL')
+    )
+
+    lateSqlFile.write(
+        "UPDATE Summon "
+        "SET idAction = {} "
+        "WHERE id = {};\n"
+        .format(summonAction, summonID)
     )

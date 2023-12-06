@@ -22,11 +22,11 @@ WHILE @table_count < LENGTH(@tables)
         EXECUTE stmt;
         DEALLOCATE PREPARE stmt;
 
-#         -- Reset the auto-increment value for the table
-#         SET @reset_statement = CONCAT('ALTER TABLE ', @table_name, ' AUTO_INCREMENT = 1');
-#         PREPARE stmt FROM @reset_statement;
-#         EXECUTE stmt;
-#         DEALLOCATE PREPARE stmt;
+        -- Reset the auto-increment value for the table
+        SET @reset_statement = CONCAT('ALTER TABLE ', @table_name, ' AUTO_INCREMENT = 1');
+        PREPARE stmt FROM @reset_statement;
+        EXECUTE stmt;
+        DEALLOCATE PREPARE stmt;
 
         -- Increment the table count for the next iteration
         SET @table_count = @table_count + 1;

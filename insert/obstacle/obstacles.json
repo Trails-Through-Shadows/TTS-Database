@@ -1,0 +1,95 @@
+[
+  {
+    "id": 1,
+    "name": "Pit Trap",
+    "damage": 10,
+    "crossable": false,
+    "health": 0,
+    "effects": [
+      {
+        "type": "POISON",
+        "duration": 3,
+        "range": "ONE",
+        "strength": 5
+      },
+      {
+        "type": "POISON_RESISTANCE",
+        "duration": 3,
+        "range": "SELF",
+        "strength": 0
+      }
+    ]
+  },
+  {
+    "id": 2,
+    "name": "Spiked Pit",
+    "damage": 15,
+    "crossable": false,
+    "health": 0,
+    "effects": []
+  },
+  {
+    "id": 3,
+    "name": "Poison Gas Trap",
+    "damage": 8,
+    "crossable": true,
+    "health": 0,
+    "effects": []
+  },
+  {
+    "id": 4,
+    "name": "Collapsing Ceiling",
+    "damage": 20,
+    "crossable": false,
+    "health": 0,
+    "effects": []
+  },
+  {
+    "id": 5,
+    "name": "Magic Fire Barrier",
+    "damage": 12,
+    "crossable": true,
+    "health": 30,
+    "effects": []
+  },
+  {
+    "id": 6,
+    "name": "Thorn Bushes",
+    "damage": 5,
+    "crossable": true,
+    "health": 10,
+    "effects": []
+  },
+  {
+    "id": 7,
+    "name": "Frozen Lake",
+    "damage": 0,
+    "crossable": true,
+    "health": 15,
+    "effects": []
+  },
+  {
+    "id": 8,
+    "name": "Arcane Turret",
+    "damage": 18,
+    "crossable": false,
+    "health": 40,
+    "effects": []
+  },
+  {
+    "id": 9,
+    "name": "Mystical Portal",
+    "damage": 0,
+    "crossable": true,
+    "health": 0,
+    "effects": []
+  },
+  {
+    "id": 10,
+    "name": "Cursed Statue",
+    "damage": 0,
+    "crossable": false,
+    "health": 50,
+    "effects": []
+  }
+]

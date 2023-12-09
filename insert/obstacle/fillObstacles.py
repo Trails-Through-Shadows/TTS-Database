@@ -47,47 +47,36 @@ def insertEffects(id, effects: [], type: str) -> int:
 currentFolderPath = os.path.dirname(os.path.realpath(__file__))
 
 # Open the JSON file
-dataFilePath = currentFolderPath + "/summons.json"
+dataFilePath = currentFolderPath + "/obstacles.json"
 with open(dataFilePath, encoding='utf8') as dataFile:
     data = json.load(dataFile)
 
 # Write the SQL file
-sqlFilePath = currentFolderPath + "/0-summons.sql"
-lateSqlFilePath = currentFolderPath + "/2-summons-late.sql"
+sqlFilePath = currentFolderPath + "/0-obstacles.sql"
 sqlFile = open(sqlFilePath, "w")
-lateSqlFile = open(lateSqlFilePath, "w")
 
 # Clear the SQL file
 sqlFile.truncate(0)
-lateSqlFile.truncate(0)
 sqlFile.flush()
-lateSqlFile.flush()
 
 # Replace None with NULL
 data = replaceNoneWithNull(data)
 
-for summon in data:
-    summonID = summon["id"]
+for obstacle in data:
+    obstacleID = obstacle["id"]
 
     # Params
-    summonName = summon["name"]
-    summonDuration = summon["duration"]
-    summonHealth = summon["health"]
-    summonAction = summon["action"]
-    summonEffects = summon["effects"]
+    obstacleName = obstacle["name"]
+    obstacleDamage = obstacle["damage"]
+    obstacleCrossable = obstacle["crossable"]
+    obstacleHealth = obstacle["health"]
+    obstacleEffects = obstacle["effects"]
 
-    sqlFile.write("-- Summon {}\n".format(summonName))
+    sqlFile.write("-- Obstacle {}\n".format(obstacleName))
     sqlFile.write(
-        "INSERT INTO Summon (id, name, duration, health, idAction) "
-        "VALUES ({}, '{}', {}, {}, {}) "
-        .format(summonID, summonName, summonDuration, summonHealth, 'NULL')
+        "INSERT INTO Obstacle (id, name, damage, health, crossable) "
+        "VALUES ({}, '{}', {}, {}, {});\n"
+        .format(obstacleID, obstacleName, obstacleDamage, obstacleHealth, obstacleCrossable)
     )
 
-    lateSqlFile.write(
-        "UPDATE Summon "
-        "SET idAction = {} "
-        "WHERE id = {};\n"
-        .format(summonAction, summonID)
-    )
-
-    insertEffects(summonID, summonEffects, "SummonEffect")
+    insertEffects(obstacleID, obstacleEffects, "ObstacleEffect")

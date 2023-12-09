@@ -48,7 +48,7 @@ for schematic in data:
                 found = True
                 break
 
-    if xCoord is None or yCoord is None:
+    if not found:
         exit("Center points not found")
 
     hexID = 1
@@ -56,14 +56,23 @@ for schematic in data:
     for y, row in enumerate(schematicRows):
         for x, cell in enumerate(row):
             if cell == "x" or cell == "o":
-                q = round((x - xCoord) - ((y - yCoord) - ((y - yCoord) & 1)) / 2)
-                r = round(y - yCoord)
+                cubeX = round(x - xCoord)
+                cubeY = round(y - yCoord)
+
+                q = round(cubeX - (cubeY - (cubeY & 1)) / 2)
+                r = cubeY
                 s = round(-q - r)
 
+                # sqlFile.write(
+                #     "INSERT INTO Hex (idPart, id, qCord, rCord, sCord) "
+                #     "VALUES ({}, {}, {}, {}, {});\n"
+                #     .format(schematicID, hexID, q, r, s)
+                # )
+
                 sqlFile.write(
-                    "INSERT INTO Hex (idPart, id, qCord, rCord, sCord) "
-                    "VALUES ({}, {}, {}, {}, {});\n"
-                    .format(schematicID, hexID, q, r, s)
+                    "{"+
+                    "\"qCord\": {}, \"rCord\": {}, \"sCord\": {}".format(q, r, s)+
+                    "},\n"
                 )
 
             hexID += 1

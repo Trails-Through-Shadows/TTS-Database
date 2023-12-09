@@ -4,6 +4,20 @@
     "name": "Giant Rat",
     "duration": "10",
     "health": "10",
-    "action": null
+    "action": null,
+    "effects": [
+      {
+        "type": "POISON",
+        "duration": 3,
+        "range": "ONE",
+        "strength": 5
+      },
+      {
+        "type": "POISON_RESISTANCE",
+        "duration": 3,
+        "range": "SELF",
+        "strength": 0
+      }
+    ]
   }
 ]

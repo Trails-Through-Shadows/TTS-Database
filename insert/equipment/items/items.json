@@ -8,7 +8,7 @@
       {
         "type": "POISON",
         "duration": 2,
-        "range": "ONE",
+        "target": "ONE",
         "strength": 1
       }
     ]
@@ -22,7 +22,7 @@
       {
         "type": "BONUS_HEALTH",
         "duration": 1,
-        "range": "SELF",
+        "target": "SELF",
         "strength": 10
       }
     ]
@@ -57,7 +57,7 @@
       {
         "type": "BONUS_MOVEMENT",
         "duration": 2,
-        "range": "SELF",
+        "target": "SELF",
         "strength": 20
       }
     ]
@@ -71,7 +71,7 @@
       {
         "type": "DISARM_RESISTANCE",
         "duration": 1,
-        "range": "SELF",
+        "target": "SELF",
         "strength": 1
       }
     ]
@@ -85,7 +85,7 @@
       {
         "type": "FIRE",
         "duration": 1,
-        "range": "ONE",
+        "target": "ONE",
         "strength": 5
       }
     ]
@@ -99,7 +99,7 @@
       {
         "type": "BONUS_DAMAGE",
         "duration": 1,
-        "range": "SELF",
+        "target": "SELF",
         "strength": 15
       }
     ]
@@ -113,7 +113,7 @@
       {
         "type": "CHARM",
         "duration": 2,
-        "range": "ONE",
+        "target": "ONE",
         "strength": 2
       }
     ]
@@ -127,7 +127,7 @@
       {
         "type": "BONUS_HEALTH",
         "duration": 1,
-        "range": "SELF",
+        "target": "SELF",
         "strength": 5
       }
     ]

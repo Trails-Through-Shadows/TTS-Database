@@ -11,13 +11,13 @@
         {
           "type": "POISON",
           "duration": 3,
-          "range": "ONE",
+          "target": "ONE",
           "strength": 5
         },
         {
           "type": "POISON_RESISTANCE",
           "duration": 3,
-          "range": "SELF",
+          "target": "SELF",
           "strength": 0
         }
       ]

@@ -204,7 +204,7 @@ CREATE TABLE `Effect` (
   `id` INT NOT NULL AUTO_INCREMENT,
   `type` ENUM ('PUSH', 'PULL', 'FORCED_MOVEMENT_RESISTANCE', 'POISON', 'POISON_RESISTANCE', 'FIRE', 'FIRE_RESISTANCE', 'BLEED', 'BLEED_RESISTANCE', 'DISARM', 'DISARM_RESISTANCE', 'STUN', 'STUN_RESISTANCE', 'CONFUSION', 'CONFUSION_RESISTANCE', 'CHARM', 'CHARM_RESISTANCE', 'FEAR', 'FEAR_RESISTANCE', 'INVISIBILITY', 'SHIELD', 'HEAL', 'REGENERATION', 'BONUS_HEALTH', 'BONUS_DAMAGE', 'BONUS_MOVEMENT') NOT NULL,
   `duration` INT NOT NULL,
-  `range` ENUM ('SELF', 'ONE', 'ALL', 'ALL_ENEMIES', 'ALL_ALLIES') NOT NULL,
+  `target` ENUM ('SELF', 'ONE', 'ALL', 'ALL_ENEMIES', 'ALL_ALLIES') NOT NULL,
   `strength` INT,
   PRIMARY KEY (`id`)
 );
@@ -381,7 +381,7 @@ CREATE INDEX `uk_SummonAction_idSummon` ON `SummonAction` (`idSummon`);
 
 CREATE INDEX `uk_SummonAction_idAction` ON `SummonAction` (`idAction`);
 
-CREATE UNIQUE INDEX `uk_SummonEffect` ON `Effect` (`type`, `duration`, `range`, `strength`);
+CREATE UNIQUE INDEX `uk_SummonEffect` ON `Effect` (`type`, `duration`, `target`, `strength`);
 
 CREATE INDEX `uk_HexObstacle_idLocation` ON `HexObstacle` (`idLocation`);
 

@@ -76,15 +76,15 @@ for enemy in data:
         eff = effect["effect"]
 
         sqlFile.write(
-            "INSERT INTO Effect (id, type, duration, `range`, strength) "
+            "INSERT INTO Effect (id, type, duration, `target`, strength) "
             "VALUES ({}, '{}', {}, '{}', {}) "
             "ON DUPLICATE KEY UPDATE id=id;\n"
-            .format("NULL", eff["type"], eff["duration"], eff["range"], eff["strength"])
+            .format("NULL", eff["type"], eff["duration"], eff["target"], eff["strength"])
         )
 
         sqlFile.write(
-            "SET @idEffect = (SELECT id FROM Effect WHERE type = '{}' AND duration = {} AND `range` = '{}' AND strength = {});\n"
-            .format(eff["type"], eff["duration"], eff["range"], eff["strength"])
+            "SET @idEffect = (SELECT id FROM Effect WHERE type = '{}' AND duration = {} AND `target` = '{}' AND strength = {});\n"
+            .format(eff["type"], eff["duration"], eff["target"], eff["strength"])
         )
 
         sqlFile.write(

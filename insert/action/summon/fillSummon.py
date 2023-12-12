@@ -26,15 +26,15 @@ def replaceNoneWithNull(data):
 def insertEffects(id, effects: [], type: str) -> int:
     for effect in effects:
         sqlFile.write(
-            "INSERT INTO Effect (id, type, duration, `range`, strength) "
+            "INSERT INTO Effect (id, type, duration, `target`, strength) "
             "VALUES ({}, '{}', {}, '{}', {}) "
             "ON DUPLICATE KEY UPDATE id=id;\n"
-            .format("NULL", effect["type"], effect["duration"], effect["range"], effect["strength"])
+            .format("NULL", effect["type"], effect["duration"], effect["target"], effect["strength"])
         )
 
         sqlFile.write(
-            "SET @idEffect = (SELECT id FROM Effect WHERE type = '{}' AND duration = {} AND `range` = '{}' AND strength = {});\n"
-            .format(effect["type"], effect["duration"], effect["range"], effect["strength"])
+            "SET @idEffect = (SELECT id FROM Effect WHERE type = '{}' AND duration = {} AND `target` = '{}' AND strength = {});\n"
+            .format(effect["type"], effect["duration"], effect["target"], effect["strength"])
         )
 
         sqlFile.write(

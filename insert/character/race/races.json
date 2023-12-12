@@ -19,7 +19,7 @@
         "effect": {
           "type": "BLEED_RESISTANCE",
           "duration": 2,
-          "range": "SELF",
+          "target": "SELF",
           "strength": 0
         }
       }
@@ -45,7 +45,7 @@
         "effect": {
           "type": "BLEED_RESISTANCE",
           "duration": 2,
-          "range": "SELF",
+          "target": "SELF",
           "strength": 0
         }
       }

@@ -1,7 +1,7 @@
 [
   {
     "id": 1,
-    "name": "Thiefling",
+    "name": "Tiefling",
     "actions": [
       {
         "id": 1,
@@ -13,6 +13,22 @@
         "levelReq": 1
       }
     ],
+    "effects": [
+      {
+        "lvlReq": 1,
+        "effect": {
+          "type": "FIRE_RESISTANCE",
+          "duration": 2,
+          "target": "SELF",
+          "strength": 0
+        }
+      }
+    ]
+  },
+  {
+    "id": 2,
+    "name": "Human",
+    "actions": [],
     "effects": [
       {
         "lvlReq": 1,
@@ -24,26 +40,30 @@
         }
       }
     ]
-  },
-  {
-    "id": 2,
-    "name": "Human",
-    "actions": [
-      {
-        "id": 1,
-        "comment": "Lorem ipsum.",
-        "levelReq": 1
-      }, {
-        "id": 1,
-        "comment": "Lorem ipsum.",
-        "levelReq": 1
-      }
-    ],
+  }, {
+    "id": 3,
+    "name": "Dwarf",
+    "actions": [],
     "effects": [
       {
         "lvlReq": 1,
         "effect": {
-          "type": "BLEED_RESISTANCE",
+          "type": "POISON_RESISTANCE",
+          "duration": 2,
+          "target": "SELF",
+          "strength": 0
+        }
+      }
+    ]
+  }, {
+    "id": 4,
+    "name": "Elf",
+    "actions": [],
+    "effects": [
+      {
+        "lvlReq": 1,
+        "effect": {
+          "type": "FEAR_RESISTANCE",
           "duration": 2,
           "target": "SELF",
           "strength": 0

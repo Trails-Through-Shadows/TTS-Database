@@ -2,7 +2,7 @@
   {
     "id": 1,
     "name": "Warlock",
-    "baseHealth": 100,
+    "baseHealth": 60,
     "actions": [
       {
         "id": 1,
@@ -18,20 +18,18 @@
     ]
   }, {
     "id": 2,
-    "name": "Human",
+    "name": "Fighter",
     "baseHealth": 100,
-    "actions": [
-      {
-        "id": 1,
-        "comment": "Lorem ipsum.",
-        "levelReq": 1,
-        "itemReq": null
-      }, {
-        "id": 1,
-        "comment": "Lorem ipsum.",
-        "levelReq": 1,
-        "itemReq": null
-      }
-    ]
+    "actions": []
+  }, {
+    "id": 3,
+    "name": "Paladin",
+    "baseHealth": 100,
+    "actions": []
+  }, {
+    "id": 4,
+    "name": "Bard",
+    "baseHealth": 80,
+    "actions": []
   }
 ]

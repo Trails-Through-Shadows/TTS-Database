@@ -1,0 +1,38 @@
+[
+  {
+    "id": 1,
+    "idAdventure": 1,
+    "idClass": 1,
+    "idRace": 1,
+    "level": 2,
+    "name": "Gandalf",
+    "playerName": "Barce"
+  },
+  {
+      "id": 2,
+      "idAdventure": 1,
+      "idClass": 2,
+      "idRace": 2,
+      "level": 2,
+      "name": "Aragorn",
+      "playerName": "Myrce"
+  },
+  {
+      "id": 3,
+      "idAdventure": 1,
+      "idClass": 3,
+      "idRace": 3,
+      "level": 2,
+      "name": "Gimli",
+      "playerName": "Pajde"
+  },
+  {
+      "id": 4,
+      "idAdventure": 1,
+      "idClass": 4,
+      "idRace": 4,
+      "level": 2,
+      "name": "Legolas",
+      "playerName": "Zoze"
+  }
+]

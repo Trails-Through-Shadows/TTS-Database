@@ -79,7 +79,7 @@ for summon in data:
     sqlFile.write("-- Summon {}\n".format(summonName))
     sqlFile.write(
         "INSERT INTO Summon (id, name, duration, health, idAction) "
-        "VALUES ({}, '{}', {}, {}, {}) "
+        "VALUES ({}, '{}', {}, {}, {}); \n"
         .format(summonID, summonName, summonDuration, summonHealth, 'NULL')
     )
 

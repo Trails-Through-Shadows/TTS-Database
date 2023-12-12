@@ -59,20 +59,23 @@ for schematic in data:
                 cubeX = round(x - xCoord)
                 cubeY = round(y - yCoord)
 
+                if y % 2 == 0 and yCoord % 2 == 1:
+                    cubeX -= 1
+
                 q = round(cubeX - (cubeY - (cubeY & 1)) / 2)
                 r = cubeY
                 s = round(-q - r)
 
-                # sqlFile.write(
-                #     "INSERT INTO Hex (idPart, id, qCord, rCord, sCord) "
-                #     "VALUES ({}, {}, {}, {}, {});\n"
-                #     .format(schematicID, hexID, q, r, s)
-                # )
-
                 sqlFile.write(
-                    "{"+
-                    "\"qCord\": {}, \"rCord\": {}, \"sCord\": {}".format(q, r, s)+
-                    "},\n"
+                    "INSERT INTO Hex (idPart, id, qCord, rCord, sCord) "
+                    "VALUES ({}, {}, {}, {}, {});\n"
+                    .format(schematicID, hexID, q, r, s)
                 )
+
+                # sqlFile.write(
+                #     "{"+
+                #     "\"qCord\": {}, \"rCord\": {}, \"sCord\": {}".format(q, r, s)+
+                #     "},\n"
+                # )
 
             hexID += 1

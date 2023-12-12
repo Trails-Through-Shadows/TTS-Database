@@ -78,4 +78,4 @@ for schematic in data:
                 #     "},\n"
                 # )
 
-            hexID += 1
+                hexID += 1

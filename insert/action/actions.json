@@ -1,6 +1,12 @@
 [
   {
     "id": 1,
+    "title": "Do nothing",
+    "description": "Just stand around.",
+    "discard": "NEVER"
+  },
+  {
+    "id": 2,
     "title": "Template Card",
     "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
     "movement": {
@@ -57,9 +63,9 @@
     "discard": "NEVER"
   },
   {
-    "id": 2,
-    "title": "Template summon action Card",
-    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+    "id": 3,
+    "title": "Bite",
+    "description": "Bite your enemies.",
     "attack": {
       "id": 2,
       "range": 1,
@@ -72,9 +78,9 @@
     "discard": "NEVER"
   },
   {
-    "id": 3,
-    "title": "Template summon action RECURSIVE Card",
-    "description": "DANGEROUS Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+    "id": 4,
+    "title": "Summon a little myšítko",
+    "description": "In a non recursive way.",
     "summon": [
       {
         "id": 3,
@@ -84,15 +90,15 @@
     "discard": "NEVER"
   },
   {
-    "id": 4,
-    "title": "Myšítko attack Card",
-    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+    "id": 5,
+    "title": "Tiny bite",
+    "description": "This bite is so weak it does nothing.",
     "discard": "NEVER"
   },
   {
-    "id": 5,
-    "title": "recursive Action summon Template Card",
-    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+    "id": 6,
+    "title": "Summon a Mother Rat",
+    "description": "It can summon little ones.",
     "summon": [
       {
         "id": 2,
@@ -100,5 +106,98 @@
       }
     ],
     "discard": "NEVER"
+  },
+  {
+    "id": 7,
+    "title": "Step forward",
+    "description": "Make two steps from hell.",
+    "movement": {
+      "id": 2,
+      "range": 2,
+      "type": "WALK"
+    },
+    "discard": "NEVER"
+  },
+  {
+    "id": 8,
+    "title": "Iron sword",
+    "description": "Attack an enemy with your sword.",
+    "attack": {
+      "id": 3,
+      "range": 1,
+      "damage": 4,
+      "area": 0,
+      "target": "ONE",
+      "numAttacks": 1,
+      "effects": []
+    },
+    "discard": "NEVER"
+  },
+  {
+    "id": 9,
+    "title": "Wooden bow",
+    "description": "Shoot an arrow at an enemy.",
+    "attack": {
+      "id": 4,
+      "range": 3,
+      "damage": 3,
+      "area": 0,
+      "target": "ONE",
+      "numAttacks": 1,
+      "effects": []
+    },
+    "discard": "NEVER"
+  },
+  {
+    "id": 10,
+    "title": "Healing word",
+    "description": "Heal an ally or yourself.",
+    "skill": {
+      "id": 2,
+      "range": 3,
+      "area": 0,
+      "target": "ONE",
+      "effects": [
+        {
+          "type": "HEAL",
+          "duration": 0,
+          "target": "ONE",
+          "strength": 4
+        }
+      ]
+    },
+    "discard": "PERMANENT"
+  },
+  {
+    "id": 11,
+    "title": "Wall of fire",
+    "description": "Burn all enemies.",
+    "skill": {
+      "id": 3,
+      "range": 3,
+      "area": 1,
+      "target": "ALL_ENEMIES",
+      "effects": [
+        {
+          "type": "FIRE",
+          "duration": 3,
+          "target": "ONE",
+          "strength": 3
+        }
+      ]
+    },
+    "discard": "PERMANENT"
+  },
+  {
+    "id": 12,
+    "title": "Lesser restoration",
+    "description": "Restore 3 cards.",
+    "restoreCards": {
+      "id": 2,
+      "numCards": 3,
+      "target": "SELF",
+      "random": true
+    },
+    "discard": "LONG_REST"
   }
 ]

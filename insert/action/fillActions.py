@@ -85,7 +85,9 @@ for action in data:
         # Params
         moveRange = movement["range"]
         moveType = movement["type"]
-        moveEffects = movement["effects"]
+        moveEffects = []
+        if movement.get('effects') is not None:
+            moveEffects = movement["effects"]
 
         sqlFile.write(
             "INSERT INTO Movement (id, `range`, type) "

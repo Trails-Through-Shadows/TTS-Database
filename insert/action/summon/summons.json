@@ -4,7 +4,7 @@
     "name": "Giant Rat",
     "duration": "10",
     "health": "10",
-    "action": null,
+    "action" : 2,
     "effects": [
       {
         "type": "POISON",
@@ -19,5 +19,21 @@
         "strength": 0
       }
     ]
+  },
+
+  {
+    "id": 2,
+    "name": "Recursive Giant Rat",
+    "duration": "10",
+    "health": "10",
+    "action": 3
+  },
+  {
+    "id": 3,
+    "name": "Little myšítko",
+    "duration": "10",
+    "health": "10",
+    "action": 4,
+    "effects": []
   }
 ]

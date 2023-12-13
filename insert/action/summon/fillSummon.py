@@ -74,7 +74,9 @@ for summon in data:
     summonDuration = summon["duration"]
     summonHealth = summon["health"]
     summonAction = summon["action"]
-    summonEffects = summon["effects"]
+    summonEffects = []
+    if summon.get('effects') is not None:
+        summonEffects = summon["effects"]
 
     sqlFile.write("-- Summon {}\n".format(summonName))
     sqlFile.write(

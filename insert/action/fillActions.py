@@ -78,7 +78,7 @@ for action in data:
 
     # Movement
     movementID = "NULL"
-    if action["movement"] != 'NULL':
+    if action.get('movement') is not None:
         movement = action["movement"]
         movementID = movement["id"]
 
@@ -97,7 +97,7 @@ for action in data:
 
     # Skill
     skillID = "NULL"
-    if action["skill"] != 'NULL':
+    if action.get('skill') is not None:
         skill = action["skill"]
         skillID = skill["id"]
 
@@ -117,7 +117,7 @@ for action in data:
 
     # Attack
     attackID = "NULL"
-    if action["attack"] != 'NULL':
+    if action.get('attack') is not None:
         attack = action["attack"]
         attackID = attack["id"]
 
@@ -139,7 +139,7 @@ for action in data:
 
     # RestoreCards
     restoreCardID = "NULL"
-    if action["restoreCards"] != 'NULL':
+    if action.get('restoreCards') is not None:
         restoreCards = action["restoreCards"]
         restoreCardID = restoreCards["id"]
 
@@ -162,15 +162,16 @@ for action in data:
     )
 
     # Summon
-    summons = action["summon"]
-    for summon in summons:
-        summonID = summon["id"]
+    if action.get('summon') is not None:
+        summons = action["summon"]
+        for summon in summons:
+            summonID = summon["id"]
 
-        # Params
-        summonRange = summon["range"]
+            # Params
+            summonRange = summon["range"]
 
-        sqlFile.write(
-            "INSERT INTO SummonAction (idSummon, idAction, `range`) "
-            "VALUES ({}, {}, {});\n"
-            .format(summonID, actionID, summonRange)
-        )
+            sqlFile.write(
+                "INSERT INTO SummonAction (idSummon, idAction, `range`) "
+                "VALUES ({}, {}, {});\n"
+                .format(summonID, actionID, summonRange)
+            )

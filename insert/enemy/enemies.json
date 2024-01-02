@@ -4,6 +4,7 @@
     "name": "Zombie",
     "health": 10,
     "defence": 2,
+    "combatStyle": "MELEE",
     "actions": [
       {
         "id": 1,
@@ -31,6 +32,7 @@
     "name": "Goblin",
     "health": 8,
     "defence": 3,
+    "combatStyle": "MELEE",
     "actions": [
       {
         "id": 1,
@@ -59,6 +61,7 @@
     "name": "Skeleton",
     "health": 6,
     "defence": 1,
+    "combatStyle": "RANGED",
     "actions": [
       {
         "id": 1,
@@ -87,6 +90,7 @@
     "name": "Orc",
     "health": 12,
     "defence": 4,
+    "combatStyle": "MELEE",
     "actions": [
       {
         "id": 1,

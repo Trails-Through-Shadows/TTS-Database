@@ -120,6 +120,7 @@ CREATE TABLE `Enemy` (
   `name` VARCHAR(45) NOT NULL,
   `health` INT NOT NULL,
   `defence` INT NOT NULL,
+  `combatStyle` ENUM ('MELEE', 'RANGED') NOT NULL,
   PRIMARY KEY (`id`)
 );
 
@@ -156,6 +157,7 @@ CREATE TABLE `Summon` (
   `name` VARCHAR(50) NOT NULL,
   `duration` INT,
   `health` INT,
+  `combatStyle` ENUM ('MELEE', 'RANGED') NOT NULL,
   `idAction` INT,
   PRIMARY KEY (`id`)
 );

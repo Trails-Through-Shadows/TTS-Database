@@ -43,7 +43,14 @@
       "range": 2,
       "area": 0,
       "target": "ONE",
-      "effects": []
+      "effects": [
+        {
+          "type": "BLEED",
+          "duration": 3,
+          "target": "ALL_ENEMIES",
+          "strength": 5
+        }
+      ]
     },
     "attack": {
       "id": 1,

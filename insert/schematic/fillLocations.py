@@ -100,39 +100,27 @@ for location in data:
                 .format(locationID, partScheme, partRotation)
             )
 
-
-
     # Doors
     if "doors" in location:
         for door in location["doors"]:
 
             # Params
-            doorFirstPart = door["first"]["partId"]
-            doorFirstCordR = door["first"]["cords"]["r"]
-            doorFirstCordQ = door["first"]["cords"]["q"]
-            doorFirstCordS = door["first"]["cords"]["s"]
-
-            doorSecondPart = door["second"]["partId"]
-            doorSecondCordR = door["second"]["cords"]["r"]
-            doorSecondCordQ = door["second"]["cords"]["q"]
-            doorSecondCordS = door["second"]["cords"]["s"]
+            doorFirstPart = door["firstPart"]
+            doorSecondPart = door["secondPart"]
+            doorCordR = door["cords"]["r"]
+            doorCordQ = door["cords"]["q"]
+            doorCordS = door["cords"]["s"]
 
             # First Hex
             sqlFile.write(
-                "SET @doorFirstHexID = (SELECT id FROM Hex WHERE idPart = {} AND qCord = {} AND rCord = {} AND sCord = {});\n"
-                .format(doorFirstPart, doorFirstCordQ, doorFirstCordR, doorFirstCordS)
-            )
-
-            # Second Hex
-            sqlFile.write(
-                "SET @doorSecondHexID = (SELECT id FROM Hex WHERE idPart = {} AND qCord = {} AND rCord = {} AND sCord = {});\n"
-                .format(doorSecondPart, doorSecondCordQ, doorSecondCordR, doorSecondCordS)
+                "SET @doorHex = (SELECT id FROM Hex WHERE idPart = {} AND qCord = {} AND rCord = {} AND sCord = {});\n"
+                .format(doorFirstPart, doorCordQ, doorCordR, doorCordS)
             )
 
             sqlFile.write(
-                "INSERT INTO HexDoor (id, idLocation, firstPart, secondPart, firstHex, secondHex) "
-                "VALUES ({}, {}, {}, {}, @doorFirstHexID, @doorSecondHexID);\n"
-                .format("NULL", locationID, doorFirstPart, doorSecondPart)
+                "INSERT INTO PartDoor (location, fromPart, toPart, hex) "
+                "VALUES ({}, {}, {}, @doorHex);\n"
+                .format(locationID, doorFirstPart, doorSecondPart)
             )
 
     # Paths

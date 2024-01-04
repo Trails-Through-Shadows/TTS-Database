@@ -39,22 +39,13 @@
     ],
     "doors": [
       {
-        "first": {
-          "partId": 1,
-          "cords": {
-            "q": -2,
-            "r": 2,
-            "s": 0
-          }
+        "cords": {
+          "q": -2,
+          "r": 2,
+          "s": 0
         },
-        "second": {
-          "partId": 2,
-          "cords": {
-            "q": 2,
-            "r": -2,
-            "s": 0
-          }
-        }
+        "firstPart": 1,
+        "secondPart": 2
       }
     ],
     "paths": []

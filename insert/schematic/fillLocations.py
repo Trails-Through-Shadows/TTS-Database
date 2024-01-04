@@ -63,12 +63,44 @@ for location in data:
             partRotation = part["rotation"]
             partHexes = part["hexes"]
 
+            #HexEnemy relationship
+            # Hexes
+            for hex in partHexes:
+
+                # Params
+                hexType = hex["type"]
+                hexTypeID = hex["id"]
+                hexCordR = hex["cords"]["r"]
+                hexCordQ = hex["cords"]["q"]
+                hexCordS = hex["cords"]["s"]
+
+                # Get Hex ID
+                sqlFile.write(
+                    "SET @hexID = (SELECT id FROM Hex WHERE idPart = {} AND qCord = {} AND rCord = {} AND sCord = {});\n"
+                    .format(partScheme, hexCordQ, hexCordR, hexCordS)
+                )
+
+                if hexType == "ENEMY":
+                    sqlFile.write(
+                        "INSERT INTO HexEnemy (idEnemy, idLocation, idPart, idHex) "
+                        "VALUES ({}, {}, {}, @hexID);\n"
+                        .format(hexTypeID, locationID, partScheme)
+                    )
+                elif hexType == "OBSTACLE":
+                    sqlFile.write(
+                        "INSERT INTO HexObstacle (idObstacle, idLocation, idPart, idHex) "
+                        "VALUES ({}, {}, {}, @hexID);\n"
+                        .format( hexTypeID, locationID, partScheme)
+                    )
+
             # LocationPart Relationship
             sqlFile.write(
                 "INSERT INTO LocationPart (idLocation, idPart, rotation) "
                 "VALUES ({}, {}, {});\n"
                 .format(locationID, partScheme, partRotation)
             )
+
+
 
     # Doors
     if "doors" in location:

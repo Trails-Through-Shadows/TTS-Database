@@ -59,6 +59,7 @@ CREATE TABLE `LocationPart` (
 CREATE TABLE `Part` (
                         `id` INT NOT NULL AUTO_INCREMENT,
                         `tag` VARCHAR(30),
+                        `usages` INT DEFAULT 0,
                         PRIMARY KEY (`id`)
 );
 

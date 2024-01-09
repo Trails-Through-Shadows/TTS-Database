@@ -16,17 +16,20 @@ WHILE @table_count < LENGTH(@tables)
         -- Get the table name for the current iteration
         SET @table_name = SUBSTRING_INDEX(SUBSTRING_INDEX(@tables, ',', @table_count + 1), ',', -1);
 
-        -- Construct and execute the DELETE statement
-        SET @delete_statement = CONCAT('DELETE FROM ', @table_name);
-        PREPARE stmt FROM @delete_statement;
-        EXECUTE stmt;
-        DEALLOCATE PREPARE stmt;
+        -- Delete only if the table name does not start with 'auth' or 'django'
+        IF not (@table_name like '`auth%' or @table_name like '`django%') THEN
+            -- Construct and execute the DELETE statement
+            SET @delete_statement = CONCAT('DROP TABLE IF EXISTS ', @table_name);
+            PREPARE stmt FROM @delete_statement;
+            EXECUTE stmt;
+            DEALLOCATE PREPARE stmt;
 
-        -- Reset the auto-increment value for the table
-        SET @reset_statement = CONCAT('ALTER TABLE ', @table_name, ' AUTO_INCREMENT = 1');
-        PREPARE stmt FROM @reset_statement;
-        EXECUTE stmt;
-        DEALLOCATE PREPARE stmt;
+            -- Reset the auto-increment value for the table
+            SET @reset_statement = CONCAT('ALTER TABLE ', @table_name, ' AUTO_INCREMENT = 1');
+            PREPARE stmt FROM @reset_statement;
+            EXECUTE stmt;
+            DEALLOCATE PREPARE stmt;
+        END IF;
 
         -- Increment the table count for the next iteration
         SET @table_count = @table_count + 1;

@@ -398,19 +398,19 @@ ALTER TABLE `Path` ADD CONSTRAINT `fk_Path_idStart` FOREIGN KEY (`idStart`) REFE
 
 ALTER TABLE `Path` ADD CONSTRAINT `fk_Path_idEnd` FOREIGN KEY (`idEnd`) REFERENCES `Location` (`id`);
 
-ALTER TABLE `LocationPart` ADD CONSTRAINT `fk_LocationPart_Location` FOREIGN KEY (`idLocation`) REFERENCES `Location` (`id`);
+ALTER TABLE `LocationPart` ADD CONSTRAINT `fk_LocationPart_Location` FOREIGN KEY (`idLocation`) REFERENCES `Location` (`id`) ON DELETE CASCADE;
 
-ALTER TABLE `LocationPart` ADD CONSTRAINT `fk_LocationPart_Part` FOREIGN KEY (`idPart`) REFERENCES `Part` (`id`);
+ALTER TABLE `LocationPart` ADD CONSTRAINT `fk_LocationPart_Part` FOREIGN KEY (`idPart`) REFERENCES `Part` (`id`) ON DELETE CASCADE;
 
-ALTER TABLE `Hex` ADD CONSTRAINT `fk_Hex_Part` FOREIGN KEY (`idPart`) REFERENCES `Part` (`id`);
+ALTER TABLE `Hex` ADD CONSTRAINT `fk_Hex_Part` FOREIGN KEY (`idPart`) REFERENCES `Part` (`id`) ON DELETE CASCADE;
 
-ALTER TABLE `PartDoor` ADD CONSTRAINT `fk_PartDoor_Location` FOREIGN KEY (`location`) REFERENCES `Location` (`id`);
+ALTER TABLE `PartDoor` ADD CONSTRAINT `fk_PartDoor_Location` FOREIGN KEY (`location`) REFERENCES `Location` (`id`) ON DELETE CASCADE;
 
-ALTER TABLE `PartDoor` ADD CONSTRAINT `fk_PartDoor_fromPart` FOREIGN KEY (`fromPart`) REFERENCES `Part` (`id`);
+ALTER TABLE `PartDoor` ADD CONSTRAINT `fk_PartDoor_fromPart` FOREIGN KEY (`fromPart`) REFERENCES `Part` (`id`) ON DELETE CASCADE;
 
-ALTER TABLE `PartDoor` ADD CONSTRAINT `fk_PartDoor_toPart` FOREIGN KEY (`toPart`) REFERENCES `Part` (`id`);
+ALTER TABLE `PartDoor` ADD CONSTRAINT `fk_PartDoor_toPart` FOREIGN KEY (`toPart`) REFERENCES `Part` (`id`) ON DELETE CASCADE;
 
-ALTER TABLE `PartDoor` ADD CONSTRAINT `fk_PartDoor_hex` FOREIGN KEY (`hex`) REFERENCES `Hex` (`id`);
+ALTER TABLE `PartDoor` ADD CONSTRAINT `fk_PartDoor_hex` FOREIGN KEY (`hex`) REFERENCES `Hex` (`id`) ON DELETE CASCADE;
 
 ALTER TABLE `Character` ADD CONSTRAINT `fk_Character_Adventure` FOREIGN KEY (`idAdventure`) REFERENCES `Adventure` (`id`);
 
@@ -426,13 +426,13 @@ ALTER TABLE `ClassAction` ADD CONSTRAINT `fk_Action_Class` FOREIGN KEY (`idClass
 
 ALTER TABLE `ClassAction` ADD CONSTRAINT `fk_ClassAction_Action` FOREIGN KEY (`idAction`) REFERENCES `Action` (`id`);
 
-ALTER TABLE `HexEnemy` ADD CONSTRAINT `fk_HexEnemy_Enemy` FOREIGN KEY (`idEnemy`) REFERENCES `Enemy` (`id`);
+ALTER TABLE `HexEnemy` ADD CONSTRAINT `fk_HexEnemy_Enemy` FOREIGN KEY (`idEnemy`) REFERENCES `Enemy` (`id`) ON DELETE CASCADE;
 
-ALTER TABLE `HexEnemy` ADD CONSTRAINT `fk_HexEnemy_Hex` FOREIGN KEY (`idHex`) REFERENCES `Hex` (`id`);
+ALTER TABLE `HexEnemy` ADD CONSTRAINT `fk_HexEnemy_Hex` FOREIGN KEY (`idHex`) REFERENCES `Hex` (`id`) ON DELETE CASCADE;
 
-ALTER TABLE `HexEnemy` ADD CONSTRAINT `fk_HexEnemy_Part` FOREIGN KEY (`idPart`) REFERENCES `Part` (`id`);
+ALTER TABLE `HexEnemy` ADD CONSTRAINT `fk_HexEnemy_Part` FOREIGN KEY (`idPart`) REFERENCES `Part` (`id`) ON DELETE CASCADE;
 
-ALTER TABLE `HexEnemy` ADD CONSTRAINT `fk_HexEnemy_Location` FOREIGN KEY (`idLocation`) REFERENCES `Location` (`id`);
+ALTER TABLE `HexEnemy` ADD CONSTRAINT `fk_HexEnemy_Location` FOREIGN KEY (`idLocation`) REFERENCES `Location` (`id`) ON DELETE CASCADE;
 
 ALTER TABLE `EnemyAction` ADD CONSTRAINT `fk_EnemyAction_Enemy` FOREIGN KEY (`idEnemy`) REFERENCES `Enemy` (`id`);
 
@@ -488,13 +488,13 @@ ALTER TABLE `ObstacleEffect` ADD CONSTRAINT `fk_ObstacleEffect_Effect` FOREIGN K
 
 ALTER TABLE `ObstacleEffect` ADD CONSTRAINT `fk_ObstacleEffect_Obstacle` FOREIGN KEY (`idObstacle`) REFERENCES `Obstacle` (`id`);
 
-ALTER TABLE `HexObstacle` ADD CONSTRAINT `fk_HexObstacle_Hex` FOREIGN KEY (`idHex`) REFERENCES `Hex` (`id`);
+ALTER TABLE `HexObstacle` ADD CONSTRAINT `fk_HexObstacle_Hex` FOREIGN KEY (`idHex`) REFERENCES `Hex` (`id`) ON DELETE CASCADE;
 
-ALTER TABLE `HexObstacle` ADD CONSTRAINT `fk_HexObstacle_Location` FOREIGN KEY (`idLocation`) REFERENCES `Location` (`id`);
+ALTER TABLE `HexObstacle` ADD CONSTRAINT `fk_HexObstacle_Location` FOREIGN KEY (`idLocation`) REFERENCES `Location` (`id`) ON DELETE CASCADE;
 
-ALTER TABLE `HexObstacle` ADD CONSTRAINT `fk_HexObstacle_Part` FOREIGN KEY (`idPart`) REFERENCES `Part` (`id`);
+ALTER TABLE `HexObstacle` ADD CONSTRAINT `fk_HexObstacle_Part` FOREIGN KEY (`idPart`) REFERENCES `Part` (`id`) ON DELETE CASCADE;
 
-ALTER TABLE `HexObstacle` ADD CONSTRAINT `fk_HexObstacle_Obstacle` FOREIGN KEY (`idObstacle`) REFERENCES `Obstacle` (`id`);
+ALTER TABLE `HexObstacle` ADD CONSTRAINT `fk_HexObstacle_Obstacle` FOREIGN KEY (`idObstacle`) REFERENCES `Obstacle` (`id`) ON DELETE CASCADE;
 
 ALTER TABLE `Character` ADD CONSTRAINT `fk_Character_Race` FOREIGN KEY (`idRace`) REFERENCES `Race` (`id`);
 

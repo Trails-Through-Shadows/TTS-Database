@@ -22,6 +22,15 @@ CREATE TABLE `CampaignLocation`
     PRIMARY KEY (`idCampaign`, `idLocation`)
 );
 
+CREATE TABLE `AdventureLocation`
+(
+    `idAdventure`  INT  NOT NULL,
+    `idLocation`   INT  NOT NULL,
+    `unlocked`     BOOL NOT NULL DEFAULT 0,
+    `timesVisited` INT  NOT NULL DEFAULT 0,
+    PRIMARY KEY (`idAdventure`, `idLocation`)
+);
+
 CREATE TABLE `Adventure`
 (
     `id`         INT NOT NULL,
@@ -102,9 +111,9 @@ CREATE TABLE `Class`
 CREATE TABLE `Character`
 (
     `id`          INT         NOT NULL AUTO_INCREMENT,
-    `idAdventure` INT         NOT NULL,
     `idClass`     INT         NOT NULL,
     `idRace`      INT         NOT NULL,
+    `idAdventure` INT         NOT NULL,
     `level`       INT         NOT NULL,
     `name`        VARCHAR(50) NOT NULL,
     `playerName`  VARCHAR(50),
@@ -113,8 +122,8 @@ CREATE TABLE `Character`
 
 CREATE TABLE `Inventory`
 (
-    `idCharacter` INT NOT NULL,
     `idItem`      INT NOT NULL,
+    `idCharacter` INT NOT NULL,
     `amount`      INT DEFAULT 1,
     PRIMARY KEY (`idCharacter`, `idItem`)
 );
@@ -355,27 +364,31 @@ CREATE TABLE `CampaignAchievements`
 
 CREATE TABLE `Item`
 (
-    `id`          INT                                                                                                                                                            NOT NULL,
-    `title`       VARCHAR(50)                                                                                                                                                    NOT NULL,
-    `type`        ENUM ('WEAPON', 'POTION', 'HELMET', 'CHESTPLATE', 'LEGGINGS', 'BOOTS', 'ACCESSORY', 'SHIELD', 'SCROLL', 'WAND', 'STAFF', 'BOOK', 'CONSUMABLE', 'TOOL', 'MISC') NOT NULL,
-    `description` TEXT,
+    `id`           INT                                                                                     NOT NULL,
+    `title`        VARCHAR(50)                                                                             NOT NULL,
+    `type`         ENUM ('WEAPON', 'HELMET', 'CHESTPLATE', 'LEGGINGS', 'BOOTS', 'ACCESSORY', 'CONSUMABLE') NOT NULL,
+    `description`  TEXT,
+    `requirements` TEXT,
     PRIMARY KEY (`id`)
 );
 
 CREATE TABLE `Market`
 (
-    `id`         INT NOT NULL,
     `idLocation` INT NOT NULL,
-    PRIMARY KEY (`id`)
+    `idItem`     INT NOT NULL,
+    `defAmount`  INT DEFAULT 1,
+    `defPrice`   INT DEFAULT 0,
+    PRIMARY KEY (`idLocation`, `idItem`)
 );
 
-CREATE TABLE `MarketItem`
+CREATE TABLE `AdventureMarket`
 (
-    `idMarket`     INT NOT NULL,
-    `idItem`       INT NOT NULL,
-    `price`        INT,
-    `requirements` TEXT,
-    PRIMARY KEY (`idMarket`, `idItem`)
+    `idLocation`  INT NOT NULL,
+    `idItem`      INT NOT NULL,
+    `idAdventure` INT NOT NULL,
+    `amount`      INT DEFAULT 1,
+    `price`       INT DEFAULT 0,
+    PRIMARY KEY (`idLocation`, `idItem`, `idAdventure`)
 );
 
 CREATE INDEX `uk_Adventure_idCampaign` ON `Adventure` (`idCampaign`);
@@ -424,13 +437,17 @@ CREATE INDEX `uk_RaceAction_idRace` ON `RaceAction` (`idRace`);
 
 CREATE INDEX `uk_RaceAction_idAction` ON `RaceAction` (`idAction`);
 
-CREATE UNIQUE INDEX `uk_Market_Location` ON `Market` (`idLocation`);
-
 ALTER TABLE `CampaignLocation`
     ADD CONSTRAINT `fk_CampaignLocation_Campaign` FOREIGN KEY (`idCampaign`) REFERENCES `Campaign` (`id`);
 
 ALTER TABLE `CampaignLocation`
     ADD CONSTRAINT `fk_CampaignLocation_Location` FOREIGN KEY (`idLocation`) REFERENCES `Location` (`id`);
+
+ALTER TABLE `AdventureLocation`
+    ADD CONSTRAINT `fk_AdventureLocation_Adventure` FOREIGN KEY (`idAdventure`) REFERENCES `Adventure` (`id`);
+
+ALTER TABLE `AdventureLocation`
+    ADD CONSTRAINT `fk_AdventureLocation_Location` FOREIGN KEY (`idLocation`) REFERENCES `Location` (`id`);
 
 ALTER TABLE `Adventure`
     ADD CONSTRAINT `fk_Adventure_Campaign` FOREIGN KEY (`idCampaign`) REFERENCES `Campaign` (`id`);
@@ -613,10 +630,16 @@ ALTER TABLE `CampaignAchievements`
     ADD CONSTRAINT `fk_CampaignAchievements_Achievement` FOREIGN KEY (`idAchievement`) REFERENCES `Achievement` (`id`);
 
 ALTER TABLE `Market`
+    ADD CONSTRAINT `fk_Market_Item` FOREIGN KEY (`idItem`) REFERENCES `Item` (`id`);
+
+ALTER TABLE `Market`
     ADD CONSTRAINT `fk_Market_Location` FOREIGN KEY (`idLocation`) REFERENCES `Location` (`id`);
 
-ALTER TABLE `MarketItem`
-    ADD CONSTRAINT `fk_MarketItem_Item` FOREIGN KEY (`idItem`) REFERENCES `Item` (`id`);
+ALTER TABLE `AdventureMarket`
+    ADD CONSTRAINT `fk_AdventureMarket_Item` FOREIGN KEY (`idItem`) REFERENCES `Item` (`id`);
 
-ALTER TABLE `MarketItem`
-    ADD CONSTRAINT `fk_MarketItem_Market` FOREIGN KEY (`idMarket`) REFERENCES `Market` (`id`);
+ALTER TABLE `AdventureMarket`
+    ADD CONSTRAINT `fk_AdventureMarket_Location` FOREIGN KEY (`idLocation`) REFERENCES `Location` (`id`);
+
+ALTER TABLE `AdventureMarket`
+    ADD CONSTRAINT `fk_AdventureMarket_Adventure` FOREIGN KEY (`idAdventure`) REFERENCES `Adventure` (`id`);

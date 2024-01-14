@@ -35,23 +35,21 @@ for location in data:
     )
 
     if location["type"] == "MARKET":
-        sqlFile.write(
-            "INSERT INTO Market (id, idLocation) "
-            "VALUES ('{}', '{}');\n"
-            .format(location["id"], location["id"])
-        )
-
         if "items" in location:
             for itemID in location["items"]["ids"]:
-                req = "NULL"
+                price = "NULL"
+                amount = "NULL"
 
-                if str(itemID) in location["items"]["requirements"]:
-                    req = location["items"]["requirements"][str(itemID)]
+                if str(itemID) in location["items"]["prices"]:
+                    price = location["items"]["prices"][str(itemID)]
+
+                if str(itemID) in location["items"]["amounts"]:
+                    amount = location["items"]["amounts"][str(itemID)]
 
                 sqlFile.write(
-                    "INSERT INTO MarketItem (idMarket, idItem, requirements) "
-                    "VALUES ({}, {}, '{}');\n"
-                    .format(location["id"], itemID, req)
+                    "INSERT INTO Market (idLocation, idItem, defPrice, defAmount) "
+                    "VALUES ({}, {}, {}, {});\n"
+                    .format(location["id"], itemID, price, amount)
                 )
 
     # Parts

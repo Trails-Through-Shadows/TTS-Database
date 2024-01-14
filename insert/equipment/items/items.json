@@ -16,7 +16,7 @@
   {
     "id": 2,
     "title": "Elixir of Healing",
-    "type": "POTION",
+    "type": "CONSUMABLE",
     "description": "A magical elixir that restores health.",
     "effects": [
       {
@@ -79,7 +79,7 @@
   {
     "id": 8,
     "title": "Fireball Scroll",
-    "type": "SCROLL",
+    "type": "CONSUMABLE",
     "description": "A scroll that allows the user to cast a fireball spell.",
     "effects": [
       {
@@ -93,7 +93,7 @@
   {
     "id": 9,
     "title": "Wand of Lightning",
-    "type": "WAND",
+    "type": "WEAPON",
     "description": "A wand that can unleash powerful lightning bolts.",
     "effects": [
       {
@@ -107,7 +107,7 @@
   {
     "id": 10,
     "title": "Spellbook of Enchantment",
-    "type": "BOOK",
+    "type": "WEAPON",
     "description": "A spellbook filled with enchantment spells.",
     "effects": [
       {
@@ -121,7 +121,7 @@
   {
     "id": 11,
     "title": "Health Potion",
-    "type": "POTION",
+    "type": "CONSUMABLE",
     "description": "A potion that restores a small amount of health.",
     "effects": [
       {

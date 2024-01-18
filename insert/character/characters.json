@@ -6,25 +6,25 @@
     "idRace": 1,
     "level": 2,
     "name": "Gandalf",
+    "playerName": "Pajde"
+  },
+  {
+    "id": 2,
+    "idAdventure": 1,
+    "idClass": 2,
+    "idRace": 2,
+    "level": 2,
+    "name": "Aragorn",
     "playerName": "Barce"
   },
   {
-      "id": 2,
-      "idAdventure": 1,
-      "idClass": 2,
-      "idRace": 2,
-      "level": 2,
-      "name": "Aragorn",
-      "playerName": "Myrce"
-  },
-  {
-      "id": 3,
-      "idAdventure": 1,
-      "idClass": 3,
-      "idRace": 3,
-      "level": 2,
-      "name": "Gimli",
-      "playerName": "Pajde"
+    "id": 3,
+    "idAdventure": 1,
+    "idClass": 3,
+    "idRace": 3,
+    "level": 2,
+    "name": "Gimli",
+    "playerName": "Myrce"
   },
   {
       "id": 4,

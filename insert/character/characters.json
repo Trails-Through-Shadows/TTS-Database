@@ -34,5 +34,14 @@
       "level": 2,
       "name": "Legolas",
       "playerName": "Zoze"
+  },
+  {
+      "id": 5,
+      "idAdventure": 2,
+      "idClass": 1,
+      "idRace": 4,
+      "level": 100,
+      "name": "Kobzol",
+      "playerName": "Kuba"
   }
 ]

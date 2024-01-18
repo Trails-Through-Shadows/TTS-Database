@@ -11,7 +11,8 @@
         "target": "ONE",
         "strength": 1
       }
-    ]
+    ],
+    "idAction": 3
   },
   {
     "id": 2,
@@ -20,7 +21,7 @@
     "description": "A magical elixir that restores health.",
     "effects": [
       {
-        "type": "BONUS_HEALTH",
+        "type": "REGENERATION",
         "duration": 1,
         "target": "SELF",
         "strength": 10
@@ -55,7 +56,7 @@
     "description": "Enchanted boots that increase movement speed.",
     "effects": [
       {
-        "type": "BONUS_MOVEMENT",
+        "type": "SPEED",
         "duration": 2,
         "target": "SELF",
         "strength": 20
@@ -97,7 +98,7 @@
     "description": "A wand that can unleash powerful lightning bolts.",
     "effects": [
       {
-        "type": "BONUS_DAMAGE",
+        "type": "EMPOWER",
         "duration": 1,
         "target": "SELF",
         "strength": 15
@@ -111,7 +112,7 @@
     "description": "A spellbook filled with enchantment spells.",
     "effects": [
       {
-        "type": "CHARM",
+        "type": "GUIDANCE",
         "duration": 2,
         "target": "ONE",
         "strength": 2
@@ -125,8 +126,8 @@
     "description": "A potion that restores a small amount of health.",
     "effects": [
       {
-        "type": "BONUS_HEALTH",
-        "duration": 1,
+        "type": "HEAL",
+        "duration": 0,
         "target": "SELF",
         "strength": 5
       }

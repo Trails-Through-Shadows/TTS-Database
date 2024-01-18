@@ -2,23 +2,14 @@
   {
     "id": 1,
     "name": "Tiefling",
-    "actions": [
-      {
-        "id": 1,
-        "comment": "Lorem ipsum.",
-        "levelReq": 1
-      }, {
-        "id": 1,
-        "comment": "Lorem ipsum.",
-        "levelReq": 1
-      }
-    ],
+    "baseInitiative": 0,
+    "actions": [],
     "effects": [
       {
         "lvlReq": 1,
         "effect": {
           "type": "FIRE_RESISTANCE",
-          "duration": 2,
+          "duration": -1,
           "target": "SELF",
           "strength": 0
         }
@@ -28,13 +19,14 @@
   {
     "id": 2,
     "name": "Human",
+    "baseInitiative": 0,
     "actions": [],
     "effects": [
       {
         "lvlReq": 1,
         "effect": {
           "type": "BLEED_RESISTANCE",
-          "duration": 2,
+          "duration": -1,
           "target": "SELF",
           "strength": 0
         }
@@ -43,13 +35,14 @@
   }, {
     "id": 3,
     "name": "Dwarf",
+    "baseInitiative": -1,
     "actions": [],
     "effects": [
       {
         "lvlReq": 1,
         "effect": {
           "type": "POISON_RESISTANCE",
-          "duration": 2,
+          "duration": -1,
           "target": "SELF",
           "strength": 0
         }
@@ -58,13 +51,14 @@
   }, {
     "id": 4,
     "name": "Elf",
+    "baseInitiative": 2,
     "actions": [],
     "effects": [
       {
         "lvlReq": 1,
         "effect": {
-          "type": "FEAR_RESISTANCE",
-          "duration": 2,
+          "type": "CONFUSION_RESISTANCE",
+          "duration": -1,
           "target": "SELF",
           "strength": 0
         }

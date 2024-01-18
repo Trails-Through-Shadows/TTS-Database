@@ -38,7 +38,7 @@ def insertEffects(id, effects: [], type: str) -> int:
         )
 
         sqlFile.write(
-            "INSERT INTO {} VALUES ({}, @idEffect);\n"
+            "INSERT INTO {} (idItem, idEffect) VALUES ({}, @idEffect);\n"
             .format(type, id)
         )
 
@@ -52,7 +52,7 @@ with open(dataFilePath, encoding='utf8') as dataFile:
     data = json.load(dataFile)
 
 # Write the SQL file
-sqlFilePath = currentFolderPath + "/0-items.sql"
+sqlFilePath = currentFolderPath + "/2-items.sql"
 sqlFile = open(sqlFilePath, "w")
 
 # Clear the SQL file
@@ -70,11 +70,15 @@ for item in data:
     itemType = item["type"]
     itemDesc = item["description"]
     itemEffects = item["effects"]
+    itemIdAction = "NULL"
+
+    if "idAction" in item:
+        itemIdAction = item["idAction"]
 
     sqlFile.write("-- Item {}\n".format(itemTitle))
     sqlFile.write(
-        "INSERT INTO Item (id, title, type, description) "
-        "VALUES ({}, '{}', '{}', '{}');\n".format(itemID, itemTitle, itemType, itemDesc)
+        "INSERT INTO Item (id, title, type, description, idAction) "
+        "VALUES ({}, '{}', '{}', '{}', {});\n".format(itemID, itemTitle, itemType, itemDesc, itemIdAction)
     )
 
     insertEffects(itemID, itemEffects, "ItemEffect")

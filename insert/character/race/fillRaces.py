@@ -49,12 +49,13 @@ for race in data:
     raceName = race["name"]
     raceEffects = race["effects"]
     raceActions = race["actions"]
+    raceInitiative = race["baseInitiative"]
 
     sqlFile.write("-- Race {}\n".format(raceName))
     sqlFile.write(
-        "INSERT INTO Race (id, name) "
-        "VALUES ({}, '{}');\n"
-        .format(raceID, raceName)
+        "INSERT INTO Race (id, name, baseInitiative) "
+        "VALUES ({}, '{}', {});\n"
+        .format(raceID, raceName, raceInitiative)
     )
 
     # Actions

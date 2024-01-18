@@ -48,13 +48,15 @@ for clazz in data:
     # Params
     clazzName = clazz["name"]
     clazzBaseHealth = clazz["baseHealth"]
+    clazzBaseDefense = clazz["baseDefense"]
+    clazzBaseInitiative = clazz["baseInitiative"]
     clazzActions = clazz["actions"]
 
     sqlFile.write("-- Class {}\n".format(clazzName))
     sqlFile.write(
-        "INSERT INTO Class (id, name, baseHealth) "
-        "VALUES ({}, '{}', {});\n"
-        .format(clazzID, clazzName, clazzBaseHealth)
+        "INSERT INTO Class (id, name, baseHealth, baseDefence, baseInitiative) "
+        "VALUES ({}, '{}', {}, {}, {});\n"
+        .format(clazzID, clazzName, clazzBaseHealth, clazzBaseDefense, clazzBaseInitiative)
     )
 
     # Actions

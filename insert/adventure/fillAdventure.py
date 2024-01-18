@@ -27,12 +27,12 @@ def replaceNoneWithNull(data):
 currentFolderPath = os.path.dirname(os.path.realpath(__file__))
 
 # Open the JSON file
-dataFilePath = currentFolderPath + "/adventures.json"
+dataFilePath = currentFolderPath + "/adventure.json"
 with open(dataFilePath, encoding='utf8') as dataFile:
     data = json.load(dataFile)
 
 # Write the SQL file
-sqlFilePath = currentFolderPath + "/5-adventures.sql"
+sqlFilePath = currentFolderPath + "/5-adventure.sql"
 sqlFile = open(sqlFilePath, "w")
 
 # Clear the SQL file
@@ -49,11 +49,12 @@ for adventure in data:
     idCampaign = adventure["idCampaign"]
     idLicense = adventure["idLicense"]
     reputation = adventure["reputation"]
-    partyXp = adventure["partyXp"]
+    experience = adventure["experience"]
+    gold = adventure["gold"]
 
     sqlFile.write("-- Adventure {}\n".format(adventureID))
     sqlFile.write(
-        "INSERT INTO Adventure (id, idCampaign, idLicense, reputation, partyXp) "
-        "VALUES ({}, {}, {}, {}, {});\n"
-        .format(adventureID, idCampaign, idLicense, reputation, partyXp)
+        "INSERT INTO Adventure (id, idCampaign, idLicense, reputation, experience, gold) "
+        "VALUES ({}, {}, {}, {}, {}, {});\n"
+        .format(adventureID, idCampaign, idLicense, reputation, experience, gold)
     )

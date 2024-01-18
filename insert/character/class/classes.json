@@ -2,34 +2,30 @@
   {
     "id": 1,
     "name": "Warlock",
-    "baseHealth": 60,
-    "actions": [
-      {
-        "id": 1,
-        "comment": "Lorem ipsum.",
-        "levelReq": 1,
-        "itemReq": 1
-      }, {
-        "id": 1,
-        "comment": "Lorem ipsum.",
-        "levelReq": 1,
-        "itemReq": null
-      }
-    ]
+    "baseHealth": 8,
+    "baseDefense": 0,
+    "baseInitiative": -2,
+    "actions": []
   }, {
     "id": 2,
     "name": "Fighter",
-    "baseHealth": 100,
+    "baseHealth": 10,
+    "baseDefense": 2,
+    "baseInitiative": 0,
     "actions": []
   }, {
     "id": 3,
     "name": "Paladin",
-    "baseHealth": 100,
+    "baseHealth": 10,
+    "baseDefense": 3,
+    "baseInitiative": -2,
     "actions": []
   }, {
     "id": 4,
     "name": "Bard",
-    "baseHealth": 80,
+    "baseHealth": 8,
+    "baseDefense": 0,
+    "baseInitiative": 2,
     "actions": []
   }
 ]

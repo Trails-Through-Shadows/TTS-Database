@@ -4,7 +4,6 @@
     "name": "Giant Rat",
     "duration": "10",
     "health": "10",
-    "combatStyle": "MELEE",
     "action" : 3,
     "effects": [
       {
@@ -15,7 +14,7 @@
       },
       {
         "type": "POISON_RESISTANCE",
-        "duration": 3,
+        "duration": -1,
         "target": "SELF",
         "strength": 0
       }
@@ -26,7 +25,6 @@
     "name": "Mother Rat",
     "duration": "10",
     "health": "10",
-    "combatStyle": "RANGED",
     "action": 4
   },
   {
@@ -34,7 +32,6 @@
     "name": "Little myšítko",
     "duration": "10",
     "health": "10",
-    "combatStyle": "MELEE",
     "action": 5
   }
 ]

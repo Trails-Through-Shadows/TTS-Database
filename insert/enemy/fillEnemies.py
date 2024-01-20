@@ -49,32 +49,27 @@ for enemy in data:
     enemyName = enemy["name"]
     enemyHealth = enemy["health"]
     enemyDefence = enemy["defence"]
-    enemyStyle = enemy["combatStyle"]
 
     enemyActions = enemy["actions"]
     enemyEffects = enemy["effects"]
 
     sqlFile.write("-- Enemy {}\n".format(enemyName))
     sqlFile.write(
-        "INSERT INTO Enemy (id, name, health, defence, combatStyle) "
-        "VALUES ({}, '{}', {}, {}, '{}');\n".format(enemyID, enemyName, enemyHealth, enemyDefence, enemyStyle)
+        "INSERT INTO Enemy (id, name, baseHealth, baseDefence) "
+        "VALUES ({}, '{}', {}, {});\n".format(enemyID, enemyName, enemyHealth, enemyDefence)
     )
 
     # Actions
     for action in enemyActions:
         actionID = action["id"]
 
-        # Params
-        actionLvlReq = action["lvlReq"]
-
         sqlFile.write(
-            "INSERT INTO EnemyAction (id, idEnemy, levelReq, idAction) "
-            "VALUES ({}, {}, {}, {});\n".format("NULL", enemyID, actionLvlReq, actionID)
+            "INSERT INTO EnemyAction (idEnemy, idAction) "
+            "VALUES ({}, {});\n".format(enemyID, actionID)
         )
 
     # Effects
     for effect in enemyEffects:
-        lvlReq = effect["lvlReq"]
         eff = effect["effect"]
 
         sqlFile.write(
@@ -90,6 +85,6 @@ for enemy in data:
         )
 
         sqlFile.write(
-            "INSERT INTO EnemyEffect (idEnemy, idEffect, levelReq) "
-            "VALUES ({}, @idEffect, {});\n".format(enemyID, lvlReq)
+            "INSERT INTO EnemyEffect (idEnemy, idEffect) "
+            "VALUES ({}, @idEffect);\n".format(enemyID,)
         )

@@ -16,6 +16,7 @@ CREATE TABLE `Campaign` (
 CREATE TABLE `CampaignLocation` (
   `idCampaign` INT NOT NULL,
   `idLocation` INT NOT NULL,
+  `winCondition` TEXT NOT NULL,
   PRIMARY KEY (`idCampaign`, `idLocation`)
 );
 
@@ -54,8 +55,10 @@ CREATE TABLE `Location` (
 );
 
 CREATE TABLE `Path` (
+  `idCampaign` INT NOT NULL,
   `idStart` INT NOT NULL,
-  `idEnd` INT NOT NULL
+  `idEnd` INT NOT NULL,
+  PRIMARY KEY (`idCampaign`, `idStart`, `idEnd`)
 );
 
 CREATE TABLE `LocationPart` (
@@ -81,12 +84,18 @@ CREATE TABLE `Hex` (
   PRIMARY KEY (`id`, `idPart`)
 );
 
-CREATE TABLE `PartDoor` (
+CREATE TABLE `LocationDoor` (
   `location` INT NOT NULL,
   `fromPart` INT NOT NULL,
   `toPart` INT NOT NULL,
   `hex` INT NOT NULL,
-  PRIMARY KEY (`location`, `fromPart`, `hex`)
+  PRIMARY KEY (`location`, `fromPart`, `toPart`, `hex`)
+);
+
+CREATE TABLE `LocationStart` (
+  `location` INT NOT NULL,
+  `hex` INT NOT NULL,
+  PRIMARY KEY (`location`, `hex`)
 );
 
 CREATE TABLE `Class` (
@@ -118,15 +127,16 @@ CREATE TABLE `Inventory` (
 
 CREATE TABLE `ClassAction` (
   `idClass` INT NOT NULL,
-  `idAction` INT NOT NULL
+  `idAction` INT NOT NULL,
+  PRIMARY KEY (`idClass`, `idAction`)
 );
 
 CREATE TABLE `Enemy` (
   `id` INT NOT NULL AUTO_INCREMENT,
   `name` VARCHAR(45) NOT NULL,
-  `health` INT NOT NULL,
-  `defence` INT NOT NULL,
-  `combatStyle` ENUM ('MELEE', 'RANGED') NOT NULL,
+  `baseHealth` INT NOT NULL,
+  `baseDefence` INT NOT NULL,
+  `usages` INT DEFAULT 0,
   PRIMARY KEY (`id`)
 );
 
@@ -135,15 +145,13 @@ CREATE TABLE `HexEnemy` (
   `idLocation` INT NOT NULL,
   `idPart` INT NOT NULL,
   `idHex` INT NOT NULL,
-  PRIMARY KEY (`idLocation`, `idPart`, `idHex`)
+  PRIMARY KEY (`idLocation`, `idPart`, `idHex`, `idEnemy`)
 );
 
 CREATE TABLE `EnemyAction` (
-  `id` INT NOT NULL AUTO_INCREMENT,
   `idEnemy` INT NOT NULL,
-  `levelReq` INT NOT NULL,
   `idAction` INT NOT NULL,
-  PRIMARY KEY (`id`)
+  PRIMARY KEY (`idEnemy`, `idAction`)
 );
 
 CREATE TABLE `Action` (
@@ -164,7 +172,6 @@ CREATE TABLE `Summon` (
   `name` VARCHAR(50) NOT NULL,
   `duration` INT,
   `health` INT,
-  `combatStyle` ENUM ('MELEE', 'RANGED') NOT NULL,
   `idAction` INT,
   PRIMARY KEY (`id`)
 );
@@ -243,29 +250,28 @@ CREATE TABLE `MovementEffect` (
 );
 
 CREATE TABLE `ClassEffect` (
-  `idEffect` INT NOT NULL,
   `idClass` INT NOT NULL,
+  `idEffect` INT NOT NULL,
   `levelReq` INT,
   PRIMARY KEY (`idClass`, `idEffect`)
 );
 
 CREATE TABLE `RaceEffect` (
-  `idEffect` INT NOT NULL,
   `idRace` INT NOT NULL,
+  `idEffect` INT NOT NULL,
   `levelReq` INT,
   PRIMARY KEY (`idRace`, `idEffect`)
 );
 
 CREATE TABLE `ItemEffect` (
-  `idEffect` INT NOT NULL,
   `idItem` INT NOT NULL,
+  `idEffect` INT NOT NULL,
   PRIMARY KEY (`idItem`, `idEffect`)
 );
 
 CREATE TABLE `EnemyEffect` (
   `idEnemy` INT NOT NULL,
   `idEffect` INT NOT NULL,
-  `levelReq` INT,
   PRIMARY KEY (`idEnemy`, `idEffect`)
 );
 
@@ -280,7 +286,7 @@ CREATE TABLE `HexObstacle` (
   `idPart` INT NOT NULL,
   `idHex` INT NOT NULL,
   `idObstacle` INT NOT NULL,
-  PRIMARY KEY (`idLocation`, `idPart`, `idHex`)
+  PRIMARY KEY (`idLocation`, `idPart`, `idHex`, `idObstacle`)
 );
 
 CREATE TABLE `Obstacle` (
@@ -289,6 +295,7 @@ CREATE TABLE `Obstacle` (
   `damage` INT,
   `health` INT,
   `crossable` BOOL NOT NULL,
+  `usages` INT DEFAULT 0,
   PRIMARY KEY (`id`)
 );
 
@@ -301,7 +308,8 @@ CREATE TABLE `Race` (
 
 CREATE TABLE `RaceAction` (
   `idRace` INT NOT NULL,
-  `idAction` INT NOT NULL
+  `idAction` INT NOT NULL,
+  PRIMARY KEY (`idRace`, `idAction`)
 );
 
 CREATE TABLE `Achievement` (
@@ -349,10 +357,6 @@ CREATE INDEX `uk_Adventure_idCampaign` ON `Adventure` (`idCampaign`);
 
 CREATE INDEX `uk_Adventure_idLicense` ON `Adventure` (`idLicense`);
 
-CREATE INDEX `uk_Path_idStart` ON `Path` (`idStart`);
-
-CREATE INDEX `uk_Path_idEnd` ON `Path` (`idEnd`);
-
 CREATE INDEX `uk_Character_idAdventure` ON `Character` (`idAdventure`);
 
 CREATE INDEX `uk_Character_idClass` ON `Character` (`idClass`);
@@ -362,12 +366,6 @@ CREATE INDEX `uk_Character-idRace` ON `Character` (`idRace`);
 CREATE INDEX `uk_ClassAction_idClass` ON `ClassAction` (`idClass`);
 
 CREATE INDEX `uk_ClassAction_idAction` ON `ClassAction` (`idAction`);
-
-CREATE INDEX `uk_HexEnemy_idEnemy` ON `HexEnemy` (`idEnemy`);
-
-CREATE INDEX `uk_EnemyAction_idEnemy` ON `EnemyAction` (`idEnemy`);
-
-CREATE INDEX `uk_EnemyAction_idAction` ON `EnemyAction` (`idAction`);
 
 CREATE INDEX `pk_Action_attack` ON `Action` (`attack`);
 
@@ -382,8 +380,6 @@ CREATE INDEX `uk_SummonAction_idSummon` ON `SummonAction` (`idSummon`);
 CREATE INDEX `uk_SummonAction_idAction` ON `SummonAction` (`idAction`);
 
 CREATE UNIQUE INDEX `uk_SummonEffect` ON `Effect` (`type`, `duration`, `target`, `strength`);
-
-CREATE INDEX `uk_HexObstacle_idLocation` ON `HexObstacle` (`idLocation`);
 
 CREATE INDEX `uk_RaceAction_idRace` ON `RaceAction` (`idRace`);
 
@@ -409,19 +405,25 @@ ALTER TABLE `Path` ADD CONSTRAINT `fk_Path_idStart` FOREIGN KEY (`idStart`) REFE
 
 ALTER TABLE `Path` ADD CONSTRAINT `fk_Path_idEnd` FOREIGN KEY (`idEnd`) REFERENCES `Location` (`id`);
 
+ALTER TABLE `Path` ADD CONSTRAINT `fk_Path_idCampaign` FOREIGN KEY (`idCampaign`) REFERENCES `Campaign` (`id`);
+
 ALTER TABLE `LocationPart` ADD CONSTRAINT `fk_LocationPart_Location` FOREIGN KEY (`idLocation`) REFERENCES `Location` (`id`) ON DELETE CASCADE;
 
 ALTER TABLE `LocationPart` ADD CONSTRAINT `fk_LocationPart_Part` FOREIGN KEY (`idPart`) REFERENCES `Part` (`id`) ON DELETE CASCADE;
 
 ALTER TABLE `Hex` ADD CONSTRAINT `fk_Hex_Part` FOREIGN KEY (`idPart`) REFERENCES `Part` (`id`) ON DELETE CASCADE;
 
-ALTER TABLE `PartDoor` ADD CONSTRAINT `fk_PartDoor_Location` FOREIGN KEY (`location`) REFERENCES `Location` (`id`) ON DELETE CASCADE;
+ALTER TABLE `LocationDoor` ADD CONSTRAINT `fk_LocationDoor_Location` FOREIGN KEY (`location`) REFERENCES `Location` (`id`) ON DELETE CASCADE;
 
-ALTER TABLE `PartDoor` ADD CONSTRAINT `fk_PartDoor_fromPart` FOREIGN KEY (`fromPart`) REFERENCES `Part` (`id`) ON DELETE CASCADE;
+ALTER TABLE `LocationDoor` ADD CONSTRAINT `fk_LocationDoor_fromPart` FOREIGN KEY (`fromPart`) REFERENCES `Part` (`id`) ON DELETE CASCADE;
 
-ALTER TABLE `PartDoor` ADD CONSTRAINT `fk_PartDoor_toPart` FOREIGN KEY (`toPart`) REFERENCES `Part` (`id`) ON DELETE CASCADE;
+ALTER TABLE `LocationDoor` ADD CONSTRAINT `fk_LocationDoor_toPart` FOREIGN KEY (`toPart`) REFERENCES `Part` (`id`) ON DELETE CASCADE;
 
-ALTER TABLE `PartDoor` ADD CONSTRAINT `fk_PartDoor_hex` FOREIGN KEY (`hex`) REFERENCES `Hex` (`id`) ON DELETE CASCADE;
+ALTER TABLE `LocationDoor` ADD CONSTRAINT `fk_LocationDoor_hex` FOREIGN KEY (`hex`) REFERENCES `Hex` (`id`) ON DELETE CASCADE;
+
+ALTER TABLE `LocationStart` ADD CONSTRAINT `fk_LocationStart_Location` FOREIGN KEY (`location`) REFERENCES `Location` (`id`) ON DELETE CASCADE;
+
+ALTER TABLE `LocationStart` ADD CONSTRAINT `fk_LocationStart_hex` FOREIGN KEY (`hex`) REFERENCES `Hex` (`id`) ON DELETE CASCADE;
 
 ALTER TABLE `Character` ADD CONSTRAINT `fk_Character_Adventure` FOREIGN KEY (`idAdventure`) REFERENCES `Adventure` (`id`);
 

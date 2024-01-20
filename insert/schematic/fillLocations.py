@@ -116,16 +116,7 @@ for location in data:
             )
 
             sqlFile.write(
-                "INSERT INTO PartDoor (location, fromPart, toPart, hex) "
+                "INSERT INTO LocationDoor (location, fromPart, toPart, hex) "
                 "VALUES ({}, {}, {}, @doorHex);\n"
                 .format(locationID, doorFirstPart, doorSecondPart)
-            )
-
-    # Paths
-    if "paths" in location:
-        for path in location["paths"]:
-            sqlFile.write(
-                "INSERT INTO Path (idStart, idEnd) "
-                "VALUES ({}, {});\n"
-                .format(path, location["id"])
             )

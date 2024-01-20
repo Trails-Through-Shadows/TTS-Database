@@ -67,9 +67,9 @@ for campaign in data:
     # Locations
     for location in campaign["locations"]:
         sqlFile.write(
-            "INSERT INTO CampaignLocation (idCampaign, idLocation) "
-            "VALUES ('{}', '{}');\n"
-            .format(campaignID, location)
+            "INSERT INTO CampaignLocation (idCampaign, idLocation, winCondition) "
+            "VALUES ('{}', '{}', '{}');\n"
+            .format(campaignID, location["id"], str(location["winCondition"]).replace("'", "\""))
         )
 
     # Achievements
@@ -78,4 +78,11 @@ for campaign in data:
             "INSERT INTO CampaignAchievements (idCampaign, idAchievement) "
             "VALUES ('{}', '{}');\n"
             .format(campaignID, achievement)
+        )
+
+    for path in campaign["paths"]:
+        sqlFile.write(
+            "INSERT INTO Path (idCampaign, idStart, idEnd) "
+            "VALUES ('{}', '{}', '{}');\n"
+            .format(campaignID, path["from"], path["to"])
         )

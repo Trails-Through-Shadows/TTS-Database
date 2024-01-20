@@ -73,7 +73,6 @@ for summon in data:
     summonName = summon["name"]
     summonDuration = summon["duration"]
     summonHealth = summon["health"]
-    summonStyle = summon["combatStyle"]
 
     summonAction = summon["action"]
     summonEffects = []
@@ -82,9 +81,9 @@ for summon in data:
 
     sqlFile.write("-- Summon {}\n".format(summonName))
     sqlFile.write(
-        "INSERT INTO Summon (id, name, duration, health, combatStyle, idAction) "
-        "VALUES ({}, '{}', {}, {}, '{}', {}); \n"
-        .format(summonID, summonName, summonDuration, summonHealth, summonStyle, 'NULL')
+        "INSERT INTO Summon (id, name, duration, health, idAction) "
+        "VALUES ({}, '{}', {}, {}, {}); \n"
+        .format(summonID, summonName, summonDuration, summonHealth, 'NULL')
     )
 
     lateSqlFile.write(

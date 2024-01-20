@@ -3,21 +3,64 @@
     "id": 1,
     "title": "Our First Campaign",
     "description": "This is our first campaign",
-    "locations": [ 1 ],
-    "achievements": [ 1, 2, 3 ]
+      "locations": [
+        {
+          "id": 1,
+          "winCondition": { "type": "killEnemies", "value": -1}
+        }
+      ],
+    "achievements": [ 1, 2, 3 ],
+    "paths": [
+      {
+        "from": 1,
+        "to": 2
+      },
+      {
+          "from": 2,
+          "to": 3
+      },
+      {
+          "from": 2,
+          "to": 4
+      },
+      {
+          "from": 3,
+          "to": 5
+      },
+      {
+          "from": 4,
+          "to": 6
+      },
+      {
+          "from": 6,
+          "to": 7
+      }
+    ]
   },
   {
-      "id": 2,
-      "title": "Our Second Campaign",
-      "description": "This is our second campaign",
-      "locations": [ 1 ],
-      "achievements": [ 1, 2, 3 ]
+    "id": 2,
+    "title": "Our Second Campaign",
+    "description": "This is our second campaign",
+    "locations": [
+      {
+        "id": 1,
+        "winCondition": { "type": "killEnemies", "value": 5}
+      }
+    ],
+    "achievements": [ 1, 2, 3 ],
+    "paths": []
   },
   {
-      "id": 3,
-      "title": "Our Third Campaign",
-      "description": "This is our third campaign",
-      "locations": [ 1 ],
-      "achievements": [ 1, 2, 3 ]
+    "id": 3,
+    "title": "Our Third Campaign",
+    "description": "This is our third campaign",
+    "locations": [
+      {
+        "id": 1,
+        "winCondition": { "type": "openDoors", "value": 3}
+      }
+    ],
+    "achievements": [ 1, 2, 3 ],
+    "paths": []
   }
 ]

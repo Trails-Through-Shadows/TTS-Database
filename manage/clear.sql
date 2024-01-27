@@ -11,29 +11,25 @@ SET @table_count = 0;
 SET @table_name = '';
 
 -- Start a loop to delete data from each table
-WHILE @table_count < LENGTH(@tables)
-    DO
-        -- Get the table name for the current iteration
-        SET @table_name = SUBSTRING_INDEX(SUBSTRING_INDEX(@tables, ',', @table_count + 1), ',', -1);
+WHILE @table_count < LENGTH(@tables) DO
+    -- Get the table name for the current iteration
+    SET @table_name = SUBSTRING_INDEX(SUBSTRING_INDEX(@tables, ',', @table_count + 1), ',', -1);
 
-        -- Delete only if the table name does not start with 'auth' or 'django'
-        IF not (@table_name like '`auth%' or @table_name like '`django%') THEN
-            -- Construct and execute the DELETE statement
-            SET @delete_statement = CONCAT('DROP TABLE IF EXISTS ', @table_name);
-            PREPARE stmt FROM @delete_statement;
-            EXECUTE stmt;
-            DEALLOCATE PREPARE stmt;
+    -- Construct and execute the DELETE statement
+    SET @delete_statement = CONCAT('DELETE FROM ', @table_name);
+    PREPARE stmt FROM @delete_statement;
+    EXECUTE stmt;
+    DEALLOCATE PREPARE stmt;
 
-            -- Reset the auto-increment value for the table
-            SET @reset_statement = CONCAT('ALTER TABLE ', @table_name, ' AUTO_INCREMENT = 1');
-            PREPARE stmt FROM @reset_statement;
-            EXECUTE stmt;
-            DEALLOCATE PREPARE stmt;
-        END IF;
+    -- Reset the auto-increment value for the table
+    SET @reset_statement = CONCAT('ALTER TABLE ', @table_name, ' AUTO_INCREMENT = 1');
+    PREPARE stmt FROM @reset_statement;
+    EXECUTE stmt;
+    DEALLOCATE PREPARE stmt;
 
-        -- Increment the table count for the next iteration
-        SET @table_count = @table_count + 1;
-    END WHILE;
+    -- Increment the table count for the next iteration
+    SET @table_count = @table_count + 1;
+END WHILE;
 
 -- Re-enable foreign key checks to ensure data integrity
 SET FOREIGN_KEY_CHECKS = 1;

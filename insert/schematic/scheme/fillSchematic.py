@@ -18,8 +18,7 @@ sqlFile.truncate(0)
 sqlFile.flush()
 
 # Iterate through the JSON data and insert records into tables
-for i, schematic in enumerate(data*8):
-    # TODO temporary
+for i, schematic in enumerate(data):
     schematicID = i + 1
 
     # Params

@@ -48,6 +48,8 @@ for campaign in data:
     # Params
     campaignTitle = campaign["title"]
     campaignDesc = campaign["description"]
+    campaignStart = campaign["startLocation"]
+    campaignFinish = campaign["finishLocation"]
 
     # Escape double quotes
     campaignTitle = campaignTitle.replace('"', '\\"')
@@ -67,9 +69,10 @@ for campaign in data:
     # Locations
     for location in campaign["locations"]:
         sqlFile.write(
-            "INSERT INTO CampaignLocation (idCampaign, idLocation, winCondition) "
-            "VALUES ('{}', '{}', '{}');\n"
-            .format(campaignID, location["id"], str(location["winCondition"]).replace("'", "\""))
+            "INSERT INTO CampaignLocation (idCampaign, idLocation, winCondition, `start`, `finish`) "
+            "VALUES ('{}', '{}', '{}', {}, {});\n"
+            .format(campaignID, location["id"], str(location["winCondition"])
+                    .replace("'", "\""), campaignStart == location["id"], location["id"] in campaignFinish)
         )
 
     # Achievements

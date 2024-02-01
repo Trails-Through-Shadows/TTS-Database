@@ -67,7 +67,7 @@ for i, schematic in enumerate(data):
                 s = round(-q - r)
 
                 sqlFile.write(
-                    "INSERT INTO Hex (idPart, id, qCord, rCord, sCord) "
+                    "INSERT INTO Hex (idPart, id, qCoord, rCoord, sCoord) "
                     "VALUES ({}, {}, {}, {}, {});\n"
                     .format(schematicID, hexID, q, r, s)
                 )

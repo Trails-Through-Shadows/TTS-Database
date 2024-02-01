@@ -74,7 +74,7 @@ for location in data:
 
                 # Get Hex ID
                 sqlFile.write(
-                    "SET @hexID = (SELECT id FROM Hex WHERE idPart = {} AND qCord = {} AND rCord = {} AND sCord = {});\n"
+                    "SET @hexID = (SELECT id FROM Hex WHERE idPart = {} AND qCoord = {} AND rCoord = {} AND sCoord = {});\n"
                     .format(partScheme, hexCordQ, hexCordR, hexCordS)
                 )
 
@@ -111,7 +111,7 @@ for location in data:
 
             # First Hex
             sqlFile.write(
-                "SET @doorHex = (SELECT id FROM Hex WHERE idPart = {} AND qCord = {} AND rCord = {} AND sCord = {});\n"
+                "SET @doorHex = (SELECT id FROM Hex WHERE idPart = {} AND qCoord = {} AND rCoord = {} AND sCoord = {});\n"
                 .format(doorFirstPart, doorCordQ, doorCordR, doorCordS)
             )
 

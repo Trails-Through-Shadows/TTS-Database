@@ -3,12 +3,38 @@
     "id": 1,
     "title": "Our First Campaign",
     "description": "This is our first campaign",
-      "locations": [
-        {
-          "id": 1,
-          "winCondition": { "type": "killEnemies", "value": -1}
-        }
-      ],
+    "locations": [
+      {
+        "id": 1,
+        "winCondition": { "type": "killEnemies", "value": -1}
+      },
+      {
+          "id": 2,
+          "winCondition": null
+      },
+      {
+          "id": 3,
+          "winCondition": { "type": "killEnemies", "value": 5}
+      },
+      {
+          "id": 4,
+          "winCondition": { "type": "killEnemies", "value": 5}
+      },
+      {
+          "id": 5,
+          "winCondition": { "type": "killEnemies", "value": 5}
+      },
+      {
+          "id": 6,
+          "winCondition": { "type": "killEnemies", "value": 5}
+      },
+      {
+          "id": 7,
+          "winCondition": { "type": "killEnemies", "value": 5}
+      }
+    ],
+    "startLocation": 1,
+    "finishLocation": [ 5, 7 ],
     "achievements": [ 1, 2, 3 ],
     "paths": [
       {
@@ -16,24 +42,24 @@
         "to": 2
       },
       {
-          "from": 2,
-          "to": 3
+        "from": 2,
+        "to": 3
       },
       {
-          "from": 2,
-          "to": 4
+        "from": 2,
+        "to": 4
       },
       {
-          "from": 3,
-          "to": 5
+        "from": 3,
+        "to": 5
       },
       {
-          "from": 4,
-          "to": 6
+        "from": 4,
+        "to": 6
       },
       {
-          "from": 6,
-          "to": 7
+        "from": 6,
+        "to": 7
       }
     ]
   },
@@ -47,6 +73,8 @@
         "winCondition": { "type": "killEnemies", "value": 5}
       }
     ],
+    "startLocation": 1,
+    "finishLocation": [1],
     "achievements": [ 1, 2, 3 ],
     "paths": []
   },
@@ -60,6 +88,8 @@
         "winCondition": { "type": "openDoors", "value": 3}
       }
     ],
+    "startLocation": 1,
+    "finishLocation": [1],
     "achievements": [ 1, 2, 3 ],
     "paths": []
   }

@@ -14,13 +14,13 @@ This repo contains scripts for managing (creating, dropping and filling) the mai
  
 ## Run
 The database is equipped with the following scripts, located in the `script` folder:
-- **Create**: creates the database and fills it with testing data
+- `create.py`: creates the database and fills it with testing data
   - `-s` flag skips the insert phase
-- **Drop**: drops the entire database
-- **Insert**: clears and re-inserts testing data into the database
+- `drop.py`: drops the entire database
+- `insert.py`: clears and re-inserts testing data into the database
   - `-s` flag skips the clear phase
 
-Run these scripts with `python3 script/create.py`.
+Run these scripts with a command such as `python3 script/create.py`.
 
 ## Schema
 

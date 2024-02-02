@@ -6,7 +6,7 @@ This repo contains scripts for managing (creating, dropping and filling) the mai
 - Make sure you have your virtual environment set up properly
   - `python3 -m venv .venv`
   - `source .venv/bin/activate`
-- Make sure all requirements are met
+- Make sure all requirements are installed
   - `pip install -r requirements.txt`
 - Create .env file
   - `cp .env.example .env`

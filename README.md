@@ -24,6 +24,6 @@ Run these scripts with a command such as `python3 script/create.py`.
 
 ## Schema
 
-The database diagram can be found [here](https://dbdiagram.io/d/CommunistBachelor-652c00e7ffbf5169f0b71ee4), if you have access of course.
+The database diagram can be found here: [full](https://dbdiagram.io/d/CommunistBachelor-652c00e7ffbf5169f0b71ee4), [readonly](https://dbdiagram.io/d/TTS-Game-Database-652c00e7ffbf5169f0b71ee4).
 
 When the diagram is updated, just export it into MySql and copy the contens into `manage/create.sql` and update the inserting scripts to go with your changes.

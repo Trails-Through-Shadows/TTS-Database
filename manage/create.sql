@@ -56,7 +56,7 @@ CREATE TABLE `Location` (
   PRIMARY KEY (`id`)
 );
 
-CREATE TABLE `Path` (
+CREATE TABLE `LocationPath` (
   `idCampaign` INT NOT NULL,
   `idStart` INT NOT NULL,
   `idEnd` INT NOT NULL,
@@ -404,11 +404,11 @@ ALTER TABLE `AdventureAchievement` ADD CONSTRAINT `fk_AdventureAchievement_Adven
 
 ALTER TABLE `AdventureAchievement` ADD CONSTRAINT `fk_AdventureAchievement_Achievement` FOREIGN KEY (`idAchievement`) REFERENCES `Achievement` (`id`);
 
-ALTER TABLE `Path` ADD CONSTRAINT `fk_Path_idStart` FOREIGN KEY (`idStart`) REFERENCES `Location` (`id`);
+ALTER TABLE `LocationPath` ADD CONSTRAINT `fk_LocationPath_idStart` FOREIGN KEY (`idStart`) REFERENCES `Location` (`id`);
 
-ALTER TABLE `Path` ADD CONSTRAINT `fk_Path_idEnd` FOREIGN KEY (`idEnd`) REFERENCES `Location` (`id`);
+ALTER TABLE `LocationPath` ADD CONSTRAINT `fk_LocationPath_idEnd` FOREIGN KEY (`idEnd`) REFERENCES `Location` (`id`);
 
-ALTER TABLE `Path` ADD CONSTRAINT `fk_Path_idCampaign` FOREIGN KEY (`idCampaign`) REFERENCES `Campaign` (`id`);
+ALTER TABLE `LocationPath` ADD CONSTRAINT `fk_LocationPath_idCampaign` FOREIGN KEY (`idCampaign`) REFERENCES `Campaign` (`id`);
 
 ALTER TABLE `LocationPart` ADD CONSTRAINT `fk_LocationPart_Location` FOREIGN KEY (`idLocation`) REFERENCES `Location` (`id`) ON DELETE CASCADE;
 

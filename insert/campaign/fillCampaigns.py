@@ -85,7 +85,7 @@ for campaign in data:
 
     for path in campaign["paths"]:
         sqlFile.write(
-            "INSERT INTO Path (idCampaign, idStart, idEnd) "
+            "INSERT INTO LocationPath (idCampaign, idStart, idEnd) "
             "VALUES ('{}', '{}', '{}');\n"
             .format(campaignID, path["from"], path["to"])
         )

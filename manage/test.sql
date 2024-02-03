@@ -1,1 +1,0 @@
-DELETE FROM Part WHERE id = 1;

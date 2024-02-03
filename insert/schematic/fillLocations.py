@@ -116,7 +116,7 @@ for location in data:
             )
 
             sqlFile.write(
-                "INSERT INTO LocationDoor (location, fromPart, toPart, hex) "
+                "INSERT INTO LocationDoor (idLocation, idPartFrom, idPartTo, idHex) "
                 "VALUES ({}, {}, {}, @doorHex);\n"
                 .format(locationID, doorFirstPart, doorSecondPart)
             )

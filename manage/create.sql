@@ -87,17 +87,18 @@ CREATE TABLE `Hex` (
 );
 
 CREATE TABLE `LocationDoor` (
-  `location` INT NOT NULL,
-  `fromPart` INT NOT NULL,
-  `toPart` INT NOT NULL,
-  `hex` INT NOT NULL,
-  PRIMARY KEY (`location`, `fromPart`, `toPart`, `hex`)
+  `idLocation` INT NOT NULL,
+  `idPartFrom` INT NOT NULL,
+  `idPartTo` INT NOT NULL,
+  `idHex` INT NOT NULL,
+  PRIMARY KEY (`idLocation`, `idPartFrom`, `idPartTo`, `idHex`)
 );
 
 CREATE TABLE `LocationStart` (
-  `location` INT NOT NULL,
-  `hex` INT NOT NULL,
-  PRIMARY KEY (`location`, `hex`)
+  `idLocation` INT NOT NULL,
+  `idPart` INT NOT NULL,
+  `idHex` INT NOT NULL,
+  PRIMARY KEY (`idLocation`, `idPart`, `idHex`)
 );
 
 CREATE TABLE `Class` (
@@ -415,17 +416,19 @@ ALTER TABLE `LocationPart` ADD CONSTRAINT `fk_LocationPart_Part` FOREIGN KEY (`i
 
 ALTER TABLE `Hex` ADD CONSTRAINT `fk_Hex_Part` FOREIGN KEY (`idPart`) REFERENCES `Part` (`id`) ON DELETE CASCADE;
 
-ALTER TABLE `LocationDoor` ADD CONSTRAINT `fk_LocationDoor_Location` FOREIGN KEY (`location`) REFERENCES `Location` (`id`) ON DELETE CASCADE;
+ALTER TABLE `LocationDoor` ADD CONSTRAINT `fk_LocationDoor_Location` FOREIGN KEY (`idLocation`) REFERENCES `Location` (`id`) ON DELETE CASCADE;
 
-ALTER TABLE `LocationDoor` ADD CONSTRAINT `fk_LocationDoor_fromPart` FOREIGN KEY (`fromPart`) REFERENCES `Part` (`id`) ON DELETE CASCADE;
+ALTER TABLE `LocationDoor` ADD CONSTRAINT `fk_LocationDoor_idPartFrom` FOREIGN KEY (`idPartFrom`) REFERENCES `Part` (`id`) ON DELETE CASCADE;
 
-ALTER TABLE `LocationDoor` ADD CONSTRAINT `fk_LocationDoor_toPart` FOREIGN KEY (`toPart`) REFERENCES `Part` (`id`) ON DELETE CASCADE;
+ALTER TABLE `LocationDoor` ADD CONSTRAINT `fk_LocationDoor_idPartTo` FOREIGN KEY (`idPartTo`) REFERENCES `Part` (`id`) ON DELETE CASCADE;
 
-ALTER TABLE `LocationDoor` ADD CONSTRAINT `fk_LocationDoor_hex` FOREIGN KEY (`hex`) REFERENCES `Hex` (`id`) ON DELETE CASCADE;
+ALTER TABLE `LocationDoor` ADD CONSTRAINT `fk_LocationDoor_idHex` FOREIGN KEY (`idHex`) REFERENCES `Hex` (`id`) ON DELETE CASCADE;
 
-ALTER TABLE `LocationStart` ADD CONSTRAINT `fk_LocationStart_Location` FOREIGN KEY (`location`) REFERENCES `Location` (`id`) ON DELETE CASCADE;
+ALTER TABLE `LocationStart` ADD CONSTRAINT `fk_LocationStart_location` FOREIGN KEY (`idLocation`) REFERENCES `Location` (`id`) ON DELETE CASCADE;
 
-ALTER TABLE `LocationStart` ADD CONSTRAINT `fk_LocationStart_hex` FOREIGN KEY (`hex`) REFERENCES `Hex` (`id`) ON DELETE CASCADE;
+ALTER TABLE `LocationStart` ADD CONSTRAINT `fk_LocationStart_part` FOREIGN KEY (`idPart`) REFERENCES `Part` (`id`) ON DELETE CASCADE;
+
+ALTER TABLE `LocationStart` ADD CONSTRAINT `fk_LocationStart_hex` FOREIGN KEY (`idHex`) REFERENCES `Hex` (`id`) ON DELETE CASCADE;
 
 ALTER TABLE `Character` ADD CONSTRAINT `fk_Character_Adventure` FOREIGN KEY (`idAdventure`) REFERENCES `Adventure` (`id`);
 

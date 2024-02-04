@@ -2,7 +2,7 @@
   {
     "id": 1,
     "title": "Dungeon 1",
-    "tag": "dng-1",
+    "tag": "l-dng1",
     "type": "DUNGEON",
     "description": "This is the first dungeon",
     "parts": [
@@ -52,7 +52,7 @@
   {
     "id": 2,
     "title": "Market 1",
-    "tag": "mark-1",
+    "tag": "l-mkt1",
     "type": "MARKET",
     "description": "This is Market 1",
     "items": {
@@ -84,7 +84,7 @@
   {
     "id": 3,
     "title": "Location 3",
-    "tag": "loc-3",
+    "tag": "l-loc3",
     "type": "DUNGEON",
     "description": "This is Location 3",
     "parts": [
@@ -109,7 +109,7 @@
   {
     "id": 4,
     "title": "Location 4",
-    "tag": "loc-4",
+    "tag": "l-loc4",
     "type": "DUNGEON",
     "description": "This is Location 4",
     "parts": [
@@ -134,7 +134,7 @@
   {
     "id": 5,
     "title": "Location 5",
-    "tag": "loc-5",
+    "tag": "l-loc5",
     "type": "DUNGEON",
     "description": "This is Location 5",
     "parts": [
@@ -159,7 +159,7 @@
   {
     "id": 6,
     "title": "Location 6",
-    "tag": "loc-6",
+    "tag": "l-loc6",
     "type": "DUNGEON",
     "description": "This is Location 6",
     "parts": [
@@ -184,7 +184,7 @@
   {
     "id": 7,
     "title": "Location 7",
-    "tag": "loc-7",
+    "tag": "l-loc7",
     "type": "DUNGEON",
     "description": "This is Location 7",
     "parts": [

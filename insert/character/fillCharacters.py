@@ -50,12 +50,12 @@ for character in data:
     idClass = character["idClass"]
     idRace = character["idRace"]
     level = character["level"]
-    name = character["name"]
+    title = character["title"]
     playerName = character["playerName"]
 
     sqlFile.write("-- Character {}\n".format(characterID))
     sqlFile.write(
-        "INSERT INTO `Character` (id, idAdventure, idClass, idRace, `level`, `name`, playerName) "
+        "INSERT INTO `Character` (id, idAdventure, idClass, idRace, `level`, `title`, playerName) "
         "VALUES ({}, {}, {}, {}, {}, '{}', '{}');\n"
-        .format(characterID, idAdventure, idClass, idRace, level, name, playerName)
+        .format(characterID, idAdventure, idClass, idRace, level, title, playerName)
     )

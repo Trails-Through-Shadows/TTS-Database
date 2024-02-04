@@ -22,6 +22,7 @@ for i, schematic in enumerate(data):
     schematicID = i + 1
 
     # Params
+    schematicTitle = schematic["title"]
     schematicTag = schematic["tag"]
     schematicRows = schematic["rows"]
 
@@ -30,11 +31,11 @@ for i, schematic in enumerate(data):
     xCoord = None
     yCoord = None
 
-    sqlFile.write("-- Schematic {}\n".format(schematicTag))
+    sqlFile.write("-- Schematic {}\n".format(schematicTitle))
     sqlFile.write(
-        "INSERT INTO Part (id, tag) "
-        "VALUES ({}, '{}');\n"
-        .format(schematicID, schematicTag)
+        "INSERT INTO Part (id, title, tag) "
+        "VALUES ({}, '{}', '{}');\n"
+        .format(schematicID, schematicTitle, schematicTag)
     )
 
     for y, row in enumerate(schematicRows):
@@ -49,7 +50,8 @@ for i, schematic in enumerate(data):
                 break
 
     if not found:
-        exit("Center points not found")
+        print("Schematic {} has no center".format(schematicTag))
+        continue
 
     hexID = 1
     axialCoordinates = []

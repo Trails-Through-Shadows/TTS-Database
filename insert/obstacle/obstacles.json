@@ -1,7 +1,8 @@
 [
   {
     "id": 1,
-    "name": "Pit Trap",
+    "title": "Pit Trap",
+    "tag": "o-trapPit",
     "damage": 10,
     "crossable": false,
     "health": 0,
@@ -22,7 +23,8 @@
   },
   {
     "id": 2,
-    "name": "Spiked Pit",
+    "title": "Spiked Pit",
+    "tag": "o-trapPitSmoked",
     "damage": 15,
     "crossable": false,
     "health": 0,
@@ -30,7 +32,8 @@
   },
   {
     "id": 3,
-    "name": "Poison Gas Trap",
+    "title": "Poison Gas Trap",
+    "tag": "o-trapPitGas",
     "damage": 8,
     "crossable": true,
     "health": 0,
@@ -38,7 +41,8 @@
   },
   {
     "id": 4,
-    "name": "Collapsing Ceiling",
+    "title": "Collapsing Ceiling",
+    "tag": "o-collapseCeiling",
     "damage": 20,
     "crossable": false,
     "health": 0,
@@ -46,7 +50,8 @@
   },
   {
     "id": 5,
-    "name": "Magic Fire Barrier",
+    "title": "Magic Fire Barrier",
+    "tag": "o-magicFireBarrier",
     "damage": 12,
     "crossable": true,
     "health": 30,
@@ -54,7 +59,8 @@
   },
   {
     "id": 6,
-    "name": "Thorn Bushes",
+    "title": "Thorn Bushes",
+    "tag": "o-bushesThorn",
     "damage": 5,
     "crossable": true,
     "health": 10,
@@ -62,7 +68,8 @@
   },
   {
     "id": 7,
-    "name": "Frozen Lake",
+    "title": "Frozen Lake",
+    "tag": "o-frozenLake",
     "damage": 0,
     "crossable": true,
     "health": 15,
@@ -70,7 +77,8 @@
   },
   {
     "id": 8,
-    "name": "Arcane Turret",
+    "title": "Arcane Turret",
+    "tag": "o-turrentArcane",
     "damage": 18,
     "crossable": false,
     "health": 40,
@@ -78,7 +86,8 @@
   },
   {
     "id": 9,
-    "name": "Mystical Portal",
+    "title": "Mystical Portal",
+    "tag": "o-mysPortal",
     "damage": 0,
     "crossable": true,
     "health": 0,
@@ -86,7 +95,8 @@
   },
   {
     "id": 10,
-    "name": "Cursed Statue",
+    "title": "Cursed Statue",
+    "tag": "o-curseStatue",
     "damage": 0,
     "crossable": false,
     "health": 50,

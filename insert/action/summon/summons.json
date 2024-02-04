@@ -1,7 +1,7 @@
 [
   {
     "id": 1,
-    "name": "Giant Rat",
+    "title": "Giant Rat",
     "duration": "10",
     "health": "10",
     "action" : 3,
@@ -22,14 +22,14 @@
   },
   {
     "id": 2,
-    "name": "Mother Rat",
+    "title": "Mother Rat",
     "duration": "10",
     "health": "10",
     "action": 4
   },
   {
     "id": 3,
-    "name": "Little myšítko",
+    "title": "Little myšítko",
     "duration": "10",
     "health": "10",
     "action": 5

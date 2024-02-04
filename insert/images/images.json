@@ -1,0 +1,69 @@
+[
+  {
+    "tag": "tiefling-warlock",
+    "url": "https://picsum.photos/200/200"
+  },
+  {
+    "tag": "tiefling-fighter",
+    "url": "https://picsum.photos/200/200"
+  },
+  {
+    "tag": "tiefling-paladin",
+    "url": "https://picsum.photos/200/200"
+  },
+  {
+    "tag": "tiefling-bard",
+    "url": "https://picsum.photos/200/200"
+  },
+
+  {
+    "tag": "human-warlock",
+    "url": "https://picsum.photos/200/200"
+  },
+  {
+    "tag": "human-fighter",
+    "url": "https://picsum.photos/200/200"
+  },
+  {
+    "tag": "human-paladin",
+    "url": "https://picsum.photos/200/200"
+  },
+  {
+    "tag": "human-bard",
+    "url": "https://picsum.photos/200/200"
+  },
+
+  {
+    "tag": "dwarf-warlock",
+    "url": "https://picsum.photos/200/200"
+  },
+  {
+    "tag": "dwarf-fighter",
+    "url": "https://picsum.photos/200/200"
+  },
+  {
+    "tag": "dwarf-paladin",
+    "url": "https://picsum.photos/200/200"
+  },
+  {
+    "tag": "dwarf-bard",
+    "url": "https://picsum.photos/200/200"
+  },
+
+  {
+    "tag": "elf-warlock",
+    "url": "https://picsum.photos/200/200"
+  },
+  {
+    "tag": "elf-fighter",
+    "url": "https://picsum.photos/200/200"
+  },
+  {
+    "tag": "elf-paladin",
+    "url": "https://picsum.photos/200/200"
+  },
+  {
+    "tag": "elf-bard",
+    "url": "https://picsum.photos/200/200"
+  }
+]

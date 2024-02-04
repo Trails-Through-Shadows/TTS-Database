@@ -67,6 +67,7 @@ for item in data:
 
     # Params
     itemTitle = item["title"]
+    itemTag = item["tag"]
     itemType = item["type"]
     itemDesc = item["description"]
     itemEffects = item["effects"]
@@ -77,8 +78,8 @@ for item in data:
 
     sqlFile.write("-- Item {}\n".format(itemTitle))
     sqlFile.write(
-        "INSERT INTO Item (id, title, type, description, idAction) "
-        "VALUES ({}, '{}', '{}', '{}', {});\n".format(itemID, itemTitle, itemType, itemDesc, itemIdAction)
+        "INSERT INTO Item (id, title, tag, type, description, idAction) "
+        "VALUES ({}, '{}', '{}', '{}', '{}', {});\n".format(itemID, itemTag, itemTitle, itemType, itemDesc, itemIdAction)
     )
 
     insertEffects(itemID, itemEffects, "ItemEffect")

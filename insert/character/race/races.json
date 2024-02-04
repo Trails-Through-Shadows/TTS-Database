@@ -1,7 +1,8 @@
 [
   {
     "id": 1,
-    "name": "Tiefling",
+    "title": "Tiefling",
+    "tag": "r-tief",
     "baseInitiative": 0,
     "actions": [],
     "effects": [
@@ -18,7 +19,8 @@
   },
   {
     "id": 2,
-    "name": "Human",
+    "title": "Human",
+    "tag": "r-human",
     "baseInitiative": 0,
     "actions": [],
     "effects": [
@@ -32,9 +34,11 @@
         }
       }
     ]
-  }, {
+  },
+  {
     "id": 3,
-    "name": "Dwarf",
+    "title": "Dwarf",
+    "tag": "r-dwarf",
     "baseInitiative": -1,
     "actions": [],
     "effects": [
@@ -48,9 +52,11 @@
         }
       }
     ]
-  }, {
+  },
+  {
     "id": 4,
-    "name": "Elf",
+    "title": "Elf",
+    "tag": "r-elf",
     "baseInitiative": 2,
     "actions": [],
     "effects": [

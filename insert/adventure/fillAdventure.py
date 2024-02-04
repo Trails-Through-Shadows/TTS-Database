@@ -48,13 +48,14 @@ for adventure in data:
     # Params
     idCampaign = adventure["idCampaign"]
     idLicense = adventure["idLicense"]
+    title = adventure["title"]
     reputation = adventure["reputation"]
     experience = adventure["experience"]
     gold = adventure["gold"]
 
     sqlFile.write("-- Adventure {}\n".format(adventureID))
     sqlFile.write(
-        "INSERT INTO Adventure (id, idCampaign, idLicense, reputation, experience, gold) "
-        "VALUES ({}, {}, {}, {}, {}, {});\n"
-        .format(adventureID, idCampaign, idLicense, reputation, experience, gold)
+        "INSERT INTO Adventure (id, idCampaign, idLicense, title, reputation, experience, gold) "
+        "VALUES ({}, {}, {}, '{}', {}, {}, {});\n"
+        .format(adventureID, idCampaign, idLicense, title, reputation, experience, gold)
     )

@@ -1,7 +1,8 @@
 [
   {
     "id": 1,
-    "name": "Zombie",
+    "title": "Zombie",
+    "tag": "e-zombie",
     "health": 10,
     "defence": 2,
     "actions": [
@@ -24,7 +25,8 @@
   },
   {
     "id": 2,
-    "name": "Goblin",
+    "title": "Goblin",
+    "tag": "e-goblin",
     "health": 8,
     "defence": 3,
     "actions": [
@@ -48,7 +50,8 @@
   },
   {
     "id": 3,
-    "name": "Skeleton",
+    "title": "Skeleton",
+    "tag": "e-skeleton",
     "health": 6,
     "defence": 1,
     "actions": [
@@ -72,7 +75,8 @@
   },
   {
     "id": 4,
-    "name": "Orc",
+    "title": "Orc",
+    "tag": "e-orc",
     "health": 12,
     "defence": 4,
     "actions": [

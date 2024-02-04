@@ -70,7 +70,7 @@ for summon in data:
     summonID = summon["id"]
 
     # Params
-    summonName = summon["name"]
+    summonTitle = summon["title"]
     summonDuration = summon["duration"]
     summonHealth = summon["health"]
 
@@ -79,11 +79,11 @@ for summon in data:
     if summon.get('effects') is not None:
         summonEffects = summon["effects"]
 
-    sqlFile.write("-- Summon {}\n".format(summonName))
+    sqlFile.write("-- Summon {}\n".format(summonTitle))
     sqlFile.write(
-        "INSERT INTO Summon (id, name, duration, health, idAction) "
+        "INSERT INTO Summon (id, title, duration, health, idAction) "
         "VALUES ({}, '{}', {}, {}, {}); \n"
-        .format(summonID, summonName, summonDuration, summonHealth, 'NULL')
+        .format(summonID, summonTitle, summonDuration, summonHealth, 'NULL')
     )
 
     lateSqlFile.write(

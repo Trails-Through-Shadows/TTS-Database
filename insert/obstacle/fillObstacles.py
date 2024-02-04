@@ -66,17 +66,18 @@ for obstacle in data:
     obstacleID = obstacle["id"]
 
     # Params
-    obstacleName = obstacle["name"]
+    obstacleTitle = obstacle["title"]
+    obstacleTag = obstacle["tag"]
     obstacleDamage = obstacle["damage"]
     obstacleCrossable = obstacle["crossable"]
     obstacleHealth = obstacle["health"]
     obstacleEffects = obstacle["effects"]
 
-    sqlFile.write("-- Obstacle {}\n".format(obstacleName))
+    sqlFile.write("-- Obstacle {}\n".format(obstacleTitle))
     sqlFile.write(
-        "INSERT INTO Obstacle (id, name, damage, health, crossable) "
-        "VALUES ({}, '{}', {}, {}, {});\n"
-        .format(obstacleID, obstacleName, obstacleDamage, obstacleHealth, obstacleCrossable)
+        "INSERT INTO Obstacle (id, title, tag, damage, health, crossable) "
+        "VALUES ({}, '{}', '{}', {}, {}, {});\n"
+        .format(obstacleID, obstacleTitle, obstacleTag, obstacleDamage, obstacleHealth, obstacleCrossable)
     )
 
     insertEffects(obstacleID, obstacleEffects, "ObstacleEffect")

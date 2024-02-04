@@ -1,28 +1,35 @@
 [
   {
     "id": 1,
-    "name": "Warlock",
+    "title": "Warlock",
+    "tag": "c-warlock",
     "baseHealth": 8,
     "baseDefense": 0,
     "baseInitiative": -2,
     "actions": []
-  }, {
+  },
+  {
     "id": 2,
-    "name": "Fighter",
+    "title": "Fighter",
+    "tag": "c-fighter",
     "baseHealth": 10,
     "baseDefense": 2,
     "baseInitiative": 0,
     "actions": []
-  }, {
+  },
+  {
     "id": 3,
-    "name": "Paladin",
+    "title": "Paladin",
+    "tag": "c-paladin",
     "baseHealth": 10,
     "baseDefense": 3,
     "baseInitiative": -2,
     "actions": []
-  }, {
+  },
+  {
     "id": 4,
-    "name": "Bard",
+    "title": "Bard",
+    "tag": "c-bard",
     "baseHealth": 8,
     "baseDefense": 0,
     "baseInitiative": 2,

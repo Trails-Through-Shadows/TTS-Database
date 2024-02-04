@@ -46,17 +46,18 @@ for clazz in data:
     clazzID = clazz["id"]
 
     # Params
-    clazzName = clazz["name"]
+    clazzTitle = clazz["title"]
+    clazzTag = clazz["tag"]
     clazzBaseHealth = clazz["baseHealth"]
     clazzBaseDefense = clazz["baseDefense"]
     clazzBaseInitiative = clazz["baseInitiative"]
     clazzActions = clazz["actions"]
 
-    sqlFile.write("-- Class {}\n".format(clazzName))
+    sqlFile.write("-- Class {}\n".format(clazzTitle))
     sqlFile.write(
-        "INSERT INTO Class (id, name, baseHealth, baseDefence, baseInitiative) "
-        "VALUES ({}, '{}', {}, {}, {});\n"
-        .format(clazzID, clazzName, clazzBaseHealth, clazzBaseDefense, clazzBaseInitiative)
+        "INSERT INTO Class (id, title, tag, baseHealth, baseDefence, baseInitiative) "
+        "VALUES ({}, '{}', '{}', {}, {}, {});\n"
+        .format(clazzID, clazzTitle, clazzTag, clazzBaseHealth, clazzBaseDefense, clazzBaseInitiative)
     )
 
     # Actions

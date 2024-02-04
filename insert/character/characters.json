@@ -5,7 +5,7 @@
     "idClass": 1,
     "idRace": 1,
     "level": 2,
-    "name": "Gandalf",
+    "title": "Gandalf",
     "playerName": "Pajde"
   },
   {
@@ -14,7 +14,7 @@
     "idClass": 2,
     "idRace": 2,
     "level": 2,
-    "name": "Aragorn",
+    "title": "Aragorn",
     "playerName": "Barce"
   },
   {
@@ -23,7 +23,7 @@
     "idClass": 3,
     "idRace": 3,
     "level": 2,
-    "name": "Gimli",
+    "title": "Gimli",
     "playerName": "Myrce"
   },
   {
@@ -32,7 +32,7 @@
       "idClass": 4,
       "idRace": 4,
       "level": 2,
-      "name": "Legolas",
+      "title": "Legolas",
       "playerName": "Zoze"
   },
   {
@@ -41,7 +41,7 @@
       "idClass": 1,
       "idRace": 4,
       "level": 100,
-      "name": "Kobzol",
+      "title": "Kobzol",
       "playerName": "Kuba"
   }
 ]

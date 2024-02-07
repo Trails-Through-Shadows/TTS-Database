@@ -68,14 +68,14 @@ for obstacle in data:
     # Params
     obstacleTitle = obstacle["title"]
     obstacleTag = obstacle["tag"]
-    obstacleDamage = obstacle["damage"]
+    obstacleDamage = obstacle["baseDamage"]
     obstacleCrossable = obstacle["crossable"]
-    obstacleHealth = obstacle["health"]
+    obstacleHealth = obstacle["baseHealth"]
     obstacleEffects = obstacle["effects"]
 
     sqlFile.write("-- Obstacle {}\n".format(obstacleTitle))
     sqlFile.write(
-        "INSERT INTO Obstacle (id, title, tag, damage, health, crossable) "
+        "INSERT INTO Obstacle (id, title, tag, baseDamage, baseHealth, crossable) "
         "VALUES ({}, '{}', '{}', {}, {}, {});\n"
         .format(obstacleID, obstacleTitle, obstacleTag, obstacleDamage, obstacleHealth, obstacleCrossable)
     )

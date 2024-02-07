@@ -3,9 +3,9 @@
     "id": 1,
     "title": "Pit Trap",
     "tag": "o-trapPit",
-    "damage": 10,
+    "baseDamage": 10,
+    "baseHealth": 0,
     "crossable": false,
-    "health": 0,
     "effects": [
       {
         "type": "POISON",
@@ -25,81 +25,81 @@
     "id": 2,
     "title": "Spiked Pit",
     "tag": "o-trapPitSmoked",
-    "damage": 15,
+    "baseDamage": 10,
+    "baseHealth": 0,
     "crossable": false,
-    "health": 0,
     "effects": []
   },
   {
     "id": 3,
     "title": "Poison Gas Trap",
     "tag": "o-trapPitGas",
-    "damage": 8,
-    "crossable": true,
-    "health": 0,
+    "baseDamage": 10,
+    "baseHealth": 0,
+    "crossable": false,
     "effects": []
   },
   {
     "id": 4,
     "title": "Collapsing Ceiling",
     "tag": "o-collapseCeiling",
-    "damage": 20,
+    "baseDamage": 10,
+    "baseHealth": 0,
     "crossable": false,
-    "health": 0,
     "effects": []
   },
   {
     "id": 5,
     "title": "Magic Fire Barrier",
     "tag": "o-magicFireBarrier",
-    "damage": 12,
+    "baseDamage": 12,
     "crossable": true,
-    "health": 30,
+    "baseHealth": 30,
     "effects": []
   },
   {
     "id": 6,
     "title": "Thorn Bushes",
     "tag": "o-bushesThorn",
-    "damage": 5,
+    "baseDamage": 5,
     "crossable": true,
-    "health": 10,
+    "baseHealth": 10,
     "effects": []
   },
   {
     "id": 7,
     "title": "Frozen Lake",
     "tag": "o-frozenLake",
-    "damage": 0,
+    "baseDamage": 0,
     "crossable": true,
-    "health": 15,
+    "baseHealth": 15,
     "effects": []
   },
   {
     "id": 8,
     "title": "Arcane Turret",
     "tag": "o-turrentArcane",
-    "damage": 18,
+    "baseDamage": 18,
     "crossable": false,
-    "health": 40,
+    "baseHealth": 40,
     "effects": []
   },
   {
     "id": 9,
     "title": "Mystical Portal",
     "tag": "o-mysPortal",
-    "damage": 0,
+    "baseDamage": 0,
     "crossable": true,
-    "health": 0,
+    "baseHealth": 0,
     "effects": []
   },
   {
     "id": 10,
     "title": "Cursed Statue",
     "tag": "o-curseStatue",
-    "damage": 0,
+    "baseDamage": 0,
     "crossable": false,
-    "health": 50,
+    "baseHealth": 50,
     "effects": []
   }
 ]

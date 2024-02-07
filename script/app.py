@@ -39,14 +39,14 @@ dbPassword = os.getenv('DB_PASSWORD')
 
 # Establish a database connection
 try:
-    log("Connecting to the database...", "INFO")
+    log("Connecting to the database... {}/{}".format(dbHost,  dbName), "INFO")
     conn = mysql.connector.connect(
         host=dbHost,
         user=dbUser,
         passwd=dbPassword,
         database=dbName
     )
-    log("Connecting to the database... Done", "INFO", True)
+    log("Connecting to the database... {}/{}  Done".format(dbHost,  dbName), "INFO", True)
 except mysql.connector.Error as error:
     log("Connecting to the database... Error", "INFO", True)
     log(f" - {error}", "ERROR")

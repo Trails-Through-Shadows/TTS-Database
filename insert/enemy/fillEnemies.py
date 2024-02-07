@@ -48,16 +48,17 @@ for enemy in data:
     # Params
     enemyTitle = enemy["title"]
     enemyTag = enemy["tag"]
-    enemyHealth = enemy["health"]
-    enemyDefence = enemy["defence"]
+    enemyHealth = enemy["baseHealth"]
+    enemyDefence = enemy["baseDefence"]
+    enemyInitiative = enemy["baseInitiative"]
 
     enemyActions = enemy["actions"]
     enemyEffects = enemy["effects"]
 
     sqlFile.write("-- Enemy {}\n".format(enemyTitle))
     sqlFile.write(
-        "INSERT INTO Enemy (id, title, tag, baseHealth, baseDefence) "
-        "VALUES ({}, '{}', '{}', {}, {});\n".format(enemyID, enemyTitle, enemyTag, enemyHealth, enemyDefence)
+        "INSERT INTO Enemy (id, title, tag, baseHealth, baseDefence,baseInitiative) "
+        "VALUES ({}, '{}', '{}', {}, {}, {});\n".format(enemyID, enemyTitle, enemyTag, enemyHealth, enemyDefence, enemyInitiative)
     )
 
     # Actions

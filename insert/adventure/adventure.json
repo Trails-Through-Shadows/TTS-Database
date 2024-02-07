@@ -6,7 +6,8 @@
     "title": "The Great TITS",
     "reputation": 1,
     "experience": 69,
-    "gold": 3
+    "gold": 3,
+    "description" : "path to perfect boobs"
   },
   {
     "id": 2,
@@ -15,6 +16,7 @@
     "title": "Smashing the Goblins",
     "reputation": 100,
     "experience": 100,
-    "gold": 100
+    "gold": 100,
+    "description" : "sword lord of the goblin horde"
   }
 ]

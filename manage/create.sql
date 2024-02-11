@@ -199,7 +199,7 @@ CREATE TABLE `Attack` (
   `id` INT NOT NULL AUTO_INCREMENT,
   `range` INT NOT NULL,
   `damage` INT NOT NULL,
-  `area` INT,
+  `area` INT NOT NULL,
   `target` ENUM ('SELF', 'ONE', 'ALL', 'ALL_ENEMIES', 'ALL_ALLIES') NOT NULL,
   `numAttacks` INT NOT NULL,
   PRIMARY KEY (`id`)
@@ -208,7 +208,7 @@ CREATE TABLE `Attack` (
 CREATE TABLE `Skill` (
   `id` INT NOT NULL AUTO_INCREMENT,
   `range` INT NOT NULL,
-  `area` INT,
+  `area` INT NOT NULL,
   `target` ENUM ('SELF', 'ONE', 'ALL', 'ALL_ENEMIES', 'ALL_ALLIES') NOT NULL,
   PRIMARY KEY (`id`)
 );

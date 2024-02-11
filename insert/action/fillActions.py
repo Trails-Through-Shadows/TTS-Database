@@ -74,6 +74,10 @@ for action in data:
     actionDesc = action["description"]
     actionDiscard = action["discard"]
 
+    actionLevelReq = "NULL"
+    if action.get('levelReq') is not None:
+        actionLevelReq = action["levelReq"]
+
     sqlFile.write("-- Action {}\n".format(actionTitle))
 
     # Movement
@@ -158,9 +162,9 @@ for action in data:
 
     # Insert Action
     sqlFile.write(
-        "INSERT INTO Action (id, title, description, attack, skill, movement, restoreCards, discard) "
-        "VALUES ({}, '{}', '{}', {}, {}, {}, {}, '{}');\n"
-        .format(actionID, actionTitle, actionDesc, attackID, skillID, movementID, restoreCardID, actionDiscard)
+        "INSERT INTO Action (id, title, description, attack, skill, movement, restoreCards, discard, levelReq) "
+        "VALUES ({}, '{}', '{}', {}, {}, {}, {}, '{}', {});\n"
+        .format(actionID, actionTitle, actionDesc, attackID, skillID, movementID, restoreCardID, actionDiscard, actionLevelReq)
     )
 
     # Summon

@@ -67,7 +67,8 @@
       "target": "SELF",
       "random": true
     },
-    "discard": "NEVER"
+    "discard": "NEVER",
+    "levelReq": 10
   },
   {
     "id": 3,

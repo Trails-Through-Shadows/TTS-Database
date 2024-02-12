@@ -79,7 +79,7 @@ for item in data:
     sqlFile.write("-- Item {}\n".format(itemTitle))
     sqlFile.write(
         "INSERT INTO Item (id, title, tag, type, description, idAction) "
-        "VALUES ({}, '{}', '{}', '{}', '{}', {});\n".format(itemID, itemTag, itemTitle, itemType, itemDesc, itemIdAction)
+        "VALUES ({}, '{}', '{}', '{}', '{}', {});\n".format(itemID, itemTitle, itemTag, itemType, itemDesc, itemIdAction)
     )
 
     insertEffects(itemID, itemEffects, "ItemEffect")

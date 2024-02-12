@@ -49,6 +49,7 @@ for adventure in data:
     idCampaign = adventure["idCampaign"]
     idLicense = adventure["idLicense"]
     title = adventure["title"]
+    description = adventure["description"]
     reputation = adventure["reputation"]
     experience = adventure["experience"]
     level = adventure["level"]
@@ -56,7 +57,7 @@ for adventure in data:
 
     sqlFile.write("-- Adventure {}\n".format(adventureID))
     sqlFile.write(
-        "INSERT INTO Adventure (id, idCampaign, idLicense, title, reputation, experience, gold, level) "
-        "VALUES ({}, {}, {}, '{}', {}, {}, {}, {});\n"
-        .format(adventureID, idCampaign, idLicense, title, reputation, experience, gold, level)
+        "INSERT INTO Adventure (id, idCampaign, idLicense, title, description, reputation, experience, gold, level) "
+        "VALUES ({}, {}, {}, '{}', '{}', {}, {}, {}, {});\n"
+        .format(adventureID, idCampaign, idLicense, title, description, reputation, experience, gold, level)
     )

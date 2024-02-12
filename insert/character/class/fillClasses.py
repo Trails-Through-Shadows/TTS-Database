@@ -52,12 +52,13 @@ for clazz in data:
     clazzBaseDefense = clazz["baseDefense"]
     clazzBaseInitiative = clazz["baseInitiative"]
     clazzActions = clazz["actions"]
+    clazzDescription = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla ac nisl nec nunc aliquam tincidunt"
 
     sqlFile.write("-- Class {}\n".format(clazzTitle))
     sqlFile.write(
-        "INSERT INTO Class (id, title, tag, baseHealth, baseDefence, baseInitiative) "
-        "VALUES ({}, '{}', '{}', {}, {}, {});\n"
-        .format(clazzID, clazzTitle, clazzTag, clazzBaseHealth, clazzBaseDefense, clazzBaseInitiative)
+        "INSERT INTO Class (id, title, tag, baseHealth, baseDefence, baseInitiative, description) "
+        "VALUES ({}, '{}', '{}', {}, {}, {}, '{}');\n"
+        .format(clazzID, clazzTitle, clazzTag, clazzBaseHealth, clazzBaseDefense, clazzBaseInitiative, clazzDescription)
     )
 
     # Actions

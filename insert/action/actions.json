@@ -24,7 +24,7 @@
           "type": "POISON_RESISTANCE",
           "duration": 3,
           "target": "SELF",
-          "strength": 0
+          "strength": 3
         }
       ]
     },

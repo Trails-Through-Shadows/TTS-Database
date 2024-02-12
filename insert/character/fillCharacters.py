@@ -49,13 +49,12 @@ for character in data:
     idAdventure = character["idAdventure"]
     idClass = character["idClass"]
     idRace = character["idRace"]
-    level = character["level"]
     title = character["title"]
     playerName = character["playerName"]
 
     sqlFile.write("-- Character {}\n".format(characterID))
     sqlFile.write(
-        "INSERT INTO `Character` (id, idAdventure, idClass, idRace, `level`, `title`, playerName) "
-        "VALUES ({}, {}, {}, {}, {}, '{}', '{}');\n"
-        .format(characterID, idAdventure, idClass, idRace, level, title, playerName)
+        "INSERT INTO `Character` (id, idAdventure, idClass, idRace, `title`, playerName) "
+        "VALUES ({}, {}, {}, {}, '{}', '{}');\n"
+        .format(characterID, idAdventure, idClass, idRace, title, playerName)
     )

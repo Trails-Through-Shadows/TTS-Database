@@ -4,7 +4,6 @@
     "idAdventure": 1,
     "idClass": 1,
     "idRace": 1,
-    "level": 2,
     "title": "Gandalf",
     "playerName": "Pajde"
   },
@@ -13,7 +12,6 @@
     "idAdventure": 1,
     "idClass": 2,
     "idRace": 2,
-    "level": 2,
     "title": "Aragorn",
     "playerName": "Barce"
   },
@@ -22,7 +20,6 @@
     "idAdventure": 1,
     "idClass": 3,
     "idRace": 3,
-    "level": 2,
     "title": "Gimli",
     "playerName": "Myrce"
   },
@@ -31,7 +28,6 @@
       "idAdventure": 1,
       "idClass": 4,
       "idRace": 4,
-      "level": 2,
       "title": "Legolas",
       "playerName": "Zoze"
   },
@@ -40,7 +36,6 @@
       "idAdventure": 2,
       "idClass": 1,
       "idRace": 4,
-      "level": 100,
       "title": "Kobzol",
       "playerName": "Kuba"
   }

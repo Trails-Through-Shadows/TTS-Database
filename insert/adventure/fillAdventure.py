@@ -51,11 +51,12 @@ for adventure in data:
     title = adventure["title"]
     reputation = adventure["reputation"]
     experience = adventure["experience"]
+    level = adventure["level"]
     gold = adventure["gold"]
 
     sqlFile.write("-- Adventure {}\n".format(adventureID))
     sqlFile.write(
-        "INSERT INTO Adventure (id, idCampaign, idLicense, title, reputation, experience, gold) "
-        "VALUES ({}, {}, {}, '{}', {}, {}, {});\n"
-        .format(adventureID, idCampaign, idLicense, title, reputation, experience, gold)
+        "INSERT INTO Adventure (id, idCampaign, idLicense, title, reputation, experience, gold, level) "
+        "VALUES ({}, {}, {}, '{}', {}, {}, {}, {});\n"
+        .format(adventureID, idCampaign, idLicense, title, reputation, experience, gold, level)
     )

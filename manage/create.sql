@@ -39,6 +39,7 @@ CREATE TABLE `Adventure` (
   `reputation` INT NOT NULL,
   `experience` INT NOT NULL,
   `gold` INT NOT NULL,
+  `level` INT NOT NULL,
   PRIMARY KEY (`id`)
 );
 
@@ -122,7 +123,6 @@ CREATE TABLE `Character` (
   `idAdventure` INT NOT NULL,
   `title` VARCHAR(128) NOT NULL,
   `playerName` VARCHAR(128),
-  `level` INT NOT NULL,
   PRIMARY KEY (`id`)
 );
 
@@ -199,7 +199,7 @@ CREATE TABLE `Attack` (
   `id` INT NOT NULL AUTO_INCREMENT,
   `range` INT NOT NULL,
   `damage` INT NOT NULL,
-  `area` INT NOT NULL,
+  `area` INT,
   `target` ENUM ('SELF', 'ONE', 'ALL', 'ALL_ENEMIES', 'ALL_ALLIES') NOT NULL,
   `numAttacks` INT NOT NULL,
   PRIMARY KEY (`id`)
@@ -208,7 +208,7 @@ CREATE TABLE `Attack` (
 CREATE TABLE `Skill` (
   `id` INT NOT NULL AUTO_INCREMENT,
   `range` INT NOT NULL,
-  `area` INT NOT NULL,
+  `area` INT,
   `target` ENUM ('SELF', 'ONE', 'ALL', 'ALL_ENEMIES', 'ALL_ALLIES') NOT NULL,
   PRIMARY KEY (`id`)
 );

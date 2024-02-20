@@ -385,7 +385,7 @@ CREATE INDEX `uk_Character_idAdventure` ON `Character` (`idAdventure`);
 
 CREATE INDEX `uk_Character_idClass` ON `Character` (`idClass`);
 
-CREATE INDEX `uk_Character-idRace` ON `Character` (`idRace`);
+CREATE INDEX `uk_Character_idRace` ON `Character` (`idRace`);
 
 CREATE INDEX `uk_ClassAction_idClass` ON `ClassAction` (`idClass`);
 
@@ -409,27 +409,27 @@ CREATE INDEX `uk_RaceAction_idRace` ON `RaceAction` (`idRace`);
 
 CREATE INDEX `uk_RaceAction_idAction` ON `RaceAction` (`idAction`);
 
-ALTER TABLE `CampaignLocation` ADD CONSTRAINT `fk_CampaignLocation_Campaign` FOREIGN KEY (`idCampaign`) REFERENCES `Campaign` (`id`);
+ALTER TABLE `CampaignLocation` ADD CONSTRAINT `fk_CampaignLocation_Campaign` FOREIGN KEY (`idCampaign`) REFERENCES `Campaign` (`id`) ON DELETE CASCADE;
 
-ALTER TABLE `CampaignLocation` ADD CONSTRAINT `fk_CampaignLocation_Location` FOREIGN KEY (`idLocation`) REFERENCES `Location` (`id`);
+ALTER TABLE `CampaignLocation` ADD CONSTRAINT `fk_CampaignLocation_Location` FOREIGN KEY (`idLocation`) REFERENCES `Location` (`id`) ON DELETE CASCADE;
 
-ALTER TABLE `AdventureLocation` ADD CONSTRAINT `fk_AdventureLocation_Adventure` FOREIGN KEY (`idAdventure`) REFERENCES `Adventure` (`id`);
+ALTER TABLE `AdventureLocation` ADD CONSTRAINT `fk_AdventureLocation_Adventure` FOREIGN KEY (`idAdventure`) REFERENCES `Adventure` (`id`) ON DELETE CASCADE;
 
-ALTER TABLE `AdventureLocation` ADD CONSTRAINT `fk_AdventureLocation_Location` FOREIGN KEY (`idLocation`) REFERENCES `Location` (`id`);
+ALTER TABLE `AdventureLocation` ADD CONSTRAINT `fk_AdventureLocation_Location` FOREIGN KEY (`idLocation`) REFERENCES `Location` (`id`) ON DELETE CASCADE;
 
-ALTER TABLE `Adventure` ADD CONSTRAINT `fk_Adventure_Campaign` FOREIGN KEY (`idCampaign`) REFERENCES `Campaign` (`id`);
+ALTER TABLE `Adventure` ADD CONSTRAINT `fk_Adventure_Campaign` FOREIGN KEY (`idCampaign`) REFERENCES `Campaign` (`id`) ON DELETE RESTRICT;
 
-ALTER TABLE `Adventure` ADD CONSTRAINT `fk_Adventure_License` FOREIGN KEY (`idLicense`) REFERENCES `License` (`id`);
+ALTER TABLE `Adventure` ADD CONSTRAINT `fk_Adventure_License` FOREIGN KEY (`idLicense`) REFERENCES `License` (`id`) ON DELETE RESTRICT;
 
-ALTER TABLE `AdventureAchievement` ADD CONSTRAINT `fk_AdventureAchievement_Adventure` FOREIGN KEY (`idAdventure`) REFERENCES `Adventure` (`id`);
+ALTER TABLE `AdventureAchievement` ADD CONSTRAINT `fk_AdventureAchievement_Adventure` FOREIGN KEY (`idAdventure`) REFERENCES `Adventure` (`id`) ON DELETE CASCADE;
 
-ALTER TABLE `AdventureAchievement` ADD CONSTRAINT `fk_AdventureAchievement_Achievement` FOREIGN KEY (`idAchievement`) REFERENCES `Achievement` (`id`);
+ALTER TABLE `AdventureAchievement` ADD CONSTRAINT `fk_AdventureAchievement_Achievement` FOREIGN KEY (`idAchievement`) REFERENCES `Achievement` (`id`) ON DELETE CASCADE;
 
-ALTER TABLE `LocationPath` ADD CONSTRAINT `fk_LocationPath_idStart` FOREIGN KEY (`idStart`) REFERENCES `Location` (`id`);
+ALTER TABLE `LocationPath` ADD CONSTRAINT `fk_LocationPath_idStart` FOREIGN KEY (`idStart`) REFERENCES `Location` (`id`) ON DELETE CASCADE;
 
-ALTER TABLE `LocationPath` ADD CONSTRAINT `fk_LocationPath_idEnd` FOREIGN KEY (`idEnd`) REFERENCES `Location` (`id`);
+ALTER TABLE `LocationPath` ADD CONSTRAINT `fk_LocationPath_idEnd` FOREIGN KEY (`idEnd`) REFERENCES `Location` (`id`) ON DELETE CASCADE;
 
-ALTER TABLE `LocationPath` ADD CONSTRAINT `fk_LocationPath_idCampaign` FOREIGN KEY (`idCampaign`) REFERENCES `Campaign` (`id`);
+ALTER TABLE `LocationPath` ADD CONSTRAINT `fk_LocationPath_idCampaign` FOREIGN KEY (`idCampaign`) REFERENCES `Campaign` (`id`) ON DELETE CASCADE;
 
 ALTER TABLE `LocationPart` ADD CONSTRAINT `fk_LocationPart_Location` FOREIGN KEY (`idLocation`) REFERENCES `Location` (`id`) ON DELETE CASCADE;
 
@@ -451,17 +451,19 @@ ALTER TABLE `LocationStart` ADD CONSTRAINT `fk_LocationStart_part` FOREIGN KEY (
 
 ALTER TABLE `LocationStart` ADD CONSTRAINT `fk_LocationStart_hex` FOREIGN KEY (`idHex`) REFERENCES `Hex` (`id`) ON DELETE CASCADE;
 
-ALTER TABLE `Character` ADD CONSTRAINT `fk_Character_Adventure` FOREIGN KEY (`idAdventure`) REFERENCES `Adventure` (`id`);
+ALTER TABLE `Character` ADD CONSTRAINT `fk_Character_Adventure` FOREIGN KEY (`idAdventure`) REFERENCES `Adventure` (`id`) ON DELETE CASCADE;
 
-ALTER TABLE `Character` ADD CONSTRAINT `fk_Character_Class` FOREIGN KEY (`idClass`) REFERENCES `Class` (`id`);
+ALTER TABLE `Character` ADD CONSTRAINT `fk_Character_Class` FOREIGN KEY (`idClass`) REFERENCES `Class` (`id`) ON DELETE RESTRICT;
 
-ALTER TABLE `Inventory` ADD CONSTRAINT `fk_Inventory_Character` FOREIGN KEY (`idCharacter`) REFERENCES `Character` (`id`);
+ALTER TABLE `Character` ADD CONSTRAINT `fk_Character_Race` FOREIGN KEY (`idRace`) REFERENCES `Race` (`id`) ON DELETE RESTRICT;
 
-ALTER TABLE `Inventory` ADD CONSTRAINT `fk_Inventory_Item` FOREIGN KEY (`idItem`) REFERENCES `Item` (`id`);
+ALTER TABLE `Inventory` ADD CONSTRAINT `fk_Inventory_Character` FOREIGN KEY (`idCharacter`) REFERENCES `Character` (`id`) ON DELETE CASCADE;
 
-ALTER TABLE `ClassAction` ADD CONSTRAINT `fk_Action_Class` FOREIGN KEY (`idClass`) REFERENCES `Class` (`id`);
+ALTER TABLE `Inventory` ADD CONSTRAINT `fk_Inventory_Item` FOREIGN KEY (`idItem`) REFERENCES `Item` (`id`) ON DELETE CASCADE;
 
-ALTER TABLE `ClassAction` ADD CONSTRAINT `fk_ClassAction_Action` FOREIGN KEY (`idAction`) REFERENCES `Action` (`id`);
+ALTER TABLE `ClassAction` ADD CONSTRAINT `fk_Action_Class` FOREIGN KEY (`idClass`) REFERENCES `Class` (`id`) ON DELETE CASCADE;
+
+ALTER TABLE `ClassAction` ADD CONSTRAINT `fk_ClassAction_Action` FOREIGN KEY (`idAction`) REFERENCES `Action` (`id`) ON DELETE CASCADE;
 
 ALTER TABLE `HexEnemy` ADD CONSTRAINT `fk_HexEnemy_Enemy` FOREIGN KEY (`idEnemy`) REFERENCES `Enemy` (`id`) ON DELETE CASCADE;
 
@@ -471,13 +473,13 @@ ALTER TABLE `HexEnemy` ADD CONSTRAINT `fk_HexEnemy_Part` FOREIGN KEY (`idPart`) 
 
 ALTER TABLE `HexEnemy` ADD CONSTRAINT `fk_HexEnemy_Location` FOREIGN KEY (`idLocation`) REFERENCES `Location` (`id`) ON DELETE CASCADE;
 
-ALTER TABLE `EnemyAction` ADD CONSTRAINT `fk_EnemyAction_Enemy` FOREIGN KEY (`idEnemy`) REFERENCES `Enemy` (`id`);
+ALTER TABLE `EnemyAction` ADD CONSTRAINT `fk_EnemyAction_Enemy` FOREIGN KEY (`idEnemy`) REFERENCES `Enemy` (`id`) ON DELETE CASCADE;
 
-ALTER TABLE `EnemyAction` ADD CONSTRAINT `fk_EnemyAction_Action` FOREIGN KEY (`idAction`) REFERENCES `Action` (`id`);
+ALTER TABLE `EnemyAction` ADD CONSTRAINT `fk_EnemyAction_Action` FOREIGN KEY (`idAction`) REFERENCES `Action` (`id`) ON DELETE CASCADE;
 
-ALTER TABLE `SummonAction` ADD CONSTRAINT `fk_SummonAction_Summon` FOREIGN KEY (`idSummon`) REFERENCES `Summon` (`id`);
+ALTER TABLE `SummonAction` ADD CONSTRAINT `fk_SummonAction_Summon` FOREIGN KEY (`idSummon`) REFERENCES `Summon` (`id`) ON DELETE CASCADE;
 
-ALTER TABLE `SummonAction` ADD CONSTRAINT `fk_SummonAction_Action` FOREIGN KEY (`idAction`) REFERENCES `Action` (`id`);
+ALTER TABLE `SummonAction` ADD CONSTRAINT `fk_SummonAction_Action` FOREIGN KEY (`idAction`) REFERENCES `Action` (`id`) ON DELETE CASCADE;
 
 ALTER TABLE `Summon` ADD CONSTRAINT `fk_Summon_Action` FOREIGN KEY (`idAction`) REFERENCES `Action` (`id`);
 
@@ -489,41 +491,41 @@ ALTER TABLE `Action` ADD CONSTRAINT `fk_Action_Movement` FOREIGN KEY (`movement`
 
 ALTER TABLE `Action` ADD CONSTRAINT `fk_Action_RestoreCards` FOREIGN KEY (`restoreCards`) REFERENCES `RestoreCards` (`id`);
 
-ALTER TABLE `SummonEffect` ADD CONSTRAINT `fk_SummonEffect_Effect` FOREIGN KEY (`idEffect`) REFERENCES `Effect` (`id`);
+ALTER TABLE `SummonEffect` ADD CONSTRAINT `fk_SummonEffect_Effect` FOREIGN KEY (`idEffect`) REFERENCES `Effect` (`id`) ON DELETE CASCADE;
 
-ALTER TABLE `SummonEffect` ADD CONSTRAINT `fk_SummonEffect_Summon` FOREIGN KEY (`idSummon`) REFERENCES `Summon` (`id`);
+ALTER TABLE `SummonEffect` ADD CONSTRAINT `fk_SummonEffect_Summon` FOREIGN KEY (`idSummon`) REFERENCES `Summon` (`id`) ON DELETE CASCADE;
 
-ALTER TABLE `AttackEffect` ADD CONSTRAINT `fk_AttackEffect_Effect` FOREIGN KEY (`idEffect`) REFERENCES `Effect` (`id`);
+ALTER TABLE `AttackEffect` ADD CONSTRAINT `fk_AttackEffect_Effect` FOREIGN KEY (`idEffect`) REFERENCES `Effect` (`id`) ON DELETE CASCADE;
 
-ALTER TABLE `AttackEffect` ADD CONSTRAINT `fk_AttackEffect_Attack` FOREIGN KEY (`idAttack`) REFERENCES `Attack` (`id`);
+ALTER TABLE `AttackEffect` ADD CONSTRAINT `fk_AttackEffect_Attack` FOREIGN KEY (`idAttack`) REFERENCES `Attack` (`id`) ON DELETE CASCADE;
 
-ALTER TABLE `SkillEffect` ADD CONSTRAINT `fk_SkillEffect_Effect` FOREIGN KEY (`idEffect`) REFERENCES `Effect` (`id`);
+ALTER TABLE `SkillEffect` ADD CONSTRAINT `fk_SkillEffect_Effect` FOREIGN KEY (`idEffect`) REFERENCES `Effect` (`id`) ON DELETE CASCADE;
 
-ALTER TABLE `SkillEffect` ADD CONSTRAINT `fk_SkillEffect_Skill` FOREIGN KEY (`idSkill`) REFERENCES `Skill` (`id`);
+ALTER TABLE `SkillEffect` ADD CONSTRAINT `fk_SkillEffect_Skill` FOREIGN KEY (`idSkill`) REFERENCES `Skill` (`id`) ON DELETE CASCADE;
 
-ALTER TABLE `MovementEffect` ADD CONSTRAINT `fk_MovementEffect_Effect` FOREIGN KEY (`idEffect`) REFERENCES `Effect` (`id`);
+ALTER TABLE `MovementEffect` ADD CONSTRAINT `fk_MovementEffect_Effect` FOREIGN KEY (`idEffect`) REFERENCES `Effect` (`id`) ON DELETE CASCADE;
 
-ALTER TABLE `MovementEffect` ADD CONSTRAINT `fk_MovementEffect_Movement` FOREIGN KEY (`idMovement`) REFERENCES `Movement` (`id`);
+ALTER TABLE `MovementEffect` ADD CONSTRAINT `fk_MovementEffect_Movement` FOREIGN KEY (`idMovement`) REFERENCES `Movement` (`id`) ON DELETE CASCADE;
 
-ALTER TABLE `ClassEffect` ADD CONSTRAINT `fk_ClassEffect_Effect` FOREIGN KEY (`idEffect`) REFERENCES `Effect` (`id`);
+ALTER TABLE `ClassEffect` ADD CONSTRAINT `fk_ClassEffect_Effect` FOREIGN KEY (`idEffect`) REFERENCES `Effect` (`id`) ON DELETE CASCADE;
 
-ALTER TABLE `ClassEffect` ADD CONSTRAINT `fk_ClassEffect_Class` FOREIGN KEY (`idClass`) REFERENCES `Class` (`id`);
+ALTER TABLE `ClassEffect` ADD CONSTRAINT `fk_ClassEffect_Class` FOREIGN KEY (`idClass`) REFERENCES `Class` (`id`) ON DELETE CASCADE;
 
-ALTER TABLE `RaceEffect` ADD CONSTRAINT `fk_RaceEffect_Effect` FOREIGN KEY (`idEffect`) REFERENCES `Effect` (`id`);
+ALTER TABLE `RaceEffect` ADD CONSTRAINT `fk_RaceEffect_Effect` FOREIGN KEY (`idEffect`) REFERENCES `Effect` (`id`) ON DELETE CASCADE;
 
-ALTER TABLE `RaceEffect` ADD CONSTRAINT `fk_RaceEffect_Race` FOREIGN KEY (`idRace`) REFERENCES `Race` (`id`);
+ALTER TABLE `RaceEffect` ADD CONSTRAINT `fk_RaceEffect_Race` FOREIGN KEY (`idRace`) REFERENCES `Race` (`id`) ON DELETE CASCADE;
 
-ALTER TABLE `ItemEffect` ADD CONSTRAINT `fk_ItemEffect_Effect` FOREIGN KEY (`idEffect`) REFERENCES `Effect` (`id`);
+ALTER TABLE `ItemEffect` ADD CONSTRAINT `fk_ItemEffect_Effect` FOREIGN KEY (`idEffect`) REFERENCES `Effect` (`id`) ON DELETE CASCADE;
 
-ALTER TABLE `ItemEffect` ADD CONSTRAINT `fk_ItemEffect_Item` FOREIGN KEY (`idItem`) REFERENCES `Item` (`id`);
+ALTER TABLE `ItemEffect` ADD CONSTRAINT `fk_ItemEffect_Item` FOREIGN KEY (`idItem`) REFERENCES `Item` (`id`) ON DELETE CASCADE;
 
-ALTER TABLE `EnemyEffect` ADD CONSTRAINT `fk_EnemyEffect_Effect` FOREIGN KEY (`idEffect`) REFERENCES `Effect` (`id`);
+ALTER TABLE `EnemyEffect` ADD CONSTRAINT `fk_EnemyEffect_Effect` FOREIGN KEY (`idEffect`) REFERENCES `Effect` (`id`) ON DELETE CASCADE;
 
-ALTER TABLE `EnemyEffect` ADD CONSTRAINT `fk_EnemyEffect_Enemy` FOREIGN KEY (`idEnemy`) REFERENCES `Enemy` (`id`);
+ALTER TABLE `EnemyEffect` ADD CONSTRAINT `fk_EnemyEffect_Enemy` FOREIGN KEY (`idEnemy`) REFERENCES `Enemy` (`id`) ON DELETE CASCADE;
 
-ALTER TABLE `ObstacleEffect` ADD CONSTRAINT `fk_ObstacleEffect_Effect` FOREIGN KEY (`idEffect`) REFERENCES `Effect` (`id`);
+ALTER TABLE `ObstacleEffect` ADD CONSTRAINT `fk_ObstacleEffect_Effect` FOREIGN KEY (`idEffect`) REFERENCES `Effect` (`id`) ON DELETE CASCADE;
 
-ALTER TABLE `ObstacleEffect` ADD CONSTRAINT `fk_ObstacleEffect_Obstacle` FOREIGN KEY (`idObstacle`) REFERENCES `Obstacle` (`id`);
+ALTER TABLE `ObstacleEffect` ADD CONSTRAINT `fk_ObstacleEffect_Obstacle` FOREIGN KEY (`idObstacle`) REFERENCES `Obstacle` (`id`) ON DELETE CASCADE;
 
 ALTER TABLE `HexObstacle` ADD CONSTRAINT `fk_HexObstacle_Hex` FOREIGN KEY (`idHex`) REFERENCES `Hex` (`id`) ON DELETE CASCADE;
 
@@ -533,24 +535,22 @@ ALTER TABLE `HexObstacle` ADD CONSTRAINT `fk_HexObstacle_Part` FOREIGN KEY (`idP
 
 ALTER TABLE `HexObstacle` ADD CONSTRAINT `fk_HexObstacle_Obstacle` FOREIGN KEY (`idObstacle`) REFERENCES `Obstacle` (`id`) ON DELETE CASCADE;
 
-ALTER TABLE `Character` ADD CONSTRAINT `fk_Character_Race` FOREIGN KEY (`idRace`) REFERENCES `Race` (`id`);
+ALTER TABLE `RaceAction` ADD CONSTRAINT `fk_Action_Race` FOREIGN KEY (`idRace`) REFERENCES `Race` (`id`) ON DELETE CASCADE;
 
-ALTER TABLE `RaceAction` ADD CONSTRAINT `fk_Action_Race` FOREIGN KEY (`idRace`) REFERENCES `Race` (`id`);
+ALTER TABLE `RaceAction` ADD CONSTRAINT `fk_RaceAction_Action` FOREIGN KEY (`idAction`) REFERENCES `Action` (`id`) ON DELETE CASCADE;
 
-ALTER TABLE `RaceAction` ADD CONSTRAINT `fk_RaceAction_Action` FOREIGN KEY (`idAction`) REFERENCES `Action` (`id`);
+ALTER TABLE `CampaignAchievements` ADD CONSTRAINT `fk_CampaignAchievements_Campaign` FOREIGN KEY (`idCampaign`) REFERENCES `Campaign` (`id`) ON DELETE CASCADE;
 
-ALTER TABLE `CampaignAchievements` ADD CONSTRAINT `fk_CampaignAchievements_Campaign` FOREIGN KEY (`idCampaign`) REFERENCES `Campaign` (`id`);
-
-ALTER TABLE `CampaignAchievements` ADD CONSTRAINT `fk_CampaignAchievements_Achievement` FOREIGN KEY (`idAchievement`) REFERENCES `Achievement` (`id`);
+ALTER TABLE `CampaignAchievements` ADD CONSTRAINT `fk_CampaignAchievements_Achievement` FOREIGN KEY (`idAchievement`) REFERENCES `Achievement` (`id`) ON DELETE CASCADE;
 
 ALTER TABLE `Item` ADD CONSTRAINT `fk_Item_Action` FOREIGN KEY (`idAction`) REFERENCES `Action` (`id`);
 
-ALTER TABLE `Market` ADD CONSTRAINT `fk_Market_Item` FOREIGN KEY (`idItem`) REFERENCES `Item` (`id`);
+ALTER TABLE `Market` ADD CONSTRAINT `fk_Market_Item` FOREIGN KEY (`idItem`) REFERENCES `Item` (`id`) ON DELETE CASCADE;
 
-ALTER TABLE `Market` ADD CONSTRAINT `fk_Market_Location` FOREIGN KEY (`idLocation`) REFERENCES `Location` (`id`);
+ALTER TABLE `Market` ADD CONSTRAINT `fk_Market_Location` FOREIGN KEY (`idLocation`) REFERENCES `Location` (`id`) ON DELETE CASCADE;
 
-ALTER TABLE `AdventureMarket` ADD CONSTRAINT `fk_AdventureMarket_Item` FOREIGN KEY (`idItem`) REFERENCES `Item` (`id`);
+ALTER TABLE `AdventureMarket` ADD CONSTRAINT `fk_AdventureMarket_Item` FOREIGN KEY (`idItem`) REFERENCES `Item` (`id`) ON DELETE CASCADE;
 
-ALTER TABLE `AdventureMarket` ADD CONSTRAINT `fk_AdventureMarket_Location` FOREIGN KEY (`idLocation`) REFERENCES `Location` (`id`);
+ALTER TABLE `AdventureMarket` ADD CONSTRAINT `fk_AdventureMarket_Location` FOREIGN KEY (`idLocation`) REFERENCES `Location` (`id`) ON DELETE CASCADE;
 
-ALTER TABLE `AdventureMarket` ADD CONSTRAINT `fk_AdventureMarket_Adventure` FOREIGN KEY (`idAdventure`) REFERENCES `Adventure` (`id`);
+ALTER TABLE `AdventureMarket` ADD CONSTRAINT `fk_AdventureMarket_Adventure` FOREIGN KEY (`idAdventure`) REFERENCES `Adventure` (`id`) ON DELETE CASCADE;

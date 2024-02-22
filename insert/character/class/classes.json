@@ -5,7 +5,7 @@
     "tag": "c-warlock",
     "baseHealth": 8,
     "baseDefense": 0,
-    "baseInitiative": -2,
+    "baseInitiative": 3,
     "actions": []
   },
   {
@@ -14,7 +14,7 @@
     "tag": "c-fighter",
     "baseHealth": 10,
     "baseDefense": 2,
-    "baseInitiative": 0,
+    "baseInitiative": 5,
     "actions": []
   },
   {
@@ -23,7 +23,7 @@
     "tag": "c-paladin",
     "baseHealth": 10,
     "baseDefense": 3,
-    "baseInitiative": -2,
+    "baseInitiative": 3,
     "actions": []
   },
   {
@@ -32,7 +32,7 @@
     "tag": "c-bard",
     "baseHealth": 8,
     "baseDefense": 0,
-    "baseInitiative": 2,
+    "baseInitiative": 7,
     "actions": []
   }
 ]

@@ -86,8 +86,8 @@ for race in data:
         )
 
         sqlFile.write(
-            "SET @idEffect = (SELECT id FROM Effect WHERE type = '{}' AND duration = {} AND `target` = '{}' AND strength = {});\n"
-            .format(eff["type"], eff["duration"], eff["target"], eff["strength"])
+            "SET @idEffect = (SELECT id FROM Effect WHERE type = '{}' AND duration = {} AND `target` = '{}' AND strength {} {});\n"
+            .format(eff["type"], eff["duration"], eff["target"], ('IS' if eff["strength"] == 'NULL' else '='), eff["strength"])
         )
 
         sqlFile.write(

@@ -5,11 +5,14 @@
   - Activated = 50% chance of being NULL, otherwise a random date between now and 30 days from now.
  */
 
-SET @numRows = 50;
+SET @numRows = 20;
 
 CREATE OR REPLACE PROCEDURE InsertRandomData()
 BEGIN
     DECLARE i INT DEFAULT 0;
+
+    INSERT INTO License (`key`, password, activated)
+    VALUES ('0000', 'admin', NULL);
 
     WHILE i < @numRows DO
         SET @randUUID = MD5(UUID());

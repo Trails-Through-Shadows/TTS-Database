@@ -55,9 +55,9 @@ for race in data:
 
     sqlFile.write("-- Race {}\n".format(raceTitle))
     sqlFile.write(
-        "INSERT INTO Race (id, title, baseInitiative, description) "
-        "VALUES ({}, '{}', {}, '{}');\n"
-        .format(raceID, raceTitle, raceInitiative, raceDescription)
+        "INSERT INTO Race (id, title, baseInitiative, description, tag) "
+        "VALUES ({}, '{}', {}, '{}','{}');\n"
+        .format(raceID, raceTitle, raceInitiative, raceDescription, raceTag)
     )
 
     # Actions

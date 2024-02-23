@@ -1,0 +1,14 @@
+[
+    {
+        "id": 1,
+        "idCampaignLocation": 1,
+        "trigger": "START",
+        "story": "So, you chose the path of shadows. What are you trying to accomplish? Why are you here? What is your goal? Will you be able to achieve it? Only time will tell. But for now, you must focus on the task at hand. You must survive and get to the other side of the dungeon."
+    },
+    {
+        "id": 2,
+        "idCampaignLocation": 1,
+        "trigger": "END",
+        "story": "You have made it to the other side of the dungeon. You have survived. But the real challenge is yet to come. You must now face the guardian of the dungeon. Will you be able to defeat it? You have time to prepare, use it well."
+    }
+]

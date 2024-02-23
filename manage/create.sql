@@ -14,12 +14,21 @@ CREATE TABLE `Campaign` (
 );
 
 CREATE TABLE `CampaignLocation` (
+  `id` INT NOT NULL AUTO_INCREMENT,
   `idCampaign` INT NOT NULL,
   `idLocation` INT NOT NULL,
   `winCondition` TEXT NOT NULL,
   `start` bool NOT NULL,
   `finish` bool NOT NULL,
-  PRIMARY KEY (`idCampaign`, `idLocation`)
+  PRIMARY KEY (`id`)
+);
+
+CREATE TABLE `Story` (
+  `id` INT NOT NULL AUTO_INCREMENT,
+  `idCampaignLocation` INT NOT NULL,
+  `trigger` ENUM ('START', 'END') NOT NULL,
+  `story` TEXT NOT NULL,
+  PRIMARY KEY (`id`)
 );
 
 CREATE TABLE `AdventureLocation` (
@@ -377,6 +386,10 @@ CREATE TABLE `ImageLink` (
   `url` TEXT
 );
 
+CREATE INDEX `CampaignLocation_fk` ON `CampaignLocation` (`idCampaign`);
+
+CREATE INDEX `LocationCampaign_fk` ON `CampaignLocation` (`idLocation`);
+
 CREATE INDEX `uk_Adventure_idCampaign` ON `Adventure` (`idCampaign`);
 
 CREATE INDEX `uk_Adventure_idLicense` ON `Adventure` (`idLicense`);
@@ -412,6 +425,8 @@ CREATE INDEX `uk_RaceAction_idAction` ON `RaceAction` (`idAction`);
 ALTER TABLE `CampaignLocation` ADD CONSTRAINT `fk_CampaignLocation_Campaign` FOREIGN KEY (`idCampaign`) REFERENCES `Campaign` (`id`) ON DELETE CASCADE;
 
 ALTER TABLE `CampaignLocation` ADD CONSTRAINT `fk_CampaignLocation_Location` FOREIGN KEY (`idLocation`) REFERENCES `Location` (`id`) ON DELETE CASCADE;
+
+ALTER TABLE `Story` ADD CONSTRAINT `fk_CampaignLocationStory_Campaign` FOREIGN KEY (`idCampaignLocation`) REFERENCES `CampaignLocation` (`id`) ON DELETE CASCADE;
 
 ALTER TABLE `AdventureLocation` ADD CONSTRAINT `fk_AdventureLocation_Adventure` FOREIGN KEY (`idAdventure`) REFERENCES `Adventure` (`id`) ON DELETE CASCADE;
 
@@ -481,15 +496,15 @@ ALTER TABLE `SummonAction` ADD CONSTRAINT `fk_SummonAction_Summon` FOREIGN KEY (
 
 ALTER TABLE `SummonAction` ADD CONSTRAINT `fk_SummonAction_Action` FOREIGN KEY (`idAction`) REFERENCES `Action` (`id`) ON DELETE CASCADE;
 
-ALTER TABLE `Summon` ADD CONSTRAINT `fk_Summon_Action` FOREIGN KEY (`idAction`) REFERENCES `Action` (`id`);
+ALTER TABLE `Summon` ADD CONSTRAINT `fk_Summon_Action` FOREIGN KEY (`idAction`) REFERENCES `Action` (`id`) ON DELETE SET NULL;
 
-ALTER TABLE `Action` ADD CONSTRAINT `fk_Action_Attack` FOREIGN KEY (`attack`) REFERENCES `Attack` (`id`);
+ALTER TABLE `Action` ADD CONSTRAINT `fk_Action_Attack` FOREIGN KEY (`attack`) REFERENCES `Attack` (`id`) ON DELETE SET NULL;
 
-ALTER TABLE `Action` ADD CONSTRAINT `fk_Action_Skill` FOREIGN KEY (`skill`) REFERENCES `Skill` (`id`);
+ALTER TABLE `Action` ADD CONSTRAINT `fk_Action_Skill` FOREIGN KEY (`skill`) REFERENCES `Skill` (`id`) ON DELETE SET NULL;
 
-ALTER TABLE `Action` ADD CONSTRAINT `fk_Action_Movement` FOREIGN KEY (`movement`) REFERENCES `Movement` (`id`);
+ALTER TABLE `Action` ADD CONSTRAINT `fk_Action_Movement` FOREIGN KEY (`movement`) REFERENCES `Movement` (`id`) ON DELETE SET NULL;
 
-ALTER TABLE `Action` ADD CONSTRAINT `fk_Action_RestoreCards` FOREIGN KEY (`restoreCards`) REFERENCES `RestoreCards` (`id`);
+ALTER TABLE `Action` ADD CONSTRAINT `fk_Action_RestoreCards` FOREIGN KEY (`restoreCards`) REFERENCES `RestoreCards` (`id`) ON DELETE SET NULL;
 
 ALTER TABLE `SummonEffect` ADD CONSTRAINT `fk_SummonEffect_Effect` FOREIGN KEY (`idEffect`) REFERENCES `Effect` (`id`) ON DELETE CASCADE;
 
@@ -543,7 +558,7 @@ ALTER TABLE `CampaignAchievements` ADD CONSTRAINT `fk_CampaignAchievements_Campa
 
 ALTER TABLE `CampaignAchievements` ADD CONSTRAINT `fk_CampaignAchievements_Achievement` FOREIGN KEY (`idAchievement`) REFERENCES `Achievement` (`id`) ON DELETE CASCADE;
 
-ALTER TABLE `Item` ADD CONSTRAINT `fk_Item_Action` FOREIGN KEY (`idAction`) REFERENCES `Action` (`id`);
+ALTER TABLE `Item` ADD CONSTRAINT `fk_Item_Action` FOREIGN KEY (`idAction`) REFERENCES `Action` (`id`) ON DELETE SET NULL;
 
 ALTER TABLE `Market` ADD CONSTRAINT `fk_Market_Item` FOREIGN KEY (`idItem`) REFERENCES `Item` (`id`) ON DELETE CASCADE;
 

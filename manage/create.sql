@@ -103,8 +103,10 @@ CREATE TABLE `LocationDoor` (
   `idLocation` INT NOT NULL,
   `idPartFrom` INT NOT NULL,
   `idPartTo` INT NOT NULL,
-  `idHex` INT NOT NULL,
-  PRIMARY KEY (`idLocation`, `idPartFrom`, `idPartTo`, `idHex`)
+  `qCoord` INT NOT NULL DEFAULT 0,
+  `rCoord` INT NOT NULL DEFAULT 0,
+  `sCoord` INT NOT NULL DEFAULT 0,
+  PRIMARY KEY (`idLocation`, `idPartFrom`, `idPartTo`)
 );
 
 CREATE TABLE `LocationStart` (
@@ -457,8 +459,6 @@ ALTER TABLE `LocationDoor` ADD CONSTRAINT `fk_LocationDoor_Location` FOREIGN KEY
 ALTER TABLE `LocationDoor` ADD CONSTRAINT `fk_LocationDoor_idPartFrom` FOREIGN KEY (`idPartFrom`) REFERENCES `Part` (`id`) ON DELETE CASCADE;
 
 ALTER TABLE `LocationDoor` ADD CONSTRAINT `fk_LocationDoor_idPartTo` FOREIGN KEY (`idPartTo`) REFERENCES `Part` (`id`) ON DELETE CASCADE;
-
-ALTER TABLE `LocationDoor` ADD CONSTRAINT `fk_LocationDoor_idHex` FOREIGN KEY (`idHex`) REFERENCES `Hex` (`id`) ON DELETE CASCADE;
 
 ALTER TABLE `LocationStart` ADD CONSTRAINT `fk_LocationStart_location` FOREIGN KEY (`idLocation`) REFERENCES `Location` (`id`) ON DELETE CASCADE;
 

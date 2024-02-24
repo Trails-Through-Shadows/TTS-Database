@@ -193,8 +193,8 @@ CREATE TABLE `Summon` (
   `id` INT NOT NULL AUTO_INCREMENT,
   `title` VARCHAR(128) NOT NULL,
   `tag` VARCHAR(32),
-  `duration` INT,
-  `health` INT,
+  `duration` INT NOT NULL,
+  `health` INT NOT NULL,
   `idAction` INT,
   PRIMARY KEY (`id`)
 );
@@ -233,9 +233,9 @@ CREATE TABLE `Movement` (
 
 CREATE TABLE `RestoreCards` (
   `id` INT NOT NULL AUTO_INCREMENT,
-  `numCards` INT,
+  `numCards` INT NOT NULL,
   `target` ENUM ('SELF', 'ONE', 'ALL', 'ALL_ENEMIES', 'ALL_ALLIES') NOT NULL,
-  `random` BOOL,
+  `random` BOOL NOT NULL,
   PRIMARY KEY (`id`)
 );
 

@@ -8,9 +8,11 @@
     "baseInitiative": 20,
     "actions": [
       {
-        "id": 5
+        "id": 8
       }, {
-        "id": 6
+        "id": 3
+      }, {
+        "id": 7
       }
     ],
     "effects": [
@@ -19,7 +21,7 @@
           "type": "POISON_RESISTANCE",
           "duration": 3,
           "target": "SELF",
-          "strength": 0
+          "strength": 3
         }
       }
     ]
@@ -33,10 +35,10 @@
     "baseInitiative": 30,
     "actions": [
       {
-        "id": 1
+        "id": 6
       },
       {
-        "id": 2
+        "id": 5
       }
     ],
     "effects": [
@@ -71,7 +73,7 @@
           "type": "BLEED_RESISTANCE",
           "duration": 2,
           "target": "SELF",
-          "strength": 0
+          "strength": 8
         }
       }
     ]
@@ -85,16 +87,16 @@
     "baseInitiative": 20,
     "actions": [
       {
-        "id": 5
+        "id": 11
       },
       {
-        "id": 6
+        "id": 8
       }
     ],
     "effects": [
       {
         "effect": {
-          "type": "STUN",
+          "type": "FORCED_MOVEMENT_RESISTANCE",
           "duration": 1,
           "target": "SELF",
           "strength": 0

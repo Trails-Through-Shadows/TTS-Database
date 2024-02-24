@@ -88,7 +88,28 @@ for location in data:
                     sqlFile.write(
                         "INSERT INTO HexObstacle (idObstacle, idLocation, idPart, idHex) "
                         "VALUES ({}, {}, {}, @hexID);\n"
-                        .format( hexTypeID, locationID, partScheme)
+                        .format(hexTypeID, locationID, partScheme)
+                    )
+
+            #Start
+            if "start" in part:
+                for start in part["start"]:
+
+                    # Params
+                    startCordR = start["r"]
+                    startCordQ = start["q"]
+                    startCordS = start["s"]
+
+                    # First hex
+                    sqlFile.write(
+                        "SET @hexID = (SELECT id FROM Hex WHERE idPart = {} AND qCoord = {} AND rCoord = {} AND sCoord = {});\n"
+                        .format(partScheme, startCordQ, startCordR, startCordS)
+                    )
+
+                    sqlFile.write(
+                        "INSERT INTO LocationStart (idLocation, idPart, idHex) "
+                        "VALUES ({}, {}, @hexID);\n"
+                        .format(locationID, partScheme)
                     )
 
             # LocationPart Relationship
@@ -109,14 +130,8 @@ for location in data:
             doorCordQ = door["cords"]["q"]
             doorCordS = door["cords"]["s"]
 
-            # First Hex
             sqlFile.write(
-                "SET @doorHex = (SELECT id FROM Hex WHERE idPart = {} AND qCoord = {} AND rCoord = {} AND sCoord = {});\n"
-                .format(doorFirstPart, doorCordQ, doorCordR, doorCordS)
-            )
-
-            sqlFile.write(
-                "INSERT INTO LocationDoor (idLocation, idPartFrom, idPartTo, idHex) "
-                "VALUES ({}, {}, {}, @doorHex);\n"
-                .format(locationID, doorFirstPart, doorSecondPart)
+                "INSERT INTO LocationDoor (idLocation, idPartFrom, idPartTo, qCoord, rCoord, sCoord) "
+                "VALUES ({}, {}, {}, {}, {}, {});\n"
+                .format(locationID, doorFirstPart, doorSecondPart, doorCordQ, doorCordR, doorCordS)
             )

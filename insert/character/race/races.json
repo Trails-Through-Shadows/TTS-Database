@@ -12,7 +12,7 @@
           "type": "FIRE_RESISTANCE",
           "duration": -1,
           "target": "SELF",
-          "strength": 3
+          "strength": 2
         }
       }
     ]
@@ -23,17 +23,7 @@
     "tag": "r-human",
     "baseInitiative": 5,
     "actions": [],
-    "effects": [
-      {
-        "lvlReq": 1,
-        "effect": {
-          "type": "BLEED_RESISTANCE",
-          "duration": -1,
-          "target": "SELF",
-          "strength": 2
-        }
-      }
-    ]
+    "effects": []
   },
   {
     "id": 3,

@@ -5,7 +5,7 @@
     "tag": "e-zombie",
     "baseHealth": 10,
     "baseDefence": 2,
-    "baseInitiative": 20,
+    "baseInitiative": 10,
     "actions": [
       {
         "id": 8
@@ -19,7 +19,7 @@
       {
         "effect": {
           "type": "POISON_RESISTANCE",
-          "duration": 3,
+          "duration": -1,
           "target": "SELF",
           "strength": 3
         }
@@ -30,9 +30,9 @@
     "id": 2,
     "title": "Goblin",
     "tag": "e-goblin",
-    "baseHealth": 10,
-    "baseDefence": 2,
-    "baseInitiative": 30,
+    "baseHealth": 8,
+    "baseDefence": 0,
+    "baseInitiative": 15,
     "actions": [
       {
         "id": 6
@@ -41,24 +41,15 @@
         "id": 5
       }
     ],
-    "effects": [
-      {
-        "effect": {
-          "type": "FIRE",
-          "duration": 2,
-          "target": "SELF",
-          "strength": 2
-        }
-      }
-    ]
+    "effects": []
   },
   {
     "id": 3,
     "title": "Skeleton",
     "tag": "e-skeleton",
     "baseHealth": 10,
-    "baseDefence": 2,
-    "baseInitiative": 20,
+    "baseDefence": 1,
+    "baseInitiative": 13,
     "actions": [
       {
         "id": 9
@@ -71,9 +62,9 @@
       {
         "effect": {
           "type": "BLEED_RESISTANCE",
-          "duration": 2,
+          "duration": -1,
           "target": "SELF",
-          "strength": 8
+          "strength": 100
         }
       }
     ]
@@ -82,9 +73,9 @@
     "id": 4,
     "title": "Orc",
     "tag": "e-orc",
-    "baseHealth": 10,
-    "baseDefence": 2,
-    "baseInitiative": 20,
+    "baseHealth": 12,
+    "baseDefence": 3,
+    "baseInitiative": 10,
     "actions": [
       {
         "id": 11
@@ -97,7 +88,7 @@
       {
         "effect": {
           "type": "FORCED_MOVEMENT_RESISTANCE",
-          "duration": 1,
+          "duration": -1,
           "target": "SELF",
           "strength": 0
         }

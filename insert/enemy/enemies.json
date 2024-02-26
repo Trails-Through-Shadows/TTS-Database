@@ -1,8 +1,8 @@
 [
   {
     "id": 1,
-    "title": "Zombie",
-    "tag": "e-zombie",
+    "title": "Chaos Zombie",
+    "tag": "e-chaos-zombie",
     "baseHealth": 10,
     "baseDefence": 2,
     "baseInitiative": 10,
@@ -28,8 +28,8 @@
   },
   {
     "id": 2,
-    "title": "Goblin",
-    "tag": "e-goblin",
+    "title": "Goblin Sorcerer",
+    "tag": "e-goblin-sorcerer",
     "baseHealth": 8,
     "baseDefence": 0,
     "baseInitiative": 15,
@@ -45,8 +45,8 @@
   },
   {
     "id": 3,
-    "title": "Skeleton",
-    "tag": "e-skeleton",
+    "title": "Skeleton Archer",
+    "tag": "e-skeleton-archer",
     "baseHealth": 10,
     "baseDefence": 1,
     "baseInitiative": 13,

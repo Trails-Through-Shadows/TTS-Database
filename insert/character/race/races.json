@@ -1,8 +1,8 @@
 [
   {
     "id": 1,
-    "title": "Tiefling",
-    "tag": "r-tief",
+    "title": "Demonkin",
+    "tag": "r-demonkin",
     "baseInitiative": 5,
     "actions": [],
     "effects": [

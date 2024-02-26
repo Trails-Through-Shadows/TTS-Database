@@ -1,8 +1,8 @@
 [
   {
     "id": 1,
-    "title": "Warlock",
-    "tag": "c-warlock",
+    "title": "Mage",
+    "tag": "c-mage",
     "baseHealth": 8,
     "baseDefense": 0,
     "baseInitiative": 3,
@@ -10,8 +10,8 @@
   },
   {
     "id": 2,
-    "title": "Fighter",
-    "tag": "c-fighter",
+    "title": "Rogue",
+    "tag": "c-rogue",
     "baseHealth": 10,
     "baseDefense": 2,
     "baseInitiative": 5,
@@ -19,8 +19,8 @@
   },
   {
     "id": 3,
-    "title": "Paladin",
-    "tag": "c-paladin",
+    "title": "Knight",
+    "tag": "c-knight",
     "baseHealth": 10,
     "baseDefense": 3,
     "baseInitiative": 3,

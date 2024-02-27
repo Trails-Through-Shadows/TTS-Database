@@ -23,7 +23,15 @@ The database is equipped with the following scripts, located in the `script` fol
 Run these scripts with a command such as `python3 script/create.py`.
 
 ## Schema
-
 The database diagram can be found here: [full](https://dbdiagram.io/d/CommunistBachelor-652c00e7ffbf5169f0b71ee4), [readonly](https://dbdiagram.io/d/TTS-Game-Database-652c00e7ffbf5169f0b71ee4).
 
-When the diagram is updated, just export it into MySql and copy the contens into `manage/create.sql` and update the inserting scripts to go with your changes.
+When the diagram is updated, just export it into MySql and copy the contents into `manage/create.sql` and update the inserting scripts to go with your changes.
+
+## Insert Priority Graph
+This graphs shows what table is required in witch table.
+
+By traversing the graph from the top by taking longest path from the top to the bottom, we can find the order in which the tables should be inserted.
+
+<p align="center">
+  <img src="graph/insertPriorityGraph.png" alt="Insert Priority Graph"/>
+</p>

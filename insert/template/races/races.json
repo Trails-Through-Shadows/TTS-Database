@@ -1,0 +1,65 @@
+[
+  {
+    "id": 1,
+    "title": "Demonkin",
+    "baseInitiative": 5,
+    "effects": [
+      {
+        "key": {
+          "idRace": 1,
+          "idEffect": 23
+        },
+        "levelReq": 1,
+        "effect": 23
+      }
+    ],
+    "actions": [],
+    "tag": "r-demonkin",
+    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla ac nisl nec nunc aliquam tincidunt"
+  },
+  {
+    "id": 2,
+    "title": "Human",
+    "baseInitiative": 5,
+    "effects": [],
+    "actions": [],
+    "tag": "r-human",
+    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla ac nisl nec nunc aliquam tincidunt"
+  },
+  {
+    "id": 3,
+    "title": "Dwarf",
+    "baseInitiative": 4,
+    "effects": [
+      {
+        "key": {
+          "idRace": 3,
+          "idEffect": 24
+        },
+        "levelReq": 1,
+        "effect": 24
+      }
+    ],
+    "actions": [],
+    "tag": "r-dwarf",
+    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla ac nisl nec nunc aliquam tincidunt"
+  },
+  {
+    "id": 4,
+    "title": "Elf",
+    "baseInitiative": 7,
+    "effects": [
+      {
+        "key": {
+          "idRace": 4,
+          "idEffect": 25
+        },
+        "levelReq": 1,
+        "effect": 25
+      }
+    ],
+    "actions": [],
+    "tag": "r-elf",
+    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla ac nisl nec nunc aliquam tincidunt"
+  }
+]

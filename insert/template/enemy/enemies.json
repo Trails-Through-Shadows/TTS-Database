@@ -1,0 +1,254 @@
+[
+  {
+    "id": 1,
+    "title": "Pyroscorian Skeleton",
+    "tag": "e-pyroSkeleton",
+    "description": "",
+    "baseHealth": 10,
+    "baseDefence": 10,
+    "baseInitiative": 10,
+    "usages": 4,
+    "effects": [
+      {
+        "key": {
+          "idEnemy": 1,
+          "idEffect": 12
+        },
+        "effect": {
+          "id": 12,
+          "target": "SELF",
+          "type": "POISON_RESISTANCE",
+          "duration": -1,
+          "strength": 3,
+          "description": null
+        }
+      }
+    ],
+    "actions": [
+      {
+        "key": {
+          "idEnemy": 1,
+          "idAction": 3
+        },
+        "action": 3
+      },
+      {
+        "key": {
+          "idEnemy": 1,
+          "idAction": 7
+        },
+        "action": 7
+      },
+      {
+        "key": {
+          "idEnemy": 1,
+          "idAction": 8
+        },
+        "action": 8
+      }
+    ],
+    "hex": null,
+    "url": "http://localhost:8080/images/enemies/pyroSkeleton.png"
+  },
+  {
+    "id": 2,
+    "title": "Ratfolk Mercenary",
+    "tag": "e-ratMercenary",
+    "description": "",
+    "baseHealth": 10,
+    "baseDefence": 10,
+    "baseInitiative": 10,
+    "usages": 6,
+    "effects": [],
+    "actions": [
+      {
+        "key": {
+          "idEnemy": 2,
+          "idAction": 5
+        },
+        "action": 5
+      },
+      {
+        "key": {
+          "idEnemy": 2,
+          "idAction": 6
+        },
+        "action": 6
+      }
+    ],
+    "hex": null,
+    "url": "http://localhost:8080/images/enemies/ratMercenary.png"
+  },
+  {
+    "id": 3,
+    "title": "Sand Golem",
+    "tag": "e-sandGolem",
+    "description": "",
+    "baseHealth": 10,
+    "baseDefence": 10,
+    "baseInitiative": 10,
+    "usages": 4,
+    "effects": [
+      {
+        "key": {
+          "idEnemy": 3,
+          "idEffect": 13
+        },
+        "effect": {
+          "id": 13,
+          "target": "SELF",
+          "type": "BLEED_RESISTANCE",
+          "duration": -1,
+          "strength": 100,
+          "description": null
+        }
+      }
+    ],
+    "actions": [
+      {
+        "key": {
+          "idEnemy": 3,
+          "idAction": 9
+        },
+        "action": 9
+      },
+      {
+        "key": {
+          "idEnemy": 3,
+          "idAction": 10
+        },
+        "action": 10
+      }
+    ],
+    "hex": null,
+    "url": "http://localhost:8080/images/enemies/sandGolem.png"
+  },
+  {
+    "id": 4,
+    "title": "Undead Archer",
+    "tag": "e-undeadArcher",
+    "description": "",
+    "baseHealth": 10,
+    "baseDefence": 10,
+    "baseInitiative": 10,
+    "usages": 0,
+    "effects": [
+      {
+        "key": {
+          "idEnemy": 4,
+          "idEffect": 14
+        },
+        "effect": {
+          "id": 14,
+          "target": "SELF",
+          "type": "FORCED_MOVEMENT_RESISTANCE",
+          "duration": -1,
+          "strength": 0,
+          "description": null
+        }
+      }
+    ],
+    "actions": [
+      {
+        "key": {
+          "idEnemy": 4,
+          "idAction": 8
+        },
+        "action": 8
+      },
+      {
+        "key": {
+          "idEnemy": 4,
+          "idAction": 11
+        },
+        "action": 11
+      }
+    ],
+    "hex": null,
+    "url": "http://localhost:8080/images/enemies/undeadArcher.png"
+  },
+  {
+    "id": 5,
+    "title": "Crocodile",
+    "tag": "e-crocodile",
+    "description": "",
+    "baseHealth": 10,
+    "baseDefence": 10,
+    "baseInitiative": 10,
+    "usages": null,
+    "effects": [],
+    "actions": [],
+    "hex": null,
+    "url": "http://localhost:8080/images/enemies/crocodile.png"
+  },
+  {
+    "id": 6,
+    "title": "Golbin Sorcerer",
+    "tag": "e-goblinSorcka",
+    "description": "",
+    "baseHealth": 10,
+    "baseDefence": 10,
+    "baseInitiative": 10,
+    "usages": null,
+    "effects": [],
+    "actions": [],
+    "hex": null,
+    "url": "http://localhost:8080/images/enemies/goblinSorcka.png"
+  },
+  {
+    "id": 7,
+    "title": "Fire Elemental",
+    "tag": "e-fireElemental",
+    "description": "",
+    "baseHealth": 10,
+    "baseDefence": 10,
+    "baseInitiative": 10,
+    "usages": null,
+    "effects": [],
+    "actions": [],
+    "hex": null,
+    "url": "http://localhost:8080/images/enemies/fireElemental.png"
+  },
+  {
+    "id": 8,
+    "title": "Undead Tree",
+    "tag": "e-undeadTree",
+    "description": "",
+    "baseHealth": 10,
+    "baseDefence": 10,
+    "baseInitiative": 10,
+    "usages": null,
+    "effects": [],
+    "actions": [],
+    "hex": null,
+    "url": "http://localhost:8080/images/enemies/undeadTree.png"
+  },
+  {
+    "id": 9,
+    "title": "Void Lizard",
+    "tag": "e-voidLizard",
+    "description": "",
+    "baseHealth": 10,
+    "baseDefence": 10,
+    "baseInitiative": 10,
+    "usages": null,
+    "effects": [],
+    "actions": [],
+    "hex": null,
+    "url": "http://localhost:8080/images/enemies/voidLizard.png"
+  },
+  {
+    "id": 10,
+    "title": "Kobold Necromancer",
+    "tag": "e-koboldNecro",
+    "description": "",
+    "baseHealth": 10,
+    "baseDefence": 10,
+    "baseInitiative": 10,
+    "usages": null,
+    "effects": [],
+    "actions": [],
+    "hex": null,
+    "url": "http://localhost:8080/images/enemies/koboldNecro.png"
+  }
+]

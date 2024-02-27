@@ -1,0 +1,37 @@
+[
+  {
+    "id": 1,
+    "title": "Giant Rat",
+    "tag": "s-giant-rat",
+    "duration": 10,
+    "health": 10,
+    "action" : 3,
+    "effects": [
+      {
+        "key": {
+          "idEnemy": 1,
+          "idEffect": 12
+        },
+        "effect": 12
+      }
+    ]
+  },
+  {
+    "id": 2,
+    "title": "Mother Rat",
+    "tag": "s-mother-rat",
+    "duration": 10,
+    "health": 10,
+    "action": 4,
+    "effects": []
+  },
+  {
+    "id": 3,
+    "title": "Little myšítko",
+    "tag": "s-mysitko",
+    "duration": 10,
+    "health": 10,
+    "action": 5,
+    "effects": []
+  }
+]

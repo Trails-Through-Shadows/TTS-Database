@@ -1,0 +1,102 @@
+@startuml
+
+object Achievement
+object Effects
+object Part {
+    -Hex[]
+}
+object License
+
+object Action {
+    -MovementAction
+    -SkillAction
+    -AttackAction
+    -RestoreCardAction
+    +SummonAction[]
+}
+Effects --> Action
+
+object Summon {
+    +Effect[]
+    +Action
+}
+Effects --> Summon
+Action -> Summon
+
+object Classes {
+    +Action[]
+    +Effect[]
+}
+Effects --> Classes
+Action --> Classes
+
+object Enemy{
+    +Action[]
+    +Effect[]
+}
+Effects --> Enemy
+Action --> Enemy
+
+object Races{
+    +Action[]
+    +Effect[]
+}
+Effects --> Races
+Action --> Races
+
+object Items {
+    +Action
+    +Effect[]
+}
+Effects --> Items
+Action --> Items
+
+object Obstacle {
+    +Effect[]
+}
+Effects --> Obstacle
+
+object Location {
+    +Enemy[]
+    +Obstacle[]
+}
+Part --> Location
+Enemy --> Location
+Obstacle --> Location
+
+object Stories {
+    +Location
+}
+Location --> Stories
+
+object SummonAction{
+    +Summon
+    +Action
+}
+Action ---> SummonAction
+Summon --l> SummonAction
+
+object Campaigns {
+    +Location[]
+    +Achievement[]
+   }
+Location --> Campaigns
+Achievement --> Campaigns
+
+object Adventure {
+    +Campaigns
+    +License
+}
+License -> Adventure
+Campaigns --> Adventure
+
+object Character {
+    +Adventure
+    +Race
+    +Class
+}
+Races -> Character
+Classes -> Character
+Adventure -> Character
+
+@enduml

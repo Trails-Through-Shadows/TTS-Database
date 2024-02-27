@@ -1,0 +1,115 @@
+[
+  {
+    "id": 1,
+    "title":"Sword of the Venom",
+    "tag": "i-venomSword",
+    "type": "WEAPON",
+    "description": "A sword that is imbued with the venom of a snake.",
+    "effects": [
+      {
+        "key": {
+          "idItem": 1,
+          "idEffect": 9
+        }
+      }
+    ],
+    "idAction": 3
+  },
+  {
+    "id": 2,
+    "title": "Elixir of Healing",
+    "tag": "i-elixirHealing",
+    "type": "CONSUMABLE",
+    "description": "A magical elixir that restores health.",
+    "effects": [
+      {
+        "key": {
+          "idItem": 1,
+          "idEffect": 9
+        }
+      }
+    ],
+    "idAction": null
+  },
+  {
+    "id": 3,
+    "title": "Iron Helmet",
+    "tag": "i-ironHelmet",
+    "type": "HELMET",
+    "description": "A sturdy iron helmet for protection.",
+    "effects": [],
+    "idAction": null
+  },
+  {
+    "id": 4,
+    "title": "Leather Chestplate",
+    "tag": "i-letherChestplate",
+    "type": "CHESTPLATE",
+    "description": "A chestplate made of tough leather.",
+    "effects": [],
+    "idAction": null
+  },
+  {
+    "id": 5,
+    "title": "Iron Leggings",
+    "tag": "i-ironLeggings",
+    "type": "LEGGINGS",
+    "description": "Durable iron leggings for added defense.",
+    "effects": [],
+    "idAction": null
+  },
+  {
+    "id": 6,
+    "title": "Boots of Speed",
+    "tag": "i-speedBoots",
+    "type": "BOOTS",
+    "description": "Enchanted boots that increase movement speed.",
+    "effects": [],
+    "idAction": null
+  },
+  {
+    "id": 7,
+    "title": "Amulet of Protection",
+    "tag": "i-protectionAmulet",
+    "type": "ACCESSORY",
+    "description": "A magical amulet that provides protection against curses.",
+    "effects": [],
+    "idAction": null
+  },
+  {
+    "id": 8,
+    "title": "Fireball Scroll",
+    "tag": "i-fireballScroll",
+    "type": "CONSUMABLE",
+    "description": "A scroll that allows the user to cast a fireball spell.",
+    "effects": [],
+    "idAction": null
+  },
+  {
+    "id": 9,
+    "title": "Wand of Lightning",
+    "tag": "i-lightningWand",
+    "type": "WEAPON",
+    "description": "A wand that can unleash powerful lightning bolts.",
+    "effects": [],
+    "idAction": null
+  },
+  {
+    "id": 10,
+    "title": "Spellbook of Enchantment",
+    "tag": "i-enchantSpellbook",
+    "type": "WEAPON",
+    "description": "A spellbook filled with enchantment spells.",
+    "effects": [],
+    "idAction": null
+  },
+  {
+    "id": 11,
+    "title": "Health Potion",
+    "tag": "i-healthPotion",
+    "type": "CONSUMABLE",
+    "description": "A potion that restores a small amount of health.",
+    "effects": [],
+    "idAction": null
+  }
+]

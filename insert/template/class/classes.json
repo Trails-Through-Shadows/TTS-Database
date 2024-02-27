@@ -1,0 +1,46 @@
+[
+  {
+    "id": 1,
+    "title": "Mage",
+    "tag": "c-mage",
+    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla ac nisl nec nunc aliquam tincidunt",
+    "baseHealth": 8,
+    "baseDefence": 0,
+    "baseInitiative": 3,
+    "effects": [],
+    "actions": []
+  },
+  {
+    "id": 2,
+    "title": "Rogue",
+    "tag": "c-rogue",
+    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla ac nisl nec nunc aliquam tincidunt",
+    "baseHealth": 10,
+    "baseDefence": 2,
+    "baseInitiative": 5,
+    "effects": [],
+    "actions": []
+  },
+  {
+    "id": 3,
+    "title": "Knight",
+    "tag": "c-knight",
+    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla ac nisl nec nunc aliquam tincidunt",
+    "baseHealth": 10,
+    "baseDefence": 3,
+    "baseInitiative": 3,
+    "effects": [],
+    "actions": []
+  },
+  {
+    "id": 4,
+    "title": "Bard",
+    "tag": "c-bard",
+    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla ac nisl nec nunc aliquam tincidunt",
+    "baseHealth": 8,
+    "baseDefence": 0,
+    "baseInitiative": 7,
+    "effects": [],
+    "actions": []
+  }
+]

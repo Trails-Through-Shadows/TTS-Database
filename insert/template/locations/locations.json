@@ -1,0 +1,332 @@
+[
+  {
+    "id": 1,
+    "title": "Dungeon 1",
+    "tag": "l-dng1",
+    "type": "DUNGEON",
+    "description": "This is the first dungeon",
+    "parts": [
+      {
+        "scheme": 1,
+        "rotation": 0,
+        "hexes": [
+          {
+            "cords": {
+              "q": 0,
+              "r": -1,
+              "s": 1
+            },
+            "type": "ENEMY",
+            "id": 3
+          },
+          {
+            "cords": {
+              "q": -2,
+              "r": 0,
+              "s": 2
+            },
+            "type": "ENEMY",
+            "id": 1
+          },
+          {
+            "cords": {
+              "q": 2,
+              "r": 0,
+              "s": -2
+            },
+            "type": "ENEMY",
+            "id": 1
+          },
+          {
+            "cords": {
+              "q": 1,
+              "r": 1,
+              "s": -2
+            },
+            "type": "ENEMY",
+            "id": 1
+          },
+          {
+            "cords": {
+              "q": 1,
+              "r": 0,
+              "s": -1
+            },
+            "type": "OBSTACLE",
+            "id": 1
+          }
+        ],
+        "start": [
+          {
+            "q": -3,
+            "r": 2,
+            "s": 1
+          },
+          {
+            "q": -2,
+            "r": 2,
+            "s": 0
+          },
+          {
+            "q": -4,
+            "r": 3,
+            "s": 1
+          },
+          {
+            "q": -3,
+            "r": 3,
+            "s": 0
+          },
+          {
+            "q": -2,
+            "r": 3,
+            "s": -1
+          },
+          {
+            "q": -1,
+            "r": 3,
+            "s": -2
+          }
+        ]
+      },
+      {
+        "scheme": 2,
+        "rotation": 0,
+        "hexes": [
+          {
+            "cords": {
+              "r": 0,
+              "q": -2,
+              "s": 2
+            },
+            "type": "ENEMY",
+            "id": 3
+          },
+          {
+            "cords": {
+              "r": -1,
+              "q": -1,
+              "s": 2
+            },
+            "type": "ENEMY",
+            "id": 1
+          },
+          {
+            "cords": {
+              "r": 2,
+              "q": -2,
+              "s": 0
+            },
+            "type": "ENEMY",
+            "id": 2
+          },
+          {
+            "cords": {
+              "r": 1,
+              "q": 0,
+              "s": -1
+            },
+            "type": "ENEMY",
+            "id": 3
+          },
+          {
+            "cords": {
+              "r": 1,
+              "q": 1,
+              "s": -2
+            },
+            "type": "ENEMY",
+            "id": 3
+          },
+          {
+            "cords": {
+              "q": -2,
+              "r": 1,
+              "s": 1
+            },
+            "type": "OBSTACLE",
+            "id": 2
+          }
+        ]
+      }
+    ],
+    "doors": [
+      {
+        "cords": {
+          "q": 3,
+          "r": -2,
+          "s": -1
+        },
+        "firstPart": 1,
+        "secondPart": 2
+      },
+      {
+        "cords": {
+          "q": -3,
+          "r": 3,
+          "s": 0
+        },
+        "firstPart": 2,
+        "secondPart": 1
+      }
+    ]
+  },
+  {
+    "id": 2,
+    "title": "Market 1",
+    "tag": "l-mkt1",
+    "type": "MARKET",
+    "description": "This is Market 1",
+    "items": {
+      "ids": [1, 2, 3, 4, 5, 6, 7, 8, 9],
+      "prices": {
+        "2": 20,
+        "3": 30,
+        "4": 40,
+        "5": 50,
+        "6": 60,
+        "7": 70,
+        "8": 80,
+        "9": 90
+      },
+      "amounts": {
+        "1": 1,
+        "2": 2,
+        "3": 3,
+        "4": 4,
+        "5": 5,
+        "6": 6,
+        "7": 7,
+        "8": 8
+      }
+    },
+    "parts": [],
+    "doors": []
+  },
+  {
+    "id": 3,
+    "title": "Location 3",
+    "tag": "l-loc3",
+    "type": "DUNGEON",
+    "description": "This is Location 3",
+    "parts": [
+      {
+        "scheme": 1,
+        "rotation": 0,
+        "hexes": [
+          {
+            "cords": {
+              "q": 0,
+              "r": 0,
+              "s": 0
+            },
+            "type": "ENEMY",
+            "id": 2
+          }
+        ]
+      }
+    ],
+    "doors": []
+  },
+  {
+    "id": 4,
+    "title": "Location 4",
+    "tag": "l-loc4",
+    "type": "DUNGEON",
+    "description": "This is Location 4",
+    "parts": [
+      {
+        "scheme": 2,
+        "rotation": 0,
+        "hexes": [
+          {
+            "cords": {
+              "q": 1,
+              "r": -1,
+              "s": 0
+            },
+            "type": "ENEMY",
+            "id": 2
+          }
+        ]
+      }
+    ],
+    "doors": []
+  },
+  {
+    "id": 5,
+    "title": "Location 5",
+    "tag": "l-loc5",
+    "type": "DUNGEON",
+    "description": "This is Location 5",
+    "parts": [
+      {
+        "scheme": 3,
+        "rotation": 0,
+        "hexes": [
+          {
+            "cords": {
+              "q": 2,
+              "r": 0,
+              "s": -2
+            },
+            "type": "ENEMY",
+            "id": 2
+          }
+        ]
+      }
+    ],
+    "doors": []
+  },
+  {
+    "id": 6,
+    "title": "Location 6",
+    "tag": "l-loc6",
+    "type": "DUNGEON",
+    "description": "This is Location 6",
+    "parts": [
+      {
+        "scheme": 4,
+        "rotation": 0,
+        "hexes": [
+          {
+            "cords": {
+              "q": 0,
+              "r": 0,
+              "s": 0
+            },
+            "type": "ENEMY",
+            "id": 2
+          }
+        ]
+      }
+    ],
+    "doors": []
+  },
+  {
+    "id": 7,
+    "title": "Location 7",
+    "tag": "l-loc7",
+    "type": "DUNGEON",
+    "description": "This is Location 7",
+    "parts": [
+      {
+        "scheme": 5,
+        "rotation": 0,
+        "hexes": [
+          {
+            "cords": {
+              "q": 1,
+              "r": 0,
+              "s": -1
+            },
+            "type": "ENEMY",
+            "id": 2
+          }
+        ]
+      }
+    ],
+    "doors": []
+  }
+]
+

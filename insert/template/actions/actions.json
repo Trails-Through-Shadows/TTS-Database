@@ -1,0 +1,285 @@
+[
+  {
+    "id": 1,
+    "title": "Do nothing",
+    "description": "Just stand around.",
+    "discard": "NEVER",
+    "levelReq": null,
+    "movement": null,
+    "skill": null,
+    "attack": null,
+    "restoreCards": null,
+    "summonActions": []
+  },
+  {
+    "id": 2,
+    "title": "Template Card",
+    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+    "discard": "NEVER",
+    "levelReq": 10,
+    "movement": {
+      "id": 1,
+      "range": 2,
+      "type": "WALK",
+      "effects": [
+        {
+          "key": {
+            "idMovement": 1,
+            "idEffect": 2
+          }
+        },
+        {
+          "key": {
+            "idMovement": 1,
+            "idEffect": 8
+          }
+        }
+      ]
+    },
+    "skill": {
+      "id": 1,
+      "range": 2,
+      "area": 0,
+      "target": "ONE",
+      "effects": [
+        {
+          "key": {
+            "idSkill": 1,
+            "idEffect": 9
+          }
+        }
+      ]
+    },
+    "attack": {
+      "id": 1,
+      "range": 1,
+      "damage": 1,
+      "area": 0,
+      "target": "ONE",
+      "numAttacks": 1,
+      "effects": []
+    },
+    "restoreCards": {
+      "id": 1,
+      "numCards": 1,
+      "target": "SELF",
+      "random": true
+    },
+    "summonActions": [
+      {
+        "key": {
+          "idSummon": 1,
+          "idAction": 2
+        },
+        "summon": 1,
+        "range": 2
+      },
+      {
+        "key": {
+          "idSummon": 3,
+          "idAction": 2
+        },
+        "summon": 3,
+        "range": 3
+      }
+    ]
+  },
+  {
+    "id": 3,
+    "title": "Bite",
+    "description": "Bite your enemies.",
+    "discard": "NEVER",
+    "levelReq": null,
+    "movement": null,
+    "skill": null,
+    "attack": {
+      "id": 2,
+      "range": 1,
+      "damage": 1,
+      "area": 0,
+      "target": "ONE",
+      "numAttacks": 1,
+      "effects": []
+    },
+    "restoreCards": null,
+    "summonActions": []
+  },
+  {
+    "id": 4,
+    "title": "Summon a little my\u0161\u00edtko",
+    "description": "In a non recursive way.",
+    "discard": "NEVER",
+    "levelReq": null,
+    "movement": null,
+    "skill": null,
+    "attack": null,
+    "restoreCards": null,
+    "summonActions": [
+      {
+        "key": {
+          "idSummon": 3,
+          "idAction": 4
+        },
+        "summon": 3,
+        "range": 1
+      }
+    ]
+  },
+  {
+    "id": 5,
+    "title": "Tiny bite",
+    "description": "This bite is so weak it does nothing.",
+    "discard": "NEVER",
+    "levelReq": null,
+    "movement": null,
+    "skill": null,
+    "attack": null,
+    "restoreCards": null,
+    "summonActions": []
+  },
+  {
+    "id": 6,
+    "title": "Summon a Mother Rat",
+    "description": "It can summon little ones.",
+    "discard": "NEVER",
+    "levelReq": null,
+    "movement": null,
+    "skill": null,
+    "attack": null,
+    "restoreCards": null,
+    "summonActions": [
+      {
+        "key": {
+          "idSummon": 2,
+          "idAction": 6
+        },
+        "summon": 2,
+        "range": 3
+      }
+    ]
+  },
+  {
+    "id": 7,
+    "title": "Step forward",
+    "description": "Make two steps from hell.",
+    "discard": "NEVER",
+    "levelReq": null,
+    "movement": {
+      "id": 2,
+      "range": 2,
+      "type": "WALK",
+      "effects": []
+    },
+    "skill": null,
+    "attack": null,
+    "restoreCards": null,
+    "summonActions": []
+  },
+  {
+    "id": 8,
+    "title": "Iron sword",
+    "description": "Attack an enemy with your sword.",
+    "discard": "NEVER",
+    "levelReq": null,
+    "movement": null,
+    "skill": null,
+    "attack": {
+      "id": 3,
+      "range": 1,
+      "damage": 4,
+      "area": 0,
+      "target": "ONE",
+      "numAttacks": 1,
+      "effects": []
+    },
+    "restoreCards": null,
+    "summonActions": []
+  },
+  {
+    "id": 9,
+    "title": "Wooden bow",
+    "description": "Shoot an arrow at an enemy.",
+    "discard": "NEVER",
+    "levelReq": null,
+    "movement": null,
+    "skill": null,
+    "attack": {
+      "id": 4,
+      "range": 3,
+      "damage": 3,
+      "area": 0,
+      "target": "ONE",
+      "numAttacks": 1,
+      "effects": []
+    },
+    "restoreCards": null,
+    "summonActions": []
+  },
+  {
+    "id": 10,
+    "title": "Healing word",
+    "description": "Heal an ally or yourself.",
+    "discard": "PERMANENT",
+    "levelReq": null,
+    "movement": null,
+    "skill": {
+      "id": 2,
+      "range": 3,
+      "area": 0,
+      "target": "ONE",
+      "effects": [
+        {
+          "key": {
+            "idSkill": 2,
+            "idEffect": 10
+          }
+        }
+      ]
+    },
+    "attack": null,
+    "restoreCards": null,
+    "summonActions": []
+  },
+  {
+    "id": 11,
+    "title": "Wall of fire",
+    "description": "Burn all enemies.",
+    "discard": "PERMANENT",
+    "levelReq": null,
+    "movement": null,
+    "skill": {
+      "id": 3,
+      "range": 3,
+      "area": 1,
+      "target": "ALL_ENEMIES",
+      "effects": [
+        {
+          "key": {
+            "idSkill": 3,
+            "idEffect": 11
+          }
+        }
+      ]
+    },
+    "attack": null,
+    "restoreCards": null,
+    "summonActions": []
+  },
+  {
+    "id": 12,
+    "title": "Lesser restoration",
+    "description": "Restore 3 cards.",
+    "discard": "LONG_REST",
+    "levelReq": null,
+    "movement": null,
+    "skill": null,
+    "attack": null,
+    "restoreCards": {
+      "id": 2,
+      "numCards": 3,
+      "target": "SELF",
+      "random": true
+    },
+    "summonActions": []
+  }
+]

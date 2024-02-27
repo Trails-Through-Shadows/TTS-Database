@@ -1,0 +1,43 @@
+[
+  {
+    "id": 1,
+    "title": "Poison Gas Trap",
+    "tag": "o-poisonGasTrap",
+    "description": "",
+    "baseDamage": 10,
+    "baseHealth": 10,
+    "crossable": true,
+    "usages": 0,
+    "effects": [],
+    "hex": null,
+    "url": "http://localhost:8080/images/obstacles/poisonGasTrap.png"
+  },
+  {
+    "id": 2,
+    "title": "Spiked Pit",
+    "tag": "o-spikedPitTrap",
+    "description": "",
+    "baseDamage": 10,
+    "baseHealth": 10,
+    "crossable": true,
+    "usages": 1,
+    "effects": [
+      {
+        "key": {
+          "idObstacle": 2,
+          "idEffect": 1
+        },
+        "effect": {
+          "id": 1,
+          "target": "ONE",
+          "type": "BLEED",
+          "duration": 5,
+          "strength": 3,
+          "description": null
+        }
+      }
+    ],
+    "hex": null,
+    "url": "http://localhost:8080/images/obstacles/spikedPitTrap.png"
+  }
+]

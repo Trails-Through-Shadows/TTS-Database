@@ -21,7 +21,7 @@ object Summon {
     +Action
 }
 Effects --> Summon
-Action -> Summon
+Action -[dashed]> Summon
 
 object Classes {
     +Action[]
@@ -73,7 +73,7 @@ object SummonAction{
     +Summon
     +Action
 }
-Action ---> SummonAction
+Action <--- SummonAction
 Summon --l> SummonAction
 
 object Campaigns {

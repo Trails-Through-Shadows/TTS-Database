@@ -35,7 +35,7 @@ with open(dataFilePath, encoding='utf8') as dataFile:
     data = json.load(dataFile)
 
 # Write the SQL file
-sqlFilePath = currentFolderPath + "/1-summons.sql"
+sqlFilePath = currentFolderPath + "/2-summons.sql"
 lateSqlFilePath = currentFolderPath + "/3-summons-late.sql"
 sqlFile = open(sqlFilePath, "w")
 lateSqlFile = open(lateSqlFilePath, "w")

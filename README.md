@@ -31,7 +31,7 @@ When the diagram is updated, just export it into MySql and copy the contents int
 This graphs shows what table is required in witch table.
 
 By traversing the graph from source to most distant node, we can determine the order in which the tables should be inserted.
-*Dashed lines* represents an split creation due to cyclic dependencies.
+*Dashed lines* represents a split creation due to cyclic dependencies.
 
 <p align="center">
   <img src="graph/insertPriorityGraph.png" alt="Insert Priority Graph"/>

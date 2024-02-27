@@ -5,7 +5,7 @@
     "idClass": 1,
     "idRace": 1,
     "title": "Gandalf",
-    "playerName": "Pajde"
+    "playerName": "Pajdě"
   },
   {
     "id": 2,
@@ -13,7 +13,7 @@
     "idClass": 2,
     "idRace": 2,
     "title": "Aragorn",
-    "playerName": "Barce"
+    "playerName": "Barče"
   },
   {
     "id": 3,
@@ -21,7 +21,7 @@
     "idClass": 3,
     "idRace": 3,
     "title": "Gimli",
-    "playerName": "Myrce"
+    "playerName": "Myrče"
   },
   {
       "id": 4,
@@ -29,7 +29,7 @@
       "idClass": 4,
       "idRace": 4,
       "title": "Legolas",
-      "playerName": "Zoze"
+      "playerName": "Žože"
   },
   {
       "id": 5,

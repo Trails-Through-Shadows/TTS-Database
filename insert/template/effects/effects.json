@@ -122,7 +122,7 @@
   {
     "id": 18,
     "target": "SELF",
-    "type": "DISARM_RESISTANCE",
+    "type": "VULNERABILITY_RESISTANCE",
     "duration": 1,
     "strength": 1,
     "description": null

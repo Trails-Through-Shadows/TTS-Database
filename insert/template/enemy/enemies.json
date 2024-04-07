@@ -19,36 +19,11 @@
           "target": "SELF",
           "type": "POISON_RESISTANCE",
           "duration": -1,
-          "strength": 3,
-          "description": null
+          "strength": 3
         }
       }
     ],
-    "actions": [
-      {
-        "key": {
-          "idEnemy": 1,
-          "idAction": 3
-        },
-        "action": 3
-      },
-      {
-        "key": {
-          "idEnemy": 1,
-          "idAction": 7
-        },
-        "action": 7
-      },
-      {
-        "key": {
-          "idEnemy": 1,
-          "idAction": 8
-        },
-        "action": 8
-      }
-    ],
-    "hex": null,
-    "url": "http://localhost:8080/images/enemies/pyroSkeleton.png"
+    "actions": []
   },
   {
     "id": 2,
@@ -60,24 +35,7 @@
     "baseInitiative": 9,
     "usages": 6,
     "effects": [],
-    "actions": [
-      {
-        "key": {
-          "idEnemy": 2,
-          "idAction": 5
-        },
-        "action": 5
-      },
-      {
-        "key": {
-          "idEnemy": 2,
-          "idAction": 6
-        },
-        "action": 6
-      }
-    ],
-    "hex": null,
-    "url": "http://localhost:8080/images/enemies/ratMercenary.png"
+    "actions": []
   },
   {
     "id": 3,
@@ -99,29 +57,11 @@
           "target": "SELF",
           "type": "BLEED_RESISTANCE",
           "duration": -1,
-          "strength": 100,
-          "description": null
+          "strength": 100
         }
       }
     ],
-    "actions": [
-      {
-        "key": {
-          "idEnemy": 3,
-          "idAction": 9
-        },
-        "action": 9
-      },
-      {
-        "key": {
-          "idEnemy": 3,
-          "idAction": 10
-        },
-        "action": 10
-      }
-    ],
-    "hex": null,
-    "url": "http://localhost:8080/images/enemies/sandGolem.png"
+    "actions": []
   },
   {
     "id": 4,
@@ -143,29 +83,11 @@
           "target": "SELF",
           "type": "FORCED_MOVEMENT_RESISTANCE",
           "duration": -1,
-          "strength": 0,
-          "description": null
+          "strength": 0
         }
       }
     ],
-    "actions": [
-      {
-        "key": {
-          "idEnemy": 4,
-          "idAction": 8
-        },
-        "action": 8
-      },
-      {
-        "key": {
-          "idEnemy": 4,
-          "idAction": 11
-        },
-        "action": 11
-      }
-    ],
-    "hex": null,
-    "url": "http://localhost:8080/images/enemies/undeadArcher.png"
+    "actions": []
   },
   {
     "id": 5,
@@ -175,11 +97,8 @@
     "baseHealth": 15,
     "baseDefence": 3,
     "baseInitiative": 11,
-    "usages": null,
     "effects": [],
-    "actions": [],
-    "hex": null,
-    "url": "http://localhost:8080/images/enemies/crocodile.png"
+    "actions": []
   },
   {
     "id": 6,
@@ -189,11 +108,8 @@
     "baseHealth": 6,
     "baseDefence": 0,
     "baseInitiative": 12,
-    "usages": null,
     "effects": [],
-    "actions": [],
-    "hex": null,
-    "url": "http://localhost:8080/images/enemies/goblinSorcka.png"
+    "actions": []
   },
   {
     "id": 7,
@@ -203,11 +119,8 @@
     "baseHealth": 12,
     "baseDefence": 2,
     "baseInitiative": 8,
-    "usages": null,
     "effects": [],
-    "actions": [],
-    "hex": null,
-    "url": "http://localhost:8080/images/enemies/fireElemental.png"
+    "actions": []
   },
   {
     "id": 8,
@@ -217,11 +130,8 @@
     "baseHealth": 20,
     "baseDefence": 4,
     "baseInitiative": 3,
-    "usages": null,
     "effects": [],
-    "actions": [],
-    "hex": null,
-    "url": "http://localhost:8080/images/enemies/undeadTree.png"
+    "actions": []
   },
   {
     "id": 9,
@@ -231,11 +141,8 @@
     "baseHealth": 13,
     "baseDefence": 2,
     "baseInitiative": 9,
-    "usages": null,
     "effects": [],
-    "actions": [],
-    "hex": null,
-    "url": "http://localhost:8080/images/enemies/voidLizard.png"
+    "actions": []
   },
   {
     "id": 10,
@@ -245,10 +152,7 @@
     "baseHealth": 5,
     "baseDefence": 2,
     "baseInitiative": 15,
-    "usages": null,
     "effects": [],
-    "actions": [],
-    "hex": null,
-    "url": "http://localhost:8080/images/enemies/koboldNecro.png"
+    "actions": []
   }
 ]

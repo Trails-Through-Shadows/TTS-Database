@@ -227,7 +227,7 @@ CREATE TABLE `Skill` (
 CREATE TABLE `Movement` (
   `id` INT NOT NULL AUTO_INCREMENT,
   `range` INT NOT NULL,
-  `type` ENUM ('WALK', 'JUMP') NOT NULL DEFAULT 'WALK',
+  `type` ENUM ('WALK', 'JUMP', 'TELEPORT') NOT NULL DEFAULT 'WALK',
   PRIMARY KEY (`id`)
 );
 

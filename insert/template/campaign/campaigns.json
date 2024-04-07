@@ -6,31 +6,31 @@
     "locations": [
       {
         "id": 1,
-        "winCondition": { "type": "killEnemies", "value": -1}
+        "winCondition": { "type": "KILL_ENEMIES", "value": -1}
       },
       {
           "id": 2,
-          "winCondition": null
+          "winCondition": { "type": "SURVIVE_ROUNDS", "value": 10}
       },
       {
           "id": 3,
-          "winCondition": { "type": "killEnemies", "value": 5}
+          "winCondition": { "type": "KILL_ENEMIES", "value": 5}
       },
       {
           "id": 4,
-          "winCondition": { "type": "killEnemies", "value": 5}
+          "winCondition": { "type": "SURVIVE_ROUNDS", "value": 5}
       },
       {
           "id": 5,
-          "winCondition": { "type": "killEnemies", "value": 5}
+          "winCondition": { "type": "OPEN_DOORS", "value": 3}
       },
       {
           "id": 6,
-          "winCondition": { "type": "killEnemies", "value": 5}
+          "winCondition": { "type": "OPEN_DOORS", "value": -1}
       },
       {
           "id": 7,
-          "winCondition": { "type": "killEnemies", "value": 5}
+          "winCondition": { "type": "SURVIVE_ROUNDS", "value": 10}
       }
     ],
     "startLocation": 1,
@@ -52,7 +52,7 @@
     "locations": [
       {
         "id": 1,
-        "winCondition": { "type": "killEnemies", "value": 5}
+        "winCondition": { "type": "KILL_ENEMIES", "value": -1}
       }
     ],
     "startLocation": 1,
@@ -67,7 +67,7 @@
     "locations": [
       {
         "id": 1,
-        "winCondition": { "type": "openDoors", "value": 3}
+        "winCondition": null
       }
     ],
     "startLocation": 1,

@@ -63,7 +63,13 @@ for entry in data:
 
     # Locations
     for location in entry["locations"]:
-        winCondition = '{}:{}'.format(location["winCondition"]["type"], location["winCondition"]["value"]) if location["winCondition"] != 'NULL' else "NULL"
+        if location["winCondition"] != 'NULL':
+            l_type = location["winCondition"]["type"]
+            l_value = location["winCondition"]["value"]
+            winCondition = "{" + '"type": "{}", "value": {}'.format(l_type, l_value) + "}"
+        else:
+            winCondition = 'NULL'
+
         starting = location["id"] == campaignStart
         finishing = location["id"] in campaignFinish
 

@@ -20,6 +20,10 @@ The database is equipped with the following scripts, located in the `script` fol
 - `insert.py`: clears and re-inserts testing data into the database
   - `-s` flag skips the clear phase
 
+## Development
+- If you want to make changes, please test them in the development database
+  - To do so, simply change the `DB_NAME` in the `.env` file to the dev database name
+
 Run these scripts with a command such as `python3 script/create.py`.
 
 ## Schema

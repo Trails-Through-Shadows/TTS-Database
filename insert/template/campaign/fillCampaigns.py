@@ -63,22 +63,24 @@ for entry in data:
 
     # Locations
     for location in entry["locations"]:
-        if location["winCondition"] != 'NULL':
-            l_type = location["winCondition"]["type"]
-            l_value = location["winCondition"]["value"]
-            winCondition = "{" + '"type": "{}", "value": {}'.format(l_type, l_value) + "}"
-        else:
-            winCondition = 'NULL'
+        conditions = ""
+        if location["conditions"] != 'NULL':
+            condList = []
+            for condition in location["conditions"]:
+                condList.append(
+                    "{" + '"type": "{}", "value": {}, "result": "{}"'.format(condition["type"], condition["value"], condition["result"]) + "}"
+                )
+            conditions = "[" + ", ".join(condList) + "]"
 
         starting = location["id"] == campaignStart
         finishing = location["id"] in campaignFinish
 
         sqlFile.write(
-            "INSERT INTO CampaignLocation (idCampaign, idLocation, winCondition, `start`, `finish`) "
+            "INSERT INTO CampaignLocation (idCampaign, idLocation, `condition`, `start`, `finish`) "
             "VALUES ('{}', '{}', '{}', {}, {});\n"
             .format(entryID,
                     location["id"],
-                    winCondition,
+                    conditions,
                     starting,
                     finishing
             )

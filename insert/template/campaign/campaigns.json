@@ -6,31 +6,53 @@
     "locations": [
       {
         "id": 1,
-        "winCondition": { "type": "KILL_ENEMIES", "value": -1}
+        "conditions": [
+          { "type": "ENEMY_DEATHS", "value": -1, "result": "COMPLETED"},
+          { "type": "ROUND_REACHED", "value": 5, "result": "FAILED"},
+          { "type": "PLAYER_DEATHS", "value": -1, "result": "FAILED"}
+        ]
       },
       {
-          "id": 2,
-          "winCondition": { "type": "SURVIVE_ROUNDS", "value": 10}
+        "id": 2,
+        "conditions": [
+          { "type": "ROUND_REACHED", "value": 10, "result": "COMPLETED"},
+          { "type": "PLAYER_DEATHS", "value": 2, "result": "FAILED"}
+        ]
       },
       {
-          "id": 3,
-          "winCondition": { "type": "KILL_ENEMIES", "value": 5}
+        "id": 3,
+        "conditions": [
+          { "type": "ENEMY_DEATHS", "value": 5, "result": "COMPLETED"},
+          { "type": "PLAYER_DEATHS", "value": -1, "result": "FAILED"}
+        ]
       },
       {
-          "id": 4,
-          "winCondition": { "type": "SURVIVE_ROUNDS", "value": 5}
+        "id": 4,
+        "conditions": [
+          { "type": "ROUND_REACHED", "value": 5, "result": "COMPLETED"},
+          { "type": "PLAYER_DEATHS", "value": -1, "result": "FAILED"}
+        ]
       },
       {
-          "id": 5,
-          "winCondition": { "type": "OPEN_DOORS", "value": 3}
+        "id": 5,
+        "conditions": [
+          { "type": "DOORS_OPENED", "value": 3, "result": "COMPLETED"},
+          { "type": "PLAYER_DEATHS", "value": -1, "result": "FAILED"}
+        ]
       },
       {
-          "id": 6,
-          "winCondition": { "type": "OPEN_DOORS", "value": -1}
+        "id": 6,
+        "conditions": [
+          { "type": "DOORS_OPENED", "value": -1, "result": "COMPLETED"},
+          { "type": "PLAYER_DEATHS", "value": -1, "result": "FAILED"}
+        ]
       },
       {
-          "id": 7,
-          "winCondition": { "type": "SURVIVE_ROUNDS", "value": 10}
+        "id": 7,
+        "conditions": [
+          { "type": "ROUND_REACHED", "value": 10, "result": "COMPLETED"},
+          { "type": "PLAYER_DEATHS", "value": -1, "result": "FAILED"}
+        ]
       }
     ],
     "startLocation": 1,
@@ -52,7 +74,10 @@
     "locations": [
       {
         "id": 1,
-        "winCondition": { "type": "KILL_ENEMIES", "value": -1}
+        "conditions": [
+          { "type": "ENEMY_DEATHS", "value": -1, "result": "COMPLETED"},
+          { "type": "PLAYER_DEATHS", "value": -1, "result": "FAILED"}
+        ]
       }
     ],
     "startLocation": 1,
@@ -67,7 +92,7 @@
     "locations": [
       {
         "id": 1,
-        "winCondition": null
+        "conditions": null
       }
     ],
     "startLocation": 1,

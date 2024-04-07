@@ -17,7 +17,7 @@ CREATE TABLE `CampaignLocation` (
   `id` INT NOT NULL AUTO_INCREMENT,
   `idCampaign` INT NOT NULL,
   `idLocation` INT NOT NULL,
-  `winCondition` TEXT NOT NULL,
+  `condition` TEXT NOT NULL,
   `start` bool NOT NULL,
   `finish` bool NOT NULL,
   PRIMARY KEY (`id`)

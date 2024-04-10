@@ -9,7 +9,9 @@
     "baseInitiative": 12,
     "usages": 4,
     "effects": [],
-    "actions": []
+    "actions": [],
+    "startingHex": null,
+    "url": "https://api.tts-game.fun/images/enemies/pyroSkeleton.png"
   },
   {
     "id": 2,
@@ -21,7 +23,9 @@
     "baseInitiative": 9,
     "usages": 6,
     "effects": [],
-    "actions": []
+    "actions": [],
+    "startingHex": null,
+    "url": "https://api.tts-game.fun/images/enemies/ratMercenary.png"
   },
   {
     "id": 3,
@@ -33,19 +37,48 @@
     "baseInitiative": 6,
     "usages": 4,
     "effects": [],
-    "actions": []
+    "actions": [],
+    "startingHex": null,
+    "url": "https://api.tts-game.fun/images/enemies/sandGolem.png"
   },
   {
     "id": 4,
     "title": "Undead Archer",
     "tag": "e-undeadArcher",
-    "description": "",
+    "description": "Silent and deadly, undead archers strike from afar with precision and accuracy. Skeletal in form, they rain down arrows upon their enemies, maintaining distance while inflicting considerable damage.",
     "baseHealth": 6,
     "baseDefence": 0,
     "baseInitiative": 15,
     "usages": 0,
     "effects": [],
-    "actions": []
+    "actions": [
+      {
+        "key": {
+          "idEnemy": 4,
+          "idAction": 48
+        }
+      },
+      {
+        "key": {
+          "idEnemy": 4,
+          "idAction": 49
+        }
+      },
+      {
+        "key": {
+          "idEnemy": 4,
+          "idAction": 50
+        }
+      },
+      {
+        "key": {
+          "idEnemy": 4,
+          "idAction": 51
+        }
+      }
+    ],
+    "startingHex": null,
+    "url": "https://api.tts-game.fun/images/enemies/undeadArcher.png"
   },
   {
     "id": 5,
@@ -55,8 +88,11 @@
     "baseHealth": 15,
     "baseDefence": 3,
     "baseInitiative": 11,
+    "usages": 0,
     "effects": [],
-    "actions": []
+    "actions": [],
+    "startingHex": null,
+    "url": "https://api.tts-game.fun/images/enemies/crocodile.png"
   },
   {
     "id": 6,
@@ -66,8 +102,11 @@
     "baseHealth": 6,
     "baseDefence": 0,
     "baseInitiative": 12,
+    "usages": 0,
     "effects": [],
-    "actions": []
+    "actions": [],
+    "startingHex": null,
+    "url": "https://api.tts-game.fun/images/enemies/goblinSorcka.png"
   },
   {
     "id": 7,
@@ -77,8 +116,11 @@
     "baseHealth": 12,
     "baseDefence": 2,
     "baseInitiative": 8,
+    "usages": 0,
     "effects": [],
-    "actions": []
+    "actions": [],
+    "startingHex": null,
+    "url": "https://api.tts-game.fun/images/enemies/fireElemental.png"
   },
   {
     "id": 8,
@@ -88,8 +130,11 @@
     "baseHealth": 20,
     "baseDefence": 4,
     "baseInitiative": 3,
+    "usages": 0,
     "effects": [],
-    "actions": []
+    "actions": [],
+    "startingHex": null,
+    "url": "https://api.tts-game.fun/images/enemies/undeadTree.png"
   },
   {
     "id": 9,
@@ -99,8 +144,11 @@
     "baseHealth": 13,
     "baseDefence": 2,
     "baseInitiative": 9,
+    "usages": 0,
     "effects": [],
-    "actions": []
+    "actions": [],
+    "startingHex": null,
+    "url": "https://api.tts-game.fun/images/enemies/voidLizard.png"
   },
   {
     "id": 10,
@@ -110,7 +158,88 @@
     "baseHealth": 5,
     "baseDefence": 2,
     "baseInitiative": 15,
+    "usages": 0,
     "effects": [],
-    "actions": []
+    "actions": [],
+    "startingHex": null,
+    "url": "https://api.tts-game.fun/images/enemies/koboldNecro.png"
+  },
+  {
+    "id": 11,
+    "title": "Zombie",
+    "tag": "e-chaosZombie",
+    "description": "Mindless and decaying, zombies are numerous and relentless in their pursuit of flesh. Though individually weak, their swarming attacks and poisonous bites can overwhelm the unprepared.",
+    "baseHealth": 10,
+    "baseDefence": 1,
+    "baseInitiative": 8,
+    "usages": null,
+    "effects": [],
+    "actions": [
+      {
+        "key": {
+          "idEnemy": 11,
+          "idAction": 44
+        }
+      },
+      {
+        "key": {
+          "idEnemy": 11,
+          "idAction": 45
+        }
+      },
+      {
+        "key": {
+          "idEnemy": 11,
+          "idAction": 46
+        }
+      },
+      {
+        "key": {
+          "idEnemy": 11,
+          "idAction": 47
+        }
+      }
+    ],
+    "startingHex": null,
+    "url": "https://api.tts-game.fun/images/enemies/chaosZombie.png"
+  },
+  {
+    "id": 12,
+    "title": "Lich",
+    "tag": "e-undeadSkeletNecro",
+    "description": "A powerful necromancer risen from the depths of darkness, the Lich commands formidable magical abilities. With spells of decay and death, it seeks to annihilate all who dare to oppose its unholy reign.",
+    "baseHealth": 20,
+    "baseDefence": 2,
+    "baseInitiative": 10,
+    "usages": null,
+    "effects": [],
+    "actions": [
+      {
+        "key": {
+          "idEnemy": 12,
+          "idAction": 52
+        }
+      },
+      {
+        "key": {
+          "idEnemy": 12,
+          "idAction": 53
+        }
+      },
+      {
+        "key": {
+          "idEnemy": 12,
+          "idAction": 54
+        }
+      },
+      {
+        "key": {
+          "idEnemy": 12,
+          "idAction": 55
+        }
+      }
+    ],
+    "startingHex": null,
+    "url": "https://api.tts-game.fun/images/enemies/undeadSkeletNecro.png"
   }
 ]

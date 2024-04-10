@@ -6,7 +6,7 @@
     "effects": [],
     "actions": [],
     "tag": "r-demonkin",
-    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla ac nisl nec nunc aliquam tincidunt"
+    "description": "Infernal and cunning beings, unleashing chaotic and destructive forces upon their enemies while manipulating darkness to their advantage."
   },
   {
     "id": 2,
@@ -15,7 +15,7 @@
     "effects": [],
     "actions": [],
     "tag": "r-human",
-    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla ac nisl nec nunc aliquam tincidunt"
+    "description": "Adaptable and resilient fighters, employing versatile tactics and strategic acumen to overcome any challenge they face."
   },
   {
     "id": 3,
@@ -24,7 +24,7 @@
     "effects": [],
     "actions": [],
     "tag": "r-dwarf",
-    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla ac nisl nec nunc aliquam tincidunt"
+    "description": "Stalwart and unyielding defenders, harnessing the power of stone and steel to crush enemies and fortify their defenses against all odds."
   },
   {
     "id": 4,
@@ -33,6 +33,6 @@
     "effects": [],
     "actions": [],
     "tag": "r-elf",
-    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla ac nisl nec nunc aliquam tincidunt"
+    "description": "Graceful and attuned to nature, blending magic and agility to dominate the battlefield while healing allies and moving unseen through the forest."
   }
 ]

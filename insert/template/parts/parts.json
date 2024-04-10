@@ -9,60 +9,51 @@
           "idPart": 1,
           "id": 1
         },
-        "q": -2,
+        "q": -1,
         "r": -1,
-        "s": 3
+        "s": 2
       },
       {
         "key": {
           "idPart": 1,
           "id": 2
         },
-        "q": -1,
+        "q": 0,
         "r": -1,
-        "s": 2
+        "s": 1
       },
       {
         "key": {
           "idPart": 1,
           "id": 3
         },
-        "q": 0,
+        "q": 1,
         "r": -1,
-        "s": 1
+        "s": 0
       },
       {
         "key": {
           "idPart": 1,
           "id": 4
         },
-        "q": 1,
+        "q": 2,
         "r": -1,
-        "s": 0
+        "s": -1
       },
       {
         "key": {
           "idPart": 1,
           "id": 5
         },
-        "q": 2,
-        "r": -1,
-        "s": -1
+        "q": -2,
+        "r": 0,
+        "s": 2
       },
       {
         "key": {
           "idPart": 1,
           "id": 6
         },
-        "q": -2,
-        "r": 0,
-        "s": 2
-      },
-      {
-        "key": {
-          "idPart": 1,
-          "id": 7
-        },
         "q": -1,
         "r": 0,
         "s": 1
@@ -70,7 +61,7 @@
       {
         "key": {
           "idPart": 1,
-          "id": 8
+          "id": 7
         },
         "q": 0,
         "r": 0,
@@ -79,7 +70,7 @@
       {
         "key": {
           "idPart": 1,
-          "id": 9
+          "id": 8
         },
         "q": 1,
         "r": 0,
@@ -88,7 +79,7 @@
       {
         "key": {
           "idPart": 1,
-          "id": 10
+          "id": 9
         },
         "q": 2,
         "r": 0,
@@ -97,7 +88,7 @@
       {
         "key": {
           "idPart": 1,
-          "id": 11
+          "id": 10
         },
         "q": -3,
         "r": 1,
@@ -106,7 +97,7 @@
       {
         "key": {
           "idPart": 1,
-          "id": 12
+          "id": 11
         },
         "q": -2,
         "r": 1,
@@ -115,7 +106,7 @@
       {
         "key": {
           "idPart": 1,
-          "id": 13
+          "id": 12
         },
         "q": -1,
         "r": 1,
@@ -124,7 +115,7 @@
       {
         "key": {
           "idPart": 1,
-          "id": 14
+          "id": 13
         },
         "q": 0,
         "r": 1,
@@ -133,7 +124,7 @@
       {
         "key": {
           "idPart": 1,
-          "id": 15
+          "id": 14
         },
         "q": 1,
         "r": 1,
@@ -142,7 +133,7 @@
       {
         "key": {
           "idPart": 1,
-          "id": 16
+          "id": 15
         },
         "q": -3,
         "r": 2,
@@ -151,7 +142,7 @@
       {
         "key": {
           "idPart": 1,
-          "id": 17
+          "id": 16
         },
         "q": -2,
         "r": 2,
@@ -160,7 +151,7 @@
       {
         "key": {
           "idPart": 1,
-          "id": 18
+          "id": 17
         },
         "q": -1,
         "r": 2,
@@ -169,7 +160,7 @@
       {
         "key": {
           "idPart": 1,
-          "id": 19
+          "id": 18
         },
         "q": 0,
         "r": 2,
@@ -178,7 +169,7 @@
       {
         "key": {
           "idPart": 1,
-          "id": 20
+          "id": 19
         },
         "q": 1,
         "r": 2,
@@ -187,7 +178,7 @@
       {
         "key": {
           "idPart": 1,
-          "id": 21
+          "id": 20
         },
         "q": -4,
         "r": 3,
@@ -196,7 +187,7 @@
       {
         "key": {
           "idPart": 1,
-          "id": 22
+          "id": 21
         },
         "q": -3,
         "r": 3,
@@ -205,7 +196,7 @@
       {
         "key": {
           "idPart": 1,
-          "id": 23
+          "id": 22
         },
         "q": -2,
         "r": 3,
@@ -214,7 +205,7 @@
       {
         "key": {
           "idPart": 1,
-          "id": 24
+          "id": 23
         },
         "q": -1,
         "r": 3,
@@ -223,11 +214,200 @@
       {
         "key": {
           "idPart": 1,
-          "id": 25
+          "id": 24
         },
         "q": 0,
         "r": 3,
         "s": -3
+      },
+      {
+        "key": {
+          "idPart": 1,
+          "id": 25
+        },
+        "q": -2,
+        "r": -2,
+        "s": 4
+      },
+      {
+        "key": {
+          "idPart": 1,
+          "id": 26
+        },
+        "q": -1,
+        "r": -3,
+        "s": 4
+      },
+      {
+        "key": {
+          "idPart": 1,
+          "id": 27
+        },
+        "q": -1,
+        "r": -2,
+        "s": 3
+      },
+      {
+        "key": {
+          "idPart": 1,
+          "id": 28
+        },
+        "q": 0,
+        "r": -3,
+        "s": 3
+      },
+      {
+        "key": {
+          "idPart": 1,
+          "id": 29
+        },
+        "q": 1,
+        "r": -3,
+        "s": 2
+      },
+      {
+        "key": {
+          "idPart": 1,
+          "id": 30
+        },
+        "q": 0,
+        "r": -2,
+        "s": 2
+      },
+      {
+        "key": {
+          "idPart": 1,
+          "id": 31
+        },
+        "q": 2,
+        "r": -3,
+        "s": 1
+      },
+      {
+        "key": {
+          "idPart": 1,
+          "id": 32
+        },
+        "q": 1,
+        "r": -2,
+        "s": 1
+      },
+      {
+        "key": {
+          "idPart": 1,
+          "id": 33
+        },
+        "q": 3,
+        "r": -3,
+        "s": 0
+      },
+      {
+        "key": {
+          "idPart": 1,
+          "id": 34
+        },
+        "q": 2,
+        "r": -2,
+        "s": 0
+      },
+      {
+        "key": {
+          "idPart": 1,
+          "id": 35
+        },
+        "q": 3,
+        "r": -2,
+        "s": -1
+      },
+      {
+        "key": {
+          "idPart": 1,
+          "id": 36
+        },
+        "q": 4,
+        "r": -3,
+        "s": -1
+      },
+      {
+        "key": {
+          "idPart": 1,
+          "id": 37
+        },
+        "q": 4,
+        "r": -2,
+        "s": -2
+      },
+      {
+        "key": {
+          "idPart": 1,
+          "id": 38
+        },
+        "q": 3,
+        "r": -1,
+        "s": -2
+      },
+      {
+        "key": {
+          "idPart": 1,
+          "id": 39
+        },
+        "q": 3,
+        "r": 0,
+        "s": -3
+      },
+      {
+        "key": {
+          "idPart": 1,
+          "id": 40
+        },
+        "q": 2,
+        "r": 1,
+        "s": -3
+      },
+      {
+        "key": {
+          "idPart": 1,
+          "id": 41
+        },
+        "q": 1,
+        "r": 3,
+        "s": -4
+      },
+      {
+        "key": {
+          "idPart": 1,
+          "id": 42
+        },
+        "q": -3,
+        "r": 0,
+        "s": 3
+      },
+      {
+        "key": {
+          "idPart": 1,
+          "id": 43
+        },
+        "q": -4,
+        "r": 2,
+        "s": 2
+      },
+      {
+        "key": {
+          "idPart": 1,
+          "id": 44
+        },
+        "q": 2,
+        "r": 2,
+        "s": -4
+      },
+      {
+        "key": {
+          "idPart": 1,
+          "id": 57
+        },
+        "q": -2,
+        "r": -1,
+        "s": 3
       }
     ],
     "usages": 2,
@@ -237,7 +417,7 @@
     "doors": null,
     "startingHexes": null,
     "unlocked": false,
-    "url": "http://localhost:8080/images/parts/square.png"
+    "url": "https://api.tts-game.fun/images/parts/square.png"
   },
   {
     "id": 2,
@@ -249,51 +429,42 @@
           "idPart": 2,
           "id": 1
         },
-        "q": 0,
+        "q": 1,
         "r": -2,
-        "s": 2
+        "s": 1
       },
       {
         "key": {
           "idPart": 2,
           "id": 2
         },
-        "q": 1,
+        "q": 2,
         "r": -2,
-        "s": 1
+        "s": 0
       },
       {
         "key": {
           "idPart": 2,
           "id": 3
         },
-        "q": 2,
-        "r": -2,
-        "s": 0
+        "q": -1,
+        "r": -1,
+        "s": 2
       },
       {
         "key": {
           "idPart": 2,
           "id": 4
         },
-        "q": -1,
+        "q": 0,
         "r": -1,
-        "s": 2
+        "s": 1
       },
       {
         "key": {
           "idPart": 2,
           "id": 5
         },
-        "q": 0,
-        "r": -1,
-        "s": 1
-      },
-      {
-        "key": {
-          "idPart": 2,
-          "id": 6
-        },
         "q": 1,
         "r": -1,
         "s": 0
@@ -301,7 +472,7 @@
       {
         "key": {
           "idPart": 2,
-          "id": 7
+          "id": 6
         },
         "q": 2,
         "r": -1,
@@ -310,7 +481,7 @@
       {
         "key": {
           "idPart": 2,
-          "id": 8
+          "id": 7
         },
         "q": -2,
         "r": 0,
@@ -319,7 +490,7 @@
       {
         "key": {
           "idPart": 2,
-          "id": 9
+          "id": 8
         },
         "q": -1,
         "r": 0,
@@ -328,7 +499,7 @@
       {
         "key": {
           "idPart": 2,
-          "id": 10
+          "id": 9
         },
         "q": 0,
         "r": 0,
@@ -337,7 +508,7 @@
       {
         "key": {
           "idPart": 2,
-          "id": 11
+          "id": 10
         },
         "q": 1,
         "r": 0,
@@ -346,7 +517,7 @@
       {
         "key": {
           "idPart": 2,
-          "id": 12
+          "id": 11
         },
         "q": 2,
         "r": 0,
@@ -355,7 +526,7 @@
       {
         "key": {
           "idPart": 2,
-          "id": 13
+          "id": 12
         },
         "q": -2,
         "r": 1,
@@ -364,7 +535,7 @@
       {
         "key": {
           "idPart": 2,
-          "id": 14
+          "id": 13
         },
         "q": -1,
         "r": 1,
@@ -373,7 +544,7 @@
       {
         "key": {
           "idPart": 2,
-          "id": 15
+          "id": 14
         },
         "q": 0,
         "r": 1,
@@ -382,7 +553,7 @@
       {
         "key": {
           "idPart": 2,
-          "id": 16
+          "id": 15
         },
         "q": 1,
         "r": 1,
@@ -391,7 +562,7 @@
       {
         "key": {
           "idPart": 2,
-          "id": 17
+          "id": 16
         },
         "q": -2,
         "r": 2,
@@ -400,11 +571,20 @@
       {
         "key": {
           "idPart": 2,
-          "id": 18
+          "id": 17
         },
         "q": -1,
         "r": 2,
         "s": -1
+      },
+      {
+        "key": {
+          "idPart": 2,
+          "id": 18
+        },
+        "q": 0,
+        "r": 2,
+        "s": -2
       },
       {
         "key": {
@@ -412,8 +592,170 @@
           "id": 19
         },
         "q": 0,
-        "r": 2,
+        "r": -3,
+        "s": 3
+      },
+      {
+        "key": {
+          "idPart": 2,
+          "id": 20
+        },
+        "q": 1,
+        "r": -3,
+        "s": 2
+      },
+      {
+        "key": {
+          "idPart": 2,
+          "id": 21
+        },
+        "q": 2,
+        "r": -3,
+        "s": 1
+      },
+      {
+        "key": {
+          "idPart": 2,
+          "id": 22
+        },
+        "q": 3,
+        "r": -3,
+        "s": 0
+      },
+      {
+        "key": {
+          "idPart": 2,
+          "id": 23
+        },
+        "q": 3,
+        "r": -2,
+        "s": -1
+      },
+      {
+        "key": {
+          "idPart": 2,
+          "id": 24
+        },
+        "q": 3,
+        "r": -1,
         "s": -2
+      },
+      {
+        "key": {
+          "idPart": 2,
+          "id": 25
+        },
+        "q": 3,
+        "r": 0,
+        "s": -3
+      },
+      {
+        "key": {
+          "idPart": 2,
+          "id": 26
+        },
+        "q": 2,
+        "r": 1,
+        "s": -3
+      },
+      {
+        "key": {
+          "idPart": 2,
+          "id": 27
+        },
+        "q": 1,
+        "r": 2,
+        "s": -3
+      },
+      {
+        "key": {
+          "idPart": 2,
+          "id": 28
+        },
+        "q": 0,
+        "r": 3,
+        "s": -3
+      },
+      {
+        "key": {
+          "idPart": 2,
+          "id": 29
+        },
+        "q": -1,
+        "r": 3,
+        "s": -2
+      },
+      {
+        "key": {
+          "idPart": 2,
+          "id": 30
+        },
+        "q": -2,
+        "r": 3,
+        "s": -1
+      },
+      {
+        "key": {
+          "idPart": 2,
+          "id": 31
+        },
+        "q": -3,
+        "r": 3,
+        "s": 0
+      },
+      {
+        "key": {
+          "idPart": 2,
+          "id": 32
+        },
+        "q": -3,
+        "r": 2,
+        "s": 1
+      },
+      {
+        "key": {
+          "idPart": 2,
+          "id": 33
+        },
+        "q": -2,
+        "r": -1,
+        "s": 3
+      },
+      {
+        "key": {
+          "idPart": 2,
+          "id": 34
+        },
+        "q": -3,
+        "r": 0,
+        "s": 3
+      },
+      {
+        "key": {
+          "idPart": 2,
+          "id": 35
+        },
+        "q": -3,
+        "r": 1,
+        "s": 2
+      },
+      {
+        "key": {
+          "idPart": 2,
+          "id": 36
+        },
+        "q": -1,
+        "r": -2,
+        "s": 3
+      },
+      {
+        "key": {
+          "idPart": 2,
+          "id": 58
+        },
+        "q": 0,
+        "r": -2,
+        "s": 2
       }
     ],
     "usages": 2,
@@ -423,7 +765,7 @@
     "doors": null,
     "startingHexes": null,
     "unlocked": false,
-    "url": "http://localhost:8080/images/parts/hexagon.png"
+    "url": "https://api.tts-game.fun/images/parts/hexagon.png"
   },
   {
     "id": 3,
@@ -798,7 +1140,7 @@
     "doors": null,
     "startingHexes": null,
     "unlocked": false,
-    "url": "http://localhost:8080/images/parts/long.png"
+    "url": "https://api.tts-game.fun/images/parts/long.png"
   },
   {
     "id": 4,
@@ -1317,7 +1659,7 @@
     "doors": null,
     "startingHexes": null,
     "unlocked": false,
-    "url": "http://localhost:8080/images/parts/t.png"
+    "url": "https://api.tts-game.fun/images/parts/t.png"
   },
   {
     "id": 5,
@@ -1620,7 +1962,7 @@
     "doors": null,
     "startingHexes": null,
     "unlocked": false,
-    "url": "http://localhost:8080/images/parts/c.png"
+    "url": "https://api.tts-game.fun/images/parts/c.png"
   },
   {
     "id": 6,
@@ -2058,7 +2400,7 @@
     "doors": null,
     "startingHexes": null,
     "unlocked": false,
-    "url": "http://localhost:8080/images/parts/o.png"
+    "url": "https://api.tts-game.fun/images/parts/o.png"
   },
   {
     "id": 7,
@@ -2262,7 +2604,7 @@
     "doors": null,
     "startingHexes": null,
     "unlocked": false,
-    "url": "http://localhost:8080/images/parts/hourglass.png"
+    "url": "https://api.tts-game.fun/images/parts/hourglass.png"
   },
   {
     "id": 8,
@@ -2448,6 +2790,6 @@
     "doors": null,
     "startingHexes": null,
     "unlocked": false,
-    "url": "http://localhost:8080/images/parts/star.png"
+    "url": "https://api.tts-game.fun/images/parts/star.png"
   }
 ]

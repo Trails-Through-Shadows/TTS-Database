@@ -18,7 +18,7 @@
     "discard": "SHORT_REST",
     "levelReq": 1,
     "movement": {
-      "id": 2,
+      "id": 4,
       "range": 2,
       "type": "WALK",
       "effects": []
@@ -79,14 +79,14 @@
     "levelReq": 1,
     "movement": null,
     "skill": {
-      "id": 2,
+      "id": 6,
       "range": 1,
       "area": null,
       "target": "SELF",
       "effects": [
         {
           "key": {
-            "idSkill": 2,
+            "idSkill": 6,
             "idEffect": 30
           },
           "effect": {
@@ -132,14 +132,14 @@
     "levelReq": 1,
     "movement": null,
     "skill": {
-      "id": 3,
+      "id": 8,
       "range": 2,
       "area": null,
       "target": "ALL_ALLIES",
       "effects": [
         {
           "key": {
-            "idSkill": 3,
+            "idSkill": 8,
             "idEffect": 31
           },
           "effect": {
@@ -255,14 +255,14 @@
     "levelReq": 1,
     "movement": null,
     "skill": {
-      "id": 4,
+      "id": 12,
       "range": 1,
       "area": null,
       "target": "ALL_ENEMIES",
       "effects": [
         {
           "key": {
-            "idSkill": 4,
+            "idSkill": 12,
             "idEffect": 34
           },
           "effect": {
@@ -295,7 +295,7 @@
     "discard": "NEVER",
     "levelReq": 1,
     "movement": {
-      "id": 3,
+      "id": 13,
       "range": 3,
       "type": "TELEPORT",
       "effects": []
@@ -313,14 +313,14 @@
     "levelReq": 1,
     "movement": null,
     "skill": {
-      "id": 5,
+      "id": 14,
       "range": 3,
       "area": null,
       "target": "ONE",
       "effects": [
         {
           "key": {
-            "idSkill": 5,
+            "idSkill": 14,
             "idEffect": 35
           },
           "effect": {
@@ -334,7 +334,7 @@
         },
         {
           "key": {
-            "idSkill": 5,
+            "idSkill": 14,
             "idEffect": 36
           },
           "effect": {
@@ -348,7 +348,7 @@
         },
         {
           "key": {
-            "idSkill": 5,
+            "idSkill": 14,
             "idEffect": 37
           },
           "effect": {
@@ -374,14 +374,14 @@
     "levelReq": 1,
     "movement": null,
     "skill": {
-      "id": 6,
+      "id": 15,
       "range": 0,
       "area": null,
       "target": "SELF",
       "effects": [
         {
           "key": {
-            "idSkill": 6,
+            "idSkill": 15,
             "idEffect": 38
           },
           "effect": {
@@ -447,14 +447,14 @@
     "levelReq": 1,
     "movement": null,
     "skill": {
-      "id": 7,
+      "id": 17,
       "range": 3,
       "area": null,
       "target": "ALL_ALLIES",
       "effects": [
         {
           "key": {
-            "idSkill": 7,
+            "idSkill": 17,
             "idEffect": 40
           },
           "effect": {
@@ -468,7 +468,7 @@
         },
         {
           "key": {
-            "idSkill": 7,
+            "idSkill": 17,
             "idEffect": 41
           },
           "effect": {
@@ -482,7 +482,7 @@
         },
         {
           "key": {
-            "idSkill": 7,
+            "idSkill": 17,
             "idEffect": 51
           },
           "effect": {
@@ -513,14 +513,14 @@
     "levelReq": 1,
     "movement": null,
     "skill": {
-      "id": 8,
+      "id": 18,
       "range": 3,
       "area": null,
       "target": "ALL_ALLIES",
       "effects": [
         {
           "key": {
-            "idSkill": 8,
+            "idSkill": 18,
             "idEffect": 42
           },
           "effect": {
@@ -546,14 +546,14 @@
     "levelReq": 1,
     "movement": null,
     "skill": {
-      "id": 9,
+      "id": 19,
       "range": 2,
       "area": null,
       "target": "ONE",
       "effects": [
         {
           "key": {
-            "idSkill": 9,
+            "idSkill": 19,
             "idEffect": 43
           },
           "effect": {
@@ -567,7 +567,7 @@
         },
         {
           "key": {
-            "idSkill": 9,
+            "idSkill": 19,
             "idEffect": 45
           },
           "effect": {
@@ -597,13 +597,13 @@
     "discard": "NEVER",
     "levelReq": 1,
     "movement": {
-      "id": 4,
+      "id": 20,
       "range": 3,
       "type": "JUMP",
       "effects": [
         {
           "key": {
-            "idMovement": 4,
+            "idMovement": 20,
             "idEffect": 44
           },
           "effect": {
@@ -699,7 +699,7 @@
     "discard": "NEVER",
     "levelReq": 1,
     "movement": {
-      "id": 5,
+      "id": 23,
       "range": 4,
       "type": "WALK",
       "effects": []
@@ -736,7 +736,7 @@
     "discard": "SHORT_REST",
     "levelReq": 1,
     "movement": {
-      "id": 6,
+      "id": 25,
       "range": 2,
       "type": "JUMP",
       "effects": []
@@ -777,14 +777,14 @@
     "levelReq": 1,
     "movement": null,
     "skill": {
-      "id": 10,
+      "id": 26,
       "range": 1,
       "area": null,
       "target": "SELF",
       "effects": [
         {
           "key": {
-            "idSkill": 10,
+            "idSkill": 26,
             "idEffect": 49
           },
           "effect": {
@@ -798,7 +798,7 @@
         },
         {
           "key": {
-            "idSkill": 10,
+            "idSkill": 26,
             "idEffect": 50
           },
           "effect": {
@@ -864,14 +864,14 @@
     "levelReq": 1,
     "movement": null,
     "skill": {
-      "id": 11,
+      "id": 28,
       "range": 1,
       "area": null,
       "target": "SELF",
       "effects": [
         {
           "key": {
-            "idSkill": 11,
+            "idSkill": 28,
             "idEffect": 53
           },
           "effect": {
@@ -885,7 +885,7 @@
         },
         {
           "key": {
-            "idSkill": 11,
+            "idSkill": 28,
             "idEffect": 54
           },
           "effect": {
@@ -931,14 +931,14 @@
     "levelReq": 1,
     "movement": null,
     "skill": {
-      "id": 12,
+      "id": 30,
       "range": 1,
       "area": null,
       "target": "SELF",
       "effects": [
         {
           "key": {
-            "idSkill": 12,
+            "idSkill": 30,
             "idEffect": 55
           },
           "effect": {
@@ -1009,14 +1009,14 @@
     "levelReq": 1,
     "movement": null,
     "skill": {
-      "id": 13,
+      "id": 33,
       "range": 1,
       "area": null,
       "target": "SELF",
       "effects": [
         {
           "key": {
-            "idSkill": 13,
+            "idSkill": 33,
             "idEffect": 54
           },
           "effect": {
@@ -1030,7 +1030,7 @@
         },
         {
           "key": {
-            "idSkill": 13,
+            "idSkill": 33,
             "idEffect": 56
           },
           "effect": {
@@ -1044,7 +1044,7 @@
         },
         {
           "key": {
-            "idSkill": 13,
+            "idSkill": 33,
             "idEffect": 57
           },
           "effect": {
@@ -1058,7 +1058,7 @@
         },
         {
           "key": {
-            "idSkill": 13,
+            "idSkill": 33,
             "idEffect": 58
           },
           "effect": {
@@ -1124,14 +1124,14 @@
     "levelReq": 1,
     "movement": null,
     "skill": {
-      "id": 14,
+      "id": 36,
       "range": 3,
       "area": null,
       "target": "ONE",
       "effects": [
         {
           "key": {
-            "idSkill": 14,
+            "idSkill": 36,
             "idEffect": 59
           },
           "effect": {
@@ -1156,13 +1156,13 @@
     "discard": "NEVER",
     "levelReq": 1,
     "movement": {
-      "id": 7,
+      "id": 37,
       "range": 3,
       "type": "WALK",
       "effects": [
         {
           "key": {
-            "idMovement": 7,
+            "idMovement": 37,
             "idEffect": 60
           },
           "effect": {
@@ -1244,14 +1244,14 @@
     "levelReq": 1,
     "movement": null,
     "skill": {
-      "id": 15,
+      "id": 40,
       "range": 1,
       "area": null,
       "target": "SELF",
       "effects": [
         {
           "key": {
-            "idSkill": 15,
+            "idSkill": 40,
             "idEffect": 62
           },
           "effect": {
@@ -1285,14 +1285,14 @@
     "levelReq": 1,
     "movement": null,
     "skill": {
-      "id": 16,
+      "id": 41,
       "range": 2,
       "area": 2,
       "target": "ALL_ENEMIES",
       "effects": [
         {
           "key": {
-            "idSkill": 16,
+            "idSkill": 41,
             "idEffect": 63
           },
           "effect": {
@@ -1318,14 +1318,14 @@
     "levelReq": 1,
     "movement": null,
     "skill": {
-      "id": 17,
+      "id": 42,
       "range": 3,
       "area": null,
       "target": "ONE",
       "effects": [
         {
           "key": {
-            "idSkill": 17,
+            "idSkill": 42,
             "idEffect": 64
           },
           "effect": {
@@ -1359,6 +1359,375 @@
       "target": "ONE",
       "numAttacks": 2,
       "effects": []
+    },
+    "restoreCards": null,
+    "summonActions": []
+  },
+  {
+    "id": 44,
+    "title": "Gruesome Swipe",
+    "description": "Swing with decayed limbs, dealing melee damage to adjacent foes.",
+    "discard": "NEVER",
+    "levelReq": 1,
+    "movement": null,
+    "skill": null,
+    "attack": {
+      "id": 24,
+      "range": 1,
+      "damage": 2,
+      "area": null,
+      "target": "ONE",
+      "numAttacks": 1,
+      "effects": []
+    },
+    "restoreCards": null,
+    "summonActions": []
+  },
+  {
+    "id": 45,
+    "title": "Rotting Lurch",
+    "description": "Stagger forward, delivering a poisonous bite to a nearby enemy.",
+    "discard": "NEVER",
+    "levelReq": 1,
+    "movement": {
+      "id": 38,
+      "range": 1,
+      "type": "WALK",
+      "effects": []
+    },
+    "skill": null,
+    "attack": {
+      "id": 25,
+      "range": 1,
+      "damage": 3,
+      "area": null,
+      "target": "ONE",
+      "numAttacks": 1,
+      "effects": [
+        {
+          "key": {
+            "idAttack": 25,
+            "idEffect": 47
+          },
+          "effect": {
+            "id": 47,
+            "target": "ONE",
+            "type": "POISON",
+            "duration": 2,
+            "strength": 2,
+            "description": ""
+          }
+        }
+      ]
+    },
+    "restoreCards": null,
+    "summonActions": []
+  },
+  {
+    "id": 46,
+    "title": "Putrid Breath",
+    "description": "Damage nearby enemies with poisonous breath.",
+    "discard": "NEVER",
+    "levelReq": 1,
+    "movement": null,
+    "skill": {
+      "id": 43,
+      "range": 1,
+      "area": 2,
+      "target": "ALL",
+      "effects": [
+        {
+          "key": {
+            "idSkill": 43,
+            "idEffect": 65
+          },
+          "effect": {
+            "id": 65,
+            "target": "ALL",
+            "type": "SLOW",
+            "duration": 2,
+            "strength": 2,
+            "description": ""
+          }
+        }
+      ]
+    },
+    "attack": null,
+    "restoreCards": null,
+    "summonActions": []
+  },
+  {
+    "id": 47,
+    "title": "Shambling Charge",
+    "description": "Lumber forward in a frenzied charge, dealing damage to enemies in the path.",
+    "discard": "NEVER",
+    "levelReq": 1,
+    "movement": {
+      "id": 39,
+      "range": 3,
+      "type": "WALK",
+      "effects": []
+    },
+    "skill": null,
+    "attack": {
+      "id": 27,
+      "range": 1,
+      "damage": 3,
+      "area": null,
+      "target": "ALL",
+      "numAttacks": 1,
+      "effects": []
+    },
+    "restoreCards": null,
+    "summonActions": []
+  },
+  {
+    "id": 48,
+    "title": "Arrow Barrage",
+    "description": "Rain a volley of arrows upon enemies from a distance.",
+    "discard": "NEVER",
+    "levelReq": 1,
+    "movement": null,
+    "skill": null,
+    "attack": {
+      "id": 28,
+      "range": 4,
+      "damage": 3,
+      "area": null,
+      "target": "ONE",
+      "numAttacks": 2,
+      "effects": []
+    },
+    "restoreCards": null,
+    "summonActions": []
+  },
+  {
+    "id": 49,
+    "title": "Precision Shot",
+    "description": "Take aim and fire a piercing shot, dealing high damage to a single target.",
+    "discard": "NEVER",
+    "levelReq": 1,
+    "movement": null,
+    "skill": null,
+    "attack": {
+      "id": 29,
+      "range": 4,
+      "damage": 5,
+      "area": null,
+      "target": "ONE",
+      "numAttacks": 1,
+      "effects": [
+        {
+          "key": {
+            "idAttack": 29,
+            "idEffect": 66
+          },
+          "effect": {
+            "id": 66,
+            "target": "ONE",
+            "type": "VULNERABILITY",
+            "duration": 2,
+            "strength": 2,
+            "description": ""
+          }
+        }
+      ]
+    },
+    "restoreCards": null,
+    "summonActions": []
+  },
+  {
+    "id": 50,
+    "title": "Retreat and Shoot",
+    "description": "Move backward while firing arrows, maintaining distance from enemies.",
+    "discard": "NEVER",
+    "levelReq": 1,
+    "movement": {
+      "id": 40,
+      "range": 3,
+      "type": "WALK",
+      "effects": []
+    },
+    "skill": null,
+    "attack": {
+      "id": 30,
+      "range": 3,
+      "damage": 2,
+      "area": null,
+      "target": "ONE",
+      "numAttacks": 1,
+      "effects": []
+    },
+    "restoreCards": null,
+    "summonActions": []
+  },
+  {
+    "id": 51,
+    "title": "Toxic Arrow",
+    "description": "Fire a poisoned arrow, inflicting damage over time to the target.",
+    "discard": "NEVER",
+    "levelReq": 1,
+    "movement": null,
+    "skill": null,
+    "attack": {
+      "id": 31,
+      "range": 4,
+      "damage": 3,
+      "area": null,
+      "target": "ONE",
+      "numAttacks": 1,
+      "effects": [
+        {
+          "key": {
+            "idAttack": 31,
+            "idEffect": 67
+          },
+          "effect": {
+            "id": 67,
+            "target": "ONE",
+            "type": "POISON",
+            "duration": 1,
+            "strength": 2,
+            "description": ""
+          }
+        }
+      ]
+    },
+    "restoreCards": null,
+    "summonActions": []
+  },
+  {
+    "id": 52,
+    "title": "Dark Nova",
+    "description": "Unleash a burst of dark energy, damaging all nearby enemies.",
+    "discard": "NEVER",
+    "levelReq": 1,
+    "movement": null,
+    "skill": null,
+    "attack": {
+      "id": 32,
+      "range": 2,
+      "damage": 4,
+      "area": 2,
+      "target": "ALL",
+      "numAttacks": 1,
+      "effects": []
+    },
+    "restoreCards": null,
+    "summonActions": []
+  },
+  {
+    "id": 53,
+    "title": "Necrotic Bolt",
+    "description": "Fire a bolt of necrotic energy, sapping life from the target.",
+    "discard": "NEVER",
+    "levelReq": 1,
+    "movement": null,
+    "skill": {
+      "id": 44,
+      "range": 1,
+      "area": null,
+      "target": "SELF",
+      "effects": [
+        {
+          "key": {
+            "idSkill": 44,
+            "idEffect": 68
+          },
+          "effect": {
+            "id": 68,
+            "target": "SELF",
+            "type": "HEAL",
+            "duration": null,
+            "strength": 3,
+            "description": ""
+          }
+        }
+      ]
+    },
+    "attack": {
+      "id": 33,
+      "range": 3,
+      "damage": 3,
+      "area": null,
+      "target": "ONE",
+      "numAttacks": 1,
+      "effects": []
+    },
+    "restoreCards": null,
+    "summonActions": []
+  },
+  {
+    "id": 54,
+    "title": "Teleport and Blast",
+    "description": "Teleport to a new location and unleash a devastating magical blast upon enemies.",
+    "discard": "NEVER",
+    "levelReq": 1,
+    "movement": {
+      "id": 41,
+      "range": 3,
+      "type": "TELEPORT",
+      "effects": []
+    },
+    "skill": null,
+    "attack": {
+      "id": 34,
+      "range": 2,
+      "damage": 5,
+      "area": null,
+      "target": "ONE",
+      "numAttacks": 1,
+      "effects": [
+        {
+          "key": {
+            "idAttack": 34,
+            "idEffect": 69
+          },
+          "effect": {
+            "id": 69,
+            "target": "ONE",
+            "type": "CONFUSION",
+            "duration": 2,
+            "strength": null,
+            "description": ""
+          }
+        }
+      ]
+    },
+    "restoreCards": null,
+    "summonActions": []
+  },
+  {
+    "id": 55,
+    "title": "Ray of Frost",
+    "description": "Release a wave of icy energy, freezing enemies in place and dealing damage.",
+    "discard": "NEVER",
+    "levelReq": 1,
+    "movement": null,
+    "skill": null,
+    "attack": {
+      "id": 35,
+      "range": 2,
+      "damage": 1,
+      "area": 2,
+      "target": "ALL",
+      "numAttacks": 1,
+      "effects": [
+        {
+          "key": {
+            "idAttack": 35,
+            "idEffect": 70
+          },
+          "effect": {
+            "id": 70,
+            "target": "ALL",
+            "type": "SLOW",
+            "duration": 1,
+            "strength": 4,
+            "description": ""
+          }
+        }
+      ]
     },
     "restoreCards": null,
     "summonActions": []

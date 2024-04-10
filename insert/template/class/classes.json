@@ -8,7 +8,16 @@
     "baseDefence": 0,
     "baseInitiative": 3,
     "effects": [],
-    "actions": []
+    "actions": [
+      {
+        "key": {
+          "idClass": 1,
+          "idAction": 10
+        },
+        "action": 10
+      }
+    ],
+    "url": "https://api.tts-game.fun/images/classes/mage.png"
   },
   {
     "id": 2,
@@ -19,7 +28,51 @@
     "baseDefence": 2,
     "baseInitiative": 5,
     "effects": [],
-    "actions": []
+    "actions": [
+      {
+        "key": {
+          "idClass": 2,
+          "idAction": 22
+        },
+        "action": 22
+      },
+      {
+        "key": {
+          "idClass": 2,
+          "idAction": 23
+        },
+        "action": 23
+      },
+      {
+        "key": {
+          "idClass": 2,
+          "idAction": 24
+        },
+        "action": 24
+      },
+      {
+        "key": {
+          "idClass": 2,
+          "idAction": 25
+        },
+        "action": 25
+      },
+      {
+        "key": {
+          "idClass": 2,
+          "idAction": 26
+        },
+        "action": 26
+      },
+      {
+        "key": {
+          "idClass": 2,
+          "idAction": 27
+        },
+        "action": 27
+      }
+    ],
+    "url": "https://api.tts-game.fun/images/classes/rogue.png"
   },
   {
     "id": 3,
@@ -30,7 +83,51 @@
     "baseDefence": 3,
     "baseInitiative": 3,
     "effects": [],
-    "actions": []
+    "actions": [
+      {
+        "key": {
+          "idClass": 3,
+          "idAction": 4
+        },
+        "action": 4
+      },
+      {
+        "key": {
+          "idClass": 3,
+          "idAction": 5
+        },
+        "action": 5
+      },
+      {
+        "key": {
+          "idClass": 3,
+          "idAction": 6
+        },
+        "action": 6
+      },
+      {
+        "key": {
+          "idClass": 3,
+          "idAction": 7
+        },
+        "action": 7
+      },
+      {
+        "key": {
+          "idClass": 3,
+          "idAction": 8
+        },
+        "action": 8
+      },
+      {
+        "key": {
+          "idClass": 3,
+          "idAction": 9
+        },
+        "action": 9
+      }
+    ],
+    "url": "https://api.tts-game.fun/images/classes/knight.png"
   },
   {
     "id": 4,
@@ -41,6 +138,50 @@
     "baseDefence": 0,
     "baseInitiative": 7,
     "effects": [],
-    "actions": []
+    "actions": [
+      {
+        "key": {
+          "idClass": 4,
+          "idAction": 16
+        },
+        "action": 16
+      },
+      {
+        "key": {
+          "idClass": 4,
+          "idAction": 17
+        },
+        "action": 17
+      },
+      {
+        "key": {
+          "idClass": 4,
+          "idAction": 18
+        },
+        "action": 18
+      },
+      {
+        "key": {
+          "idClass": 4,
+          "idAction": 19
+        },
+        "action": 19
+      },
+      {
+        "key": {
+          "idClass": 4,
+          "idAction": 20
+        },
+        "action": 20
+      },
+      {
+        "key": {
+          "idClass": 4,
+          "idAction": 21
+        },
+        "action": 21
+      }
+    ],
+    "url": "https://api.tts-game.fun/images/classes/bard.png"
   }
 ]

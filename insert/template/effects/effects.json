@@ -376,5 +376,68 @@
     "strength": 4,
     "description": "",
     "url": "https://api.tts-game.fun/images/effects/slow.png"
+  },
+  {
+    "id": 71,
+    "target": "SELF",
+    "type": "PROTECTION",
+    "duration": 1,
+    "strength": 2,
+    "description": "",
+    "url": "https://api.tts-game.fun/images/effects/protection.png"
+  },
+  {
+    "id": 72,
+    "target": "SELF",
+    "type": "BLEED_RESISTANCE",
+    "duration": -1,
+    "strength": 10,
+    "description": "",
+    "url": "https://api.tts-game.fun/images/effects/bleed_resistance.png"
+  },
+  {
+    "id": 73,
+    "target": "SELF",
+    "type": "POISON_RESISTANCE",
+    "duration": -1,
+    "strength": 10,
+    "description": "",
+    "url": "https://api.tts-game.fun/images/effects/poison_resistance.png"
+  },
+  {
+    "id": 74,
+    "target": "SELF",
+    "type": "CONFUSION_RESISTANCE",
+    "duration": -1,
+    "strength": null,
+    "description": "",
+    "url": "https://api.tts-game.fun/images/effects/confusion_resistance.png"
+  },
+  {
+    "id": 75,
+    "target": "SELF",
+    "type": "FIRE_RESISTANCE",
+    "duration": -1,
+    "strength": 50,
+    "description": "",
+    "url": "https://api.tts-game.fun/images/effects/fire_resistance.png"
+  },
+  {
+    "id": 76,
+    "target": "SELF",
+    "type": "CONFUSION_RESISTANCE",
+    "duration": -1,
+    "strength": null,
+    "description": "",
+    "url": "https://api.tts-game.fun/images/effects/confusion_resistance.png"
+  },
+  {
+    "id": 77,
+    "target": "SELF",
+    "type": "POISON_RESISTANCE",
+    "duration": -1,
+    "strength": 50,
+    "description": "",
+    "url": "https://api.tts-game.fun/images/effects/poison_resistance.png"
   }
 ]

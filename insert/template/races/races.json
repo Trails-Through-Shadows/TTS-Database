@@ -3,36 +3,183 @@
     "id": 1,
     "title": "Demonkin",
     "baseInitiative": 5,
-    "effects": [],
-    "actions": [],
+    "effects": [
+      {
+        "key": {
+          "idRace": 1,
+          "idEffect": 75
+        },
+        "levelReq": null,
+        "effect": 75
+      }
+    ],
+    "actions": [
+      {
+        "key": {
+          "idRace": 1,
+          "idAction": 40
+        },
+        "action": 40
+      },
+      {
+        "key": {
+          "idRace": 1,
+          "idAction": 41
+        },
+        "action": 41
+      },
+      {
+        "key": {
+          "idRace": 1,
+          "idAction": 42
+        },
+        "action": 42
+      },
+      {
+        "key": {
+          "idRace": 1,
+          "idAction": 43
+        },
+        "action": 43
+      }
+    ],
     "tag": "r-demonkin",
-    "description": "Infernal and cunning beings, unleashing chaotic and destructive forces upon their enemies while manipulating darkness to their advantage."
+    "description": "Infernal and cunning beings, unleashing chaotic and destructive forces upon their enemies while manipulating darkness to their advantage.",
+    "url": "https://api.tts-game.fun/images/races/demonkin.png"
   },
   {
     "id": 2,
     "title": "Human",
     "baseInitiative": 5,
     "effects": [],
-    "actions": [],
+    "actions": [
+      {
+        "key": {
+          "idRace": 2,
+          "idAction": 28
+        },
+        "action": 28
+      },
+      {
+        "key": {
+          "idRace": 2,
+          "idAction": 29
+        },
+        "action": 29
+      },
+      {
+        "key": {
+          "idRace": 2,
+          "idAction": 30
+        },
+        "action": 30
+      },
+      {
+        "key": {
+          "idRace": 2,
+          "idAction": 31
+        },
+        "action": 31
+      }
+    ],
     "tag": "r-human",
-    "description": "Adaptable and resilient fighters, employing versatile tactics and strategic acumen to overcome any challenge they face."
+    "description": "Adaptable and resilient fighters, employing versatile tactics and strategic acumen to overcome any challenge they face.",
+    "url": "https://api.tts-game.fun/images/races/human.png"
   },
   {
     "id": 3,
     "title": "Dwarf",
     "baseInitiative": 4,
-    "effects": [],
-    "actions": [],
+    "effects": [
+      {
+        "key": {
+          "idRace": 3,
+          "idEffect": 77
+        },
+        "levelReq": null,
+        "effect": 77
+      }
+    ],
+    "actions": [
+      {
+        "key": {
+          "idRace": 3,
+          "idAction": 32
+        },
+        "action": 32
+      },
+      {
+        "key": {
+          "idRace": 3,
+          "idAction": 33
+        },
+        "action": 33
+      },
+      {
+        "key": {
+          "idRace": 3,
+          "idAction": 34
+        },
+        "action": 34
+      },
+      {
+        "key": {
+          "idRace": 3,
+          "idAction": 35
+        },
+        "action": 35
+      }
+    ],
     "tag": "r-dwarf",
-    "description": "Stalwart and unyielding defenders, harnessing the power of stone and steel to crush enemies and fortify their defenses against all odds."
+    "description": "Stalwart and unyielding defenders, harnessing the power of stone and steel to crush enemies and fortify their defenses against all odds.",
+    "url": "https://api.tts-game.fun/images/races/dwarf.png"
   },
   {
     "id": 4,
     "title": "Elf",
     "baseInitiative": 7,
-    "effects": [],
-    "actions": [],
+    "effects": [
+      {
+        "key": {
+          "idRace": 4,
+          "idEffect": 76
+        },
+        "levelReq": null,
+        "effect": 76
+      }
+    ],
+    "actions": [
+      {
+        "key": {
+          "idRace": 4,
+          "idAction": 36
+        },
+        "action": 36
+      },
+      {
+        "key": {
+          "idRace": 4,
+          "idAction": 37
+        },
+        "action": 37
+      },
+      {
+        "key": {
+          "idRace": 4,
+          "idAction": 38
+        },
+        "action": 38
+      },
+      {
+        "key": {
+          "idRace": 4,
+          "idAction": 39
+        },
+        "action": 39
+      }
+    ],
     "tag": "r-elf",
-    "description": "Graceful and attuned to nature, blending magic and agility to dominate the battlefield while healing allies and moving unseen through the forest."
+    "description": "Graceful and attuned to nature, blending magic and agility to dominate the battlefield while healing allies and moving unseen through the forest.",
+    "url": "https://api.tts-game.fun/images/races/elf.png"
   }
 ]

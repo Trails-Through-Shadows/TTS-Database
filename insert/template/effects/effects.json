@@ -1,186 +1,290 @@
 [
-  {
-    "id": 1,
-    "target": "ONE",
-    "type": "BLEED",
-    "duration": 5,
-    "strength": 3,
-    "description": null
-  },
-  {
-    "id": 2,
-    "target": "ONE",
-    "type": "POISON",
-    "duration": 3,
-    "strength": 5,
-    "description": null
-  },
-  {
-    "id": 3,
-    "target": "ONE",
-    "type": "SLOW",
-    "duration": 1,
-    "strength": 2,
-    "description": null
-  },
-  {
-    "id": 4,
-    "target": "ONE",
-    "type": "FIRE_RESISTANCE",
-    "duration": 2,
-    "strength": 1,
-    "description": null
-  },
-  {
-    "id": 6,
-    "target": "SELF",
-    "type": "POISON_RESISTANCE",
-    "duration": -1,
-    "strength": 10,
-    "description": null
-  },
-  {
-    "id": 8,
-    "target": "SELF",
-    "type": "POISON_RESISTANCE",
-    "duration": 3,
-    "strength": 3,
-    "description": null
-  },
-  {
-    "id": 9,
-    "target": "ALL_ENEMIES",
-    "type": "BLEED",
-    "duration": 3,
-    "strength": 5,
-    "description": null
-  },
-  {
-    "id": 10,
-    "target": "ONE",
-    "type": "HEAL",
-    "duration": 0,
-    "strength": 4,
-    "description": null
-  },
-  {
-    "id": 11,
-    "target": "ONE",
-    "type": "FIRE",
-    "duration": 3,
-    "strength": 3,
-    "description": null
-  },
-  {
-    "id": 12,
-    "target": "SELF",
-    "type": "POISON_RESISTANCE",
-    "duration": -1,
-    "strength": 3,
-    "description": null
-  },
-  {
-    "id": 13,
-    "target": "SELF",
-    "type": "BLEED_RESISTANCE",
-    "duration": -1,
-    "strength": 100,
-    "description": null
-  },
-  {
-    "id": 14,
-    "target": "SELF",
-    "type": "FORCED_MOVEMENT_RESISTANCE",
-    "duration": -1,
-    "strength": 0,
-    "description": null
-  },
-  {
-    "id": 15,
-    "target": "ONE",
-    "type": "POISON",
-    "duration": 2,
-    "strength": 1,
-    "description": null
-  },
-  {
-    "id": 16,
-    "target": "SELF",
-    "type": "REGENERATION",
-    "duration": 1,
-    "strength": 10,
-    "description": null
-  },
-  {
-    "id": 17,
-    "target": "SELF",
-    "type": "SPEED",
-    "duration": 2,
-    "strength": 20,
-    "description": null
-  },
-  {
-    "id": 18,
-    "target": "SELF",
-    "type": "VULNERABILITY_RESISTANCE",
-    "duration": 1,
-    "strength": 1,
-    "description": null
-  },
-  {
-    "id": 19,
-    "target": "ONE",
-    "type": "FIRE",
-    "duration": 1,
-    "strength": 5,
-    "description": null
-  },
-  {
-    "id": 20,
-    "target": "SELF",
-    "type": "EMPOWER",
-    "duration": 1,
-    "strength": 15,
-    "description": null
-  },
-  {
-    "id": 21,
-    "target": "ONE",
-    "type": "GUIDANCE",
-    "duration": 2,
-    "strength": 2,
-    "description": null
-  },
-  {
-    "id": 22,
-    "target": "SELF",
-    "type": "HEAL",
-    "duration": 0,
-    "strength": 5,
-    "description": null
-  },
-  {
-    "id": 23,
-    "target": "SELF",
-    "type": "FIRE_RESISTANCE",
-    "duration": -1,
-    "strength": 2,
-    "description": null
-  },
-  {
-    "id": 24,
-    "target": "SELF",
-    "type": "POISON_RESISTANCE",
-    "duration": -1,
-    "strength": 2,
-    "description": null
-  },
-  {
-    "id": 25,
-    "target": "SELF",
-    "type": "CONFUSION_RESISTANCE",
-    "duration": -1,
-    "strength": null,
-    "description": null
-  }
+    {
+        "id": 26,
+        "target": "ALL_ENEMIES",
+        "type": "STUN",
+        "duration": 3,
+        "strength": null,
+        "description": ""
+    },
+    {
+            "id": 30,
+            "target": "SELF",
+            "type": "PROTECTION",
+            "duration": 2,
+            "strength": 3,
+            "description": ""
+    },
+    {
+            "id": 31,
+            "target": "ALL_ALLIES",
+            "type": "PROTECTION",
+            "duration": 3,
+            "strength": 2,
+            "description": ""
+    },
+    {
+            "id": 32,
+            "target": "ONE",
+            "type": "PUSH",
+            "duration": null,
+            "strength": 3,
+            "description": ""
+    },
+    {
+            "id": 33,
+            "target": "ALL",
+            "type": "FIRE",
+            "duration": 3,
+            "strength": 2,
+            "description": ""
+    },
+    {
+            "id": 34,
+            "target": "ALL_ENEMIES",
+            "type": "CONFUSION",
+            "duration": 3,
+            "strength": null,
+            "description": ""
+    },
+    {
+            "id": 35,
+            "target": "ONE",
+            "type": "VULNERABILITY",
+            "duration": 2,
+            "strength": 3,
+            "description": ""
+    },
+    {
+            "id": 36,
+            "target": "ONE",
+            "type": "ENFEEBLE",
+            "duration": 3,
+            "strength": 2,
+            "description": ""
+    },
+    {
+            "id": 37,
+            "target": "ONE",
+            "type": "CONFUSION",
+            "duration": 2,
+            "strength": null,
+            "description": ""
+    },
+    {
+            "id": 38,
+            "target": "SELF",
+            "type": "EMPOWER",
+            "duration": 3,
+            "strength": 2,
+            "description": ""
+    },
+    {
+            "id": 39,
+            "target": "ALL_ENEMIES",
+            "type": "CONFUSION",
+            "duration": 3,
+            "strength": null,
+            "description": ""
+    },
+    {
+            "id": 40,
+            "target": "ALL_ALLIES",
+            "type": "GUIDANCE",
+            "duration": 2,
+            "strength": null,
+            "description": ""
+    },
+    {
+            "id": 41,
+            "target": "ALL_ALLIES",
+            "type": "EMPOWER",
+            "duration": 2,
+            "strength": 2,
+            "description": ""
+    },
+    {
+            "id": 51,
+            "target": "ALL_ALLIES",
+            "type": "CONFUSION_RESISTANCE",
+            "duration": 2,
+            "strength": null,
+            "description": ""
+    },
+    {
+            "id": 42,
+            "target": "ALL_ALLIES",
+            "type": "HEAL",
+            "duration": null,
+            "strength": 2,
+            "description": ""
+    },
+    {
+            "id": 43,
+            "target": "ONE",
+            "type": "REGENERATION",
+            "duration": 2,
+            "strength": 3,
+            "description": ""
+    },
+    {
+            "id": 45,
+            "target": "ONE",
+            "type": "SPEED",
+            "duration": 2,
+            "strength": 2,
+            "description": ""
+    },
+    {
+            "id": 44,
+            "target": "SELF",
+            "type": "PROTECTION",
+            "duration": 1,
+            "strength": 1,
+            "description": ""
+    },
+    {
+            "id": 46,
+            "target": "ONE",
+            "type": "CONFUSION",
+            "duration": 2,
+            "strength": null,
+            "description": ""
+    },
+    {
+            "id": 47,
+            "target": "ONE",
+            "type": "POISON",
+            "duration": 2,
+            "strength": 2,
+            "description": ""
+    },
+    {
+            "id": 48,
+            "target": "ONE",
+            "type": "BLEED",
+            "duration": 2,
+            "strength": 1,
+            "description": ""
+    },
+    {
+            "id": 49,
+            "target": "SELF",
+            "type": "FORCED_MOVEMENT_RESISTANCE",
+            "duration": 2,
+            "strength": 3,
+            "description": ""
+    },
+    {
+            "id": 50,
+            "target": "SELF",
+            "type": "VULNERABILITY_RESISTANCE",
+            "duration": 2,
+            "strength": 3,
+            "description": ""
+    },
+    {
+            "id": 52,
+            "target": "ONE",
+            "type": "FIRE",
+            "duration": 3,
+            "strength": 2,
+            "description": ""
+    },
+    {
+            "id": 53,
+            "target": "SELF",
+            "type": "EMPOWER",
+            "duration": 2,
+            "strength": 2,
+            "description": ""
+    },
+    {
+            "id": 54,
+            "target": "SELF",
+            "type": "PROTECTION",
+            "duration": 2,
+            "strength": 2,
+            "description": ""
+    },
+    {
+            "id": 55,
+            "target": "SELF",
+            "type": "VULNERABILITY_RESISTANCE",
+            "duration": 1,
+            "strength": 3,
+            "description": ""
+    },
+    {
+            "id": 56,
+            "target": "SELF",
+            "type": "SLOW",
+            "duration": 2,
+            "strength": 2,
+            "description": ""
+    },
+    {
+            "id": 57,
+            "target": "SELF",
+            "type": "FORCED_MOVEMENT_RESISTANCE",
+            "duration": 2,
+            "strength": 2,
+            "description": ""
+    },
+    {
+            "id": 58,
+            "target": "SELF",
+            "type": "STUN_RESISTANCE",
+            "duration": 2,
+            "strength": null,
+            "description": ""
+    },
+    {
+            "id": 59,
+            "target": "ONE",
+            "type": "HEAL",
+            "duration": null,
+            "strength": 3,
+            "description": ""
+    },
+    {
+            "id": 60,
+            "target": "SELF",
+            "type": "SPEED",
+            "duration": 1,
+            "strength": 1,
+            "description": ""
+    },
+    {
+            "id": 61,
+            "target": "ONE",
+            "type": "VULNERABILITY",
+            "duration": 1,
+            "strength": 2,
+            "description": ""
+    },
+    {
+            "id": 62,
+            "target": "SELF",
+            "type": "HEAL",
+            "duration": null,
+            "strength": 2,
+            "description": ""
+    },
+    {
+            "id": 63,
+            "target": "ALL_ENEMIES",
+            "type": "FIRE",
+            "duration": 2,
+            "strength": 3,
+            "description": ""
+    },
+    {
+            "id": 64,
+            "target": "ONE",
+            "type": "PULL",
+            "duration": null,
+            "strength": 3,
+            "description": ""
+     }
 ]

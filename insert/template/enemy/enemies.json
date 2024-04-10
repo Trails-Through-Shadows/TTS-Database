@@ -8,21 +8,7 @@
     "baseDefence": 1,
     "baseInitiative": 12,
     "usages": 4,
-    "effects": [
-      {
-        "key": {
-          "idEnemy": 1,
-          "idEffect": 12
-        },
-        "effect": {
-          "id": 12,
-          "target": "SELF",
-          "type": "POISON_RESISTANCE",
-          "duration": -1,
-          "strength": 3
-        }
-      }
-    ],
+    "effects": [],
     "actions": []
   },
   {
@@ -46,21 +32,7 @@
     "baseDefence": 3,
     "baseInitiative": 6,
     "usages": 4,
-    "effects": [
-      {
-        "key": {
-          "idEnemy": 3,
-          "idEffect": 13
-        },
-        "effect": {
-          "id": 13,
-          "target": "SELF",
-          "type": "BLEED_RESISTANCE",
-          "duration": -1,
-          "strength": 100
-        }
-      }
-    ],
+    "effects": [],
     "actions": []
   },
   {
@@ -72,21 +44,7 @@
     "baseDefence": 0,
     "baseInitiative": 15,
     "usages": 0,
-    "effects": [
-      {
-        "key": {
-          "idEnemy": 4,
-          "idEffect": 14
-        },
-        "effect": {
-          "id": 14,
-          "target": "SELF",
-          "type": "FORCED_MOVEMENT_RESISTANCE",
-          "duration": -1,
-          "strength": 0
-        }
-      }
-    ],
+    "effects": [],
     "actions": []
   },
   {

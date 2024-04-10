@@ -4,7 +4,7 @@
     "title": "Do nothing",
     "description": "Just stand around.",
     "discard": "NEVER",
-    "levelReq": null,
+    "levelReq": 1,
     "movement": null,
     "skill": null,
     "attack": null,
@@ -12,13 +12,13 @@
     "summonActions": []
   },
   {
-    "id": 2,
+    "id": 4,
     "title": "Charge",
     "description": "Rush forward to strike enemies with brute force.",
-    "discard": "NEVER",
+    "discard": "SHORT_REST",
     "levelReq": 1,
     "movement": {
-      "id": 1,
+      "id": 2,
       "range": 2,
       "type": "WALK",
       "effects": []
@@ -31,6 +31,1333 @@
       "area": 0,
       "target": "ONE",
       "numAttacks": 1,
+      "effects": []
+    },
+    "restoreCards": null,
+    "summonActions": []
+  },
+  {
+    "id": 5,
+    "title": "Shield Bash",
+    "description": "Stun enemies with a powerful shield strike.",
+    "discard": "SHORT_REST",
+    "levelReq": 1,
+    "movement": null,
+    "skill": null,
+    "attack": {
+      "id": 2,
+      "range": 1,
+      "damage": 2,
+      "area": 2,
+      "target": "ALL_ENEMIES",
+      "numAttacks": 1,
+      "effects": [
+        {
+          "key": {
+            "idAttack": 2,
+            "idEffect": 26
+          },
+          "effect": {
+            "id": 26,
+            "target": "ALL_ENEMIES",
+            "type": "STUN",
+            "duration": 3,
+            "strength": null,
+            "description": ""
+          }
+        }
+      ]
+    },
+    "restoreCards": null,
+    "summonActions": []
+  },
+  {
+    "id": 6,
+    "title": "Guardian's Valor",
+    "description": "Protect yourself from damage.",
+    "discard": "NEVER",
+    "levelReq": 1,
+    "movement": null,
+    "skill": {
+      "id": 2,
+      "range": 1,
+      "area": null,
+      "target": "SELF",
+      "effects": [
+        {
+          "key": {
+            "idSkill": 2,
+            "idEffect": 30
+          },
+          "effect": {
+            "id": 30,
+            "target": "SELF",
+            "type": "PROTECTION",
+            "duration": 2,
+            "strength": 3,
+            "description": ""
+          }
+        }
+      ]
+    },
+    "attack": null,
+    "restoreCards": null,
+    "summonActions": []
+  },
+  {
+    "id": 7,
+    "title": "Strike",
+    "description": "Strike your enemies.",
+    "discard": "NEVER",
+    "levelReq": 1,
+    "movement": null,
+    "skill": null,
+    "attack": {
+      "id": 4,
+      "range": 1,
+      "damage": 2,
+      "area": null,
+      "target": "ONE",
+      "numAttacks": 2,
+      "effects": []
+    },
+    "restoreCards": null,
+    "summonActions": []
+  },
+  {
+    "id": 8,
+    "title": "Shield Wall",
+    "description": "Block incoming attacks against your allies, reducing damage taken.",
+    "discard": "SHORT_REST",
+    "levelReq": 1,
+    "movement": null,
+    "skill": {
+      "id": 3,
+      "range": 2,
+      "area": null,
+      "target": "ALL_ALLIES",
+      "effects": [
+        {
+          "key": {
+            "idSkill": 3,
+            "idEffect": 31
+          },
+          "effect": {
+            "id": 31,
+            "target": "ALL_ALLIES",
+            "type": "PROTECTION",
+            "duration": 3,
+            "strength": 2,
+            "description": ""
+          }
+        }
+      ]
+    },
+    "attack": null,
+    "restoreCards": null,
+    "summonActions": []
+  },
+  {
+    "id": 9,
+    "title": "Shove",
+    "description": "Push your enemies away.",
+    "discard": "SHORT_REST",
+    "levelReq": 1,
+    "movement": null,
+    "skill": null,
+    "attack": {
+      "id": 5,
+      "range": 1,
+      "damage": 1,
+      "area": null,
+      "target": "ALL_ENEMIES",
+      "numAttacks": 1,
+      "effects": [
+        {
+          "key": {
+            "idAttack": 5,
+            "idEffect": 32
+          },
+          "effect": {
+            "id": 32,
+            "target": "ONE",
+            "type": "PUSH",
+            "duration": null,
+            "strength": 3,
+            "description": ""
+          }
+        }
+      ]
+    },
+    "restoreCards": null,
+    "summonActions": []
+  },
+  {
+    "id": 10,
+    "title": "Fireball",
+    "description": "Hurl a ball of flame at enemies, dealing area damage.",
+    "discard": "SHORT_REST",
+    "levelReq": 1,
+    "movement": null,
+    "skill": null,
+    "attack": {
+      "id": 6,
+      "range": 4,
+      "damage": 3,
+      "area": 2,
+      "target": "ALL",
+      "numAttacks": 1,
+      "effects": [
+        {
+          "key": {
+            "idAttack": 6,
+            "idEffect": 33
+          },
+          "effect": {
+            "id": 33,
+            "target": "ALL",
+            "type": "FIRE",
+            "duration": 3,
+            "strength": 2,
+            "description": ""
+          }
+        }
+      ]
+    },
+    "restoreCards": null,
+    "summonActions": []
+  },
+  {
+    "id": 11,
+    "title": "Arcane Blast",
+    "description": "Blast enemies with raw arcane energy.",
+    "discard": "NEVER",
+    "levelReq": 1,
+    "movement": null,
+    "skill": null,
+    "attack": {
+      "id": 7,
+      "range": 3,
+      "damage": 2,
+      "area": null,
+      "target": "ONE",
+      "numAttacks": 1,
+      "effects": []
+    },
+    "restoreCards": null,
+    "summonActions": []
+  },
+  {
+    "id": 12,
+    "title": "Chain Lightning",
+    "description": "Unleash lightning to arc between multiple enemies and confuse them.",
+    "discard": "SHORT_REST",
+    "levelReq": 1,
+    "movement": null,
+    "skill": {
+      "id": 4,
+      "range": 1,
+      "area": null,
+      "target": "ALL_ENEMIES",
+      "effects": [
+        {
+          "key": {
+            "idSkill": 4,
+            "idEffect": 34
+          },
+          "effect": {
+            "id": 34,
+            "target": "ALL_ENEMIES",
+            "type": "CONFUSION",
+            "duration": 3,
+            "strength": null,
+            "description": ""
+          }
+        }
+      ]
+    },
+    "attack": {
+      "id": 8,
+      "range": 1,
+      "damage": 2,
+      "area": 2,
+      "target": "ALL_ENEMIES",
+      "numAttacks": 1,
+      "effects": []
+    },
+    "restoreCards": null,
+    "summonActions": []
+  },
+  {
+    "id": 13,
+    "title": "Teleport",
+    "description": "Instantly relocate to another location on the battlefield.",
+    "discard": "NEVER",
+    "levelReq": 1,
+    "movement": {
+      "id": 3,
+      "range": 3,
+      "type": "TELEPORT",
+      "effects": []
+    },
+    "skill": null,
+    "attack": null,
+    "restoreCards": null,
+    "summonActions": []
+  },
+  {
+    "id": 14,
+    "title": "Confusion Spell",
+    "description": "Cloud your enemies' mind.",
+    "discard": "SHORT_REST",
+    "levelReq": 1,
+    "movement": null,
+    "skill": {
+      "id": 5,
+      "range": 3,
+      "area": null,
+      "target": "ONE",
+      "effects": [
+        {
+          "key": {
+            "idSkill": 5,
+            "idEffect": 35
+          },
+          "effect": {
+            "id": 35,
+            "target": "ONE",
+            "type": "VULNERABILITY",
+            "duration": 2,
+            "strength": 3,
+            "description": ""
+          }
+        },
+        {
+          "key": {
+            "idSkill": 5,
+            "idEffect": 36
+          },
+          "effect": {
+            "id": 36,
+            "target": "ONE",
+            "type": "ENFEEBLE",
+            "duration": 3,
+            "strength": 2,
+            "description": ""
+          }
+        },
+        {
+          "key": {
+            "idSkill": 5,
+            "idEffect": 37
+          },
+          "effect": {
+            "id": 37,
+            "target": "ONE",
+            "type": "CONFUSION",
+            "duration": 2,
+            "strength": null,
+            "description": ""
+          }
+        }
+      ]
+    },
+    "attack": null,
+    "restoreCards": null,
+    "summonActions": []
+  },
+  {
+    "id": 15,
+    "title": "Mana Surge",
+    "description": "Refresh your mind.",
+    "discard": "SHORT_REST",
+    "levelReq": 1,
+    "movement": null,
+    "skill": {
+      "id": 6,
+      "range": 0,
+      "area": null,
+      "target": "SELF",
+      "effects": [
+        {
+          "key": {
+            "idSkill": 6,
+            "idEffect": 38
+          },
+          "effect": {
+            "id": 38,
+            "target": "SELF",
+            "type": "EMPOWER",
+            "duration": 3,
+            "strength": 2,
+            "description": ""
+          }
+        }
+      ]
+    },
+    "attack": null,
+    "restoreCards": {
+      "id": 1,
+      "numCards": 3,
+      "target": "SELF",
+      "random": true
+    },
+    "summonActions": []
+  },
+  {
+    "id": 16,
+    "title": "Sonic Wave",
+    "description": "Emit a wave of sound to disorient enemies.",
+    "discard": "SHORT_REST",
+    "levelReq": 1,
+    "movement": null,
+    "skill": null,
+    "attack": {
+      "id": 9,
+      "range": 3,
+      "damage": 3,
+      "area": 2,
+      "target": "ALL",
+      "numAttacks": 1,
+      "effects": [
+        {
+          "key": {
+            "idAttack": 9,
+            "idEffect": 39
+          },
+          "effect": {
+            "id": 39,
+            "target": "ALL_ENEMIES",
+            "type": "CONFUSION",
+            "duration": 3,
+            "strength": null,
+            "description": ""
+          }
+        }
+      ]
+    },
+    "restoreCards": null,
+    "summonActions": []
+  },
+  {
+    "id": 17,
+    "title": "Inspiring Melody",
+    "description": "Boost allies' morale, enhancing their abilities.",
+    "discard": "SHORT_REST",
+    "levelReq": 1,
+    "movement": null,
+    "skill": {
+      "id": 7,
+      "range": 3,
+      "area": null,
+      "target": "ALL_ALLIES",
+      "effects": [
+        {
+          "key": {
+            "idSkill": 7,
+            "idEffect": 40
+          },
+          "effect": {
+            "id": 40,
+            "target": "ALL_ALLIES",
+            "type": "GUIDANCE",
+            "duration": 2,
+            "strength": null,
+            "description": ""
+          }
+        },
+        {
+          "key": {
+            "idSkill": 7,
+            "idEffect": 41
+          },
+          "effect": {
+            "id": 41,
+            "target": "ALL_ALLIES",
+            "type": "EMPOWER",
+            "duration": 2,
+            "strength": 2,
+            "description": ""
+          }
+        },
+        {
+          "key": {
+            "idSkill": 7,
+            "idEffect": 51
+          },
+          "effect": {
+            "id": 51,
+            "target": "ALL_ALLIES",
+            "type": "CONFUSION_RESISTANCE",
+            "duration": 2,
+            "strength": null,
+            "description": ""
+          }
+        }
+      ]
+    },
+    "attack": null,
+    "restoreCards": {
+      "id": 2,
+      "numCards": 2,
+      "target": "ONE",
+      "random": true
+    },
+    "summonActions": []
+  },
+  {
+    "id": 18,
+    "title": "Healing Harmony",
+    "description": "Heal allies with soothing music.",
+    "discard": "NEVER",
+    "levelReq": 1,
+    "movement": null,
+    "skill": {
+      "id": 8,
+      "range": 3,
+      "area": null,
+      "target": "ALL_ALLIES",
+      "effects": [
+        {
+          "key": {
+            "idSkill": 8,
+            "idEffect": 42
+          },
+          "effect": {
+            "id": 42,
+            "target": "ALL_ALLIES",
+            "type": "HEAL",
+            "duration": null,
+            "strength": 2,
+            "description": ""
+          }
+        }
+      ]
+    },
+    "attack": null,
+    "restoreCards": null,
+    "summonActions": []
+  },
+  {
+    "id": 19,
+    "title": "Call of Life",
+    "description": "Fill your ally with regenerating aura.",
+    "discard": "SHORT_REST",
+    "levelReq": 1,
+    "movement": null,
+    "skill": {
+      "id": 9,
+      "range": 2,
+      "area": null,
+      "target": "ONE",
+      "effects": [
+        {
+          "key": {
+            "idSkill": 9,
+            "idEffect": 43
+          },
+          "effect": {
+            "id": 43,
+            "target": "ONE",
+            "type": "REGENERATION",
+            "duration": 2,
+            "strength": 3,
+            "description": ""
+          }
+        },
+        {
+          "key": {
+            "idSkill": 9,
+            "idEffect": 45
+          },
+          "effect": {
+            "id": 45,
+            "target": "ONE",
+            "type": "SPEED",
+            "duration": 2,
+            "strength": 2,
+            "description": ""
+          }
+        }
+      ]
+    },
+    "attack": null,
+    "restoreCards": {
+      "id": 3,
+      "numCards": 2,
+      "target": "ONE",
+      "random": false
+    },
+    "summonActions": []
+  },
+  {
+    "id": 20,
+    "title": "Evasive Dance",
+    "description": "Move gracefully, avoiding enemy attacks.",
+    "discard": "NEVER",
+    "levelReq": 1,
+    "movement": {
+      "id": 4,
+      "range": 3,
+      "type": "JUMP",
+      "effects": [
+        {
+          "key": {
+            "idMovement": 4,
+            "idEffect": 44
+          },
+          "effect": {
+            "id": 44,
+            "target": "SELF",
+            "type": "PROTECTION",
+            "duration": 1,
+            "strength": 1,
+            "description": ""
+          }
+        }
+      ]
+    },
+    "skill": null,
+    "attack": null,
+    "restoreCards": null,
+    "summonActions": []
+  },
+  {
+    "id": 21,
+    "title": "Violin Bash",
+    "description": "If all else fails, resort to violence.",
+    "discard": "SHORT_REST",
+    "levelReq": 1,
+    "movement": null,
+    "skill": null,
+    "attack": {
+      "id": 10,
+      "range": 1,
+      "damage": 4,
+      "area": null,
+      "target": "ONE",
+      "numAttacks": 1,
+      "effects": [
+        {
+          "key": {
+            "idAttack": 10,
+            "idEffect": 46
+          },
+          "effect": {
+            "id": 46,
+            "target": "ONE",
+            "type": "CONFUSION",
+            "duration": 2,
+            "strength": null,
+            "description": ""
+          }
+        }
+      ]
+    },
+    "restoreCards": null,
+    "summonActions": []
+  },
+  {
+    "id": 22,
+    "title": "Poisoned Dagger",
+    "description": "Inflict enemies with a toxic poison.",
+    "discard": "SHORT_REST",
+    "levelReq": 1,
+    "movement": null,
+    "skill": null,
+    "attack": {
+      "id": 11,
+      "range": 1,
+      "damage": 3,
+      "area": null,
+      "target": "SELF",
+      "numAttacks": 2,
+      "effects": [
+        {
+          "key": {
+            "idAttack": 11,
+            "idEffect": 47
+          },
+          "effect": {
+            "id": 47,
+            "target": "ONE",
+            "type": "POISON",
+            "duration": 2,
+            "strength": 2,
+            "description": ""
+          }
+        }
+      ]
+    },
+    "restoreCards": null,
+    "summonActions": []
+  },
+  {
+    "id": 23,
+    "title": "Shadow Step",
+    "description": "Fade into the shadows and reappear elsewhere.",
+    "discard": "NEVER",
+    "levelReq": 1,
+    "movement": {
+      "id": 5,
+      "range": 4,
+      "type": "WALK",
+      "effects": []
+    },
+    "skill": null,
+    "attack": null,
+    "restoreCards": null,
+    "summonActions": []
+  },
+  {
+    "id": 24,
+    "title": "Swift Strike",
+    "description": "Silently strike your enemy from a distance.",
+    "discard": "NEVER",
+    "levelReq": 1,
+    "movement": null,
+    "skill": null,
+    "attack": {
+      "id": 12,
+      "range": 3,
+      "damage": 2,
+      "area": null,
+      "target": "ONE",
+      "numAttacks": 2,
+      "effects": []
+    },
+    "restoreCards": null,
+    "summonActions": []
+  },
+  {
+    "id": 25,
+    "title": "Leap of Death",
+    "description": "Leap forward and throw daggers at your enemies.",
+    "discard": "SHORT_REST",
+    "levelReq": 1,
+    "movement": {
+      "id": 6,
+      "range": 2,
+      "type": "JUMP",
+      "effects": []
+    },
+    "skill": null,
+    "attack": {
+      "id": 13,
+      "range": 2,
+      "damage": 4,
+      "area": null,
+      "target": "ONE",
+      "numAttacks": 1,
+      "effects": [
+        {
+          "key": {
+            "idAttack": 13,
+            "idEffect": 48
+          },
+          "effect": {
+            "id": 48,
+            "target": "ONE",
+            "type": "BLEED",
+            "duration": 2,
+            "strength": 1,
+            "description": ""
+          }
+        }
+      ]
+    },
+    "restoreCards": null,
+    "summonActions": []
+  },
+  {
+    "id": 26,
+    "title": "Strategic Retreat",
+    "description": "Fall back to rearrange your force.",
+    "discard": "SHORT_REST",
+    "levelReq": 1,
+    "movement": null,
+    "skill": {
+      "id": 10,
+      "range": 1,
+      "area": null,
+      "target": "SELF",
+      "effects": [
+        {
+          "key": {
+            "idSkill": 10,
+            "idEffect": 49
+          },
+          "effect": {
+            "id": 49,
+            "target": "SELF",
+            "type": "FORCED_MOVEMENT_RESISTANCE",
+            "duration": 2,
+            "strength": 3,
+            "description": ""
+          }
+        },
+        {
+          "key": {
+            "idSkill": 10,
+            "idEffect": 50
+          },
+          "effect": {
+            "id": 50,
+            "target": "SELF",
+            "type": "VULNERABILITY_RESISTANCE",
+            "duration": 2,
+            "strength": 3,
+            "description": ""
+          }
+        }
+      ]
+    },
+    "attack": null,
+    "restoreCards": {
+      "id": 4,
+      "numCards": 3,
+      "target": "SELF",
+      "random": false
+    },
+    "summonActions": []
+  },
+  {
+    "id": 27,
+    "title": "Flaming Arrow",
+    "description": "Pierce your enemies with fiery force.",
+    "discard": "SHORT_REST",
+    "levelReq": 1,
+    "movement": null,
+    "skill": null,
+    "attack": {
+      "id": 14,
+      "range": 4,
+      "damage": 2,
+      "area": null,
+      "target": "ONE",
+      "numAttacks": 1,
+      "effects": [
+        {
+          "key": {
+            "idAttack": 14,
+            "idEffect": 52
+          },
+          "effect": {
+            "id": 52,
+            "target": "ONE",
+            "type": "FIRE",
+            "duration": 3,
+            "strength": 2,
+            "description": ""
+          }
+        }
+      ]
+    },
+    "restoreCards": null,
+    "summonActions": []
+  },
+  {
+    "id": 28,
+    "title": "Adaptability",
+    "description": "Quickly adapt to the situation, gaining advantage.",
+    "discard": "NEVER",
+    "levelReq": 1,
+    "movement": null,
+    "skill": {
+      "id": 11,
+      "range": 1,
+      "area": null,
+      "target": "SELF",
+      "effects": [
+        {
+          "key": {
+            "idSkill": 11,
+            "idEffect": 53
+          },
+          "effect": {
+            "id": 53,
+            "target": "SELF",
+            "type": "EMPOWER",
+            "duration": 2,
+            "strength": 2,
+            "description": ""
+          }
+        },
+        {
+          "key": {
+            "idSkill": 11,
+            "idEffect": 54
+          },
+          "effect": {
+            "id": 54,
+            "target": "SELF",
+            "type": "PROTECTION",
+            "duration": 2,
+            "strength": 2,
+            "description": ""
+          }
+        }
+      ]
+    },
+    "attack": null,
+    "restoreCards": null,
+    "summonActions": []
+  },
+  {
+    "id": 29,
+    "title": "Martial Prowess",
+    "description": "Demonstrate martial prowess with precise strikes.",
+    "discard": "SHORT_REST",
+    "levelReq": 1,
+    "movement": null,
+    "skill": null,
+    "attack": {
+      "id": 15,
+      "range": 1,
+      "damage": 3,
+      "area": null,
+      "target": "ONE",
+      "numAttacks": 3,
+      "effects": []
+    },
+    "restoreCards": null,
+    "summonActions": []
+  },
+  {
+    "id": 30,
+    "title": "Human Ingenuity",
+    "description": "Utilize human ingenuity to gain tactical advantage.",
+    "discard": "SHORT_REST",
+    "levelReq": 1,
+    "movement": null,
+    "skill": {
+      "id": 12,
+      "range": 1,
+      "area": null,
+      "target": "SELF",
+      "effects": [
+        {
+          "key": {
+            "idSkill": 12,
+            "idEffect": 55
+          },
+          "effect": {
+            "id": 55,
+            "target": "SELF",
+            "type": "VULNERABILITY_RESISTANCE",
+            "duration": 1,
+            "strength": 3,
+            "description": ""
+          }
+        }
+      ]
+    },
+    "attack": null,
+    "restoreCards": {
+      "id": 5,
+      "numCards": 2,
+      "target": "SELF",
+      "random": true
+    },
+    "summonActions": []
+  },
+  {
+    "id": 31,
+    "title": "Primal Smash",
+    "description": "Channel your ancestral instincts to bonk.",
+    "discard": "SHORT_REST",
+    "levelReq": 1,
+    "movement": null,
+    "skill": null,
+    "attack": {
+      "id": 16,
+      "range": 1,
+      "damage": 3,
+      "area": null,
+      "target": "ONE",
+      "numAttacks": 1,
+      "effects": []
+    },
+    "restoreCards": null,
+    "summonActions": []
+  },
+  {
+    "id": 32,
+    "title": "Dwarven Wrath",
+    "description": "Unleash dwarven fury upon enemies.",
+    "discard": "SHORT_REST",
+    "levelReq": 1,
+    "movement": null,
+    "skill": null,
+    "attack": {
+      "id": 17,
+      "range": 1,
+      "damage": 3,
+      "area": null,
+      "target": "ONE",
+      "numAttacks": 2,
+      "effects": []
+    },
+    "restoreCards": null,
+    "summonActions": []
+  },
+  {
+    "id": 33,
+    "title": "Mountain's Might",
+    "description": "Channel the strength of mountains.",
+    "discard": "SHORT_REST",
+    "levelReq": 1,
+    "movement": null,
+    "skill": {
+      "id": 13,
+      "range": 1,
+      "area": null,
+      "target": "SELF",
+      "effects": [
+        {
+          "key": {
+            "idSkill": 13,
+            "idEffect": 54
+          },
+          "effect": {
+            "id": 54,
+            "target": "SELF",
+            "type": "PROTECTION",
+            "duration": 2,
+            "strength": 2,
+            "description": ""
+          }
+        },
+        {
+          "key": {
+            "idSkill": 13,
+            "idEffect": 56
+          },
+          "effect": {
+            "id": 56,
+            "target": "SELF",
+            "type": "SLOW",
+            "duration": 2,
+            "strength": 2,
+            "description": ""
+          }
+        },
+        {
+          "key": {
+            "idSkill": 13,
+            "idEffect": 57
+          },
+          "effect": {
+            "id": 57,
+            "target": "SELF",
+            "type": "FORCED_MOVEMENT_RESISTANCE",
+            "duration": 2,
+            "strength": 2,
+            "description": ""
+          }
+        },
+        {
+          "key": {
+            "idSkill": 13,
+            "idEffect": 58
+          },
+          "effect": {
+            "id": 58,
+            "target": "SELF",
+            "type": "STUN_RESISTANCE",
+            "duration": 2,
+            "strength": null,
+            "description": ""
+          }
+        }
+      ]
+    },
+    "attack": null,
+    "restoreCards": null,
+    "summonActions": []
+  },
+  {
+    "id": 34,
+    "title": "Hammer's Decision",
+    "description": "Strike enemies with the force of a dwarven hammer.",
+    "discard": "NEVER",
+    "levelReq": 1,
+    "movement": null,
+    "skill": null,
+    "attack": {
+      "id": 18,
+      "range": 1,
+      "damage": 2,
+      "area": null,
+      "target": "ONE",
+      "numAttacks": 1,
+      "effects": []
+    },
+    "restoreCards": null,
+    "summonActions": []
+  },
+  {
+    "id": 35,
+    "title": "Circle of Broken Bones",
+    "description": "Decimate those around you.",
+    "discard": "SHORT_REST",
+    "levelReq": 1,
+    "movement": null,
+    "skill": null,
+    "attack": {
+      "id": 19,
+      "range": 1,
+      "damage": 3,
+      "area": 2,
+      "target": "ALL",
+      "numAttacks": 1,
+      "effects": []
+    },
+    "restoreCards": null,
+    "summonActions": []
+  },
+  {
+    "id": 36,
+    "title": "Nature's Blessing",
+    "description": "Heal allies with the power of nature.",
+    "discard": "SHORT_REST",
+    "levelReq": 1,
+    "movement": null,
+    "skill": {
+      "id": 14,
+      "range": 3,
+      "area": null,
+      "target": "ONE",
+      "effects": [
+        {
+          "key": {
+            "idSkill": 14,
+            "idEffect": 59
+          },
+          "effect": {
+            "id": 59,
+            "target": "ONE",
+            "type": "HEAL",
+            "duration": null,
+            "strength": 3,
+            "description": ""
+          }
+        }
+      ]
+    },
+    "attack": null,
+    "restoreCards": null,
+    "summonActions": []
+  },
+  {
+    "id": 37,
+    "title": "Elven Agility",
+    "description": "Move swiftly and gracefully across the battlefield.",
+    "discard": "NEVER",
+    "levelReq": 1,
+    "movement": {
+      "id": 7,
+      "range": 3,
+      "type": "WALK",
+      "effects": [
+        {
+          "key": {
+            "idMovement": 7,
+            "idEffect": 60
+          },
+          "effect": {
+            "id": 60,
+            "target": "SELF",
+            "type": "SPEED",
+            "duration": 1,
+            "strength": 1,
+            "description": ""
+          }
+        }
+      ]
+    },
+    "skill": null,
+    "attack": null,
+    "restoreCards": null,
+    "summonActions": []
+  },
+  {
+    "id": 38,
+    "title": "Elven Arrow",
+    "description": "Shoot enemies with arrows imbued with elven magic.",
+    "discard": "NEVER",
+    "levelReq": 1,
+    "movement": null,
+    "skill": null,
+    "attack": {
+      "id": 20,
+      "range": 3,
+      "damage": 3,
+      "area": null,
+      "target": "ONE",
+      "numAttacks": 1,
+      "effects": [
+        {
+          "key": {
+            "idAttack": 20,
+            "idEffect": 61
+          },
+          "effect": {
+            "id": 61,
+            "target": "ONE",
+            "type": "VULNERABILITY",
+            "duration": 1,
+            "strength": 2,
+            "description": ""
+          }
+        }
+      ]
+    },
+    "restoreCards": null,
+    "summonActions": []
+  },
+  {
+    "id": 39,
+    "title": "Multishot",
+    "description": "Fire two arrows from your bow.",
+    "discard": "SHORT_REST",
+    "levelReq": 1,
+    "movement": null,
+    "skill": null,
+    "attack": {
+      "id": 21,
+      "range": 3,
+      "damage": 3,
+      "area": null,
+      "target": "ONE",
+      "numAttacks": 2,
+      "effects": []
+    },
+    "restoreCards": null,
+    "summonActions": []
+  },
+  {
+    "id": 40,
+    "title": "Soul Drain",
+    "description": "Drain the life force from enemies to heal yourself.",
+    "discard": "SHORT_REST",
+    "levelReq": 1,
+    "movement": null,
+    "skill": {
+      "id": 15,
+      "range": 1,
+      "area": null,
+      "target": "SELF",
+      "effects": [
+        {
+          "key": {
+            "idSkill": 15,
+            "idEffect": 62
+          },
+          "effect": {
+            "id": 62,
+            "target": "SELF",
+            "type": "HEAL",
+            "duration": null,
+            "strength": 2,
+            "description": ""
+          }
+        }
+      ]
+    },
+    "attack": {
+      "id": 22,
+      "range": 1,
+      "damage": 2,
+      "area": null,
+      "target": "ONE",
+      "numAttacks": 1,
+      "effects": []
+    },
+    "restoreCards": null,
+    "summonActions": []
+  },
+  {
+    "id": 41,
+    "title": "Hellfire",
+    "description": "Engulf enemies in flames from the depths of hell.",
+    "discard": "SHORT_REST",
+    "levelReq": 1,
+    "movement": null,
+    "skill": {
+      "id": 16,
+      "range": 2,
+      "area": 2,
+      "target": "ALL_ENEMIES",
+      "effects": [
+        {
+          "key": {
+            "idSkill": 16,
+            "idEffect": 63
+          },
+          "effect": {
+            "id": 63,
+            "target": "ALL_ENEMIES",
+            "type": "FIRE",
+            "duration": 2,
+            "strength": 3,
+            "description": ""
+          }
+        }
+      ]
+    },
+    "attack": null,
+    "restoreCards": null,
+    "summonActions": []
+  },
+  {
+    "id": 42,
+    "title": "Demon's Grasp",
+    "description": "Pull enemies towards you with demonic force.",
+    "discard": "SHORT_REST",
+    "levelReq": 1,
+    "movement": null,
+    "skill": {
+      "id": 17,
+      "range": 3,
+      "area": null,
+      "target": "ONE",
+      "effects": [
+        {
+          "key": {
+            "idSkill": 17,
+            "idEffect": 64
+          },
+          "effect": {
+            "id": 64,
+            "target": "ONE",
+            "type": "PULL",
+            "duration": null,
+            "strength": 3,
+            "description": ""
+          }
+        }
+      ]
+    },
+    "attack": null,
+    "restoreCards": null,
+    "summonActions": []
+  },
+  {
+    "id": 43,
+    "title": "Infernal Rage",
+    "description": "Unleash demonic fury upon enemies.",
+    "discard": "NEVER",
+    "levelReq": 1,
+    "movement": null,
+    "skill": null,
+    "attack": {
+      "id": 23,
+      "range": 2,
+      "damage": 2,
+      "area": null,
+      "target": "ONE",
+      "numAttacks": 2,
       "effects": []
     },
     "restoreCards": null,

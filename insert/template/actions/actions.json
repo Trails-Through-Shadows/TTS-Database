@@ -56,14 +56,6 @@
           "key": {
             "idAttack": 2,
             "idEffect": 26
-          },
-          "effect": {
-            "id": 26,
-            "target": "ALL_ENEMIES",
-            "type": "STUN",
-            "duration": 3,
-            "strength": null,
-            "description": ""
           }
         }
       ]
@@ -88,14 +80,6 @@
           "key": {
             "idSkill": 6,
             "idEffect": 30
-          },
-          "effect": {
-            "id": 30,
-            "target": "SELF",
-            "type": "PROTECTION",
-            "duration": 2,
-            "strength": 3,
-            "description": ""
           }
         }
       ]
@@ -141,14 +125,6 @@
           "key": {
             "idSkill": 8,
             "idEffect": 31
-          },
-          "effect": {
-            "id": 31,
-            "target": "ALL_ALLIES",
-            "type": "PROTECTION",
-            "duration": 3,
-            "strength": 2,
-            "description": ""
           }
         }
       ]
@@ -177,14 +153,6 @@
           "key": {
             "idAttack": 5,
             "idEffect": 32
-          },
-          "effect": {
-            "id": 32,
-            "target": "ONE",
-            "type": "PUSH",
-            "duration": null,
-            "strength": 3,
-            "description": ""
           }
         }
       ]
@@ -212,14 +180,6 @@
           "key": {
             "idAttack": 6,
             "idEffect": 33
-          },
-          "effect": {
-            "id": 33,
-            "target": "ALL",
-            "type": "FIRE",
-            "duration": 3,
-            "strength": 2,
-            "description": ""
           }
         }
       ]
@@ -264,14 +224,6 @@
           "key": {
             "idSkill": 12,
             "idEffect": 34
-          },
-          "effect": {
-            "id": 34,
-            "target": "ALL_ENEMIES",
-            "type": "CONFUSION",
-            "duration": 3,
-            "strength": null,
-            "description": ""
           }
         }
       ]
@@ -322,42 +274,18 @@
           "key": {
             "idSkill": 14,
             "idEffect": 35
-          },
-          "effect": {
-            "id": 35,
-            "target": "ONE",
-            "type": "VULNERABILITY",
-            "duration": 2,
-            "strength": 3,
-            "description": ""
           }
         },
         {
           "key": {
             "idSkill": 14,
             "idEffect": 36
-          },
-          "effect": {
-            "id": 36,
-            "target": "ONE",
-            "type": "ENFEEBLE",
-            "duration": 3,
-            "strength": 2,
-            "description": ""
           }
         },
         {
           "key": {
             "idSkill": 14,
             "idEffect": 37
-          },
-          "effect": {
-            "id": 37,
-            "target": "ONE",
-            "type": "CONFUSION",
-            "duration": 2,
-            "strength": null,
-            "description": ""
           }
         }
       ]
@@ -383,14 +311,6 @@
           "key": {
             "idSkill": 15,
             "idEffect": 38
-          },
-          "effect": {
-            "id": 38,
-            "target": "SELF",
-            "type": "EMPOWER",
-            "duration": 3,
-            "strength": 2,
-            "description": ""
           }
         }
       ]
@@ -424,14 +344,6 @@
           "key": {
             "idAttack": 9,
             "idEffect": 39
-          },
-          "effect": {
-            "id": 39,
-            "target": "ALL_ENEMIES",
-            "type": "CONFUSION",
-            "duration": 3,
-            "strength": null,
-            "description": ""
           }
         }
       ]
@@ -456,42 +368,18 @@
           "key": {
             "idSkill": 17,
             "idEffect": 40
-          },
-          "effect": {
-            "id": 40,
-            "target": "ALL_ALLIES",
-            "type": "GUIDANCE",
-            "duration": 2,
-            "strength": null,
-            "description": ""
           }
         },
         {
           "key": {
             "idSkill": 17,
             "idEffect": 41
-          },
-          "effect": {
-            "id": 41,
-            "target": "ALL_ALLIES",
-            "type": "EMPOWER",
-            "duration": 2,
-            "strength": 2,
-            "description": ""
           }
         },
         {
           "key": {
             "idSkill": 17,
             "idEffect": 51
-          },
-          "effect": {
-            "id": 51,
-            "target": "ALL_ALLIES",
-            "type": "CONFUSION_RESISTANCE",
-            "duration": 2,
-            "strength": null,
-            "description": ""
           }
         }
       ]
@@ -522,14 +410,6 @@
           "key": {
             "idSkill": 18,
             "idEffect": 42
-          },
-          "effect": {
-            "id": 42,
-            "target": "ALL_ALLIES",
-            "type": "HEAL",
-            "duration": null,
-            "strength": 2,
-            "description": ""
           }
         }
       ]
@@ -555,28 +435,12 @@
           "key": {
             "idSkill": 19,
             "idEffect": 43
-          },
-          "effect": {
-            "id": 43,
-            "target": "ONE",
-            "type": "REGENERATION",
-            "duration": 2,
-            "strength": 3,
-            "description": ""
           }
         },
         {
           "key": {
             "idSkill": 19,
             "idEffect": 45
-          },
-          "effect": {
-            "id": 45,
-            "target": "ONE",
-            "type": "SPEED",
-            "duration": 2,
-            "strength": 2,
-            "description": ""
           }
         }
       ]
@@ -605,14 +469,6 @@
           "key": {
             "idMovement": 20,
             "idEffect": 44
-          },
-          "effect": {
-            "id": 44,
-            "target": "SELF",
-            "type": "PROTECTION",
-            "duration": 1,
-            "strength": 1,
-            "description": ""
           }
         }
       ]
@@ -642,14 +498,6 @@
           "key": {
             "idAttack": 10,
             "idEffect": 46
-          },
-          "effect": {
-            "id": 46,
-            "target": "ONE",
-            "type": "CONFUSION",
-            "duration": 2,
-            "strength": null,
-            "description": ""
           }
         }
       ]
@@ -677,14 +525,6 @@
           "key": {
             "idAttack": 11,
             "idEffect": 47
-          },
-          "effect": {
-            "id": 47,
-            "target": "ONE",
-            "type": "POISON",
-            "duration": 2,
-            "strength": 2,
-            "description": ""
           }
         }
       ]
@@ -754,14 +594,6 @@
           "key": {
             "idAttack": 13,
             "idEffect": 48
-          },
-          "effect": {
-            "id": 48,
-            "target": "ONE",
-            "type": "BLEED",
-            "duration": 2,
-            "strength": 1,
-            "description": ""
           }
         }
       ]
@@ -786,28 +618,12 @@
           "key": {
             "idSkill": 26,
             "idEffect": 49
-          },
-          "effect": {
-            "id": 49,
-            "target": "SELF",
-            "type": "FORCED_MOVEMENT_RESISTANCE",
-            "duration": 2,
-            "strength": 3,
-            "description": ""
           }
         },
         {
           "key": {
             "idSkill": 26,
             "idEffect": 50
-          },
-          "effect": {
-            "id": 50,
-            "target": "SELF",
-            "type": "VULNERABILITY_RESISTANCE",
-            "duration": 2,
-            "strength": 3,
-            "description": ""
           }
         }
       ]
@@ -841,14 +657,6 @@
           "key": {
             "idAttack": 14,
             "idEffect": 52
-          },
-          "effect": {
-            "id": 52,
-            "target": "ONE",
-            "type": "FIRE",
-            "duration": 3,
-            "strength": 2,
-            "description": ""
           }
         }
       ]
@@ -873,28 +681,12 @@
           "key": {
             "idSkill": 28,
             "idEffect": 53
-          },
-          "effect": {
-            "id": 53,
-            "target": "SELF",
-            "type": "EMPOWER",
-            "duration": 2,
-            "strength": 2,
-            "description": ""
           }
         },
         {
           "key": {
             "idSkill": 28,
             "idEffect": 54
-          },
-          "effect": {
-            "id": 54,
-            "target": "SELF",
-            "type": "PROTECTION",
-            "duration": 2,
-            "strength": 2,
-            "description": ""
           }
         }
       ]
@@ -917,7 +709,7 @@
       "damage": 3,
       "area": null,
       "target": "ONE",
-      "numAttacks": 3,
+      "numAttacks": 2,
       "effects": []
     },
     "restoreCards": null,
@@ -940,14 +732,6 @@
           "key": {
             "idSkill": 30,
             "idEffect": 55
-          },
-          "effect": {
-            "id": 55,
-            "target": "SELF",
-            "type": "VULNERABILITY_RESISTANCE",
-            "duration": 1,
-            "strength": 3,
-            "description": ""
           }
         }
       ]
@@ -1018,56 +802,24 @@
           "key": {
             "idSkill": 33,
             "idEffect": 54
-          },
-          "effect": {
-            "id": 54,
-            "target": "SELF",
-            "type": "PROTECTION",
-            "duration": 2,
-            "strength": 2,
-            "description": ""
           }
         },
         {
           "key": {
             "idSkill": 33,
             "idEffect": 56
-          },
-          "effect": {
-            "id": 56,
-            "target": "SELF",
-            "type": "SLOW",
-            "duration": 2,
-            "strength": 2,
-            "description": ""
           }
         },
         {
           "key": {
             "idSkill": 33,
             "idEffect": 57
-          },
-          "effect": {
-            "id": 57,
-            "target": "SELF",
-            "type": "FORCED_MOVEMENT_RESISTANCE",
-            "duration": 2,
-            "strength": 2,
-            "description": ""
           }
         },
         {
           "key": {
             "idSkill": 33,
             "idEffect": 58
-          },
-          "effect": {
-            "id": 58,
-            "target": "SELF",
-            "type": "STUN_RESISTANCE",
-            "duration": 2,
-            "strength": null,
-            "description": ""
           }
         }
       ]
@@ -1133,14 +885,6 @@
           "key": {
             "idSkill": 36,
             "idEffect": 59
-          },
-          "effect": {
-            "id": 59,
-            "target": "ONE",
-            "type": "HEAL",
-            "duration": null,
-            "strength": 3,
-            "description": ""
           }
         }
       ]
@@ -1164,14 +908,6 @@
           "key": {
             "idMovement": 37,
             "idEffect": 60
-          },
-          "effect": {
-            "id": 60,
-            "target": "SELF",
-            "type": "SPEED",
-            "duration": 1,
-            "strength": 1,
-            "description": ""
           }
         }
       ]
@@ -1201,14 +937,6 @@
           "key": {
             "idAttack": 20,
             "idEffect": 61
-          },
-          "effect": {
-            "id": 61,
-            "target": "ONE",
-            "type": "VULNERABILITY",
-            "duration": 1,
-            "strength": 2,
-            "description": ""
           }
         }
       ]
@@ -1253,14 +981,6 @@
           "key": {
             "idSkill": 40,
             "idEffect": 62
-          },
-          "effect": {
-            "id": 62,
-            "target": "SELF",
-            "type": "HEAL",
-            "duration": null,
-            "strength": 2,
-            "description": ""
           }
         }
       ]
@@ -1294,14 +1014,6 @@
           "key": {
             "idSkill": 41,
             "idEffect": 63
-          },
-          "effect": {
-            "id": 63,
-            "target": "ALL_ENEMIES",
-            "type": "FIRE",
-            "duration": 2,
-            "strength": 3,
-            "description": ""
           }
         }
       ]
@@ -1327,14 +1039,6 @@
           "key": {
             "idSkill": 42,
             "idEffect": 64
-          },
-          "effect": {
-            "id": 64,
-            "target": "ONE",
-            "type": "PULL",
-            "duration": null,
-            "strength": 3,
-            "description": ""
           }
         }
       ]
@@ -1390,7 +1094,7 @@
     "discard": "NEVER",
     "levelReq": 1,
     "movement": {
-      "id": 38,
+      "id": 45,
       "range": 1,
       "type": "WALK",
       "effects": []
@@ -1408,14 +1112,6 @@
           "key": {
             "idAttack": 25,
             "idEffect": 47
-          },
-          "effect": {
-            "id": 47,
-            "target": "ONE",
-            "type": "POISON",
-            "duration": 2,
-            "strength": 2,
-            "description": ""
           }
         }
       ]
@@ -1431,23 +1127,15 @@
     "levelReq": 1,
     "movement": null,
     "skill": {
-      "id": 43,
+      "id": 46,
       "range": 1,
       "area": 2,
       "target": "ALL",
       "effects": [
         {
           "key": {
-            "idSkill": 43,
+            "idSkill": 46,
             "idEffect": 65
-          },
-          "effect": {
-            "id": 65,
-            "target": "ALL",
-            "type": "SLOW",
-            "duration": 2,
-            "strength": 2,
-            "description": ""
           }
         }
       ]
@@ -1463,7 +1151,7 @@
     "discard": "NEVER",
     "levelReq": 1,
     "movement": {
-      "id": 39,
+      "id": 47,
       "range": 3,
       "type": "WALK",
       "effects": []
@@ -1521,14 +1209,6 @@
           "key": {
             "idAttack": 29,
             "idEffect": 66
-          },
-          "effect": {
-            "id": 66,
-            "target": "ONE",
-            "type": "VULNERABILITY",
-            "duration": 2,
-            "strength": 2,
-            "description": ""
           }
         }
       ]
@@ -1543,7 +1223,7 @@
     "discard": "NEVER",
     "levelReq": 1,
     "movement": {
-      "id": 40,
+      "id": 50,
       "range": 3,
       "type": "WALK",
       "effects": []
@@ -1581,14 +1261,6 @@
           "key": {
             "idAttack": 31,
             "idEffect": 67
-          },
-          "effect": {
-            "id": 67,
-            "target": "ONE",
-            "type": "POISON",
-            "duration": 1,
-            "strength": 2,
-            "description": ""
           }
         }
       ]
@@ -1624,23 +1296,15 @@
     "levelReq": 1,
     "movement": null,
     "skill": {
-      "id": 44,
+      "id": 53,
       "range": 1,
       "area": null,
       "target": "SELF",
       "effects": [
         {
           "key": {
-            "idSkill": 44,
+            "idSkill": 53,
             "idEffect": 68
-          },
-          "effect": {
-            "id": 68,
-            "target": "SELF",
-            "type": "HEAL",
-            "duration": null,
-            "strength": 3,
-            "description": ""
           }
         }
       ]
@@ -1664,7 +1328,7 @@
     "discard": "NEVER",
     "levelReq": 1,
     "movement": {
-      "id": 41,
+      "id": 54,
       "range": 3,
       "type": "TELEPORT",
       "effects": []
@@ -1682,14 +1346,6 @@
           "key": {
             "idAttack": 34,
             "idEffect": 69
-          },
-          "effect": {
-            "id": 69,
-            "target": "ONE",
-            "type": "CONFUSION",
-            "duration": 2,
-            "strength": null,
-            "description": ""
           }
         }
       ]
@@ -1717,14 +1373,6 @@
           "key": {
             "idAttack": 35,
             "idEffect": 70
-          },
-          "effect": {
-            "id": 70,
-            "target": "ALL",
-            "type": "SLOW",
-            "duration": 1,
-            "strength": 4,
-            "description": ""
           }
         }
       ]

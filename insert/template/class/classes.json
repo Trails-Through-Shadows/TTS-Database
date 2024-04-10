@@ -15,6 +15,41 @@
           "idAction": 10
         },
         "action": 10
+      },
+      {
+        "key": {
+          "idClass": 1,
+          "idAction": 11
+        },
+        "action": 11
+      },
+      {
+        "key": {
+          "idClass": 1,
+          "idAction": 12
+        },
+        "action": 12
+      },
+      {
+        "key": {
+          "idClass": 1,
+          "idAction": 13
+        },
+        "action": 13
+      },
+      {
+        "key": {
+          "idClass": 1,
+          "idAction": 14
+        },
+        "action": 14
+      },
+      {
+        "key": {
+          "idClass": 1,
+          "idAction": 15
+        },
+        "action": 15
       }
     ],
     "url": "https://api.tts-game.fun/images/classes/mage.png"

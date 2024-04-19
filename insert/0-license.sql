@@ -12,7 +12,7 @@ BEGIN
     DECLARE i INT DEFAULT 0;
 
     INSERT INTO License (`key`, password, activated)
-    VALUES ('0000', 'admin', NULL);
+    VALUES ('shadefa11en', 'ourPassword', NULL);
 
     WHILE i < @numRows DO
         SET @randUUID = MD5(UUID());

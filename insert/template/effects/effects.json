@@ -1,186 +1,443 @@
 [
   {
-    "id": 1,
-    "target": "ONE",
-    "type": "BLEED",
-    "duration": 5,
-    "strength": 3,
-    "description": null
+    "id": 26,
+    "target": "ALL_ENEMIES",
+    "type": "STUN",
+    "duration": 3,
+    "strength": null,
+    "description": "",
+    "url": "https://api.tts-game.fun/images/effects/stun.png"
   },
   {
-    "id": 2,
+    "id": 30,
+    "target": "SELF",
+    "type": "PROTECTION",
+    "duration": 2,
+    "strength": 3,
+    "description": "",
+    "url": "https://api.tts-game.fun/images/effects/protection.png"
+  },
+  {
+    "id": 31,
+    "target": "ALL_ALLIES",
+    "type": "PROTECTION",
+    "duration": 3,
+    "strength": 2,
+    "description": "",
+    "url": "https://api.tts-game.fun/images/effects/protection.png"
+  },
+  {
+    "id": 32,
+    "target": "ONE",
+    "type": "PUSH",
+    "duration": null,
+    "strength": 3,
+    "description": "",
+    "url": "https://api.tts-game.fun/images/effects/push.png"
+  },
+  {
+    "id": 33,
+    "target": "ALL",
+    "type": "FIRE",
+    "duration": 3,
+    "strength": 2,
+    "description": "",
+    "url": "https://api.tts-game.fun/images/effects/fire.png"
+  },
+  {
+    "id": 34,
+    "target": "ALL_ENEMIES",
+    "type": "CONFUSION",
+    "duration": 3,
+    "strength": null,
+    "description": "",
+    "url": "https://api.tts-game.fun/images/effects/confusion.png"
+  },
+  {
+    "id": 35,
+    "target": "ONE",
+    "type": "VULNERABILITY",
+    "duration": 2,
+    "strength": 3,
+    "description": "",
+    "url": "https://api.tts-game.fun/images/effects/vulnerability.png"
+  },
+  {
+    "id": 36,
+    "target": "ONE",
+    "type": "ENFEEBLE",
+    "duration": 3,
+    "strength": 2,
+    "description": "",
+    "url": "https://api.tts-game.fun/images/effects/enfeeble.png"
+  },
+  {
+    "id": 37,
+    "target": "ONE",
+    "type": "CONFUSION",
+    "duration": 2,
+    "strength": null,
+    "description": "",
+    "url": "https://api.tts-game.fun/images/effects/confusion.png"
+  },
+  {
+    "id": 38,
+    "target": "SELF",
+    "type": "EMPOWER",
+    "duration": 3,
+    "strength": 2,
+    "description": "",
+    "url": "https://api.tts-game.fun/images/effects/empower.png"
+  },
+  {
+    "id": 39,
+    "target": "ALL_ENEMIES",
+    "type": "CONFUSION",
+    "duration": 3,
+    "strength": null,
+    "description": "",
+    "url": "https://api.tts-game.fun/images/effects/confusion.png"
+  },
+  {
+    "id": 40,
+    "target": "ALL_ALLIES",
+    "type": "GUIDANCE",
+    "duration": 2,
+    "strength": null,
+    "description": "",
+    "url": "https://api.tts-game.fun/images/effects/guidance.png"
+  },
+  {
+    "id": 41,
+    "target": "ALL_ALLIES",
+    "type": "EMPOWER",
+    "duration": 2,
+    "strength": 2,
+    "description": "",
+    "url": "https://api.tts-game.fun/images/effects/empower.png"
+  },
+  {
+    "id": 42,
+    "target": "ALL_ALLIES",
+    "type": "HEAL",
+    "duration": null,
+    "strength": 2,
+    "description": "",
+    "url": "https://api.tts-game.fun/images/effects/heal.png"
+  },
+  {
+    "id": 43,
+    "target": "ONE",
+    "type": "REGENERATION",
+    "duration": 2,
+    "strength": 3,
+    "description": "",
+    "url": "https://api.tts-game.fun/images/effects/regeneration.png"
+  },
+  {
+    "id": 44,
+    "target": "SELF",
+    "type": "PROTECTION",
+    "duration": 1,
+    "strength": 1,
+    "description": "",
+    "url": "https://api.tts-game.fun/images/effects/protection.png"
+  },
+  {
+    "id": 45,
+    "target": "ONE",
+    "type": "SPEED",
+    "duration": 2,
+    "strength": 2,
+    "description": "",
+    "url": "https://api.tts-game.fun/images/effects/speed.png"
+  },
+  {
+    "id": 46,
+    "target": "ONE",
+    "type": "CONFUSION",
+    "duration": 2,
+    "strength": null,
+    "description": "",
+    "url": "https://api.tts-game.fun/images/effects/confusion.png"
+  },
+  {
+    "id": 47,
     "target": "ONE",
     "type": "POISON",
-    "duration": 3,
-    "strength": 5,
-    "description": null
-  },
-  {
-    "id": 3,
-    "target": "ONE",
-    "type": "SLOW",
-    "duration": 1,
+    "duration": 2,
     "strength": 2,
-    "description": null
+    "description": "",
+    "url": "https://api.tts-game.fun/images/effects/poison.png"
   },
   {
-    "id": 4,
+    "id": 48,
     "target": "ONE",
-    "type": "FIRE_RESISTANCE",
+    "type": "BLEED",
     "duration": 2,
     "strength": 1,
-    "description": null
+    "description": "",
+    "url": "https://api.tts-game.fun/images/effects/bleed.png"
   },
   {
-    "id": 6,
+    "id": 49,
     "target": "SELF",
-    "type": "POISON_RESISTANCE",
-    "duration": -1,
-    "strength": 10,
-    "description": null
-  },
-  {
-    "id": 8,
-    "target": "SELF",
-    "type": "POISON_RESISTANCE",
-    "duration": 3,
+    "type": "FORCED_MOVEMENT_RESISTANCE",
+    "duration": 2,
     "strength": 3,
-    "description": null
+    "description": "",
+    "url": "https://api.tts-game.fun/images/effects/forced_movement_resistance.png"
   },
   {
-    "id": 9,
-    "target": "ALL_ENEMIES",
-    "type": "BLEED",
-    "duration": 3,
-    "strength": 5,
-    "description": null
+    "id": 50,
+    "target": "SELF",
+    "type": "VULNERABILITY_RESISTANCE",
+    "duration": 2,
+    "strength": 3,
+    "description": "",
+    "url": "https://api.tts-game.fun/images/effects/vulnerability_resistance.png"
   },
   {
-    "id": 10,
-    "target": "ONE",
-    "type": "HEAL",
-    "duration": 0,
-    "strength": 4,
-    "description": null
+    "id": 51,
+    "target": "ALL_ALLIES",
+    "type": "CONFUSION_RESISTANCE",
+    "duration": 2,
+    "strength": null,
+    "description": "",
+    "url": "https://api.tts-game.fun/images/effects/confusion_resistance.png"
   },
   {
-    "id": 11,
+    "id": 52,
     "target": "ONE",
     "type": "FIRE",
     "duration": 3,
-    "strength": 3,
-    "description": null
+    "strength": 2,
+    "description": "",
+    "url": "https://api.tts-game.fun/images/effects/fire.png"
   },
   {
-    "id": 12,
+    "id": 53,
     "target": "SELF",
-    "type": "POISON_RESISTANCE",
-    "duration": -1,
-    "strength": 3,
-    "description": null
-  },
-  {
-    "id": 13,
-    "target": "SELF",
-    "type": "BLEED_RESISTANCE",
-    "duration": -1,
-    "strength": 100,
-    "description": null
-  },
-  {
-    "id": 14,
-    "target": "SELF",
-    "type": "FORCED_MOVEMENT_RESISTANCE",
-    "duration": -1,
-    "strength": 0,
-    "description": null
-  },
-  {
-    "id": 15,
-    "target": "ONE",
-    "type": "POISON",
+    "type": "EMPOWER",
     "duration": 2,
-    "strength": 1,
-    "description": null
+    "strength": 2,
+    "description": "",
+    "url": "https://api.tts-game.fun/images/effects/empower.png"
   },
   {
-    "id": 16,
+    "id": 54,
     "target": "SELF",
-    "type": "REGENERATION",
-    "duration": 1,
-    "strength": 10,
-    "description": null
-  },
-  {
-    "id": 17,
-    "target": "SELF",
-    "type": "SPEED",
+    "type": "PROTECTION",
     "duration": 2,
-    "strength": 20,
-    "description": null
+    "strength": 2,
+    "description": "",
+    "url": "https://api.tts-game.fun/images/effects/protection.png"
   },
   {
-    "id": 18,
+    "id": 55,
     "target": "SELF",
     "type": "VULNERABILITY_RESISTANCE",
     "duration": 1,
-    "strength": 1,
-    "description": null
+    "strength": 3,
+    "description": "",
+    "url": "https://api.tts-game.fun/images/effects/vulnerability_resistance.png"
   },
   {
-    "id": 19,
-    "target": "ONE",
-    "type": "FIRE",
-    "duration": 1,
-    "strength": 5,
-    "description": null
-  },
-  {
-    "id": 20,
+    "id": 56,
     "target": "SELF",
-    "type": "EMPOWER",
-    "duration": 1,
-    "strength": 15,
-    "description": null
-  },
-  {
-    "id": 21,
-    "target": "ONE",
-    "type": "GUIDANCE",
+    "type": "SLOW",
     "duration": 2,
     "strength": 2,
-    "description": null
+    "description": "",
+    "url": "https://api.tts-game.fun/images/effects/slow.png"
   },
   {
-    "id": 22,
+    "id": 57,
+    "target": "SELF",
+    "type": "FORCED_MOVEMENT_RESISTANCE",
+    "duration": 2,
+    "strength": 2,
+    "description": "",
+    "url": "https://api.tts-game.fun/images/effects/forced_movement_resistance.png"
+  },
+  {
+    "id": 58,
+    "target": "SELF",
+    "type": "STUN_RESISTANCE",
+    "duration": 2,
+    "strength": null,
+    "description": "",
+    "url": "https://api.tts-game.fun/images/effects/stun_resistance.png"
+  },
+  {
+    "id": 59,
+    "target": "ONE",
+    "type": "HEAL",
+    "duration": null,
+    "strength": 3,
+    "description": "",
+    "url": "https://api.tts-game.fun/images/effects/heal.png"
+  },
+  {
+    "id": 60,
+    "target": "SELF",
+    "type": "SPEED",
+    "duration": 1,
+    "strength": 1,
+    "description": "",
+    "url": "https://api.tts-game.fun/images/effects/speed.png"
+  },
+  {
+    "id": 61,
+    "target": "ONE",
+    "type": "VULNERABILITY",
+    "duration": 1,
+    "strength": 2,
+    "description": "",
+    "url": "https://api.tts-game.fun/images/effects/vulnerability.png"
+  },
+  {
+    "id": 62,
     "target": "SELF",
     "type": "HEAL",
-    "duration": 0,
-    "strength": 5,
-    "description": null
-  },
-  {
-    "id": 23,
-    "target": "SELF",
-    "type": "FIRE_RESISTANCE",
-    "duration": -1,
+    "duration": null,
     "strength": 2,
-    "description": null
+    "description": "",
+    "url": "https://api.tts-game.fun/images/effects/heal.png"
   },
   {
-    "id": 24,
+    "id": 63,
+    "target": "ALL_ENEMIES",
+    "type": "FIRE",
+    "duration": 2,
+    "strength": 3,
+    "description": "",
+    "url": "https://api.tts-game.fun/images/effects/fire.png"
+  },
+  {
+    "id": 64,
+    "target": "ONE",
+    "type": "PULL",
+    "duration": null,
+    "strength": 3,
+    "description": "",
+    "url": "https://api.tts-game.fun/images/effects/pull.png"
+  },
+  {
+    "id": 65,
+    "target": "ALL",
+    "type": "SLOW",
+    "duration": 2,
+    "strength": 2,
+    "description": "",
+    "url": "https://api.tts-game.fun/images/effects/slow.png"
+  },
+  {
+    "id": 66,
+    "target": "ONE",
+    "type": "VULNERABILITY",
+    "duration": 2,
+    "strength": 2,
+    "description": "",
+    "url": "https://api.tts-game.fun/images/effects/vulnerability.png"
+  },
+  {
+    "id": 67,
+    "target": "ONE",
+    "type": "POISON",
+    "duration": 1,
+    "strength": 2,
+    "description": "",
+    "url": "https://api.tts-game.fun/images/effects/poison.png"
+  },
+  {
+    "id": 68,
+    "target": "SELF",
+    "type": "HEAL",
+    "duration": null,
+    "strength": 3,
+    "description": "",
+    "url": "https://api.tts-game.fun/images/effects/heal.png"
+  },
+  {
+    "id": 69,
+    "target": "ONE",
+    "type": "CONFUSION",
+    "duration": 2,
+    "strength": null,
+    "description": "",
+    "url": "https://api.tts-game.fun/images/effects/confusion.png"
+  },
+  {
+    "id": 70,
+    "target": "ALL",
+    "type": "SLOW",
+    "duration": 1,
+    "strength": 4,
+    "description": "",
+    "url": "https://api.tts-game.fun/images/effects/slow.png"
+  },
+  {
+    "id": 71,
+    "target": "SELF",
+    "type": "PROTECTION",
+    "duration": 1,
+    "strength": 2,
+    "description": "",
+    "url": "https://api.tts-game.fun/images/effects/protection.png"
+  },
+  {
+    "id": 72,
+    "target": "SELF",
+    "type": "BLEED_RESISTANCE",
+    "duration": -1,
+    "strength": 10,
+    "description": "",
+    "url": "https://api.tts-game.fun/images/effects/bleed_resistance.png"
+  },
+  {
+    "id": 73,
     "target": "SELF",
     "type": "POISON_RESISTANCE",
     "duration": -1,
-    "strength": 2,
-    "description": null
+    "strength": 10,
+    "description": "",
+    "url": "https://api.tts-game.fun/images/effects/poison_resistance.png"
   },
   {
-    "id": 25,
+    "id": 74,
     "target": "SELF",
     "type": "CONFUSION_RESISTANCE",
     "duration": -1,
     "strength": null,
-    "description": null
+    "description": "",
+    "url": "https://api.tts-game.fun/images/effects/confusion_resistance.png"
+  },
+  {
+    "id": 75,
+    "target": "SELF",
+    "type": "FIRE_RESISTANCE",
+    "duration": -1,
+    "strength": 50,
+    "description": "",
+    "url": "https://api.tts-game.fun/images/effects/fire_resistance.png"
+  },
+  {
+    "id": 76,
+    "target": "SELF",
+    "type": "CONFUSION_RESISTANCE",
+    "duration": -1,
+    "strength": null,
+    "description": "",
+    "url": "https://api.tts-game.fun/images/effects/confusion_resistance.png"
+  },
+  {
+    "id": 77,
+    "target": "SELF",
+    "type": "POISON_RESISTANCE",
+    "duration": -1,
+    "strength": 50,
+    "description": "",
+    "url": "https://api.tts-game.fun/images/effects/poison_resistance.png"
   }
 ]

@@ -21,22 +21,7 @@
     "baseHealth": 10,
     "crossable": true,
     "usages": 1,
-    "effects": [
-      {
-        "key": {
-          "idObstacle": 2,
-          "idEffect": 1
-        },
-        "effect": {
-          "id": 1,
-          "target": "ONE",
-          "type": "BLEED",
-          "duration": 5,
-          "strength": 3,
-          "description": null
-        }
-      }
-    ],
+    "effects": [],
     "hex": null,
     "url": "http://localhost:8080/images/obstacles/spikedPitTrap.png"
   }

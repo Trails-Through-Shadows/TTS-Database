@@ -5,15 +5,8 @@
     "tag": "i-venomSword",
     "type": "WEAPON",
     "description": "A sword that is imbued with the venom of a snake.",
-    "effects": [
-      {
-        "key": {
-          "idItem": 1,
-          "idEffect": 9
-        }
-      }
-    ],
-    "idAction": 3
+    "effects": [],
+    "idAction": null
   },
   {
     "id": 2,
@@ -21,14 +14,7 @@
     "tag": "i-elixirHealing",
     "type": "CONSUMABLE",
     "description": "A magical elixir that restores health.",
-    "effects": [
-      {
-        "key": {
-          "idItem": 1,
-          "idEffect": 9
-        }
-      }
-    ],
+    "effects": [],
     "idAction": null
   },
   {

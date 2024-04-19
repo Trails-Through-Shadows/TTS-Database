@@ -74,5 +74,5 @@ for entry in data:
         sqlFile.write(
             "INSERT INTO RaceAction (idRace, idAction) "
             "VALUES ({}, {});\n"
-            .format(entryID, action["key"]["idEffect"])
+            .format(entryID, action["key"]["idAction"])
         )

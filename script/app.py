@@ -64,6 +64,11 @@ def executeFileSQL(filePath: str) -> None:
         sqlFileContent = file.read()
         file.close()
 
+        # Ignore if the file is empty
+        if not sqlFileContent:
+            log(" - Executing {}... Done".format(filePath), "INFO", True)
+            return
+
         # Execute the SQL file
         cursor = conn.cursor()
         for result in cursor.execute(sqlFileContent, multi=True):

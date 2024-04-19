@@ -3,44 +3,220 @@
     "id": 1,
     "title": "Mage",
     "tag": "c-mage",
-    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla ac nisl nec nunc aliquam tincidunt",
+    "description": "Masters of arcane arts, wielding devastating spells to decimate foes from afar and providing strategic support with their magical abilities.",
     "baseHealth": 8,
     "baseDefence": 0,
     "baseInitiative": 3,
     "effects": [],
-    "actions": []
+    "actions": [
+      {
+        "key": {
+          "idClass": 1,
+          "idAction": 10
+        },
+        "action": 10
+      },
+      {
+        "key": {
+          "idClass": 1,
+          "idAction": 11
+        },
+        "action": 11
+      },
+      {
+        "key": {
+          "idClass": 1,
+          "idAction": 12
+        },
+        "action": 12
+      },
+      {
+        "key": {
+          "idClass": 1,
+          "idAction": 13
+        },
+        "action": 13
+      },
+      {
+        "key": {
+          "idClass": 1,
+          "idAction": 14
+        },
+        "action": 14
+      },
+      {
+        "key": {
+          "idClass": 1,
+          "idAction": 15
+        },
+        "action": 15
+      }
+    ],
+    "url": "https://api.tts-game.fun/images/classes/mage.png"
   },
   {
     "id": 2,
     "title": "Rogue",
     "tag": "c-rogue",
-    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla ac nisl nec nunc aliquam tincidunt",
+    "description": "Masters of stealth and precision, employing swift, deadly strikes and tactical maneuvering to exploit weaknesses and control the battlefield.",
     "baseHealth": 10,
     "baseDefence": 2,
     "baseInitiative": 5,
     "effects": [],
-    "actions": []
+    "actions": [
+      {
+        "key": {
+          "idClass": 2,
+          "idAction": 22
+        },
+        "action": 22
+      },
+      {
+        "key": {
+          "idClass": 2,
+          "idAction": 23
+        },
+        "action": 23
+      },
+      {
+        "key": {
+          "idClass": 2,
+          "idAction": 24
+        },
+        "action": 24
+      },
+      {
+        "key": {
+          "idClass": 2,
+          "idAction": 25
+        },
+        "action": 25
+      },
+      {
+        "key": {
+          "idClass": 2,
+          "idAction": 26
+        },
+        "action": 26
+      },
+      {
+        "key": {
+          "idClass": 2,
+          "idAction": 27
+        },
+        "action": 27
+      }
+    ],
+    "url": "https://api.tts-game.fun/images/classes/rogue.png"
   },
   {
     "id": 3,
     "title": "Knight",
     "tag": "c-knight",
-    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla ac nisl nec nunc aliquam tincidunt",
+    "description": "Brave and resilient warriors who excel in frontline combat, absorbing damage and delivering powerful strikes to protect allies.",
     "baseHealth": 10,
     "baseDefence": 3,
     "baseInitiative": 3,
     "effects": [],
-    "actions": []
+    "actions": [
+      {
+        "key": {
+          "idClass": 3,
+          "idAction": 4
+        },
+        "action": 4
+      },
+      {
+        "key": {
+          "idClass": 3,
+          "idAction": 5
+        },
+        "action": 5
+      },
+      {
+        "key": {
+          "idClass": 3,
+          "idAction": 6
+        },
+        "action": 6
+      },
+      {
+        "key": {
+          "idClass": 3,
+          "idAction": 7
+        },
+        "action": 7
+      },
+      {
+        "key": {
+          "idClass": 3,
+          "idAction": 8
+        },
+        "action": 8
+      },
+      {
+        "key": {
+          "idClass": 3,
+          "idAction": 9
+        },
+        "action": 9
+      }
+    ],
+    "url": "https://api.tts-game.fun/images/classes/knight.png"
   },
   {
     "id": 4,
     "title": "Bard",
     "tag": "c-bard",
-    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla ac nisl nec nunc aliquam tincidunt",
+    "description": "Charming and versatile performers, inspiring allies and confounding enemies with their melodic skills and supportive maneuvers.",
     "baseHealth": 8,
     "baseDefence": 0,
     "baseInitiative": 7,
     "effects": [],
-    "actions": []
+    "actions": [
+      {
+        "key": {
+          "idClass": 4,
+          "idAction": 16
+        },
+        "action": 16
+      },
+      {
+        "key": {
+          "idClass": 4,
+          "idAction": 17
+        },
+        "action": 17
+      },
+      {
+        "key": {
+          "idClass": 4,
+          "idAction": 18
+        },
+        "action": 18
+      },
+      {
+        "key": {
+          "idClass": 4,
+          "idAction": 19
+        },
+        "action": 19
+      },
+      {
+        "key": {
+          "idClass": 4,
+          "idAction": 20
+        },
+        "action": 20
+      },
+      {
+        "key": {
+          "idClass": 4,
+          "idAction": 21
+        },
+        "action": 21
+      }
+    ],
+    "url": "https://api.tts-game.fun/images/classes/bard.png"
   }
 ]

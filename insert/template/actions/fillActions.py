@@ -140,10 +140,10 @@ for entry in data:
     # Insert Action
     sqlFile.write(
         "INSERT INTO Action (id, title, description, attack, skill, movement, restoreCards, discard, levelReq) "
-        "VALUES ({}, '{}', '{}', {}, {}, {}, {}, '{}', {});\n"
+        'VALUES ({}, "{}", "{}", {}, {}, {}, {}, "{}", {});\n'
         .format(entryID,
-                entry["title"],
-                entry["description"],
+                replaceQuotes(entry["title"]),
+                replaceQuotes(entry["description"]),
                 attackID,
                 skillID,
                 movementID,

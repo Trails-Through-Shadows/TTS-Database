@@ -11,40 +11,54 @@
         "rotation": 0,
         "hexes": [
           {
+            "note": "skeleton",
+            "type": "ENEMY",
+            "id": 4,
+            "cords": {
+              "q": 4,
+              "r": -3,
+              "s": -1
+            }
+          },
+          {
+            "note": "skeleton",
+            "type": "ENEMY",
+            "id": 4,
+            "cords": {
+              "q": 3,
+              "r": -1,
+              "s": -2
+            }
+          },
+          {
+            "note": "zombie",
+            "type": "ENEMY",
+            "id": 11,
+            "cords": {
+              "q": -1,
+              "r": -1,
+              "s": 2
+            }
+          },
+          {
+            "note": "zombie",
+            "type": "ENEMY",
+            "id": 11,
             "cords": {
               "q": 0,
               "r": -1,
               "s": 1
-            },
-            "type": "ENEMY",
-            "id": 3
+            }
           },
           {
-            "cords": {
-              "q": -2,
-              "r": 0,
-              "s": 2
-            },
+            "note": "zombie",
             "type": "ENEMY",
-            "id": 1
-          },
-          {
+            "id": 11,
             "cords": {
-              "q": 2,
-              "r": 0,
-              "s": -2
-            },
-            "type": "ENEMY",
-            "id": 1
-          },
-          {
-            "cords": {
-              "q": 1,
+              "q": 0,
               "r": 1,
-              "s": -2
-            },
-            "type": "ENEMY",
-            "id": 1
+              "s": -1
+            }
           },
           {
             "cords": {
@@ -58,14 +72,9 @@
         ],
         "start": [
           {
-            "q": -3,
+            "q": -4,
             "r": 2,
-            "s": 1
-          },
-          {
-            "q": -2,
-            "r": 2,
-            "s": 0
+            "s": 2
           },
           {
             "q": -4,
@@ -74,18 +83,23 @@
           },
           {
             "q": -3,
+            "r": 2,
+            "s": 1
+          },
+          {
+            "q": -3,
             "r": 3,
+            "s": 0
+          },
+          {
+            "q": -2,
+            "r": 2,
             "s": 0
           },
           {
             "q": -2,
             "r": 3,
             "s": -1
-          },
-          {
-            "q": -1,
-            "r": 3,
-            "s": -2
           }
         ]
       },
@@ -94,49 +108,54 @@
         "rotation": 0,
         "hexes": [
           {
+            "note": "skeleton",
+            "type": "ENEMY",
+            "id": 11,
             "cords": {
               "r": 0,
               "q": -2,
               "s": 2
-            },
-            "type": "ENEMY",
-            "id": 3
+            }
           },
           {
-            "cords": {
-              "r": -1,
-              "q": -1,
-              "s": 2
-            },
+            "note": "skeleton",
             "type": "ENEMY",
-            "id": 1
-          },
-          {
+            "id": 11,
             "cords": {
               "r": 2,
-              "q": -2,
-              "s": 0
-            },
-            "type": "ENEMY",
-            "id": 2
-          },
-          {
-            "cords": {
-              "r": 1,
-              "q": 0,
+              "q": -1,
               "s": -1
-            },
-            "type": "ENEMY",
-            "id": 3
+            }
           },
           {
-            "cords": {
-              "r": 1,
-              "q": 1,
-              "s": -2
-            },
+            "note": "zombie",
             "type": "ENEMY",
-            "id": 3
+            "id": 4,
+            "cords": {
+              "r": -2,
+              "q": 1,
+              "s": 1
+            }
+          },
+          {
+            "note": "zombie",
+            "type": "ENEMY",
+            "id": 4,
+            "cords": {
+              "r": -1,
+              "q": 2,
+              "s": -1
+            }
+          },
+          {
+            "note": "lich",
+            "type": "ENEMY",
+            "id": 12,
+            "cords": {
+              "r": 0,
+              "q": 0,
+              "s": 0
+            }
           },
           {
             "cords": {
@@ -153,17 +172,17 @@
     "doors": [
       {
         "cords": {
-          "q": 3,
-          "r": -2,
-          "s": -1
+          "q": 5,
+          "r": -3,
+          "s": -2
         },
         "firstPart": 1,
         "secondPart": 2
       },
       {
         "cords": {
-          "q": -3,
-          "r": 3,
+          "q": -4,
+          "r": 4,
           "s": 0
         },
         "firstPart": 2,

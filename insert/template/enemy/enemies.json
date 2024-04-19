@@ -8,47 +8,10 @@
     "baseDefence": 1,
     "baseInitiative": 12,
     "usages": 4,
-    "effects": [
-      {
-        "key": {
-          "idEnemy": 1,
-          "idEffect": 12
-        },
-        "effect": {
-          "id": 12,
-          "target": "SELF",
-          "type": "POISON_RESISTANCE",
-          "duration": -1,
-          "strength": 3,
-          "description": null
-        }
-      }
-    ],
-    "actions": [
-      {
-        "key": {
-          "idEnemy": 1,
-          "idAction": 3
-        },
-        "action": 3
-      },
-      {
-        "key": {
-          "idEnemy": 1,
-          "idAction": 7
-        },
-        "action": 7
-      },
-      {
-        "key": {
-          "idEnemy": 1,
-          "idAction": 8
-        },
-        "action": 8
-      }
-    ],
-    "hex": null,
-    "url": "http://localhost:8080/images/enemies/pyroSkeleton.png"
+    "effects": [],
+    "actions": [],
+    "startingHex": null,
+    "url": "https://api.tts-game.fun/images/enemies/pyroSkeleton.png"
   },
   {
     "id": 2,
@@ -60,24 +23,9 @@
     "baseInitiative": 9,
     "usages": 6,
     "effects": [],
-    "actions": [
-      {
-        "key": {
-          "idEnemy": 2,
-          "idAction": 5
-        },
-        "action": 5
-      },
-      {
-        "key": {
-          "idEnemy": 2,
-          "idAction": 6
-        },
-        "action": 6
-      }
-    ],
-    "hex": null,
-    "url": "http://localhost:8080/images/enemies/ratMercenary.png"
+    "actions": [],
+    "startingHex": null,
+    "url": "https://api.tts-game.fun/images/enemies/ratMercenary.png"
   },
   {
     "id": 3,
@@ -88,84 +36,49 @@
     "baseDefence": 3,
     "baseInitiative": 6,
     "usages": 4,
-    "effects": [
-      {
-        "key": {
-          "idEnemy": 3,
-          "idEffect": 13
-        },
-        "effect": {
-          "id": 13,
-          "target": "SELF",
-          "type": "BLEED_RESISTANCE",
-          "duration": -1,
-          "strength": 100,
-          "description": null
-        }
-      }
-    ],
-    "actions": [
-      {
-        "key": {
-          "idEnemy": 3,
-          "idAction": 9
-        },
-        "action": 9
-      },
-      {
-        "key": {
-          "idEnemy": 3,
-          "idAction": 10
-        },
-        "action": 10
-      }
-    ],
-    "hex": null,
-    "url": "http://localhost:8080/images/enemies/sandGolem.png"
+    "effects": [],
+    "actions": [],
+    "startingHex": null,
+    "url": "https://api.tts-game.fun/images/enemies/sandGolem.png"
   },
   {
     "id": 4,
     "title": "Undead Archer",
     "tag": "e-undeadArcher",
-    "description": "",
+    "description": "Silent and deadly, undead archers strike from afar with precision and accuracy. Skeletal in form, they rain down arrows upon their enemies, maintaining distance while inflicting considerable damage.",
     "baseHealth": 6,
     "baseDefence": 0,
     "baseInitiative": 15,
     "usages": 0,
-    "effects": [
-      {
-        "key": {
-          "idEnemy": 4,
-          "idEffect": 14
-        },
-        "effect": {
-          "id": 14,
-          "target": "SELF",
-          "type": "FORCED_MOVEMENT_RESISTANCE",
-          "duration": -1,
-          "strength": 0,
-          "description": null
-        }
-      }
-    ],
+    "effects": [],
     "actions": [
       {
         "key": {
           "idEnemy": 4,
-          "idAction": 8
-        },
-        "action": 8
+          "idAction": 48
+        }
       },
       {
         "key": {
           "idEnemy": 4,
-          "idAction": 11
-        },
-        "action": 11
+          "idAction": 49
+        }
+      },
+      {
+        "key": {
+          "idEnemy": 4,
+          "idAction": 50
+        }
+      },
+      {
+        "key": {
+          "idEnemy": 4,
+          "idAction": 51
+        }
       }
     ],
-    "hex": null,
-    "url": "http://localhost:8080/images/enemies/undeadArcher.png"
+    "startingHex": null,
+    "url": "https://api.tts-game.fun/images/enemies/undeadArcher.png"
   },
   {
     "id": 5,
@@ -175,11 +88,11 @@
     "baseHealth": 15,
     "baseDefence": 3,
     "baseInitiative": 11,
-    "usages": null,
+    "usages": 0,
     "effects": [],
     "actions": [],
-    "hex": null,
-    "url": "http://localhost:8080/images/enemies/crocodile.png"
+    "startingHex": null,
+    "url": "https://api.tts-game.fun/images/enemies/crocodile.png"
   },
   {
     "id": 6,
@@ -189,11 +102,11 @@
     "baseHealth": 6,
     "baseDefence": 0,
     "baseInitiative": 12,
-    "usages": null,
+    "usages": 0,
     "effects": [],
     "actions": [],
-    "hex": null,
-    "url": "http://localhost:8080/images/enemies/goblinSorcka.png"
+    "startingHex": null,
+    "url": "https://api.tts-game.fun/images/enemies/goblinSorcka.png"
   },
   {
     "id": 7,
@@ -203,11 +116,11 @@
     "baseHealth": 12,
     "baseDefence": 2,
     "baseInitiative": 8,
-    "usages": null,
+    "usages": 0,
     "effects": [],
     "actions": [],
-    "hex": null,
-    "url": "http://localhost:8080/images/enemies/fireElemental.png"
+    "startingHex": null,
+    "url": "https://api.tts-game.fun/images/enemies/fireElemental.png"
   },
   {
     "id": 8,
@@ -217,11 +130,11 @@
     "baseHealth": 20,
     "baseDefence": 4,
     "baseInitiative": 3,
-    "usages": null,
+    "usages": 0,
     "effects": [],
     "actions": [],
-    "hex": null,
-    "url": "http://localhost:8080/images/enemies/undeadTree.png"
+    "startingHex": null,
+    "url": "https://api.tts-game.fun/images/enemies/undeadTree.png"
   },
   {
     "id": 9,
@@ -231,11 +144,11 @@
     "baseHealth": 13,
     "baseDefence": 2,
     "baseInitiative": 9,
-    "usages": null,
+    "usages": 0,
     "effects": [],
     "actions": [],
-    "hex": null,
-    "url": "http://localhost:8080/images/enemies/voidLizard.png"
+    "startingHex": null,
+    "url": "https://api.tts-game.fun/images/enemies/voidLizard.png"
   },
   {
     "id": 10,
@@ -245,10 +158,88 @@
     "baseHealth": 5,
     "baseDefence": 2,
     "baseInitiative": 15,
-    "usages": null,
+    "usages": 0,
     "effects": [],
     "actions": [],
-    "hex": null,
-    "url": "http://localhost:8080/images/enemies/koboldNecro.png"
+    "startingHex": null,
+    "url": "https://api.tts-game.fun/images/enemies/koboldNecro.png"
+  },
+  {
+    "id": 11,
+    "title": "Zombie",
+    "tag": "e-chaosZombie",
+    "description": "Mindless and decaying, zombies are numerous and relentless in their pursuit of flesh. Though individually weak, their swarming attacks and poisonous bites can overwhelm the unprepared.",
+    "baseHealth": 10,
+    "baseDefence": 1,
+    "baseInitiative": 8,
+    "usages": null,
+    "effects": [],
+    "actions": [
+      {
+        "key": {
+          "idEnemy": 11,
+          "idAction": 44
+        }
+      },
+      {
+        "key": {
+          "idEnemy": 11,
+          "idAction": 45
+        }
+      },
+      {
+        "key": {
+          "idEnemy": 11,
+          "idAction": 46
+        }
+      },
+      {
+        "key": {
+          "idEnemy": 11,
+          "idAction": 47
+        }
+      }
+    ],
+    "startingHex": null,
+    "url": "https://api.tts-game.fun/images/enemies/chaosZombie.png"
+  },
+  {
+    "id": 12,
+    "title": "Lich",
+    "tag": "e-undeadSkeletNecro",
+    "description": "A powerful necromancer risen from the depths of darkness, the Lich commands formidable magical abilities. With spells of decay and death, it seeks to annihilate all who dare to oppose its unholy reign.",
+    "baseHealth": 20,
+    "baseDefence": 2,
+    "baseInitiative": 10,
+    "usages": null,
+    "effects": [],
+    "actions": [
+      {
+        "key": {
+          "idEnemy": 12,
+          "idAction": 52
+        }
+      },
+      {
+        "key": {
+          "idEnemy": 12,
+          "idAction": 53
+        }
+      },
+      {
+        "key": {
+          "idEnemy": 12,
+          "idAction": 54
+        }
+      },
+      {
+        "key": {
+          "idEnemy": 12,
+          "idAction": 55
+        }
+      }
+    ],
+    "startingHex": null,
+    "url": "https://api.tts-game.fun/images/enemies/undeadSkeletNecro.png"
   }
 ]

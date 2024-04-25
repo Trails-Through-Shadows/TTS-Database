@@ -210,7 +210,7 @@
   {
     "id": 12,
     "title": "Chain Lightning",
-    "description": "Unleash lightning to arc between multiple enemies and confuse them.",
+    "description": "Unleash lightning to arc between multiple enemies and leave them vulnerable.",
     "discard": "SHORT_REST",
     "levelReq": 1,
     "movement": null,
@@ -223,7 +223,7 @@
         {
           "key": {
             "idSkill": 12,
-            "idEffect": 34
+            "idEffect": 78
           }
         }
       ]
@@ -281,12 +281,6 @@
             "idSkill": 14,
             "idEffect": 36
           }
-        },
-        {
-          "key": {
-            "idSkill": 14,
-            "idEffect": 37
-          }
         }
       ]
     },
@@ -343,7 +337,7 @@
         {
           "key": {
             "idAttack": 9,
-            "idEffect": 39
+            "idEffect": 79
           }
         }
       ]
@@ -367,19 +361,19 @@
         {
           "key": {
             "idSkill": 17,
-            "idEffect": 40
-          }
-        },
-        {
-          "key": {
-            "idSkill": 17,
             "idEffect": 41
           }
         },
         {
           "key": {
             "idSkill": 17,
-            "idEffect": 51
+            "idEffect": 80
+          }
+        },
+        {
+          "key": {
+            "idSkill": 17,
+            "idEffect": 81
           }
         }
       ]
@@ -436,12 +430,6 @@
             "idSkill": 19,
             "idEffect": 43
           }
-        },
-        {
-          "key": {
-            "idSkill": 19,
-            "idEffect": 45
-          }
         }
       ]
     },
@@ -497,7 +485,7 @@
         {
           "key": {
             "idAttack": 10,
-            "idEffect": 46
+            "idEffect": 82
           }
         }
       ]
@@ -788,7 +776,7 @@
   {
     "id": 33,
     "title": "Mountain's Might",
-    "description": "Channel the strength of mountains.",
+    "description": "Channel the defensive strength of mountains.",
     "discard": "SHORT_REST",
     "levelReq": 1,
     "movement": null,
@@ -802,12 +790,6 @@
           "key": {
             "idSkill": 33,
             "idEffect": 54
-          }
-        },
-        {
-          "key": {
-            "idSkill": 33,
-            "idEffect": 56
           }
         },
         {
@@ -903,14 +885,7 @@
       "id": 37,
       "range": 3,
       "type": "WALK",
-      "effects": [
-        {
-          "key": {
-            "idMovement": 37,
-            "idEffect": 60
-          }
-        }
-      ]
+      "effects": []
     },
     "skill": null,
     "attack": null,
@@ -1129,13 +1104,13 @@
     "skill": {
       "id": 46,
       "range": 1,
-      "area": 2,
+      "area": null,
       "target": "ALL",
       "effects": [
         {
           "key": {
             "idSkill": 46,
-            "idEffect": 65
+            "idEffect": 83
           }
         }
       ]
@@ -1345,7 +1320,7 @@
         {
           "key": {
             "idAttack": 34,
-            "idEffect": 69
+            "idEffect": 84
           }
         }
       ]
@@ -1372,7 +1347,7 @@
         {
           "key": {
             "idAttack": 35,
-            "idEffect": 70
+            "idEffect": 85
           }
         }
       ]

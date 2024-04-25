@@ -7,7 +7,7 @@
     "baseHealth": 12,
     "baseDefence": 1,
     "baseInitiative": 12,
-    "usages": 4,
+    "usages": 0,
     "effects": [],
     "actions": [],
     "startingHex": null,
@@ -21,7 +21,7 @@
     "baseHealth": 8,
     "baseDefence": 2,
     "baseInitiative": 9,
-    "usages": 6,
+    "usages": 5,
     "effects": [],
     "actions": [],
     "startingHex": null,
@@ -35,7 +35,7 @@
     "baseHealth": 20,
     "baseDefence": 3,
     "baseInitiative": 6,
-    "usages": 4,
+    "usages": 0,
     "effects": [],
     "actions": [],
     "startingHex": null,
@@ -49,32 +49,36 @@
     "baseHealth": 6,
     "baseDefence": 0,
     "baseInitiative": 15,
-    "usages": 0,
+    "usages": 4,
     "effects": [],
     "actions": [
       {
         "key": {
-          "idEnemy": 4,
+          "idEnemy": null,
           "idAction": 48
-        }
+        },
+        "action": 48
       },
       {
         "key": {
-          "idEnemy": 4,
+          "idEnemy": null,
           "idAction": 49
-        }
+        },
+        "action": 49
       },
       {
         "key": {
-          "idEnemy": 4,
+          "idEnemy": null,
           "idAction": 50
-        }
+        },
+        "action": 50
       },
       {
         "key": {
-          "idEnemy": 4,
+          "idEnemy": null,
           "idAction": 51
-        }
+        },
+        "action": 51
       }
     ],
     "startingHex": null,
@@ -172,32 +176,36 @@
     "baseHealth": 10,
     "baseDefence": 1,
     "baseInitiative": 8,
-    "usages": null,
+    "usages": 5,
     "effects": [],
     "actions": [
       {
         "key": {
-          "idEnemy": 11,
+          "idEnemy": null,
           "idAction": 44
-        }
+        },
+        "action": 44
       },
       {
         "key": {
-          "idEnemy": 11,
+          "idEnemy": null,
           "idAction": 45
-        }
+        },
+        "action": 45
       },
       {
         "key": {
-          "idEnemy": 11,
+          "idEnemy": null,
           "idAction": 46
-        }
+        },
+        "action": 46
       },
       {
         "key": {
-          "idEnemy": 11,
+          "idEnemy": null,
           "idAction": 47
-        }
+        },
+        "action": 47
       }
     ],
     "startingHex": null,
@@ -211,32 +219,51 @@
     "baseHealth": 20,
     "baseDefence": 2,
     "baseInitiative": 10,
-    "usages": null,
-    "effects": [],
+    "usages": 1,
+    "effects": [
+      {
+        "key": {
+          "idEnemy": null,
+          "idEffect": 86
+        },
+        "effect": {
+          "id": 86,
+          "target": "SELF",
+          "type": "FORCED_MOVEMENT_RESISTANCE",
+          "duration": -1,
+          "strength": 50,
+          "description": ""
+        }
+      }
+    ],
     "actions": [
       {
         "key": {
-          "idEnemy": 12,
+          "idEnemy": null,
           "idAction": 52
-        }
+        },
+        "action": 52
       },
       {
         "key": {
-          "idEnemy": 12,
+          "idEnemy": null,
           "idAction": 53
-        }
+        },
+        "action": 53
       },
       {
         "key": {
-          "idEnemy": 12,
+          "idEnemy": null,
           "idAction": 54
-        }
+        },
+        "action": 54
       },
       {
         "key": {
-          "idEnemy": 12,
+          "idEnemy": null,
           "idAction": 55
-        }
+        },
+        "action": 55
       }
     ],
     "startingHex": null,

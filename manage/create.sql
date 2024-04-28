@@ -26,7 +26,7 @@ CREATE TABLE `CampaignLocation` (
 CREATE TABLE `Story` (
   `id` INT NOT NULL AUTO_INCREMENT,
   `idCampaignLocation` INT NOT NULL,
-  `trigger` ENUM ('START', 'END') NOT NULL,
+  `trigger` ENUM ('NEW', 'ONGOING', 'COMPLETED', 'FAILED') NOT NULL,
   `story` TEXT NOT NULL,
   PRIMARY KEY (`id`)
 );

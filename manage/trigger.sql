@@ -5,7 +5,7 @@ CREATE OR REPLACE TRIGGER trg_UpdatePartRelationsINSERT
     FOR EACH ROW
 BEGIN
     UPDATE Part
-    SET usages = COALESCE((SELECT COUNT(idLocation) FROM LocationPart WHERE idPart = NEW.idPart GROUP BY idPart), 0)
+    SET usages = Part.usages + 1
     WHERE id = NEW.idPart;
 END;
 
@@ -14,7 +14,7 @@ CREATE OR REPLACE TRIGGER trg_UpdatePartRelationsDELETE
     FOR EACH ROW
 BEGIN
     UPDATE Part
-    SET usages = COALESCE((SELECT COUNT(idLocation) FROM LocationPart WHERE id = OLD.idPart GROUP BY idPart), 0)
+    SET usages = Part.usages - 1
     WHERE id = OLD.idPart;
 END;
 
@@ -25,7 +25,7 @@ CREATE OR REPLACE TRIGGER trg_UpdateEnemyRelationsINSERT
     FOR EACH ROW
 BEGIN
     UPDATE Enemy
-    SET usages = COALESCE((SELECT COUNT(idLocation) FROM HexEnemy WHERE idEnemy = NEW.idEnemy GROUP BY idEnemy), 0)
+    SET usages = Enemy.usages + 1
     WHERE id = NEW.idEnemy;
 END;
 
@@ -34,9 +34,10 @@ CREATE OR REPLACE TRIGGER trg_UpdateEnemyRelationsDELETE
     FOR EACH ROW
 BEGIN
     UPDATE Enemy
-    SET usages = COALESCE((SELECT COUNT(idLocation) FROM HexEnemy WHERE id = OLD.idEnemy GROUP BY idEnemy), 0)
+    SET usages = Enemy.usages - 1
     WHERE id = OLD.idEnemy;
 END;
+
 
 # Trigger on Obstacle relation update
 
@@ -45,7 +46,7 @@ CREATE OR REPLACE TRIGGER trg_UpdateObstacleRelationsINSERT
     FOR EACH ROW
 BEGIN
     UPDATE Obstacle
-    SET usages = COALESCE((SELECT COUNT(idLocation) FROM HexObstacle WHERE idObstacle = NEW.idObstacle GROUP BY idObstacle), 0)
+    SET usages = Obstacle.usages + 1
     WHERE id = NEW.idObstacle;
 END;
 
@@ -54,6 +55,6 @@ CREATE OR REPLACE TRIGGER trg_UpdateObstacleRelationsDELETE
     FOR EACH ROW
 BEGIN
     UPDATE Obstacle
-    SET usages = COALESCE((SELECT COUNT(idLocation) FROM HexObstacle WHERE id = OLD.idObstacle GROUP BY idObstacle), 0)
+    SET usages = Obstacle.usages - 1
     WHERE id = OLD.idObstacle;
 END;

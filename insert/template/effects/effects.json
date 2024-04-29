@@ -301,7 +301,7 @@
     "target": "SELF",
     "type": "FIRE_RESISTANCE",
     "duration": -1,
-    "strength": 50,
+    "strength": -1,
     "description": "",
     "url": "https://api.tts-game.fun/images/effects/fire_resistance.png"
   },
@@ -310,7 +310,7 @@
     "target": "SELF",
     "type": "POISON_RESISTANCE",
     "duration": -1,
-    "strength": 50,
+    "strength": -1,
     "description": "",
     "url": "https://api.tts-game.fun/images/effects/poison_resistance.png"
   },

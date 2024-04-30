@@ -17,7 +17,7 @@
   },
   {
     "id": 3,
-    "idAdventure": 2,
+    "idAdventure": 1,
     "idClass": 3,
     "idRace": 3,
     "title": "Gimli",
@@ -30,13 +30,5 @@
       "idRace": 4,
       "title": "Legolas",
       "playerName": "Žože"
-  },
-  {
-      "id": 5,
-      "idAdventure": 2,
-      "idClass": 1,
-      "idRace": 4,
-      "title": "Kobzol",
-      "playerName": "Kuba"
   }
 ]

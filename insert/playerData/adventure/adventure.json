@@ -3,22 +3,11 @@
     "id": 1,
     "idCampaign": 1,
     "idLicense": 1,
-    "title": "The Great TITS",
+    "title": "Smashing the Goblins",
     "reputation": 1,
-    "experience": 69,
+    "experience": 42,
     "level": 2,
     "gold": 3,
-    "description" : "path to perfect boobs"
-  },
-  {
-    "id": 2,
-    "idCampaign": 1,
-    "idLicense": 2,
-    "title": "Smashing the Goblins",
-    "reputation": 100,
-    "experience": 100,
-    "level": 8,
-    "gold": 100,
     "description" : "sword lord of the goblin horde"
   }
 ]

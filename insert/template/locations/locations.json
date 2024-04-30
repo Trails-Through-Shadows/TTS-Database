@@ -83,7 +83,7 @@
       {
         "key": {
           "idEnemy": 11,
-          "idHex": 4,
+          "idHex": 6,
           "idLocation": 1,
           "idPart": 1
         },
@@ -110,7 +110,7 @@
       {
         "key": {
           "idEnemy": 4,
-          "idHex": 28,
+          "idHex": 37,
           "idLocation": 1,
           "idPart": 1
         },
@@ -118,8 +118,17 @@
       },
       {
         "key": {
+          "idEnemy": 11,
+          "idHex": 18,
+          "idLocation": 1,
+          "idPart": 1
+        },
+        "enemy": 11
+      },
+      {
+        "key": {
           "idEnemy": 12,
-          "idHex": 3,
+          "idHex": 9,
           "idLocation": 1,
           "idPart": 2
         },
@@ -137,23 +146,23 @@
       {
         "key": {
           "idEnemy": 4,
-          "idHex": 11,
+          "idHex": 58,
           "idLocation": 1,
           "idPart": 2
         },
         "enemy": 4
+      },
+      {
+        "key": {
+          "idEnemy": 11,
+          "idHex": 17,
+          "idLocation": 1,
+          "idPart": 2
+        },
+        "enemy": 11
       }
     ],
     "obstacles": [
-      {
-        "key": {
-          "idObstacle": 1,
-          "idHex": 6,
-          "idPart": 1,
-          "idLocation": 1
-        },
-        "obstacle": 1
-      },
       {
         "key": {
           "idObstacle": 1,
@@ -162,15 +171,6 @@
           "idLocation": 1
         },
         "obstacle": 1
-      },
-      {
-        "key": {
-          "idObstacle": 2,
-          "idHex": 9,
-          "idPart": 2,
-          "idLocation": 1
-        },
-        "obstacle": 2
       }
     ],
     "url": "https://api.tts-game.fun/images/locations/silentArrows.png"

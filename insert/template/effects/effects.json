@@ -6,7 +6,7 @@
     "duration": 3,
     "strength": null,
     "description": "",
-    "url": "https://api.tts-game.fun/images/effects/stun.png"
+    "url": "https://api.tts-game.fun/images/svg/effects/stun.svg"
   },
   {
     "id": 30,
@@ -15,7 +15,7 @@
     "duration": 2,
     "strength": 3,
     "description": "",
-    "url": "https://api.tts-game.fun/images/effects/protection.png"
+    "url": "https://api.tts-game.fun/images/svg/effects/protection.svg"
   },
   {
     "id": 31,
@@ -24,7 +24,7 @@
     "duration": 3,
     "strength": 2,
     "description": "",
-    "url": "https://api.tts-game.fun/images/effects/protection.png"
+    "url": "https://api.tts-game.fun/images/svg/effects/protection.svg"
   },
   {
     "id": 32,
@@ -33,7 +33,7 @@
     "duration": null,
     "strength": 3,
     "description": "",
-    "url": "https://api.tts-game.fun/images/effects/push.png"
+    "url": "https://api.tts-game.fun/images/svg/effects/push.svg"
   },
   {
     "id": 33,
@@ -42,7 +42,7 @@
     "duration": 3,
     "strength": 2,
     "description": "",
-    "url": "https://api.tts-game.fun/images/effects/fire.png"
+    "url": "https://api.tts-game.fun/images/svg/effects/fire.svg"
   },
   {
     "id": 35,
@@ -51,7 +51,7 @@
     "duration": 2,
     "strength": 3,
     "description": "",
-    "url": "https://api.tts-game.fun/images/effects/weakness.png"
+    "url": "https://api.tts-game.fun/images/svg/effects/weakness.svg"
   },
   {
     "id": 36,
@@ -60,7 +60,7 @@
     "duration": 3,
     "strength": 2,
     "description": "",
-    "url": "https://api.tts-game.fun/images/effects/enfeeble.png"
+    "url": "https://api.tts-game.fun/images/svg/effects/enfeeble.svg"
   },
   {
     "id": 38,
@@ -69,7 +69,7 @@
     "duration": 3,
     "strength": 2,
     "description": "",
-    "url": "https://api.tts-game.fun/images/effects/empower.png"
+    "url": "https://api.tts-game.fun/images/svg/effects/empower.svg"
   },
   {
     "id": 41,
@@ -78,7 +78,7 @@
     "duration": 2,
     "strength": 2,
     "description": "",
-    "url": "https://api.tts-game.fun/images/effects/empower.png"
+    "url": "https://api.tts-game.fun/images/svg/effects/empower.svg"
   },
   {
     "id": 42,
@@ -87,7 +87,7 @@
     "duration": null,
     "strength": 2,
     "description": "",
-    "url": "https://api.tts-game.fun/images/effects/heal.png"
+    "url": "https://api.tts-game.fun/images/svg/effects/heal.svg"
   },
   {
     "id": 43,
@@ -96,7 +96,7 @@
     "duration": 2,
     "strength": 3,
     "description": "",
-    "url": "https://api.tts-game.fun/images/effects/regeneration.png"
+    "url": "https://api.tts-game.fun/images/svg/effects/regeneration.svg"
   },
   {
     "id": 44,
@@ -105,7 +105,7 @@
     "duration": 1,
     "strength": 1,
     "description": "",
-    "url": "https://api.tts-game.fun/images/effects/protection.png"
+    "url": "https://api.tts-game.fun/images/svg/effects/protection.svg"
   },
   {
     "id": 47,
@@ -114,7 +114,7 @@
     "duration": 2,
     "strength": 2,
     "description": "",
-    "url": "https://api.tts-game.fun/images/effects/poison.png"
+    "url": "https://api.tts-game.fun/images/svg/effects/poison.svg"
   },
   {
     "id": 48,
@@ -123,7 +123,7 @@
     "duration": 2,
     "strength": 1,
     "description": "",
-    "url": "https://api.tts-game.fun/images/effects/bleed.png"
+    "url": "https://api.tts-game.fun/images/svg/effects/bleed.svg"
   },
   {
     "id": 49,
@@ -132,7 +132,7 @@
     "duration": 2,
     "strength": 3,
     "description": "",
-    "url": "https://api.tts-game.fun/images/effects/forced_movement_resistance.png"
+    "url": "https://api.tts-game.fun/images/svg/effects/forced_movement_resistance.svg"
   },
   {
     "id": 50,
@@ -141,7 +141,7 @@
     "duration": 2,
     "strength": 3,
     "description": "",
-    "url": "https://api.tts-game.fun/images/effects/weakness_resistance.png"
+    "url": "https://api.tts-game.fun/images/svg/effects/weakness_resistance.svg"
   },
   {
     "id": 52,
@@ -150,7 +150,7 @@
     "duration": 3,
     "strength": 2,
     "description": "",
-    "url": "https://api.tts-game.fun/images/effects/fire.png"
+    "url": "https://api.tts-game.fun/images/svg/effects/fire.svg"
   },
   {
     "id": 53,
@@ -159,7 +159,7 @@
     "duration": 2,
     "strength": 2,
     "description": "",
-    "url": "https://api.tts-game.fun/images/effects/empower.png"
+    "url": "https://api.tts-game.fun/images/svg/effects/empower.svg"
   },
   {
     "id": 54,
@@ -168,7 +168,7 @@
     "duration": 2,
     "strength": 2,
     "description": "",
-    "url": "https://api.tts-game.fun/images/effects/protection.png"
+    "url": "https://api.tts-game.fun/images/svg/effects/protection.svg"
   },
   {
     "id": 55,
@@ -177,7 +177,7 @@
     "duration": 1,
     "strength": 3,
     "description": "",
-    "url": "https://api.tts-game.fun/images/effects/weakness_resistance.png"
+    "url": "https://api.tts-game.fun/images/svg/effects/weakness_resistance.svg"
   },
   {
     "id": 57,
@@ -186,7 +186,7 @@
     "duration": 2,
     "strength": 2,
     "description": "",
-    "url": "https://api.tts-game.fun/images/effects/forced_movement_resistance.png"
+    "url": "https://api.tts-game.fun/images/svg/effects/forced_movement_resistance.svg"
   },
   {
     "id": 58,
@@ -195,7 +195,7 @@
     "duration": 2,
     "strength": null,
     "description": "",
-    "url": "https://api.tts-game.fun/images/effects/stun_resistance.png"
+    "url": "https://api.tts-game.fun/images/svg/effects/stun_resistance.svg"
   },
   {
     "id": 59,
@@ -204,7 +204,7 @@
     "duration": null,
     "strength": 3,
     "description": "",
-    "url": "https://api.tts-game.fun/images/effects/heal.png"
+    "url": "https://api.tts-game.fun/images/svg/effects/heal.svg"
   },
   {
     "id": 61,
@@ -213,7 +213,7 @@
     "duration": 1,
     "strength": 2,
     "description": "",
-    "url": "https://api.tts-game.fun/images/effects/weakness.png"
+    "url": "https://api.tts-game.fun/images/svg/effects/weakness.svg"
   },
   {
     "id": 62,
@@ -222,7 +222,7 @@
     "duration": null,
     "strength": 2,
     "description": "",
-    "url": "https://api.tts-game.fun/images/effects/heal.png"
+    "url": "https://api.tts-game.fun/images/svg/effects/heal.svg"
   },
   {
     "id": 63,
@@ -231,7 +231,7 @@
     "duration": 2,
     "strength": 3,
     "description": "",
-    "url": "https://api.tts-game.fun/images/effects/fire.png"
+    "url": "https://api.tts-game.fun/images/svg/effects/fire.svg"
   },
   {
     "id": 64,
@@ -240,7 +240,7 @@
     "duration": null,
     "strength": 3,
     "description": "",
-    "url": "https://api.tts-game.fun/images/effects/pull.png"
+    "url": "https://api.tts-game.fun/images/svg/effects/pull.svg"
   },
   {
     "id": 66,
@@ -249,7 +249,7 @@
     "duration": 2,
     "strength": 2,
     "description": "",
-    "url": "https://api.tts-game.fun/images/effects/weakness.png"
+    "url": "https://api.tts-game.fun/images/svg/effects/weakness.svg"
   },
   {
     "id": 67,
@@ -258,7 +258,7 @@
     "duration": 1,
     "strength": 2,
     "description": "",
-    "url": "https://api.tts-game.fun/images/effects/poison.png"
+    "url": "https://api.tts-game.fun/images/svg/effects/poison.svg"
   },
   {
     "id": 68,
@@ -267,7 +267,7 @@
     "duration": null,
     "strength": 3,
     "description": "",
-    "url": "https://api.tts-game.fun/images/effects/heal.png"
+    "url": "https://api.tts-game.fun/images/svg/effects/heal.svg"
   },
   {
     "id": 71,
@@ -276,7 +276,7 @@
     "duration": 1,
     "strength": 2,
     "description": "",
-    "url": "https://api.tts-game.fun/images/effects/protection.png"
+    "url": "https://api.tts-game.fun/images/svg/effects/protection.svg"
   },
   {
     "id": 72,
@@ -285,7 +285,7 @@
     "duration": -1,
     "strength": 10,
     "description": "",
-    "url": "https://api.tts-game.fun/images/effects/bleed_resistance.png"
+    "url": "https://api.tts-game.fun/images/svg/effects/bleed_resistance.svg"
   },
   {
     "id": 73,
@@ -294,7 +294,7 @@
     "duration": -1,
     "strength": 10,
     "description": "",
-    "url": "https://api.tts-game.fun/images/effects/poison_resistance.png"
+    "url": "https://api.tts-game.fun/images/svg/effects/poison_resistance.svg"
   },
   {
     "id": 75,
@@ -303,7 +303,7 @@
     "duration": -1,
     "strength": -1,
     "description": "",
-    "url": "https://api.tts-game.fun/images/effects/fire_resistance.png"
+    "url": "https://api.tts-game.fun/images/svg/effects/fire_resistance.svg"
   },
   {
     "id": 77,
@@ -312,7 +312,7 @@
     "duration": -1,
     "strength": -1,
     "description": "",
-    "url": "https://api.tts-game.fun/images/effects/poison_resistance.png"
+    "url": "https://api.tts-game.fun/images/svg/effects/poison_resistance.svg"
   },
   {
     "id": 78,
@@ -321,7 +321,7 @@
     "duration": 3,
     "strength": 2,
     "description": "",
-    "url": "https://api.tts-game.fun/images/effects/weakness.png"
+    "url": "https://api.tts-game.fun/images/svg/effects/weakness.svg"
   },
   {
     "id": 79,
@@ -330,7 +330,7 @@
     "duration": 3,
     "strength": 2,
     "description": "",
-    "url": "https://api.tts-game.fun/images/effects/enfeeble.png"
+    "url": "https://api.tts-game.fun/images/svg/effects/enfeeble.svg"
   },
   {
     "id": 80,
@@ -339,7 +339,7 @@
     "duration": 2,
     "strength": 2,
     "description": "",
-    "url": "https://api.tts-game.fun/images/effects/weakness_resistance.png"
+    "url": "https://api.tts-game.fun/images/svg/effects/weakness_resistance.svg"
   },
   {
     "id": 81,
@@ -348,7 +348,7 @@
     "duration": 2,
     "strength": 2,
     "description": "",
-    "url": "https://api.tts-game.fun/images/effects/protection.png"
+    "url": "https://api.tts-game.fun/images/svg/effects/protection.svg"
   },
   {
     "id": 82,
@@ -357,7 +357,7 @@
     "duration": 1,
     "strength": 1,
     "description": "",
-    "url": "https://api.tts-game.fun/images/effects/weakness.png"
+    "url": "https://api.tts-game.fun/images/svg/effects/weakness.svg"
   },
   {
     "id": 83,
@@ -366,7 +366,7 @@
     "duration": 2,
     "strength": 1,
     "description": "",
-    "url": "https://api.tts-game.fun/images/effects/weakness.png"
+    "url": "https://api.tts-game.fun/images/svg/effects/weakness.svg"
   },
   {
     "id": 84,
@@ -375,7 +375,7 @@
     "duration": 1,
     "strength": 3,
     "description": "",
-    "url": "https://api.tts-game.fun/images/effects/enfeeble.png"
+    "url": "https://api.tts-game.fun/images/svg/effects/enfeeble.svg"
   },
   {
     "id": 85,
@@ -384,7 +384,7 @@
     "duration": 1,
     "strength": null,
     "description": "",
-    "url": "https://api.tts-game.fun/images/effects/stun.png"
+    "url": "https://api.tts-game.fun/images/svg/effects/stun.svg"
   },
   {
     "id": 86,
@@ -393,7 +393,7 @@
     "duration": -1,
     "strength": 50,
     "description": "",
-    "url": "https://api.tts-game.fun/images/effects/forced_movement_resistance.png"
+    "url": "https://api.tts-game.fun/images/svg/effects/forced_movement_resistance.svg"
   },
   {
     "id": 87,
@@ -402,6 +402,24 @@
     "duration": -1,
     "strength": null,
     "description": "",
-    "url": "https://api.tts-game.fun/images/effects/stun_resistance.png"
+    "url": "https://api.tts-game.fun/images/svg/effects/stun_resistance.svg"
+  },
+  {
+    "id": 88,
+    "target": "ALL",
+    "type": "POISON",
+    "duration": 1,
+    "strength": 2,
+    "description": "Poison from gas trap",
+    "url": "https://api.tts-game.fun/images/svg/effects/poison.svg"
+  },
+  {
+    "id": 89,
+    "target": "ONE",
+    "type": "WEAKNESS",
+    "duration": 2,
+    "strength": 1,
+    "description": "Weaknes by bleeding from trap hit.",
+    "url": "https://api.tts-game.fun/images/svg/effects/weakness.svg"
   }
 ]

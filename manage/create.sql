@@ -1,391 +1,391 @@
 CREATE TABLE `License` (
-  `id` INT NOT NULL AUTO_INCREMENT,
-  `key` VARCHAR(20) NOT NULL,
-  `password` TEXT NOT NULL,
-  `activated` DATETIME,
-  PRIMARY KEY (`id`)
+                           `id` INT NOT NULL AUTO_INCREMENT,
+                           `key` VARCHAR(20) NOT NULL,
+                           `password` TEXT NOT NULL,
+                           `activated` DATETIME,
+                           PRIMARY KEY (`id`)
 );
 
 CREATE TABLE `Campaign` (
-  `id` INT NOT NULL AUTO_INCREMENT,
-  `title` VARCHAR(128) NOT NULL,
-  `description` TEXT,
-  PRIMARY KEY (`id`)
+                            `id` INT NOT NULL AUTO_INCREMENT,
+                            `title` VARCHAR(128) NOT NULL,
+                            `description` TEXT,
+                            PRIMARY KEY (`id`)
 );
 
 CREATE TABLE `CampaignLocation` (
-  `id` INT NOT NULL AUTO_INCREMENT,
-  `idCampaign` INT NOT NULL,
-  `idLocation` INT NOT NULL,
-  `condition` TEXT NOT NULL,
-  `start` bool NOT NULL,
-  `finish` bool NOT NULL,
-  PRIMARY KEY (`id`)
+                                    `id` INT NOT NULL AUTO_INCREMENT,
+                                    `idCampaign` INT NOT NULL,
+                                    `idLocation` INT NOT NULL,
+                                    `condition` TEXT NOT NULL,
+                                    `start` bool NOT NULL,
+                                    `finish` bool NOT NULL,
+                                    PRIMARY KEY (`id`)
 );
 
 CREATE TABLE `Story` (
-  `id` INT NOT NULL AUTO_INCREMENT,
-  `idCampaignLocation` INT NOT NULL,
-  `trigger` ENUM ('NEW', 'ONGOING', 'COMPLETED', 'FAILED') NOT NULL,
-  `story` TEXT NOT NULL,
-  PRIMARY KEY (`id`)
+                         `id` INT NOT NULL AUTO_INCREMENT,
+                         `idCampaignLocation` INT NOT NULL,
+                         `trigger` ENUM ('NEW', 'ONGOING', 'COMPLETED', 'FAILED') NOT NULL,
+                         `story` TEXT NOT NULL,
+                         PRIMARY KEY (`id`)
 );
 
 CREATE TABLE `AdventureLocation` (
-  `idAdventure` INT NOT NULL,
-  `idLocation` INT NOT NULL,
-  `unlocked` BOOL NOT NULL DEFAULT 0,
-  `state` ENUM ('NOT_VISITED', 'VISITED', 'FAILED', 'COMPLETED') NOT NULL DEFAULT 'NOT_VISITED',
-  PRIMARY KEY (`idAdventure`, `idLocation`)
+                                     `idAdventure` INT NOT NULL,
+                                     `idLocation` INT NOT NULL,
+                                     `unlocked` BOOL NOT NULL DEFAULT 0,
+                                     `state` ENUM ('NOT_VISITED', 'VISITED', 'FAILED', 'COMPLETED') NOT NULL DEFAULT 'NOT_VISITED',
+                                     PRIMARY KEY (`idAdventure`, `idLocation`)
 );
 
 CREATE TABLE `Adventure` (
-  `id` INT NOT NULL AUTO_INCREMENT,
-  `idCampaign` INT NOT NULL,
-  `idLicense` INT NOT NULL,
-  `title` VARCHAR(128) NOT NULL,
-  `description` TEXT,
-  `reputation` INT NOT NULL,
-  `experience` INT NOT NULL,
-  `gold` INT NOT NULL,
-  `level` INT NOT NULL,
-  PRIMARY KEY (`id`)
+                             `id` INT NOT NULL AUTO_INCREMENT,
+                             `idCampaign` INT NOT NULL,
+                             `idLicense` INT NOT NULL,
+                             `title` VARCHAR(128) NOT NULL,
+                             `description` TEXT,
+                             `reputation` INT NOT NULL,
+                             `experience` INT NOT NULL,
+                             `gold` INT NOT NULL,
+                             `level` INT NOT NULL,
+                             PRIMARY KEY (`id`)
 );
 
 CREATE TABLE `AdventureAchievement` (
-  `idAdventure` INT NOT NULL,
-  `idAchievement` INT NOT NULL,
-  `progress` INT NOT NULL,
-  PRIMARY KEY (`idAdventure`, `idAchievement`)
+                                        `idAdventure` INT NOT NULL,
+                                        `idAchievement` INT NOT NULL,
+                                        `progress` INT NOT NULL,
+                                        PRIMARY KEY (`idAdventure`, `idAchievement`)
 );
 
 CREATE TABLE `Location` (
-  `id` INT NOT NULL AUTO_INCREMENT,
-  `title` VARCHAR(128) NOT NULL,
-  `tag` VARCHAR(32),
-  `type` ENUM ('CITY', 'DUNGEON', 'MARKET', 'QUEST') NOT NULL,
-  `description` TEXT,
-  PRIMARY KEY (`id`)
+                            `id` INT NOT NULL AUTO_INCREMENT,
+                            `title` VARCHAR(128) NOT NULL,
+                            `tag` VARCHAR(32),
+                            `type` ENUM ('CITY', 'DUNGEON', 'MARKET', 'QUEST') NOT NULL,
+                            `description` TEXT,
+                            PRIMARY KEY (`id`)
 );
 
 CREATE TABLE `LocationPath` (
-  `idCampaign` INT NOT NULL,
-  `idStart` INT NOT NULL,
-  `idEnd` INT NOT NULL,
-  PRIMARY KEY (`idCampaign`, `idStart`, `idEnd`)
+                                `idCampaign` INT NOT NULL,
+                                `idStart` INT NOT NULL,
+                                `idEnd` INT NOT NULL,
+                                PRIMARY KEY (`idCampaign`, `idStart`, `idEnd`)
 );
 
 CREATE TABLE `LocationPart` (
-  `idLocation` INT NOT NULL,
-  `idPart` INT NOT NULL,
-  `rotation` INT NOT NULL DEFAULT 0,
-  PRIMARY KEY (`idLocation`, `idPart`)
+                                `idLocation` INT NOT NULL,
+                                `idPart` INT NOT NULL,
+                                `rotation` INT NOT NULL DEFAULT 0,
+                                PRIMARY KEY (`idLocation`, `idPart`)
 );
 
 CREATE TABLE `Part` (
-  `id` INT NOT NULL AUTO_INCREMENT,
-  `title` VARCHAR(128) NOT NULL,
-  `tag` VARCHAR(32),
-  `usages` INT DEFAULT 0,
-  PRIMARY KEY (`id`)
+                        `id` INT NOT NULL AUTO_INCREMENT,
+                        `title` VARCHAR(128) NOT NULL,
+                        `tag` VARCHAR(32),
+                        `usages` INT DEFAULT 0,
+                        PRIMARY KEY (`id`)
 );
 
 CREATE TABLE `Hex` (
-  `idPart` INT NOT NULL,
-  `id` INT NOT NULL AUTO_INCREMENT,
-  `qCoord` INT NOT NULL DEFAULT 0,
-  `rCoord` INT NOT NULL DEFAULT 0,
-  `sCoord` INT NOT NULL DEFAULT 0,
-  PRIMARY KEY (`id`, `idPart`)
+                       `idPart` INT NOT NULL,
+                       `id` INT NOT NULL AUTO_INCREMENT,
+                       `qCoord` INT NOT NULL DEFAULT 0,
+                       `rCoord` INT NOT NULL DEFAULT 0,
+                       `sCoord` INT NOT NULL DEFAULT 0,
+                       PRIMARY KEY (`id`, `idPart`)
 );
 
 CREATE TABLE `LocationDoor` (
-  `idLocation` INT NOT NULL,
-  `idPartFrom` INT NOT NULL,
-  `idPartTo` INT NOT NULL,
-  `qCoord` INT NOT NULL DEFAULT 0,
-  `rCoord` INT NOT NULL DEFAULT 0,
-  `sCoord` INT NOT NULL DEFAULT 0,
-  PRIMARY KEY (`idLocation`, `idPartFrom`, `idPartTo`)
+                                `idLocation` INT NOT NULL,
+                                `idPartFrom` INT NOT NULL,
+                                `idPartTo` INT NOT NULL,
+                                `qCoord` INT NOT NULL DEFAULT 0,
+                                `rCoord` INT NOT NULL DEFAULT 0,
+                                `sCoord` INT NOT NULL DEFAULT 0,
+                                PRIMARY KEY (`idLocation`, `idPartFrom`, `idPartTo`)
 );
 
 CREATE TABLE `LocationStart` (
-  `idLocation` INT NOT NULL,
-  `idPart` INT NOT NULL,
-  `idHex` INT NOT NULL,
-  PRIMARY KEY (`idLocation`, `idPart`, `idHex`)
+                                 `idLocation` INT NOT NULL,
+                                 `idPart` INT NOT NULL,
+                                 `idHex` INT NOT NULL,
+                                 PRIMARY KEY (`idLocation`, `idPart`, `idHex`)
 );
 
 CREATE TABLE `Class` (
-  `id` INT NOT NULL AUTO_INCREMENT,
-  `title` VARCHAR(128) NOT NULL,
-  `tag` VARCHAR(32),
-  `description` TEXT,
-  `baseHealth` INT NOT NULL,
-  `baseDefence` INT NOT NULL,
-  `baseInitiative` INT NOT NULL,
-  PRIMARY KEY (`id`)
+                         `id` INT NOT NULL AUTO_INCREMENT,
+                         `title` VARCHAR(128) NOT NULL,
+                         `tag` VARCHAR(32),
+                         `description` TEXT,
+                         `baseHealth` INT NOT NULL,
+                         `baseDefence` INT NOT NULL,
+                         `baseInitiative` INT NOT NULL,
+                         PRIMARY KEY (`id`)
 );
 
 CREATE TABLE `Character` (
-  `id` INT NOT NULL AUTO_INCREMENT,
-  `idClass` INT NOT NULL,
-  `idRace` INT NOT NULL,
-  `idAdventure` INT NOT NULL,
-  `title` VARCHAR(128) NOT NULL,
-  `playerName` VARCHAR(128),
-  PRIMARY KEY (`id`)
+                             `id` INT NOT NULL AUTO_INCREMENT,
+                             `idClass` INT NOT NULL,
+                             `idRace` INT NOT NULL,
+                             `idAdventure` INT NOT NULL,
+                             `title` VARCHAR(128) NOT NULL,
+                             `playerName` VARCHAR(128),
+                             PRIMARY KEY (`id`)
 );
 
 CREATE TABLE `Inventory` (
-  `idItem` INT NOT NULL,
-  `idCharacter` INT NOT NULL,
-  `amount` INT DEFAULT 1,
-  PRIMARY KEY (`idCharacter`, `idItem`)
+                             `idItem` INT NOT NULL,
+                             `idCharacter` INT NOT NULL,
+                             `amount` INT DEFAULT 1,
+                             PRIMARY KEY (`idCharacter`, `idItem`)
 );
 
 CREATE TABLE `ClassAction` (
-  `idClass` INT NOT NULL,
-  `idAction` INT NOT NULL,
-  PRIMARY KEY (`idClass`, `idAction`)
+                               `idClass` INT NOT NULL,
+                               `idAction` INT NOT NULL,
+                               PRIMARY KEY (`idClass`, `idAction`)
 );
 
 CREATE TABLE `Enemy` (
-  `id` INT NOT NULL AUTO_INCREMENT,
-  `title` VARCHAR(128) NOT NULL,
-  `tag` VARCHAR(32),
-  `description` TEXT,
-  `baseHealth` INT NOT NULL,
-  `baseDefence` INT NOT NULL,
-  `baseInitiative` INT NOT NULL,
-  `usages` INT DEFAULT 0,
-  PRIMARY KEY (`id`)
+                         `id` INT NOT NULL AUTO_INCREMENT,
+                         `title` VARCHAR(128) NOT NULL,
+                         `tag` VARCHAR(32),
+                         `description` TEXT,
+                         `baseHealth` INT NOT NULL,
+                         `baseDefence` INT NOT NULL,
+                         `baseInitiative` INT NOT NULL,
+                         `usages` INT DEFAULT 0,
+                         PRIMARY KEY (`id`)
 );
 
 CREATE TABLE `HexEnemy` (
-  `idEnemy` INT NOT NULL,
-  `idLocation` INT NOT NULL,
-  `idPart` INT NOT NULL,
-  `idHex` INT NOT NULL,
-  PRIMARY KEY (`idLocation`, `idPart`, `idHex`, `idEnemy`)
+                            `idEnemy` INT NOT NULL,
+                            `idLocation` INT NOT NULL,
+                            `idPart` INT NOT NULL,
+                            `idHex` INT NOT NULL,
+                            PRIMARY KEY (`idLocation`, `idPart`, `idHex`, `idEnemy`)
 );
 
 CREATE TABLE `EnemyAction` (
-  `idEnemy` INT NOT NULL,
-  `idAction` INT NOT NULL,
-  PRIMARY KEY (`idEnemy`, `idAction`)
+                               `idEnemy` INT NOT NULL,
+                               `idAction` INT NOT NULL,
+                               PRIMARY KEY (`idEnemy`, `idAction`)
 );
 
 CREATE TABLE `Action` (
-  `id` INT NOT NULL AUTO_INCREMENT,
-  `title` VARCHAR(128) NOT NULL,
-  `description` TEXT,
-  `movement` INT,
-  `skill` INT,
-  `attack` INT,
-  `restoreCards` INT,
-  `discard` ENUM ('PERMANENT', 'SHORT_REST', 'LONG_REST', 'NEVER') DEFAULT 'NEVER',
-  `levelReq` INT,
-  PRIMARY KEY (`id`)
+                          `id` INT NOT NULL AUTO_INCREMENT,
+                          `title` VARCHAR(128) NOT NULL,
+                          `description` TEXT,
+                          `movement` INT,
+                          `skill` INT,
+                          `attack` INT,
+                          `restoreCards` INT,
+                          `discard` ENUM ('PERMANENT', 'SHORT_REST', 'LONG_REST', 'NEVER') DEFAULT 'NEVER',
+                          `levelReq` INT,
+                          PRIMARY KEY (`id`)
 );
 
 CREATE TABLE `Summon` (
-  `id` INT NOT NULL AUTO_INCREMENT,
-  `title` VARCHAR(128) NOT NULL,
-  `tag` VARCHAR(32),
-  `duration` INT NOT NULL,
-  `health` INT NOT NULL,
-  `idAction` INT,
-  PRIMARY KEY (`id`)
+                          `id` INT NOT NULL AUTO_INCREMENT,
+                          `title` VARCHAR(128) NOT NULL,
+                          `tag` VARCHAR(32),
+                          `duration` INT NOT NULL,
+                          `health` INT NOT NULL,
+                          `idAction` INT,
+                          PRIMARY KEY (`id`)
 );
 
 CREATE TABLE `SummonAction` (
-  `idSummon` INT NOT NULL,
-  `idAction` INT NOT NULL,
-  `range` INT,
-  PRIMARY KEY (`idSummon`, `idAction`)
+                                `idSummon` INT NOT NULL,
+                                `idAction` INT NOT NULL,
+                                `range` INT,
+                                PRIMARY KEY (`idSummon`, `idAction`)
 );
 
 CREATE TABLE `Attack` (
-  `id` INT NOT NULL AUTO_INCREMENT,
-  `range` INT NOT NULL,
-  `damage` INT NOT NULL,
-  `area` INT,
-  `target` ENUM ('SELF', 'ONE', 'ALL', 'ALL_ENEMIES', 'ALL_ALLIES') NOT NULL,
-  `numAttacks` INT NOT NULL,
-  PRIMARY KEY (`id`)
+                          `id` INT NOT NULL AUTO_INCREMENT,
+                          `range` INT NOT NULL,
+                          `damage` INT NOT NULL,
+                          `area` INT,
+                          `target` ENUM ('SELF', 'ONE', 'ALL', 'ALL_ENEMIES', 'ALL_ALLIES') NOT NULL,
+                          `numAttacks` INT NOT NULL,
+                          PRIMARY KEY (`id`)
 );
 
 CREATE TABLE `Skill` (
-  `id` INT NOT NULL AUTO_INCREMENT,
-  `range` INT NOT NULL,
-  `area` INT,
-  `target` ENUM ('SELF', 'ONE', 'ALL', 'ALL_ENEMIES', 'ALL_ALLIES') NOT NULL,
-  PRIMARY KEY (`id`)
+                         `id` INT NOT NULL AUTO_INCREMENT,
+                         `range` INT NOT NULL,
+                         `area` INT,
+                         `target` ENUM ('SELF', 'ONE', 'ALL', 'ALL_ENEMIES', 'ALL_ALLIES') NOT NULL,
+                         PRIMARY KEY (`id`)
 );
 
 CREATE TABLE `Movement` (
-  `id` INT NOT NULL AUTO_INCREMENT,
-  `range` INT NOT NULL,
-  `type` ENUM ('WALK', 'JUMP', 'TELEPORT') NOT NULL DEFAULT 'WALK',
-  PRIMARY KEY (`id`)
+                            `id` INT NOT NULL AUTO_INCREMENT,
+                            `range` INT NOT NULL,
+                            `type` ENUM ('WALK', 'JUMP', 'TELEPORT') NOT NULL DEFAULT 'WALK',
+                            PRIMARY KEY (`id`)
 );
 
 CREATE TABLE `RestoreCards` (
-  `id` INT NOT NULL AUTO_INCREMENT,
-  `numCards` INT NOT NULL,
-  `target` ENUM ('SELF', 'ONE', 'ALL', 'ALL_ENEMIES', 'ALL_ALLIES') NOT NULL,
-  `random` BOOL NOT NULL,
-  PRIMARY KEY (`id`)
+                                `id` INT NOT NULL AUTO_INCREMENT,
+                                `numCards` INT NOT NULL,
+                                `target` ENUM ('SELF', 'ONE', 'ALL', 'ALL_ENEMIES', 'ALL_ALLIES') NOT NULL,
+                                `random` BOOL NOT NULL,
+                                PRIMARY KEY (`id`)
 );
 
 CREATE TABLE `Effect` (
-  `id` INT NOT NULL AUTO_INCREMENT,
-  `type` ENUM ('PUSH', 'PULL', 'FORCED_MOVEMENT_RESISTANCE', 'POISON', 'POISON_RESISTANCE', 'FIRE', 'FIRE_RESISTANCE', 'BLEED', 'BLEED_RESISTANCE', 'STUN', 'STUN_RESISTANCE', 'PROTECTION', 'WEAKNESS', 'WEAKNESS_RESISTANCE', 'HEAL', 'REGENERATION', 'EMPOWER', 'ENFEEBLE', 'ENFEEBLE_RESISTANCE') NOT NULL,
-  `description` TEXT,
-  `duration` INT,
-  `strength` INT,
-  `target` ENUM ('SELF', 'ONE', 'ALL', 'ALL_ENEMIES', 'ALL_ALLIES') NOT NULL,
-  PRIMARY KEY (`id`)
+                          `id` INT NOT NULL AUTO_INCREMENT,
+                          `type` ENUM ('PUSH', 'PULL', 'FORCED_MOVEMENT_RESISTANCE', 'POISON', 'POISON_RESISTANCE', 'FIRE', 'FIRE_RESISTANCE', 'BLEED', 'BLEED_RESISTANCE', 'STUN', 'STUN_RESISTANCE', 'PROTECTION', 'WEAKNESS', 'WEAKNESS_RESISTANCE', 'HEAL', 'REGENERATION', 'EMPOWER', 'ENFEEBLE', 'ENFEEBLE_RESISTANCE') NOT NULL,
+                          `description` TEXT,
+                          `duration` INT,
+                          `strength` INT,
+                          `target` ENUM ('SELF', 'ONE', 'ALL', 'ALL_ENEMIES', 'ALL_ALLIES') NOT NULL,
+                          PRIMARY KEY (`id`)
 );
 
 CREATE TABLE `SummonEffect` (
-  `idSummon` INT NOT NULL,
-  `idEffect` INT NOT NULL,
-  PRIMARY KEY (`idSummon`, `idEffect`)
+                                `idSummon` INT NOT NULL,
+                                `idEffect` INT NOT NULL,
+                                PRIMARY KEY (`idSummon`, `idEffect`)
 );
 
 CREATE TABLE `AttackEffect` (
-  `idAttack` INT NOT NULL,
-  `idEffect` INT NOT NULL,
-  PRIMARY KEY (`idAttack`, `idEffect`)
+                                `idAttack` INT NOT NULL,
+                                `idEffect` INT NOT NULL,
+                                PRIMARY KEY (`idAttack`, `idEffect`)
 );
 
 CREATE TABLE `SkillEffect` (
-  `idSkill` INT NOT NULL,
-  `idEffect` INT NOT NULL,
-  PRIMARY KEY (`idSkill`, `idEffect`)
+                               `idSkill` INT NOT NULL,
+                               `idEffect` INT NOT NULL,
+                               PRIMARY KEY (`idSkill`, `idEffect`)
 );
 
 CREATE TABLE `MovementEffect` (
-  `idMovement` INT NOT NULL,
-  `idEffect` INT NOT NULL,
-  PRIMARY KEY (`idMovement`, `idEffect`)
+                                  `idMovement` INT NOT NULL,
+                                  `idEffect` INT NOT NULL,
+                                  PRIMARY KEY (`idMovement`, `idEffect`)
 );
 
 CREATE TABLE `ClassEffect` (
-  `idClass` INT NOT NULL,
-  `idEffect` INT NOT NULL,
-  `levelReq` INT,
-  PRIMARY KEY (`idClass`, `idEffect`)
+                               `idClass` INT NOT NULL,
+                               `idEffect` INT NOT NULL,
+                               `levelReq` INT,
+                               PRIMARY KEY (`idClass`, `idEffect`)
 );
 
 CREATE TABLE `RaceEffect` (
-  `idRace` INT NOT NULL,
-  `idEffect` INT NOT NULL,
-  `levelReq` INT,
-  PRIMARY KEY (`idRace`, `idEffect`)
+                              `idRace` INT NOT NULL,
+                              `idEffect` INT NOT NULL,
+                              `levelReq` INT,
+                              PRIMARY KEY (`idRace`, `idEffect`)
 );
 
 CREATE TABLE `ItemEffect` (
-  `idItem` INT NOT NULL,
-  `idEffect` INT NOT NULL,
-  PRIMARY KEY (`idItem`, `idEffect`)
+                              `idItem` INT NOT NULL,
+                              `idEffect` INT NOT NULL,
+                              PRIMARY KEY (`idItem`, `idEffect`)
 );
 
 CREATE TABLE `EnemyEffect` (
-  `idEnemy` INT NOT NULL,
-  `idEffect` INT NOT NULL,
-  PRIMARY KEY (`idEnemy`, `idEffect`)
+                               `idEnemy` INT NOT NULL,
+                               `idEffect` INT NOT NULL,
+                               PRIMARY KEY (`idEnemy`, `idEffect`)
 );
 
 CREATE TABLE `ObstacleEffect` (
-  `idObstacle` INT NOT NULL,
-  `idEffect` INT NOT NULL,
-  PRIMARY KEY (`idEffect`, `idObstacle`)
+                                  `idObstacle` INT NOT NULL,
+                                  `idEffect` INT NOT NULL,
+                                  PRIMARY KEY (`idEffect`, `idObstacle`)
 );
 
 CREATE TABLE `HexObstacle` (
-  `idLocation` INT NOT NULL,
-  `idPart` INT NOT NULL,
-  `idHex` INT NOT NULL,
-  `idObstacle` INT NOT NULL,
-  PRIMARY KEY (`idLocation`, `idPart`, `idHex`, `idObstacle`)
+                               `idLocation` INT NOT NULL,
+                               `idPart` INT NOT NULL,
+                               `idHex` INT NOT NULL,
+                               `idObstacle` INT NOT NULL,
+                               PRIMARY KEY (`idLocation`, `idPart`, `idHex`, `idObstacle`)
 );
 
 CREATE TABLE `Obstacle` (
-  `id` INT NOT NULL AUTO_INCREMENT,
-  `title` VARCHAR(128) NOT NULL,
-  `tag` VARCHAR(32),
-  `description` TEXT,
-  `baseDamage` INT,
-  `baseHealth` INT,
-  `crossable` BOOL NOT NULL,
-  `usages` INT DEFAULT 0,
-  PRIMARY KEY (`id`)
+                            `id` INT NOT NULL AUTO_INCREMENT,
+                            `title` VARCHAR(128) NOT NULL,
+                            `tag` VARCHAR(32),
+                            `description` TEXT,
+                            `baseDamage` INT,
+                            `baseHealth` INT,
+                            `crossable` BOOL NOT NULL,
+                            `usages` INT DEFAULT 0,
+                            PRIMARY KEY (`id`)
 );
 
 CREATE TABLE `Race` (
-  `id` INT NOT NULL AUTO_INCREMENT,
-  `title` VARCHAR(128) NOT NULL,
-  `tag` VARCHAR(32),
-  `description` TEXT,
-  `baseInitiative` INT NOT NULL,
-  PRIMARY KEY (`id`)
+                        `id` INT NOT NULL AUTO_INCREMENT,
+                        `title` VARCHAR(128) NOT NULL,
+                        `tag` VARCHAR(32),
+                        `description` TEXT,
+                        `baseInitiative` INT NOT NULL,
+                        PRIMARY KEY (`id`)
 );
 
 CREATE TABLE `RaceAction` (
-  `idRace` INT NOT NULL,
-  `idAction` INT NOT NULL,
-  PRIMARY KEY (`idRace`, `idAction`)
+                              `idRace` INT NOT NULL,
+                              `idAction` INT NOT NULL,
+                              PRIMARY KEY (`idRace`, `idAction`)
 );
 
 CREATE TABLE `Achievement` (
-  `id` INT NOT NULL AUTO_INCREMENT,
-  `title` VARCHAR(128) NOT NULL,
-  `description` TEXT NOT NULL,
-  `xpReward` INT NOT NULL,
-  PRIMARY KEY (`id`)
+                               `id` INT NOT NULL AUTO_INCREMENT,
+                               `title` VARCHAR(128) NOT NULL,
+                               `description` TEXT NOT NULL,
+                               `xpReward` INT NOT NULL,
+                               PRIMARY KEY (`id`)
 );
 
 CREATE TABLE `CampaignAchievements` (
-  `idCampaign` INT NOT NULL,
-  `idAchievement` INT NOT NULL,
-  PRIMARY KEY (`idCampaign`, `idAchievement`)
+                                        `idCampaign` INT NOT NULL,
+                                        `idAchievement` INT NOT NULL,
+                                        PRIMARY KEY (`idCampaign`, `idAchievement`)
 );
 
 CREATE TABLE `Item` (
-  `id` INT NOT NULL AUTO_INCREMENT,
-  `idAction` INT,
-  `title` VARCHAR(128) NOT NULL,
-  `tag` VARCHAR(32),
-  `type` ENUM ('WEAPON', 'HELMET', 'CHESTPLATE', 'LEGGINGS', 'BOOTS', 'ACCESSORY', 'CONSUMABLE') NOT NULL,
-  `description` TEXT,
-  `requirements` TEXT,
-  PRIMARY KEY (`id`)
+                        `id` INT NOT NULL AUTO_INCREMENT,
+                        `idAction` INT,
+                        `title` VARCHAR(128) NOT NULL,
+                        `tag` VARCHAR(32),
+                        `type` ENUM ('WEAPON', 'HELMET', 'CHESTPLATE', 'LEGGINGS', 'BOOTS', 'ACCESSORY', 'CONSUMABLE') NOT NULL,
+                        `description` TEXT,
+                        `requirements` TEXT,
+                        PRIMARY KEY (`id`)
 );
 
 CREATE TABLE `Market` (
-  `idLocation` INT NOT NULL,
-  `idItem` INT NOT NULL,
-  `defAmount` INT DEFAULT 1,
-  `defPrice` INT DEFAULT 0,
-  PRIMARY KEY (`idLocation`, `idItem`)
+                          `idLocation` INT NOT NULL,
+                          `idItem` INT NOT NULL,
+                          `defAmount` INT DEFAULT 1,
+                          `defPrice` INT DEFAULT 0,
+                          PRIMARY KEY (`idLocation`, `idItem`)
 );
 
 CREATE TABLE `AdventureMarket` (
-  `idLocation` INT NOT NULL,
-  `idItem` INT NOT NULL,
-  `idAdventure` INT NOT NULL,
-  `amount` INT DEFAULT 1,
-  `price` INT DEFAULT 0,
-  PRIMARY KEY (`idLocation`, `idItem`, `idAdventure`)
+                                   `idLocation` INT NOT NULL,
+                                   `idItem` INT NOT NULL,
+                                   `idAdventure` INT NOT NULL,
+                                   `amount` INT DEFAULT 1,
+                                   `price` INT DEFAULT 0,
+                                   PRIMARY KEY (`idLocation`, `idItem`, `idAdventure`)
 );
 
 CREATE TABLE `ImageLink` (
-  `tag` VARCHAR(32) PRIMARY KEY,
-  `variation` INT DEFAULT 0,
-  `url` TEXT
+                             `tag` VARCHAR(32) PRIMARY KEY,
+                             `variation` INT DEFAULT 0,
+                             `url` TEXT
 );
 
 CREATE INDEX `CampaignLocation_fk` ON `CampaignLocation` (`idCampaign`);

@@ -21,7 +21,7 @@ for dirPath, _, fileNames in os.walk(insertFolder):
 
         # SQL files
         if fileName.lower().endswith('.sql') and fileName.lower() != '0-license.sql':
-            log(" - Removing " + filePath + "...", "INFO", True)
+            # log(" - Removing " + filePath + "...", "INFO", True)
             os.remove(filePath)
             
 log("Successfully removed all the .sql files in the directory.", "INFO", True)
@@ -35,7 +35,7 @@ for dirPath, _, fileNames in os.walk(insertFolder):
 
         # Python files
         if fileName.lower().endswith('.py'):
-            executeFilePython(filePath)
+            executeFilePython(filePath, [], False)
 
 log("Successfully executed all the Python files.", "INFO", True)
 log("", "INFO", True)

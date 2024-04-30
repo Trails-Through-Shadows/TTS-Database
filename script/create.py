@@ -18,8 +18,9 @@ executeFileSQL(createScriptPath)
 if not (len(sys.argv) > 1 and sys.argv[1] == '-s'):
     # Clear the database
     clearScriptPath = 'script/insert.py'
-    executeFilePython(clearScriptPath, ['-s'])
+    executeFilePython(clearScriptPath, ['-s'], True)
+else:
+    log("Successfully executed all the SQL files.", "INFO")
 
 # Close the connection
 conn.close()
-log("Successfully executed all the SQL files.", "INFO")

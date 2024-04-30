@@ -82,16 +82,20 @@ def executeFileSQL(filePath: str) -> None:
 
 
 # Function to execute a Python file
-def executeFilePython(filePath: str, args=None) -> None:
+def executeFilePython(filePath: str, args=None, silent=False) -> None:
     if args is None:
         args = []
 
     filePath = filePath.replace('\\', '/')
-    log(" - Executing {}...".format(filePath), "INFO")
+
+    if not silent:
+        log(" - Executing {}...".format(filePath), "INFO")
 
     try:
         subprocess.call(['python', filePath] + args)
-        log(" - Executing {}... Done".format(filePath), "INFO", True)
+
+        if not silent:
+            log(" - Executing {}... Done".format(filePath), "INFO", True)
     except Exception as e:
         log(" - Executing {}... Error", "INFO", True)
         log("    - {}".format(e), "ERROR", True)

@@ -3,43 +3,46 @@
     "id": 1,
     "title": "Pyroscorian Skeleton",
     "tag": "e-pyroSkeleton",
-    "description": "",
+    "description": "This charred skeleton radiates intense heat, remnants of its life in volcanic regions. It launches fire-based attacks, igniting its surroundings and any who dare approach.",
     "baseHealth": 12,
     "baseDefence": 1,
     "baseInitiative": 12,
-    "usages": 0,
+    "usages": 1,
     "effects": [],
     "actions": [],
     "startingHex": null,
-    "url": "https://api.tts-game.fun/images/enemies/pyroSkeleton.png"
+    "url": "https://api.tts-game.fun/images/enemies/pyroSkeleton.png",
+    "remappedActions": null
   },
   {
     "id": 2,
     "title": "Ratfolk Mercenary",
     "tag": "e-ratMercenary",
-    "description": "",
+    "description": "This cunning Ratfolk mercenary is small but agile, equipped with light armor and dual daggers. Skilled in stealth and espionage, they are often hired for sabotage missions or as scouts in larger armies.",
     "baseHealth": 8,
     "baseDefence": 2,
     "baseInitiative": 9,
-    "usages": 5,
+    "usages": 8,
     "effects": [],
     "actions": [],
     "startingHex": null,
-    "url": "https://api.tts-game.fun/images/enemies/ratMercenary.png"
+    "url": "https://api.tts-game.fun/images/enemies/ratMercenary.png",
+    "remappedActions": null
   },
   {
     "id": 3,
     "title": "Sand Golem",
     "tag": "e-sandGolem",
-    "description": "",
+    "description": "A towering golem crafted from compacted sand, this entity is incredibly durable, with a natural resilience against physical blows. It lumbers slowly but hits with crushing force, proving to be a formidable guardian in desert ruins or ancient temples.",
     "baseHealth": 20,
     "baseDefence": 3,
     "baseInitiative": 6,
-    "usages": 0,
+    "usages": 2,
     "effects": [],
     "actions": [],
     "startingHex": null,
-    "url": "https://api.tts-game.fun/images/enemies/sandGolem.png"
+    "url": "https://api.tts-game.fun/images/enemies/sandGolem.png",
+    "remappedActions": null
   },
   {
     "id": 4,
@@ -49,7 +52,7 @@
     "baseHealth": 6,
     "baseDefence": 0,
     "baseInitiative": 15,
-    "usages": 4,
+    "usages": 7,
     "effects": [],
     "actions": [
       {
@@ -82,13 +85,14 @@
       }
     ],
     "startingHex": null,
-    "url": "https://api.tts-game.fun/images/enemies/undeadArcher.png"
+    "url": "https://api.tts-game.fun/images/enemies/undeadArcher.png",
+    "remappedActions": null
   },
   {
     "id": 5,
     "title": "Crocodile",
     "tag": "e-crocodile",
-    "description": "",
+    "description": "This massive crocodile boasts thick scales and powerful jaws, capable of crushing armor and bone alike. It lurks in waterways, attacking swiftly with little warning, making it a deadly predator in its natural habitat.",
     "baseHealth": 15,
     "baseDefence": 3,
     "baseInitiative": 11,
@@ -96,41 +100,44 @@
     "effects": [],
     "actions": [],
     "startingHex": null,
-    "url": "https://api.tts-game.fun/images/enemies/crocodile.png"
+    "url": "https://api.tts-game.fun/images/enemies/crocodile.png",
+    "remappedActions": null
   },
   {
     "id": 6,
     "title": "Goblin Sorcerer",
-    "tag": "e-goblinSorcka",
-    "description": "",
+    "tag": "e-goblinSorcerer",
+    "description": "A small, cunning creature with a knack for magic, the Goblin Sorcerer uses a variety of spells to harass and confound its enemies. While physically weak, its magical versatility makes it a tricky opponent.",
     "baseHealth": 6,
     "baseDefence": 0,
     "baseInitiative": 12,
-    "usages": 0,
+    "usages": 2,
     "effects": [],
     "actions": [],
     "startingHex": null,
-    "url": "https://api.tts-game.fun/images/enemies/goblinSorcka.png"
+    "url": "https://api.tts-game.fun/images/enemies/goblinSorcerer.png",
+    "remappedActions": null
   },
   {
     "id": 7,
     "title": "Fire Elemental",
     "tag": "e-fireElemental",
-    "description": "",
+    "description": "Composed entirely of roaring flames, the Fire Elemental emanates intense heat that can ignite its surroundings. It moves fluidly, attacking with fiery bursts that can engulf multiple targets at once.",
     "baseHealth": 12,
     "baseDefence": 2,
     "baseInitiative": 8,
-    "usages": 0,
+    "usages": 1,
     "effects": [],
     "actions": [],
     "startingHex": null,
-    "url": "https://api.tts-game.fun/images/enemies/fireElemental.png"
+    "url": "https://api.tts-game.fun/images/enemies/fireElemental.png",
+    "remappedActions": null
   },
   {
     "id": 8,
     "title": "Undead Tree",
     "tag": "e-undeadTree",
-    "description": "",
+    "description": "This twisted, animated tree is a terrifying sight, with gnarled branches and a hollow, moaning trunk. It's highly durable and can withstand significant damage, making it a stalwart defender of cursed forests.",
     "baseHealth": 20,
     "baseDefence": 4,
     "baseInitiative": 3,
@@ -138,35 +145,38 @@
     "effects": [],
     "actions": [],
     "startingHex": null,
-    "url": "https://api.tts-game.fun/images/enemies/undeadTree.png"
+    "url": "https://api.tts-game.fun/images/enemies/undeadTree.png",
+    "remappedActions": null
   },
   {
     "id": 9,
     "title": "Void Lizard",
     "tag": "e-voidLizard",
-    "description": "",
+    "description": " A sleek, dark lizard that seems to absorb light around it, the Void Lizard can manipulate shadows to conceal its presence. It attacks with surprising speed and precision, often catching its prey off guard.",
     "baseHealth": 13,
     "baseDefence": 2,
     "baseInitiative": 9,
-    "usages": 0,
+    "usages": 1,
     "effects": [],
     "actions": [],
     "startingHex": null,
-    "url": "https://api.tts-game.fun/images/enemies/voidLizard.png"
+    "url": "https://api.tts-game.fun/images/enemies/voidLizard.png",
+    "remappedActions": null
   },
   {
     "id": 10,
     "title": "Kobold Necromancer",
     "tag": "e-koboldNecro",
-    "description": "",
+    "description": "A diminutive, reptilian spellcaster, this Kobold Necromancer specializes in the dark arts, summoning undead minions to do its bidding. Despite its low health, it can be a persistent threat if not dealt with quickly.",
     "baseHealth": 5,
     "baseDefence": 2,
     "baseInitiative": 15,
-    "usages": 0,
+    "usages": 1,
     "effects": [],
     "actions": [],
     "startingHex": null,
-    "url": "https://api.tts-game.fun/images/enemies/koboldNecro.png"
+    "url": "https://api.tts-game.fun/images/enemies/koboldNecro.png",
+    "remappedActions": null
   },
   {
     "id": 11,
@@ -176,7 +186,7 @@
     "baseHealth": 10,
     "baseDefence": 1,
     "baseInitiative": 8,
-    "usages": 5,
+    "usages": 4,
     "effects": [],
     "actions": [
       {
@@ -209,7 +219,8 @@
       }
     ],
     "startingHex": null,
-    "url": "https://api.tts-game.fun/images/enemies/chaosZombie.png"
+    "url": "https://api.tts-game.fun/images/enemies/chaosZombie.png",
+    "remappedActions": null
   },
   {
     "id": 12,
@@ -267,6 +278,7 @@
       }
     ],
     "startingHex": null,
-    "url": "https://api.tts-game.fun/images/enemies/undeadSkeletNecro.png"
+    "url": "https://api.tts-game.fun/images/enemies/undeadSkeletNecro.png",
+    "remappedActions": null
   }
 ]

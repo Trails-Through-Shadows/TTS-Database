@@ -2,25 +2,57 @@
   {
     "id": 1,
     "title": "Poison Gas Trap",
-    "tag": "o-poisonGasTrap",
-    "description": "",
+    "description": "A disguised metal plate on the floor releases a colorless, faintly sweet poison gas when stepped on. The gas causes disorientation and respiratory issues, quickly incapacitating or killing intruders. This trap effectively guards important areas.",
     "baseDamage": 10,
     "baseHealth": 10,
     "crossable": true,
-    "effects": [],
+    "usages": 4,
+    "effects": [
+      {
+        "key": {
+          "idObstacle": 1,
+          "idEffect": 88
+        },
+        "effect": {
+          "id": 88,
+          "target": "ALL",
+          "type": "POISON",
+          "duration": 1,
+          "strength": 2,
+          "description": "Poison from gas trap"
+        }
+      }
+    ],
+    "tag": "o-poisonGasTrap",
     "hex": null,
-    "url": "http://localhost:8080/images/obstacles/poisonGasTrap.png"
+    "url": "https://api.tts-game.fun/images/obstacles/poisonGasTrap.png"
   },
   {
     "id": 2,
     "title": "Spiked Pit",
-    "tag": "o-spikedPitTrap",
-    "description": "",
+    "description": "A hidden pit covered with a false floor springs open under weight, revealing sharp spikes below. Falling victims suffer severe injuries from the impalement, making this trap a lethal deterrent in secure areas.",
     "baseDamage": 0,
     "baseHealth": -1,
     "crossable": false,
-    "effects": [],
+    "usages": 9,
+    "effects": [
+      {
+        "key": {
+          "idObstacle": 2,
+          "idEffect": 89
+        },
+        "effect": {
+          "id": 89,
+          "target": "ONE",
+          "type": "WEAKNESS",
+          "duration": 2,
+          "strength": 1,
+          "description": "Weaknes by bleeding from trap hit."
+        }
+      }
+    ],
+    "tag": "o-spikedPitTrap",
     "hex": null,
-    "url": "http://localhost:8080/images/obstacles/spikedPitTrap.png"
+    "url": "https://api.tts-game.fun/images/obstacles/spikedPitTrap.png"
   }
 ]

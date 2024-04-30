@@ -1,8 +1,8 @@
 [
   {
     "id": 1,
-    "title": "Our First Campaign",
-    "description": "This is our first campaign",
+    "title": "Embers of the Forgotten Kingdom",
+    "description": "Adventurers journey through the ruins of a once-glorious kingdom now overrun by dark forces. Their quest: to uncover ancient artifacts and decipher the mystery of the kingdom's sudden fall while battling the risen undead and thwarting a necromancer's sinister plot.",
     "locations": [
       {
         "id": 1,
@@ -13,44 +13,30 @@
         ]
       },
       {
-        "id": 2,
+        "id": 3,
         "conditions": [
           { "type": "ROUND_REACHED", "value": 10, "result": "COMPLETED"},
           { "type": "PLAYER_DEATHS", "value": 2, "result": "FAILED"}
         ]
       },
       {
-        "id": 3,
+        "id": 4,
         "conditions": [
           { "type": "ENEMY_DEATHS", "value": 5, "result": "COMPLETED"},
           { "type": "PLAYER_DEATHS", "value": -1, "result": "FAILED"}
         ]
       },
       {
-        "id": 4,
+        "id": 5,
         "conditions": [
           { "type": "ROUND_REACHED", "value": 5, "result": "COMPLETED"},
           { "type": "PLAYER_DEATHS", "value": -1, "result": "FAILED"}
         ]
       },
       {
-        "id": 5,
-        "conditions": [
-          { "type": "DOORS_OPENED", "value": 3, "result": "COMPLETED"},
-          { "type": "PLAYER_DEATHS", "value": -1, "result": "FAILED"}
-        ]
-      },
-      {
-        "id": 6,
-        "conditions": [
-          { "type": "DOORS_OPENED", "value": -1, "result": "COMPLETED"},
-          { "type": "PLAYER_DEATHS", "value": -1, "result": "FAILED"}
-        ]
-      },
-      {
         "id": 7,
         "conditions": [
-          { "type": "ROUND_REACHED", "value": 10, "result": "COMPLETED"},
+          { "type": "DOORS_OPENED", "value": 3, "result": "COMPLETED"},
           { "type": "PLAYER_DEATHS", "value": -1, "result": "FAILED"}
         ]
       }
@@ -59,18 +45,16 @@
     "finishLocation": [ 5, 7 ],
     "achievements": [ 1, 2, 3 ],
     "paths": [
-      { "from": 1, "to": 2 },
-      { "from": 2, "to": 3 },
-      { "from": 2, "to": 4 },
+      { "from": 1, "to": 3 },
+      { "from": 3, "to": 4 },
       { "from": 3, "to": 5 },
-      { "from": 4, "to": 6 },
-      { "from": 6, "to": 7 }
+      { "from": 4, "to": 7 }
     ]
   },
   {
     "id": 2,
-    "title": "Our Second Campaign",
-    "description": "This is our second campaign",
+    "title": "Voyage to the Shattered Isles",
+    "description": "This maritime campaign sets players on a perilous sea voyage to a cluster of mysterious islands, where rumors of a hidden power draw pirates and explorers alike. They must navigate treacherous waters, hostile island tribes, and ancient curses in their quest for treasure.",
     "locations": [
       {
         "id": 1,
@@ -78,26 +62,56 @@
           { "type": "ENEMY_DEATHS", "value": -1, "result": "COMPLETED"},
           { "type": "PLAYER_DEATHS", "value": -1, "result": "FAILED"}
         ]
+      }, {
+        "id": 3,
+        "conditions": [
+          { "type": "ROUND_REACHED", "value": 10, "result": "COMPLETED"},
+          { "type": "PLAYER_DEATHS", "value": 2, "result": "FAILED"}
+        ]
       }
     ],
     "startLocation": 1,
-    "finishLocation": [1],
+    "finishLocation": [ 1 ],
     "achievements": [ 1, 2, 3 ],
-    "paths": []
+    "paths": [
+      { "from": 1, "to": 3 }
+    ]
   },
   {
     "id": 3,
-    "title": "Our Third Campaign",
-    "description": "This is our third campaign",
+    "title": "The Crystal Rift Prophecy",
+    "description": "Players are drawn into a cosmic conflict when a celestial alignment opens the Crystal Rift, releasing otherworldly creatures into their realm. The adventurers must gather legendary crystals scattered across diverse lands to close the rift and prevent a cosmic catastrophe.",
     "locations": [
       {
         "id": 1,
         "conditions": null
+      }, {
+        "id": 3,
+        "conditions": [
+          { "type": "ROUND_REACHED", "value": 10, "result": "COMPLETED"},
+          { "type": "PLAYER_DEATHS", "value": 2, "result": "FAILED"}
+        ]
+      }, {
+        "id": 4,
+        "conditions": [
+          { "type": "ENEMY_DEATHS", "value": 5, "result": "COMPLETED"},
+          { "type": "PLAYER_DEATHS", "value": -1, "result": "FAILED"}
+        ]
+      }, {
+        "id": 7,
+        "conditions": [
+          { "type": "DOORS_OPENED", "value": 3, "result": "COMPLETED"},
+          { "type": "PLAYER_DEATHS", "value": -1, "result": "FAILED"}
+        ]
       }
     ],
     "startLocation": 1,
-    "finishLocation": [1],
+    "finishLocation": [ 4, 7 ],
     "achievements": [ 1, 2, 3 ],
-    "paths": []
+    "paths": [
+      { "from": 1, "to": 3 },
+      { "from": 3, "to": 4 },
+      { "from": 3, "to": 7 }
+    ]
   }
 ]

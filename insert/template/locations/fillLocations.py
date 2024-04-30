@@ -1,6 +1,30 @@
 import json
 import os
 
+
+# Replace None with NULL recursively
+def replaceNoneWithNull(data):
+    if isinstance(data, dict):
+        for key in data:
+            if data[key] is None:
+                data[key] = "NULL"
+            else:
+                data[key] = replaceNoneWithNull(data[key])
+    elif isinstance(data, list):
+        for i in range(len(data)):
+            if data[i] is None:
+                data[i] = "NULL"
+            else:
+                data[i] = replaceNoneWithNull(data[i])
+    else:
+        if data is None:
+            data = "NULL"
+
+    return data
+
+def replaceQuotes(data):
+    return data.replace('"', '\\"').replace("'", "\\'")
+
 # Get current file path even if it's executed from another file
 currentFolderPath = os.path.dirname(os.path.realpath(__file__))
 
@@ -17,121 +41,114 @@ sqlFile = open(sqlFilePath, "w")
 sqlFile.truncate(0)
 sqlFile.flush()
 
+# Replace None with NULL
+data = replaceNoneWithNull(data)
+
 # Iterate through the JSON data and insert records into tables
-for location in data:
-    locationID = location["id"]
+for entry in data:
+    entryID = entry["id"]
+    sqlFile.write("-- Location {}\n".format(entryID))
 
-    # Params
-    locationTitle = location["title"]
-    locationTag = location["tag"]
-    locationType = location["type"]
-    locationDesc = location["description"]
-
-    sqlFile.write("-- Location {}\n".format(locationTag))
+    # Insert location
     sqlFile.write(
         "INSERT INTO Location (id, title, tag, type, description) "
         "VALUES ({}, '{}', '{}', '{}', '{}');\n"
-        .format(locationID, locationTitle, locationTag, locationType, locationDesc)
+        .format(entryID,
+                replaceQuotes(entry["title"]),
+                entry["tag"],
+                entry["type"],
+                replaceQuotes(entry["description"])
+        )
     )
 
-    if location["type"] == "MARKET":
-        if "items" in location:
-            for itemID in location["items"]["ids"]:
+    if entry["type"] == "MARKET":
+        if "items" in entry:
+            for itemID in entry["items"]["ids"]:
                 price = "NULL"
                 amount = "NULL"
 
-                if str(itemID) in location["items"]["prices"]:
-                    price = location["items"]["prices"][str(itemID)]
+                if str(itemID) in entry["items"]["prices"]:
+                    price = entry["items"]["prices"][str(itemID)]
 
-                if str(itemID) in location["items"]["amounts"]:
-                    amount = location["items"]["amounts"][str(itemID)]
+                if str(itemID) in entry["items"]["amounts"]:
+                    amount = entry["items"]["amounts"][str(itemID)]
 
                 sqlFile.write(
                     "INSERT INTO Market (idLocation, idItem, defPrice, defAmount) "
                     "VALUES ({}, {}, {}, {});\n"
-                    .format(location["id"], itemID, price, amount)
+                    .format(entryID, itemID, price, amount)
                 )
 
     # Parts
-    if "parts" in location:
-        for part in location["parts"]:
+    if "parts" in entry:
+        for part in entry["parts"]:
 
-            # Params
-            partScheme = part["scheme"]
-            partRotation = part["rotation"]
-            partHexes = part["hexes"]
-
-            #HexEnemy relationship
-            # Hexes
-            for hex in partHexes:
-
-                # Params
-                hexType = hex["type"]
-                hexTypeID = hex["id"]
-                hexCordR = hex["cords"]["r"]
-                hexCordQ = hex["cords"]["q"]
-                hexCordS = hex["cords"]["s"]
-
-                # Get Hex ID
-                sqlFile.write(
-                    "SET @hexID = (SELECT id FROM Hex WHERE idPart = {} AND qCoord = {} AND rCoord = {} AND sCoord = {});\n"
-                    .format(partScheme, hexCordQ, hexCordR, hexCordS)
-                )
-
-                if hexType == "ENEMY":
-                    sqlFile.write(
-                        "INSERT INTO HexEnemy (idEnemy, idLocation, idPart, idHex) "
-                        "VALUES ({}, {}, {}, @hexID);\n"
-                        .format(hexTypeID, locationID, partScheme)
-                    )
-                elif hexType == "OBSTACLE":
-                    sqlFile.write(
-                        "INSERT INTO HexObstacle (idObstacle, idLocation, idPart, idHex) "
-                        "VALUES ({}, {}, {}, @hexID);\n"
-                        .format(hexTypeID, locationID, partScheme)
-                    )
-
-            #Start
-            if "start" in part:
-                for start in part["start"]:
-
-                    # Params
-                    startCordR = start["r"]
-                    startCordQ = start["q"]
-                    startCordS = start["s"]
-
-                    # First hex
-                    sqlFile.write(
-                        "SET @hexID = (SELECT id FROM Hex WHERE idPart = {} AND qCoord = {} AND rCoord = {} AND sCoord = {});\n"
-                        .format(partScheme, startCordQ, startCordR, startCordS)
-                    )
-
-                    sqlFile.write(
-                        "INSERT INTO LocationStart (idLocation, idPart, idHex) "
-                        "VALUES ({}, {}, @hexID);\n"
-                        .format(locationID, partScheme)
-                    )
-
-            # LocationPart Relationship
+            # Insert Part
             sqlFile.write(
                 "INSERT INTO LocationPart (idLocation, idPart, rotation) "
                 "VALUES ({}, {}, {});\n"
-                .format(locationID, partScheme, partRotation)
+                .format(entryID,
+                        part["part"],
+                        part["rotation"])
+            )
+
+    #Start
+    if "startHexes" in entry:
+        for startHex in entry["startHexes"]:
+
+            # Insert Start Hexes
+            sqlFile.write(
+                "INSERT INTO LocationStart (idLocation, idPart, idHex) "
+                "VALUES ({}, {}, {});\n"
+                .format(entryID,
+                        startHex["idPart"],
+                        startHex["idHex"]
+                )
             )
 
     # Doors
-    if "doors" in location:
-        for door in location["doors"]:
+    if "doors" in entry:
+        for door in entry["doors"]:
 
-            # Params
-            doorFirstPart = door["firstPart"]
-            doorSecondPart = door["secondPart"]
-            doorCordR = door["cords"]["r"]
-            doorCordQ = door["cords"]["q"]
-            doorCordS = door["cords"]["s"]
-
+            # Insert Door
             sqlFile.write(
                 "INSERT INTO LocationDoor (idLocation, idPartFrom, idPartTo, qCoord, rCoord, sCoord) "
                 "VALUES ({}, {}, {}, {}, {}, {});\n"
-                .format(locationID, doorFirstPart, doorSecondPart, doorCordQ, doorCordR, doorCordS)
+                .format(entryID,
+                        door["key"]["idPartFrom"],
+                        door["key"]["idPartTo"],
+                        door["q"],
+                        door["r"],
+                        door["s"]
+                )
+            )
+
+    # Enemies
+    if "enemies" in entry:
+        for enemy in entry["enemies"]:
+
+            # Insert Enemy
+            sqlFile.write(
+                "INSERT INTO HexEnemy (idEnemy, idLocation, idPart, idHex) "
+                "VALUES ({}, {}, {}, {});\n"
+                .format(enemy["enemy"],
+                        entryID,
+                        enemy['key']["idPart"],
+                        enemy['key']["idHex"],
+                )
+            )
+
+    # Obstacles
+    if "obstacles" in entry:
+        for obstacle in entry["obstacles"]:
+
+            # Insert Obstacle
+            sqlFile.write(
+                "INSERT INTO HexObstacle (idObstacle, idLocation, idPart, idHex) "
+                "VALUES ({}, {}, {}, {});\n"
+                .format(obstacle["obstacle"],
+                        entryID,
+                        obstacle["key"]["idPart"],
+                        obstacle["key"]["idHex"],
+                )
             )

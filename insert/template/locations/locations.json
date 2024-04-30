@@ -1,341 +1,842 @@
 [
   {
     "id": 1,
-    "title": "Dungeon 1",
-    "tag": "l-dng1",
+    "title": "The Hollows of Silent Arrows",
+    "tag": "l-silentArrows",
     "type": "DUNGEON",
-    "description": "This is the first dungeon",
+    "description": "Deep within a misty forest, the Hollows of Silent Arrows features caverns filled with narrow passageways and hidden alcoves. The silence is broken only by the soft whistling of arrows from spectral archers, cursed to defend their tomb. The ground is strewn with bones and decaying gear, and zombies roam, driven by old loyalties. Explorers face deadly traps and ambushes as they delve deeper, all crafted to safeguard the ancient secrets within.",
     "parts": [
       {
-        "scheme": 1,
-        "rotation": 0,
-        "hexes": [
-          {
-            "note": "skeleton",
-            "type": "ENEMY",
-            "id": 4,
-            "cords": {
-              "q": 4,
-              "r": -3,
-              "s": -1
-            }
-          },
-          {
-            "note": "skeleton",
-            "type": "ENEMY",
-            "id": 4,
-            "cords": {
-              "q": 3,
-              "r": -1,
-              "s": -2
-            }
-          },
-          {
-            "note": "zombie",
-            "type": "ENEMY",
-            "id": 11,
-            "cords": {
-              "q": -1,
-              "r": -1,
-              "s": 2
-            }
-          },
-          {
-            "note": "zombie",
-            "type": "ENEMY",
-            "id": 11,
-            "cords": {
-              "q": 0,
-              "r": -1,
-              "s": 1
-            }
-          },
-          {
-            "cords": {
-              "q": 1,
-              "r": 0,
-              "s": -1
-            },
-            "type": "OBSTACLE",
-            "id": 1
-          }
-        ],
-        "start": [
-          {
-            "q": -4,
-            "r": 2,
-            "s": 2
-          },
-          {
-            "q": -4,
-            "r": 3,
-            "s": 1
-          },
-          {
-            "q": -3,
-            "r": 2,
-            "s": 1
-          },
-          {
-            "q": -3,
-            "r": 3,
-            "s": 0
-          },
-          {
-            "q": -2,
-            "r": 2,
-            "s": 0
-          },
-          {
-            "q": -2,
-            "r": 3,
-            "s": -1
-          }
-        ]
+        "key": {
+          "idLocation": 1,
+          "idPart": 1
+        },
+        "part": 1,
+        "rotation": 0
       },
       {
-        "scheme": 2,
-        "rotation": 0,
-        "hexes": [
-          {
-            "note": "skeleton",
-            "type": "ENEMY",
-            "id": 11,
-            "cords": {
-              "r": 0,
-              "q": -2,
-              "s": 2
-            }
-          },
-          {
-            "note": "skeleton",
-            "type": "ENEMY",
-            "id": 11,
-            "cords": {
-              "r": 2,
-              "q": -1,
-              "s": -1
-            }
-          },
-          {
-            "note": "zombie",
-            "type": "ENEMY",
-            "id": 4,
-            "cords": {
-              "r": -2,
-              "q": 1,
-              "s": 1
-            }
-          },
-          {
-            "note": "zombie",
-            "type": "ENEMY",
-            "id": 4,
-            "cords": {
-              "r": -1,
-              "q": 2,
-              "s": -1
-            }
-          },
-          {
-            "note": "lich",
-            "type": "ENEMY",
-            "id": 12,
-            "cords": {
-              "r": 0,
-              "q": 0,
-              "s": 0
-            }
-          },
-          {
-            "cords": {
-              "q": -2,
-              "r": 1,
-              "s": 1
-            },
-            "type": "OBSTACLE",
-            "id": 2
-          }
-        ]
+        "key": {
+          "idLocation": 1,
+          "idPart": 2
+        },
+        "part": 2,
+        "rotation": 0
       }
     ],
     "doors": [
       {
-        "cords": {
-          "q": 5,
-          "r": -3,
-          "s": -2
+        "key": {
+          "idLocation": 1,
+          "idPartFrom": 1,
+          "idPartTo": 2
         },
-        "firstPart": 1,
-        "secondPart": 2
+        "q": 5,
+        "r": -3,
+        "s": -2,
+        "opened": false
       },
       {
-        "cords": {
-          "q": -4,
-          "r": 4,
-          "s": 0
+        "key": {
+          "idLocation": 1,
+          "idPartFrom": 2,
+          "idPartTo": 1
         },
-        "firstPart": 2,
-        "secondPart": 1
+        "q": -4,
+        "r": 4,
+        "s": 0,
+        "opened": false
       }
-    ]
-  },
-  {
-    "id": 2,
-    "title": "Market 1",
-    "tag": "l-mkt1",
-    "type": "MARKET",
-    "description": "This is Market 1",
-    "items": {
-      "ids": [1, 2, 3, 4, 5, 6, 7, 8, 9],
-      "prices": {
-        "2": 20,
-        "3": 30,
-        "4": 40,
-        "5": 50,
-        "6": 60,
-        "7": 70,
-        "8": 80,
-        "9": 90
+    ],
+    "startHexes": [
+      {
+        "idLocation": 1,
+        "idPart": 1,
+        "idHex": 15
       },
-      "amounts": {
-        "1": 1,
-        "2": 2,
-        "3": 3,
-        "4": 4,
-        "5": 5,
-        "6": 6,
-        "7": 7,
-        "8": 8
+      {
+        "idLocation": 1,
+        "idPart": 1,
+        "idHex": 16
+      },
+      {
+        "idLocation": 1,
+        "idPart": 1,
+        "idHex": 20
+      },
+      {
+        "idLocation": 1,
+        "idPart": 1,
+        "idHex": 21
+      },
+      {
+        "idLocation": 1,
+        "idPart": 1,
+        "idHex": 22
+      },
+      {
+        "idLocation": 1,
+        "idPart": 1,
+        "idHex": 43
       }
-    },
-    "parts": [],
-    "doors": []
+    ],
+    "enemies": [
+      {
+        "key": {
+          "idEnemy": 11,
+          "idHex": 4,
+          "idLocation": 1,
+          "idPart": 1
+        },
+        "enemy": 11
+      },
+      {
+        "key": {
+          "idEnemy": 11,
+          "idHex": 9,
+          "idLocation": 1,
+          "idPart": 1
+        },
+        "enemy": 11
+      },
+      {
+        "key": {
+          "idEnemy": 4,
+          "idHex": 27,
+          "idLocation": 1,
+          "idPart": 1
+        },
+        "enemy": 4
+      },
+      {
+        "key": {
+          "idEnemy": 4,
+          "idHex": 28,
+          "idLocation": 1,
+          "idPart": 1
+        },
+        "enemy": 4
+      },
+      {
+        "key": {
+          "idEnemy": 12,
+          "idHex": 3,
+          "idLocation": 1,
+          "idPart": 2
+        },
+        "enemy": 12
+      },
+      {
+        "key": {
+          "idEnemy": 4,
+          "idHex": 6,
+          "idLocation": 1,
+          "idPart": 2
+        },
+        "enemy": 4
+      },
+      {
+        "key": {
+          "idEnemy": 4,
+          "idHex": 11,
+          "idLocation": 1,
+          "idPart": 2
+        },
+        "enemy": 4
+      }
+    ],
+    "obstacles": [
+      {
+        "key": {
+          "idObstacle": 1,
+          "idHex": 6,
+          "idPart": 1,
+          "idLocation": 1
+        },
+        "obstacle": 1
+      },
+      {
+        "key": {
+          "idObstacle": 1,
+          "idHex": 7,
+          "idPart": 1,
+          "idLocation": 1
+        },
+        "obstacle": 1
+      },
+      {
+        "key": {
+          "idObstacle": 2,
+          "idHex": 9,
+          "idPart": 2,
+          "idLocation": 1
+        },
+        "obstacle": 2
+      }
+    ],
+    "url": "https://api.tts-game.fun/images/locations/silentArrows.png"
   },
   {
     "id": 3,
-    "title": "Location 3",
-    "tag": "l-loc3",
+    "title": "Grimstone Depths",
+    "tag": "l-grimstoneDepths",
     "type": "DUNGEON",
-    "description": "This is Location 3",
+    "description": " Located at the heart of a desolate mountain range, the Grimstone Depths are a series of volcanic tunnels and caverns. The walls glow with natural magma flows, and the air is hot and suffocating, with frequent tremors hinting at the dangerous forces at work beneath the earth.",
     "parts": [
       {
-        "scheme": 1,
-        "rotation": 0,
-        "hexes": [
-          {
-            "cords": {
-              "q": 0,
-              "r": 0,
-              "s": 0
-            },
-            "type": "ENEMY",
-            "id": 2
-          }
-        ]
+        "key": {
+          "idLocation": 3,
+          "idPart": 1
+        },
+        "part": 1,
+        "rotation": 0
+      },
+      {
+        "key": {
+          "idLocation": 3,
+          "idPart": 3
+        },
+        "part": 3,
+        "rotation": 0
       }
     ],
-    "doors": []
+    "doors": [
+      {
+        "key": {
+          "idLocation": 3,
+          "idPartFrom": 1,
+          "idPartTo": 3
+        },
+        "q": -4,
+        "r": 0,
+        "s": 4,
+        "opened": false
+      },
+      {
+        "key": {
+          "idLocation": 3,
+          "idPartFrom": 3,
+          "idPartTo": 1
+        },
+        "q": 4,
+        "r": 0,
+        "s": -4,
+        "opened": false
+      }
+    ],
+    "startHexes": [
+      {
+        "idLocation": 3,
+        "idPart": 1,
+        "idHex": 20
+      },
+      {
+        "idLocation": 3,
+        "idPart": 1,
+        "idHex": 21
+      },
+      {
+        "idLocation": 3,
+        "idPart": 1,
+        "idHex": 22
+      },
+      {
+        "idLocation": 3,
+        "idPart": 1,
+        "idHex": 23
+      },
+      {
+        "idLocation": 3,
+        "idPart": 1,
+        "idHex": 24
+      },
+      {
+        "idLocation": 3,
+        "idPart": 1,
+        "idHex": 41
+      }
+    ],
+    "enemies": [
+      {
+        "key": {
+          "idEnemy": 4,
+          "idHex": 9,
+          "idLocation": 3,
+          "idPart": 1
+        },
+        "enemy": 4
+      },
+      {
+        "key": {
+          "idEnemy": 2,
+          "idHex": 27,
+          "idLocation": 3,
+          "idPart": 1
+        },
+        "enemy": 2
+      },
+      {
+        "key": {
+          "idEnemy": 2,
+          "idHex": 30,
+          "idLocation": 3,
+          "idPart": 1
+        },
+        "enemy": 2
+      },
+      {
+        "key": {
+          "idEnemy": 7,
+          "idHex": 17,
+          "idLocation": 3,
+          "idPart": 3
+        },
+        "enemy": 7
+      }
+    ],
+    "obstacles": [],
+    "url": "https://api.tts-game.fun/images/locations/grimstoneDepths.png"
   },
   {
     "id": 4,
-    "title": "Location 4",
-    "tag": "l-loc4",
+    "title": "Whispering Hollows",
+    "tag": "l-whisperingHallows",
     "type": "DUNGEON",
-    "description": "This is Location 4",
+    "description": "A network of caves known for strange, whispering winds that sound eerily like voices from the past. Adventurers report hallucinations and ghostly sightings, with the cave's layout seemingly changing with the wind's direction.",
     "parts": [
       {
-        "scheme": 2,
-        "rotation": 0,
-        "hexes": [
-          {
-            "cords": {
-              "q": 1,
-              "r": -1,
-              "s": 0
-            },
-            "type": "ENEMY",
-            "id": 2
-          }
-        ]
+        "key": {
+          "idLocation": 4,
+          "idPart": 2
+        },
+        "part": 2,
+        "rotation": 0
+      },
+      {
+        "key": {
+          "idLocation": 4,
+          "idPart": 3
+        },
+        "part": 3,
+        "rotation": 0
       }
     ],
-    "doors": []
+    "doors": [
+      {
+        "key": {
+          "idLocation": 4,
+          "idPartFrom": 2,
+          "idPartTo": 3
+        },
+        "q": 4,
+        "r": 0,
+        "s": -4,
+        "opened": false
+      },
+      {
+        "key": {
+          "idLocation": 4,
+          "idPartFrom": 3,
+          "idPartTo": 2
+        },
+        "q": 4,
+        "r": 0,
+        "s": -4,
+        "opened": false
+      }
+    ],
+    "startHexes": [
+      {
+        "idLocation": 4,
+        "idPart": 2,
+        "idHex": 12
+      },
+      {
+        "idLocation": 4,
+        "idPart": 2,
+        "idHex": 16
+      },
+      {
+        "idLocation": 4,
+        "idPart": 2,
+        "idHex": 30
+      },
+      {
+        "idLocation": 4,
+        "idPart": 2,
+        "idHex": 31
+      },
+      {
+        "idLocation": 4,
+        "idPart": 2,
+        "idHex": 32
+      },
+      {
+        "idLocation": 4,
+        "idPart": 2,
+        "idHex": 35
+      }
+    ],
+    "enemies": [
+      {
+        "key": {
+          "idEnemy": 4,
+          "idHex": 2,
+          "idLocation": 4,
+          "idPart": 2
+        },
+        "enemy": 4
+      },
+      {
+        "key": {
+          "idEnemy": 10,
+          "idHex": 58,
+          "idLocation": 4,
+          "idPart": 2
+        },
+        "enemy": 10
+      },
+      {
+        "key": {
+          "idEnemy": 12,
+          "idHex": 17,
+          "idLocation": 4,
+          "idPart": 3
+        },
+        "enemy": 12
+      }
+    ],
+    "obstacles": [
+      {
+        "key": {
+          "idObstacle": 1,
+          "idHex": 9,
+          "idPart": 2,
+          "idLocation": 4
+        },
+        "obstacle": 1
+      },
+      {
+        "key": {
+          "idObstacle": 2,
+          "idHex": 13,
+          "idPart": 3,
+          "idLocation": 4
+        },
+        "obstacle": 2
+      },
+      {
+        "key": {
+          "idObstacle": 2,
+          "idHex": 21,
+          "idPart": 3,
+          "idLocation": 4
+        },
+        "obstacle": 2
+      },
+      {
+        "key": {
+          "idObstacle": 2,
+          "idHex": 28,
+          "idPart": 3,
+          "idLocation": 4
+        },
+        "obstacle": 2
+      }
+    ],
+    "url": "https://api.tts-game.fun/images/locations/whisperingHallows.png"
   },
   {
     "id": 5,
-    "title": "Location 5",
-    "tag": "l-loc5",
+    "title": "Shattered Spires",
+    "tag": "l-shatteredSpires",
     "type": "DUNGEON",
-    "description": "This is Location 5",
+    "description": "This dungeon is a series of towering, rocky spires that rise abruptly from a harsh, cracked desert. The spires are hollow and filled with treacherous paths, home to creatures adapted to the harsh, vertical environment.",
     "parts": [
       {
-        "scheme": 3,
-        "rotation": 0,
-        "hexes": [
-          {
-            "cords": {
-              "q": 2,
-              "r": 0,
-              "s": -2
-            },
-            "type": "ENEMY",
-            "id": 2
-          }
-        ]
-      }
-    ],
-    "doors": []
-  },
-  {
-    "id": 6,
-    "title": "Location 6",
-    "tag": "l-loc6",
-    "type": "DUNGEON",
-    "description": "This is Location 6",
-    "parts": [
+        "key": {
+          "idLocation": 5,
+          "idPart": 1
+        },
+        "part": 1,
+        "rotation": 0
+      },
       {
-        "scheme": 4,
-        "rotation": 0,
-        "hexes": [
-          {
-            "cords": {
-              "q": 0,
-              "r": 0,
-              "s": 0
-            },
-            "type": "ENEMY",
-            "id": 2
-          }
-        ]
+        "key": {
+          "idLocation": 5,
+          "idPart": 3
+        },
+        "part": 3,
+        "rotation": 0
       }
     ],
-    "doors": []
+    "doors": [
+      {
+        "key": {
+          "idLocation": 5,
+          "idPartFrom": 1,
+          "idPartTo": 3
+        },
+        "q": -2,
+        "r": 4,
+        "s": -2,
+        "opened": false
+      },
+      {
+        "key": {
+          "idLocation": 5,
+          "idPartFrom": 3,
+          "idPartTo": 1
+        },
+        "q": 1,
+        "r": -3,
+        "s": 2,
+        "opened": false
+      }
+    ],
+    "startHexes": [
+      {
+        "idLocation": 5,
+        "idPart": 1,
+        "idHex": 16
+      },
+      {
+        "idLocation": 5,
+        "idPart": 1,
+        "idHex": 17
+      },
+      {
+        "idLocation": 5,
+        "idPart": 1,
+        "idHex": 20
+      },
+      {
+        "idLocation": 5,
+        "idPart": 1,
+        "idHex": 21
+      },
+      {
+        "idLocation": 5,
+        "idPart": 1,
+        "idHex": 22
+      },
+      {
+        "idLocation": 5,
+        "idPart": 1,
+        "idHex": 23
+      }
+    ],
+    "enemies": [
+      {
+        "key": {
+          "idEnemy": 3,
+          "idHex": 27,
+          "idLocation": 5,
+          "idPart": 1
+        },
+        "enemy": 3
+      },
+      {
+        "key": {
+          "idEnemy": 3,
+          "idHex": 30,
+          "idLocation": 5,
+          "idPart": 1
+        },
+        "enemy": 3
+      },
+      {
+        "key": {
+          "idEnemy": 5,
+          "idHex": 21,
+          "idLocation": 5,
+          "idPart": 3
+        },
+        "enemy": 5
+      },
+      {
+        "key": {
+          "idEnemy": 5,
+          "idHex": 27,
+          "idLocation": 5,
+          "idPart": 3
+        },
+        "enemy": 5
+      }
+    ],
+    "obstacles": [
+      {
+        "key": {
+          "idObstacle": 2,
+          "idHex": 9,
+          "idPart": 1,
+          "idLocation": 5
+        },
+        "obstacle": 2
+      },
+      {
+        "key": {
+          "idObstacle": 2,
+          "idHex": 13,
+          "idPart": 1,
+          "idLocation": 5
+        },
+        "obstacle": 2
+      },
+      {
+        "key": {
+          "idObstacle": 2,
+          "idHex": 9,
+          "idPart": 3,
+          "idLocation": 5
+        },
+        "obstacle": 2
+      }
+    ],
+    "url": "https://api.tts-game.fun/images/locations/shatteredSpires.png"
   },
   {
     "id": 7,
-    "title": "Location 7",
-    "tag": "l-loc7",
+    "title": "The Labyrinth of the Damned",
+    "tag": "l-labyrinthDamned",
     "type": "DUNGEON",
-    "description": "This is Location 7",
+    "description": "An ancient, sprawling maze built by a mad king to house his enemies, this labyrinth is full of dead ends, traps, and puzzles. The spirits of those who perished within still roam the corridors, driven by madness and despair.",
     "parts": [
       {
-        "scheme": 5,
-        "rotation": 0,
-        "hexes": [
-          {
-            "cords": {
-              "q": 1,
-              "r": 0,
-              "s": -1
-            },
-            "type": "ENEMY",
-            "id": 2
-          }
-        ]
+        "key": {
+          "idLocation": 7,
+          "idPart": 1
+        },
+        "part": 1,
+        "rotation": 0
+      },
+      {
+        "key": {
+          "idLocation": 7,
+          "idPart": 3
+        },
+        "part": 3,
+        "rotation": 0
+      },
+      {
+        "key": {
+          "idLocation": 7,
+          "idPart": 5
+        },
+        "part": 5,
+        "rotation": 0
+      },
+      {
+        "key": {
+          "idLocation": 7,
+          "idPart": 8
+        },
+        "part": 8,
+        "rotation": 0
       }
     ],
-    "doors": []
+    "doors": [
+      {
+        "key": {
+          "idLocation": 7,
+          "idPartFrom": 1,
+          "idPartTo": 3
+        },
+        "q": -4,
+        "r": 0,
+        "s": 4,
+        "opened": false
+      },
+      {
+        "key": {
+          "idLocation": 7,
+          "idPartFrom": 1,
+          "idPartTo": 5
+        },
+        "q": 2,
+        "r": 3,
+        "s": -5,
+        "opened": false
+      },
+      {
+        "key": {
+          "idLocation": 7,
+          "idPartFrom": 1,
+          "idPartTo": 8
+        },
+        "q": 5,
+        "r": -4,
+        "s": -1,
+        "opened": false
+      },
+      {
+        "key": {
+          "idLocation": 7,
+          "idPartFrom": 3,
+          "idPartTo": 1
+        },
+        "q": 4,
+        "r": 0,
+        "s": -4,
+        "opened": false
+      },
+      {
+        "key": {
+          "idLocation": 7,
+          "idPartFrom": 5,
+          "idPartTo": 1
+        },
+        "q": 0,
+        "r": -5,
+        "s": 5,
+        "opened": false
+      },
+      {
+        "key": {
+          "idLocation": 7,
+          "idPartFrom": 8,
+          "idPartTo": 1
+        },
+        "q": -4,
+        "r": 3,
+        "s": 1,
+        "opened": false
+      }
+    ],
+    "startHexes": [
+      {
+        "idLocation": 7,
+        "idPart": 1,
+        "idHex": 15
+      },
+      {
+        "idLocation": 7,
+        "idPart": 1,
+        "idHex": 20
+      },
+      {
+        "idLocation": 7,
+        "idPart": 1,
+        "idHex": 21
+      },
+      {
+        "idLocation": 7,
+        "idPart": 1,
+        "idHex": 22
+      },
+      {
+        "idLocation": 7,
+        "idPart": 1,
+        "idHex": 23
+      },
+      {
+        "idLocation": 7,
+        "idPart": 1,
+        "idHex": 43
+      }
+    ],
+    "enemies": [
+      {
+        "key": {
+          "idEnemy": 4,
+          "idHex": 9,
+          "idLocation": 7,
+          "idPart": 1
+        },
+        "enemy": 4
+      },
+      {
+        "key": {
+          "idEnemy": 8,
+          "idHex": 27,
+          "idLocation": 7,
+          "idPart": 1
+        },
+        "enemy": 8
+      },
+      {
+        "key": {
+          "idEnemy": 8,
+          "idHex": 32,
+          "idLocation": 7,
+          "idPart": 1
+        },
+        "enemy": 8
+      },
+      {
+        "key": {
+          "idEnemy": 7,
+          "idHex": 10,
+          "idLocation": 7,
+          "idPart": 3
+        },
+        "enemy": 7
+      },
+      {
+        "key": {
+          "idEnemy": 7,
+          "idHex": 17,
+          "idLocation": 7,
+          "idPart": 3
+        },
+        "enemy": 7
+      },
+      {
+        "key": {
+          "idEnemy": 6,
+          "idHex": 13,
+          "idLocation": 7,
+          "idPart": 5
+        },
+        "enemy": 6
+      },
+      {
+        "key": {
+          "idEnemy": 6,
+          "idHex": 23,
+          "idLocation": 7,
+          "idPart": 5
+        },
+        "enemy": 6
+      },
+      {
+        "key": {
+          "idEnemy": 9,
+          "idHex": 10,
+          "idLocation": 7,
+          "idPart": 8
+        },
+        "enemy": 9
+      }
+    ],
+    "obstacles": [
+      {
+        "key": {
+          "idObstacle": 2,
+          "idHex": 36,
+          "idPart": 1,
+          "idLocation": 7
+        },
+        "obstacle": 2
+      },
+      {
+        "key": {
+          "idObstacle": 1,
+          "idHex": 14,
+          "idPart": 3,
+          "idLocation": 7
+        },
+        "obstacle": 1
+      },
+      {
+        "key": {
+          "idObstacle": 1,
+          "idHex": 22,
+          "idPart": 3,
+          "idLocation": 7
+        },
+        "obstacle": 1
+      }
+    ],
+    "url": "https://api.tts-game.fun/images/locations/labyrinthDamned.png"
   }
 ]
-
